@@ -40,10 +40,11 @@ const Header = () => {
                         </button>
 
                         <div className="hidden md:flex space-x-8 text-xl tracking-wider tenali-ramakrishna">
-                            <a href="#" className="hover:text-amber-400 transition-colors uppercase">Inicio</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors uppercase">Acerca</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors uppercase">Servicios</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors uppercase">Contacto</a>
+                            <a href="/" className="hover:text-amber-400 transition-colors uppercase">Inicio</a>
+                            <a href="/about" className="hover:text-amber-400 transition-colors uppercase">Acerca</a>
+                            <a href="/services" className="hover:text-amber-400 transition-colors uppercase">Servicios</a>
+                            <a href="/events" className="hover:text-amber-400 transition-colors uppercase">Eventos</a>
+                            <a href="/contact" className="hover:text-amber-400 transition-colors uppercase">Contacto</a>
                         </div>
                     </div>
                 </nav>
@@ -52,10 +53,11 @@ const Header = () => {
                 {isMenuOpen && (
                     <div className="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm mt-4 py-6 px-4">
                         <div className="flex flex-col space-y-4 text-sm tracking-wider tenali-ramakrishna">
-                            <a href="#" className="hover:text-amber-400 transition-colors py-2 uppercase">Inicio</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors py-2 uppercase">Acerca</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors py-2 uppercase">Servicios</a>
-                            <a href="#" className="hover:text-amber-400 transition-colors py-2 uppercase">Contacto</a>
+                            <a href="/" className="hover:text-amber-400 transition-colors py-2 uppercase">Inicio</a>
+                            <a href="/about" className="hover:text-amber-400 transition-colors py-2 uppercase">Acerca</a>
+                            <a href="/services" className="hover:text-amber-400 transition-colors py-2 uppercase">Servicios</a>
+                            <a href="/events" className="hover:text-amber-400 transition-colors py-2 uppercase">Eventos</a>
+                            <a href="/contact" className="hover:text-amber-400 transition-colors py-2 uppercase">Contacto</a>
                         </div>
                     </div>
                 )}
