@@ -366,8 +366,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "Una experiencia transformadora. El ambiente, la atención al detalle y la profesionalidad 
-                del equipo superaron todas mis expectativas."
+                &quot;Una experiencia transformadora. El ambiente, la atención al detalle y la profesionalidad 
+                del equipo superaron todas mis expectativas.&quot;
               </p>
               <p className="text-amber-400 font-light">- Sofia M.</p>
             </div>
@@ -378,8 +378,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "El lujo y la discreción en su máxima expresión. Cada visita es un viaje sensorial único 
-                que me reconecta conmigo mismo."
+                &quot;El lujo y la discreción en su máxima expresión. Cada visita es un viaje sensorial único 
+                que me reconecta conmigo mismo.&quot;
               </p>
               <p className="text-amber-400 font-light">- Carlos R.</p>
             </div>
@@ -390,8 +390,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "Mi pareja y yo vivimos una experiencia inolvidable. El workshop de tantra para parejas 
-                fortaleció nuestra conexión de manera extraordinaria."
+                &quot;Mi pareja y yo vivimos una experiencia inolvidable. El workshop de tantra para parejas 
+                fortaleció nuestra conexión de manera extraordinaria.&quot;
               </p>
               <p className="text-amber-400 font-light">- Ana & David</p>
             </div>
