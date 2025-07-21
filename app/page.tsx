@@ -7,9 +7,6 @@ import Gallery from '@/components/ui/sections/Gallery';
 import ServicesSection, { services } from '@/components/ui/sections/Services';
 
 const TantricLuxeSpa = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [selectedService, setSelectedService] = React.useState(null);
-  
   const events = [
     {
       title: "FULL MOON RITUAL",

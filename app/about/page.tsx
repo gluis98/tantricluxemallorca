@@ -386,7 +386,7 @@ const AboutPage = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div>
                                     <blockquote className="text-2xl font-light text-gray-300 italic leading-relaxed mb-8">
-                                        "El tantra no es solo una práctica, es un camino hacia la comprensión profunda de uno mismo y la conexión auténtica con otros. En cada experiencia que creamos, honramos esta sabiduría ancestral mientras abrazamos la belleza del momento presente."
+                                        &quot;El tantra no es solo una práctica, es un camino hacia la comprensión profunda de uno mismo y la conexión auténtica con otros. En cada experiencia que creamos, honramos esta sabiduría ancestral mientras abrazamos la belleza del momento presente.&quot;
                                     </blockquote>
                                     <div className="text-amber-400 text-lg tenali-ramakrishna">
                                         — Filosofía Tantric Luxe

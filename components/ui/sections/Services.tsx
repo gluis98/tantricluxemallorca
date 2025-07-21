@@ -3,6 +3,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export const services = [
     {
@@ -61,9 +62,11 @@ export default function ServicesSection() {
                         className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full"
                     >
                         <div className="flex-grow">
-                            <img
+                            <Image
                                 src="/images/PlaceDeluxe_01.jpg"
-                                alt="Imagen del servicio"
+                                alt={service.title}
+                                width={400}
+                                height={160}
                                 className="w-full h-40 object-cover rounded-md mb-4"
                             />
                             <div className="flex justify-between items-start mb-4">
