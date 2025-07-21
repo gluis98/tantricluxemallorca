@@ -295,7 +295,7 @@ const TantricLuxeSpa = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-transparent rounded-lg"></div>
-              <img
+              <Image
                 src="/images/PlaceDeluxe_01.jpg"
                 alt="Luxury spa interior"
                 className="rounded-lg shadow-2xl"
