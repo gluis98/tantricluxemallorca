@@ -14,8 +14,8 @@ const Gallery = () => {
           <div className="flex-1 relative group">
             <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
               <Image
-                src="/images/PlaceDeluxe_02.jpg"
-                alt="Espacio de masaje 1"
+                src="/images/espacio_exclusivo_tantrico.webp"
+                alt="Espacio Exclusivo Tantrico"
                 width={400}
                 height={500}
                 className="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105"
@@ -33,8 +33,8 @@ const Gallery = () => {
           <div className="flex-1 relative group">
             <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
               <Image
-                src="/images/PlaceDeluxe_01.jpg"
-                alt="Espacio de masaje 2"
+                src="/images/ambiente_relante_en_palma.webp"
+                alt="Ambiente Relajante En Palma"
                 width={400}
                 height={500}
                 className="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105"
@@ -52,8 +52,8 @@ const Gallery = () => {
           <div className="flex-1 relative group">
             <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
               <Image
-                src="/images/PlaceDeluxe_02.jpg"
-                alt="Espacio de masaje 3"
+                src="/images/experiencias_eroticas_unicas.webp"
+                alt="Experiencias Eroticas Unicas"
                 width={400}
                 height={500}
                 className="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105"

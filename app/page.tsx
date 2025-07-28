@@ -5,28 +5,29 @@ import Image from 'next/image';
 import Header from '../components/ui/sections/Header';
 import Gallery from '@/components/ui/sections/Gallery';
 import ServicesSection, { services } from '@/components/ui/sections/Services';
+import MasajistasModal from '@/components/Anim/MasajistasModal';
 
 const TantricLuxeSpa = () => {
-  const events = [
-    {
-      title: "FULL MOON RITUAL",
-      date: "Próxima Luna Llena",
-      description: "Ceremonia tántrica especial bajo la energía de la luna llena",
-      spots: "8 plazas disponibles"
-    },
-    {
-      title: "TANTRA WORKSHOP",
-      date: "Todos los sábados",
-      description: "Aprende las bases del tantra en un ambiente exclusivo y privado",
-      spots: "6 plazas por sesión"
-    },
-    {
-      title: "VIP SUNSET EXPERIENCE",
-      date: "Jueves y Domingos",
-      description: "Sesión especial al atardecer con vistas a la bahía de Palma",
-      spots: "Solo 2 parejas"
-    }
-  ];
+  // const events = [
+  //   {
+  //     title: "RITUAL LUNA LLENA TANTRICO",
+  //     date: "Próxima Luna Llena",
+  //     description: "Ceremonia de masaje tantrico Mallorca especial bajo la energía lunar transformadora",
+  //     spots: "8 plazas disponibles"
+  //   },
+  //   {
+  //     title: "TALLER MASAJE TANTRICO PALMA",
+  //     date: "Todos los sábados",
+  //     description: "Aprende las técnicas ancestrales del masaje tantrico en Palma de Mallorca",
+  //     spots: "6 plazas por sesión"
+  //   },
+  //   {
+  //     title: "EXPERIENCIA TANTRICA SUNSET",
+  //     date: "Jueves y Domingos",
+  //     description: "Sesión exclusiva de masaje tantrico Mallorca al atardecer con vistas a la bahía de Palma",
+  //     spots: "Solo 2 parejas"
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
@@ -65,7 +66,7 @@ const TantricLuxeSpa = () => {
           <span className="glow-mandala"></span>
           <Image
             src="/images/Mandala.webp"
-            alt="Left Mandala"
+            alt="Mandala sagrado masaje tantrico Mallorca"
             width={600}
             height={600}
             className="object-contain w-full h-full relative z-10"
@@ -76,7 +77,7 @@ const TantricLuxeSpa = () => {
           <span className="glow-mandala"></span>
           <Image
             src="/images/Mandala.webp"
-            alt="Right Mandala"
+            alt="Símbolo tantrico energético Palma Mallorca"
             width={600}
             height={600}
             className="object-contain w-full h-full relative z-10"
@@ -93,19 +94,19 @@ const TantricLuxeSpa = () => {
         <div className="max-w-7xl mx-auto text-center">
           {/* Subtitle */}
           <p className="text-sm md:text-md mb-8 font-light tracking-widest text-amber-400 tenali-ramakrishna">
-            EROTIC MASSAGES
+            EROTIC MASSAGE
           </p>
           {/* Main title */}
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-wider mb-4 gradiente-dorado">
+          <p className="text-4xl md:text-6xl lg:text-8xl font-light tracking-wider mb-4 gradiente-dorado" style={{fontFamily: 'Cormorant Garamond'}}>
             TANTRIC LUXE
+          </p>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">
+            MASAJE TANTRICO PALMA
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">
-            MALLORCA
-          </h2>
 
           {/* Subtitle 2*/}
           <p className="text-xl md:text-2xl font-light tracking-widest mb-8 text-gray-300 tenali-ramakrishna">
-            EXCLUSIVE MASSAGE EXPERIENCE
+            EXPERIENCIA EXCLUSIVA DE MASAJE TANTRICO EN MALLORCA
           </p>
 
           {/* Decorative line */}
@@ -115,10 +116,10 @@ const TantricLuxeSpa = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-8xl mx-auto">
             {/* Left service */}
             <div className="space-y-6 col-span-1">
-            <div className="w-22 h-22 rounded-full w-full m-0">
+            <div className="w-20 h-20 rounded-full w-full m-0">
                   <Image
                     src="/images/MantraButton.png"
-                    alt="Boton Mantra"
+                    alt="Botón masaje tantrico exclusivo Mallorca"
                     width={150}
                     height={150}
                     className="object-contain w-full h-full"
@@ -126,15 +127,15 @@ const TantricLuxeSpa = () => {
                 </div>
                 <div className="text-center flex flex-col items-center">
                 <h3 className="text-xl md:text-2xl font-light tracking-wider mb-4">
-                  EXCLUSIVE<br />MASSAGE
+                  MASAJE TANTRICO<br />EXCLUSIVO
                 </h3>
                 <p className="text-sm text-gray-400 mb-6 leading-relaxed w-[250px]">
-                  Indulge in our signature treatments -
-                  Experience ultimate relaxation
+                  Experimenta nuestro masaje tantrico Palma premium - 
+                  Relajación y conexión espiritual absoluta
                 </p>
                 <div className='flex flex-col w-[200px] justify-self-center'>
                   <button className="tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors">
-                    BOOK NOW
+                    RESERVAR AHORA
                   </button>
 
                   {/* Decorative dots */}
@@ -156,7 +157,7 @@ const TantricLuxeSpa = () => {
                   <span className="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
                   <Image
                     src="/images/BotomLuxDark.webp"
-                    alt="Boton Luxury"
+                    alt="Servicios especiales masaje tantrico Mallorca"
                     width={150}
                     height={150}
                     className="object-contain w-full h-full relative z-10"
@@ -166,8 +167,8 @@ const TantricLuxeSpa = () => {
                   </span>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-2xl font-light tracking-wider tenali-ramakrishna">SPECIAL</h3>
-                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">services</p>
+                  <h3 className="text-2xl font-light tracking-wider tenali-ramakrishna">TANTRICO</h3>
+                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">especial</p>
                 </div>
               </div>
 
@@ -178,7 +179,7 @@ const TantricLuxeSpa = () => {
                   <span className="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
                   <Image
                     src="/images/BotomLuxDark.webp"
-                    alt="Boton Luxury"
+                    alt="Masaje tantrico deluxe Palma Mallorca"
                     width={150}
                     height={150}
                     className="object-contain w-full h-full relative z-10"
@@ -189,7 +190,7 @@ const TantricLuxeSpa = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl font-light tracking-wider tenali-ramakrishna">DELUXE</h3>
-                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">massages</p>
+                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">masajes</p>
                 </div>
               </div>
 
@@ -200,7 +201,7 @@ const TantricLuxeSpa = () => {
                   <span className="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
                   <Image
                     src="/images/BotomLuxDark.webp"
-                    alt="Boton Luxury"
+                    alt="Experiencia tantrica única Mallorca"
                     width={150}
                     height={150}
                     className="object-contain w-full h-full relative z-10"
@@ -210,18 +211,18 @@ const TantricLuxeSpa = () => {
                   </span>
                 </div>
                 <div className="text-center ">
-                  <h3 className="text-2xl font-light tracking-wider tenali-ramakrishna">UNIQUE</h3>
-                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">moments</p>
+                  <h3 className="text-2xl font-light tracking-wider tenali-ramakrishna">ÚNICO</h3>
+                  <p className="text-lg text-amber-400/80 uppercase tenali-ramakrishna">momentos</p>
                 </div>
               </div>
             </div>
 
             {/* Right service */}
             <div className="space-y-6 col-span-1">
-            <div className="w-22 h-22 rounded-full w-full m-0">
+            <div className="w-20 h-20 rounded-full w-full m-0">
                   <Image
                   src="/images/MantraButton.png"
-                    alt="Boton Mantra"
+                    alt="Masaje tantrico premium Palma de Mallorca"
                     width={150}
                     height={150}
                     className="object-contain w-full h-full"
@@ -229,15 +230,15 @@ const TantricLuxeSpa = () => {
                 </div>
               <div className="text-center flex flex-col items-center">
                 <h3 className="text-xl md:text-2xl font-light tracking-wider mb-4">
-                  EXCLUSIVE<br />MASSAGE
+                  MASAJE EROTICO<br />PREMIUM
                 </h3>
                 <p className="text-sm text-gray-400 mb-6 leading-relaxed w-[250px]">
-                  Discover our exceptional treatments -
-                  Pure relaxation experience
+                  Descubre el verdadero masaje tantrico Mallorca - 
+                  Conexión sagrada y relajación profunda
                 </p>
                 <div className='flex flex-col w-[200px] justify-self-center'>
                   <button className="tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors">
-                    BOOK NOW
+                    RESERVAR AHORA
                   </button>
 
                   {/* Decorative dots */}
@@ -265,23 +266,23 @@ const TantricLuxeSpa = () => {
                 SOBRE NOSOTROS
               </p>
               <h2 className="text-3xl md:text-4xl font-light tracking-wider mb-8 gradiente-dorado">
-                UN SANTUARIO DE LUJO Y SENSUALIDAD
+                ESPECIALISTAS EN MASAJE TANTRICO MALLORCA
               </h2>
               <div className="w-24 h-px bg-amber-400 mb-8"></div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                En Tantric Luxe Mallorca, hemos creado un oasis exclusivo donde el arte ancestral del tantra 
-                se encuentra con el lujo contemporáneo. Nuestro espacio está diseñado para ofrecer una 
-                experiencia transformadora en completa privacidad.
+                En Tantric Luxe somos pioneros del masaje tantrico en Palma de Mallorca. Nuestro centro 
+                especializado combina las técnicas ancestrales del masaje tantrico con el lujo y la 
+                privacidad que mereces en el corazón de Mallorca.
               </p>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Cada detalle ha sido cuidadosamente seleccionado para crear un ambiente que despierte todos 
-                tus sentidos, desde los aceites esenciales importados hasta la música ambiental personalizada 
-                para cada sesión.
+                Cada sesión de masaje tantrico Mallorca está diseñada para despertar tus sentidos y 
+                conectarte con tu energía interior. Utilizamos aceites esenciales premium y técnicas 
+                tradicionales del masaje tantrico Palma para una experiencia transformadora única.
               </p>
               <div className="grid grid-cols-3 gap-8 text-center">
                 <div>
                   <h4 className="text-3xl font-light text-amber-400 mb-2">10+</h4>
-                  <p className="text-sm text-gray-400">Años de experiencia</p>
+                  <p className="text-sm text-gray-400">Años en masaje tantrico</p>
                 </div>
                 <div>
                   <h4 className="text-3xl font-light text-amber-400 mb-2">500+</h4>
@@ -293,25 +294,25 @@ const TantricLuxeSpa = () => {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-transparent rounded-lg"></div>
+            <div className="relative w-full h-full">
               <Image
-                src="/images/PlaceDeluxe_01.jpg"
-                alt="Luxury spa interior"
-                className="rounded-lg shadow-2xl"
+                src="/images/especialistas_en_masajese_eroticos.webp"
+                alt="Centro de masaje tantrico exclusivo en Palma Mallorca"
+                className="rounded-lg shadow-2xl object-cover"
+                fill
               />
             </div>
           </div>
         </section>
 
         {/* Events Section */}
-        <section id="eventos" className="py-24 px-4 max-w-7xl mx-auto">
+        {/* <section id="eventos" className="py-24 px-4 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
               EVENTOS ESPECIALES
             </p>
             <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-              EXPERIENCIAS ÚNICAS
+              EXPERIENCIAS MASAJE TANTRICO MALLORCA
             </h2>
             <div className="w-24 h-px bg-amber-400 mx-auto"></div>
           </div>
@@ -344,7 +345,7 @@ const TantricLuxeSpa = () => {
               VER TODOS LOS EVENTOS
             </button>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
         <section className="py-24 px-4 max-w-7xl mx-auto">
@@ -353,7 +354,7 @@ const TantricLuxeSpa = () => {
               TESTIMONIOS
             </p>
             <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-              EXPERIENCIAS DE NUESTROS CLIENTES
+              OPINIONES DE TANTRIC LUXE
             </h2>
             <div className="w-24 h-px bg-amber-400 mx-auto"></div>
           </div>
@@ -366,8 +367,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                &quot;Una experiencia transformadora. El ambiente, la atención al detalle y la profesionalidad 
-                del equipo superaron todas mis expectativas.&quot;
+                &quot;El mejor masaje tantrico Mallorca que he experimentado. La técnica y el ambiente 
+                crean una experiencia transformadora única. Altamente recomendado.&quot;
               </p>
               <p className="text-amber-400 font-light">- Sofia M.</p>
             </div>
@@ -378,8 +379,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                &quot;El lujo y la discreción en su máxima expresión. Cada visita es un viaje sensorial único 
-                que me reconecta conmigo mismo.&quot;
+                &quot;Profesionalidad excepcional en masaje tantrico Palma. El lujo y la discreción 
+                hacen de cada sesión una experiencia sagrada inolvidable.&quot;
               </p>
               <p className="text-amber-400 font-light">- Carlos R.</p>
             </div>
@@ -390,8 +391,8 @@ const TantricLuxeSpa = () => {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                &quot;Mi pareja y yo vivimos una experiencia inolvidable. El workshop de tantra para parejas 
-                fortaleció nuestra conexión de manera extraordinaria.&quot;
+                &quot;El taller de masaje tantrico Mallorca para parejas fortaleció nuestra conexión. 
+                Una experiencia de crecimiento personal y espiritual extraordinaria.&quot;
               </p>
               <p className="text-amber-400 font-light">- Ana & David</p>
             </div>
@@ -405,7 +406,7 @@ const TantricLuxeSpa = () => {
               CONTACTO
             </p>
             <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-              RESERVA TU EXPERIENCIA
+              RESERVA TU MASAJE TANTRICO MALLORCA
             </h2>
             <div className="w-24 h-px bg-amber-400 mx-auto"></div>
           </div>
@@ -421,8 +422,8 @@ const TantricLuxeSpa = () => {
                     <span className="text-amber-400">📍</span>
                   </div>
                   <div>
-                    <h4 className="text-amber-400 mb-1">Ubicación</h4>
-                    <p className="text-gray-300">Palma de Mallorca</p>
+                    <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna">Centro Masaje Tantrico</h4>
+                    <p className="text-gray-300">Palma de Mallorca, Islas Baleares</p>
                     <p className="text-sm text-gray-400">Ubicación exacta tras reserva confirmada</p>
                   </div>
                 </div>
@@ -431,9 +432,9 @@ const TantricLuxeSpa = () => {
                     <span className="text-amber-400">📱</span>
                   </div>
                   <div>
-                    <h4 className="text-amber-400 mb-1">WhatsApp</h4>
-                    <p className="text-gray-300">+34 XXX XXX XXX</p>
-                    <p className="text-sm text-gray-400">Respuesta en menos de 1 hora</p>
+                    <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna">WhatsApp</h4>
+                    <p className="text-gray-300">+34 691536135</p>
+                    <p className="text-sm text-gray-400">Respuesta inmediata para reservas</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -441,9 +442,9 @@ const TantricLuxeSpa = () => {
                     <span className="text-amber-400">⏰</span>
                   </div>
                   <div>
-                    <h4 className="text-amber-400 mb-1">Horario</h4>
+                    <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna">Horario</h4>
                     <p className="text-gray-300">Lunes a Domingo</p>
-                    <p className="text-sm text-gray-400">11:00 - 02:00</p>
+                    <p className="text-sm text-gray-400">09:00 - 23:00</p>
                   </div>
                 </div>
               </div>
@@ -453,9 +454,9 @@ const TantricLuxeSpa = () => {
                   POLÍTICA DE PRIVACIDAD
                 </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  En Tantric Luxe Mallorca valoramos y protegemos tu privacidad. Toda la información 
-                  personal es tratada con la máxima confidencialidad. No compartimos datos con terceros 
-                  y garantizamos discreción absoluta en cada visita.
+                  En nuestro centro de masaje tantrico Palma valoramos tu privacidad. Mantenemos 
+                  confidencialidad absoluta en cada sesión de masaje tantrico Mallorca. No compartimos 
+                  información personal y garantizamos discreción total en tu experiencia tantrica.
                 </p>
               </div>
             </div>
@@ -463,7 +464,7 @@ const TantricLuxeSpa = () => {
             <div>
               <form className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20">
                 <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-8">
-                  FORMULARIO DE RESERVA
+                  RESERVA MASAJE TANTRICO PALMA
                 </h3>
                 <div className="space-y-6">
                   <div>
@@ -491,9 +492,9 @@ const TantricLuxeSpa = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-amber-400 mb-2">Servicio</label>
+                    <label className="block text-sm text-amber-400 mb-2">Tipo de Masaje Tantrico</label>
                     <select className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white focus:border-amber-600/50 focus:outline-none transition-colors">
-                      <option value="">Selecciona un servicio</option>
+                      <option value="">Selecciona tu masaje tantrico</option>
                       {services.map((service) => (
                         <option key={service.id} value={service.id}>
                           {service.title} - {service.price}
@@ -505,14 +506,14 @@ const TantricLuxeSpa = () => {
                     <label className="block text-sm text-amber-400 mb-2">Mensaje (Opcional)</label>
                     <textarea
                       className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-amber-600/50 focus:outline-none transition-colors h-24 resize-none"
-                      placeholder="¿Alguna petición especial?"
+                      placeholder="Cuéntanos sobre tu experiencia ideal de masaje tantrico"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
                   >
-                    ENVIAR RESERVA
+                    RESERVAR MASAJE TANTRICO
                   </button>
                 </div>
               </form>
@@ -524,39 +525,54 @@ const TantricLuxeSpa = () => {
         <footer className="border-t border-amber-900/20 py-12 px-4 mt-24">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl font-light tracking-wider gradiente-dorado mb-4">
-                  TANTRIC LUXE
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Un santuario exclusivo de lujo y sensualidad en el corazón de Mallorca.
-                </p>
+              <div className="">
+                <div className="flex flex-col w-[200px] sm:w-[300px] md:w-[80%] items-center">
+                  <Image
+                    src="/images/LogoFull.png"
+                    alt="Logo Tantric Luxe"
+                    width={150}
+                    height={150}
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+                {/* <p className="text-sm text-gray-400">
+                  Centro especializado en masaje tantrico Mallorca. Experiencias sagradas de 
+                  masaje tantrico Palma con máxima privacidad y profesionalidad.
+                </p> */}
               </div>
               <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">ENLACES RÁPIDOS</h4>
+                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">NAVEGACIÓN</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="#inicio" className="hover:text-amber-400 transition-colors">Inicio</a></li>
-                  <li><a href="#servicios" className="hover:text-amber-400 transition-colors">Servicios</a></li>
-                  <li><a href="#eventos" className="hover:text-amber-400 transition-colors">Eventos</a></li>
+                  <li><a href="#inicio" className="hover:text-amber-400 transition-colors">Masaje Tantrico Mallorca</a></li>
+                  <li><a href="#servicios" className="hover:text-amber-400 transition-colors">Servicios Tantricos</a></li>
+                  <li><a href="#eventos" className="hover:text-amber-400 transition-colors">Eventos Especiales</a></li>
                   <li><a href="#contacto" className="hover:text-amber-400 transition-colors">Contacto</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SERVICIOS</h4>
+                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">MASAJES TANTRICOS</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                  <li>Tantric Deluxe</li>
-                  <li>Sensual Premium</li>
-                  <li>Exotic Paradise</li>
-                  <li>Couples Harmony</li>
+                  <li>Masaje Tantrico Deluxe Mallorca</li>
+                  <li>Masaje Tantrico Premium Palma</li>
+                  <li>Experiencia Tantrica Parejas</li>
+                  <li>Ritual Tantrico Personalizado</li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SÍGUENOS</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors"
+                    aria-label="Instagram masaje tantrico Mallorca"
+                  >
                     <span className="text-amber-400">📷</span>
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors"
+                    aria-label="WhatsApp masaje tantrico Palma"
+                  >
                     <span className="text-amber-400">💬</span>
                   </a>
                 </div>
@@ -564,7 +580,7 @@ const TantricLuxeSpa = () => {
             </div>
             <div className="border-t border-amber-900/20 pt-8 text-center">
               <p className="text-sm text-gray-400">
-                © 2024 Tantric Luxe Mallorca. Todos los derechos reservados. | 
+                © 2024 Tantric Luxe Mallorca - Centro Especializado en Masaje Tantrico Palma. Todos los derechos reservados. | 
                 <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Política de Privacidad</a> | 
                 <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Términos y Condiciones</a>
               </p>
@@ -572,6 +588,7 @@ const TantricLuxeSpa = () => {
           </div>
         </footer>
       </main>
+      <MasajistasModal />
     </div>
   );
 };

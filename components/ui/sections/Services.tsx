@@ -9,6 +9,7 @@ export const services = [
     {
         id: 1,
         title: "TANTRIC DELUXE",
+        image: "/images/tantric_deluxe.webp",
         duration: "90 min",
         price: "€450",
         description: "Una experiencia sensorial completa que combina técnicas ancestrales tántricas con el lujo moderno. Incluye aromaterapia personalizada y ambientación exclusiva.",
@@ -17,6 +18,7 @@ export const services = [
     {
         id: 2,
         title: "SENSUAL PREMIUM",
+        image: "/images/sensual_premium.webp",
         duration: "120 min",
         price: "€650",
         description: "Nuestro servicio más exclusivo, diseñado para despertar todos los sentidos. Una experiencia transformadora en un ambiente de absoluta privacidad.",
@@ -25,6 +27,7 @@ export const services = [
     {
         id: 3,
         title: "EXOTIC PARADISE",
+        image: "/images/exotic_paradise.webp",
         duration: "60 min",
         price: "€350",
         description: "Un viaje sensorial inspirado en las técnicas orientales más refinadas. Perfecto para una primera experiencia en nuestro exclusivo spa.",
@@ -33,6 +36,7 @@ export const services = [
     {
         id: 4,
         title: "COUPLES HARMONY",
+        image: "/images/couples_harmony.webp",
         duration: "90 min",
         price: "€800",
         description: "Experiencia diseñada para parejas que buscan reconectar en un ambiente íntimo y lujoso. Incluye instrucción tántrica básica.",
@@ -63,7 +67,7 @@ export default function ServicesSection() {
                     >
                         <div className="flex-grow">
                             <Image
-                                src="/images/PlaceDeluxe_01.jpg"
+                                src={service.image}
                                 alt={service.title}
                                 width={400}
                                 height={160}
