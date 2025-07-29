@@ -48,8 +48,8 @@ export default function ServicesSection() {
 
     return (
 
-        <section id="servicios" className="py-24 px-4 max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+        <section id="servicios" className="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
+            <div className="text-center mb-12">
                 <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
                     NUESTROS SERVICIOS
                 </p>
@@ -63,7 +63,7 @@ export default function ServicesSection() {
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full"
+                        className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full"
                     >
                         <div className="flex-grow">
                             <Image

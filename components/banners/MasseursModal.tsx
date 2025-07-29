@@ -9,25 +9,25 @@ const MasajistasModal = () => {
     {
       id: 1,
       name: "Masajista 1",
-      image: "/images/masajista1.webp", // Reemplaza con tus imágenes reales
+      image: "/images/masseurs/masseur_02.webp", // Reemplaza con tus imágenes reales
       specialty: "Especialista en Tantrico Clásico"
     },
     {
       id: 2,
       name: "Masajista 2", 
-      image: "/images/masajista2.webp",
+      image: "/images/masseurs/masseur_03.webp",
       specialty: "Experta en Relajación Profunda"
     },
     {
       id: 3,
       name: "Masajista 3",
-      image: "/images/masajista3.webp", 
+      image: "/images/masseurs/masseur_06.webp", 
       specialty: "Maestra en Técnicas Ancestrales"
     },
     {
       id: 4,
       name: "Masajista 4",
-      image: "/images/masajista4.webp",
+      image: "/images/masseurs/masseur_04.webp",
       specialty: "Especialista en Experiencias Premium"
     }
   ];
@@ -64,6 +64,14 @@ const MasajistasModal = () => {
           animation: showModal ? 'fadeIn 0.5s ease-out' : 'fadeOut 0.3s ease-in'
         }}
       />
+
+                {/* Botón cerrar */}
+                <button 
+            onClick={closeModal}
+            className="absolute top-1 right-1 w-7 h-7 rounded-full bg-amber-900/60 hover:bg-amber-900/40 flex items-center justify-center transition-colors group"
+          >
+            <span className="text-amber-400 text-xl group-hover:rotate-90 transition-transform duration-300">×</span>
+          </button>
       
              {/* Modal Container */}
        <div className="relative z-10 w-full max-w-6xl mx-4 h-[90vh] overflow-hidden">
@@ -73,28 +81,21 @@ const MasajistasModal = () => {
             animation: showModal ? 'modalSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'modalSlideOut 0.3s ease-in'
           }}
         >
-          {/* Botón cerrar */}
-          {/* <button 
-            onClick={closeModal}
-            className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-amber-900 hover:bg-amber-900/40 flex items-center justify-center transition-colors group"
-          >
-            <span className="text-amber-400 text-xl group-hover:rotate-90 transition-transform duration-300">×</span>
-          </button> */}
 
                      {/* Grid de Masajistas */}
-           <div className="flex flex-col h-full gap-2">
+          <div className="flex flex-col h-full gap-2 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4">
             {masajistas.map((masajista, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div
                   key={masajista.id}
-                  className={`transform transition-all duration-700 ease-out h-[24%] ${
+                  className={`transform transition-all duration-700 ease-out h-[24%] md:h-auto ${
                     animateCards 
                       ? 'translate-x-0 opacity-100' 
                       : isEven 
                         ? 'translate-x-full opacity-0' 
                         : '-translate-x-full opacity-0'
-                  }`}
+                  } md:col-span-1 md:row-span-1`}
                   style={{
                     transitionDelay: `${index * 200}ms`
                   }}
