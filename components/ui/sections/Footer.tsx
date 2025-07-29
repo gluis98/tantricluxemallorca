@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -20,10 +21,10 @@ const Footer = () => {
           <div>
             <h4 className="text-amber-400 mb-4 tenali-ramakrishna">NAVEGACIÓN</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="/" className="hover:text-amber-400 transition-colors">Masaje Tantrico Mallorca</a></li>
-              <li><a href="/servicios" className="hover:text-amber-400 transition-colors">Servicios Tantricos</a></li>
-              <li><a href="/masajistas" className="hover:text-amber-400 transition-colors">Masajistas Eróticas</a></li>
-              <li><a href="/contacto" className="hover:text-amber-400 transition-colors">Contacto</a></li>
+              <li><Link href="/" className="hover:text-amber-400 transition-colors">Masaje Tantrico Mallorca</Link></li>
+              <li><Link href="/servicios" className="hover:text-amber-400 transition-colors">Servicios Tantricos</Link></li>
+              <li><Link href="/masajistas" className="hover:text-amber-400 transition-colors">Masajistas Eróticas</Link></li>
+              <li><Link href="/contacto" className="hover:text-amber-400 transition-colors">Contacto</Link></li>
             </ul>
           </div>
           <div>
