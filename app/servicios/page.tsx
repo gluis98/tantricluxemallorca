@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/ui/sections/Header';
+import Footer from '@/components/ui/sections/Footer';
 
 // Define el tipo para un servicio
 type Service = {
@@ -13,6 +14,7 @@ type Service = {
   description: string;
   features: string[];
   fullDescription: string;
+  image: string;
 };
 
 const services = [
@@ -23,7 +25,8 @@ const services = [
     price: "€450",
     description: "Una experiencia sensorial completa que combina técnicas ancestrales tántricas con el lujo moderno. Incluye aromaterapia personalizada y ambientación exclusiva.",
     features: ["Aromaterapia premium", "Música personalizada", "Aceites esenciales importados", "Ambiente privado"],
-    fullDescription: "Sumérgete en una experiencia transformadora donde el arte ancestral del tantra se encuentra con el lujo contemporáneo. Nuestro servicio Tantric Deluxe está diseñado para despertar todos tus sentidos a través de técnicas milenarias adaptadas al mundo moderno. Cada sesión comienza con una consulta personalizada para adaptar la experiencia a tus necesidades específicas."
+    fullDescription: "Sumérgete en una experiencia transformadora donde el arte ancestral del tantra se encuentra con el lujo contemporáneo. Nuestro servicio Tantric Deluxe está diseñado para despertar todos tus sentidos a través de técnicas milenarias adaptadas al mundo moderno. Cada sesión comienza con una consulta personalizada para adaptar la experiencia a tus necesidades específicas.",
+    image: "/images/tantric_deluxe.webp"
   },
   {
     id: 2,
@@ -32,7 +35,8 @@ const services = [
     price: "€650",
     description: "Nuestro servicio más exclusivo, diseñado para despertar todos los sentidos. Una experiencia transformadora en un ambiente de absoluta privacidad.",
     features: ["Champagne de bienvenida", "Jacuzzi privado", "Masaje cuatro manos", "Suite VIP"],
-    fullDescription: "La experiencia más lujosa y exclusiva de Tantric Luxe Mallorca. El Sensual Premium representa la cumbre de nuestros servicios, ofreciendo una experiencia inmersiva de dos horas en nuestra suite VIP. Esta experiencia única incluye rituales de preparación, técnicas avanzadas de masaje tántrico y un ambiente diseñado específicamente para el máximo placer y relajación."
+    fullDescription: "La experiencia más lujosa y exclusiva de Tantric Luxe Mallorca. El Sensual Premium representa la cumbre de nuestros servicios, ofreciendo una experiencia inmersiva de dos horas en nuestra suite VIP. Esta experiencia única incluye rituales de preparación, técnicas avanzadas de masaje tántrico y un ambiente diseñado específicamente para el máximo placer y relajación.",
+    image: "/images/sensual_premium.webp"
   },
   {
     id: 3,
@@ -41,7 +45,8 @@ const services = [
     price: "€350",
     description: "Un viaje sensorial inspirado en las técnicas orientales más refinadas. Perfecto para una primera experiencia en nuestro exclusivo spa.",
     features: ["Técnicas orientales", "Velas aromáticas", "Música ambiental", "Toallas calientes"],
-    fullDescription: "Descubre el paraíso exótico con este servicio inspirado en las tradiciones más refinadas de Oriente. Exotic Paradise es perfecto para quienes se inician en el mundo del masaje tántrico, ofreciendo una introducción suave pero profundamente satisfactoria a nuestros servicios. Cada elemento ha sido cuidadosamente seleccionado para crear una atmósfera de serenidad y despertar sensorial."
+    fullDescription: "Descubre el paraíso exótico con este servicio inspirado en las tradiciones más refinadas de Oriente. Exotic Paradise es perfecto para quienes se inician en el mundo del masaje tántrico, ofreciendo una introducción suave pero profundamente satisfactoria a nuestros servicios. Cada elemento ha sido cuidadosamente seleccionado para crear una atmósfera de serenidad y despertar sensorial.",
+    image: "/images/exotic_paradise.webp"
   },
   {
     id: 4,
@@ -50,7 +55,8 @@ const services = [
     price: "€800",
     description: "Experiencia diseñada para parejas que buscan reconectar en un ambiente íntimo y lujoso. Incluye instrucción tántrica básica.",
     features: ["Sala para parejas", "Instructor especializado", "Ritual de conexión", "Aceites afrodisíacos"],
-    fullDescription: "Fortalece la conexión con tu pareja a través de esta experiencia única diseñada específicamente para dos. Couples Harmony combina técnicas tántricas tradicionales con enfoques modernos de terapia de pareja, creando un espacio sagrado donde explorar la intimidad y profundizar la conexión emocional y física. Incluye instrucción personalizada y rituales de conexión."
+    fullDescription: "Fortalece la conexión con tu pareja a través de esta experiencia única diseñada específicamente para dos. Couples Harmony combina técnicas tántricas tradicionales con enfoques modernos de terapia de pareja, creando un espacio sagrado donde explorar la intimidad y profundizar la conexión emocional y física. Incluye instrucción personalizada y rituales de conexión.",
+    image: "/images/couples_harmony.webp"
   },
   {
     id: 5,
@@ -59,7 +65,8 @@ const services = [
     price: "€850",
     description: "Un viaje espiritual y sensorial de 2.5 horas que combina meditación, tantra y rituales ancestrales en un ambiente místico único.",
     features: ["Ritual de purificación", "Meditación guiada", "Ceremonias ancestrales", "Ambiente místico"],
-    fullDescription: "Embárcate en un viaje profundo hacia el autodescubrimiento y la expansión de conciencia. Mystical Journey es nuestra experiencia más transformadora, diseñada para aquellos que buscan algo más que relajación física. Esta experiencia incluye rituales de purificación, meditación guiada, trabajo energético avanzado y técnicas tántricas que han sido transmitidas a través de generaciones."
+    fullDescription: "Embárcate en un viaje profundo hacia el autodescubrimiento y la expansión de conciencia. Mystical Journey es nuestra experiencia más transformadora, diseñada para aquellos que buscan algo más que relajación física. Esta experiencia incluye rituales de purificación, meditación guiada, trabajo energético avanzado y técnicas tántricas que han sido transmitidas a través de generaciones.",
+    image: "/images/experiencias_eroticas_unicas.webp"
   },
   {
     id: 6,
@@ -68,7 +75,8 @@ const services = [
     price: "€1200",
     description: "El summum del lujo y la exclusividad. Una experiencia de 3 horas en nuestras instalaciones más privadas con servicios premium únicos.",
     features: ["Chef privado", "Mayordomo personal", "Limousine incluida", "Suite presidencial"],
-    fullDescription: "Vive como la realeza con nuestro servicio más exclusivo y lujoso. El Royal Treatment es una experiencia completa de tres horas que incluye servicios de mayordomo personal, chef privado, transporte en limousina y acceso a nuestra suite presidencial. Esta experiencia está limitada a solo dos reservas por mes, garantizando la máxima exclusividad y personalización."
+    fullDescription: "Vive como la realeza con nuestro servicio más exclusivo y lujoso. El Royal Treatment es una experiencia completa de tres horas que incluye servicios de mayordomo personal, chef privado, transporte en limousine y acceso a nuestra suite presidencial. Esta experiencia está limitada a solo dos reservas por mes, garantizando la máxima exclusividad y personalización.",
+    image: "/images/espacio_exclusivo_tantrico.webp"
   }
 ];
 
@@ -76,7 +84,7 @@ const ServicesPage = () => {
   const [selectedService, setSelectedService] = React.useState<Service | null>(null);
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden">
+    <div className="min-h-screen text-white relative">
       {/* Complex background with multiple gradients and radial effects */}
       <div className="absolute inset-0 bg-gray-950"></div>
 
@@ -139,21 +147,13 @@ const ServicesPage = () => {
       <main className="relative z-10 px-4 md:px-8 py-8">
         <div className="max-w-7xl mx-auto">
           
-          {/* Hero Section */}
+          {/* Hero Section - Actualizado para ser consistente con masajistas */}
           <div className="text-center mb-16">
-            <p className="text-sm md:text-md mb-8 font-light tracking-widest text-amber-400 tenali-ramakrishna">
-              NUESTROS SERVICIOS
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-wider mb-4 gradiente-dorado">
-              EXPERIENCIAS
-            </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">
-              EXCLUSIVAS
-            </h2>
+            <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">OFRECEMOS EXPERIENCIAS</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">SERVICIOS ERÓTICOS</h1>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">EXCLUSIVIDAD Y PRIVACIDAD</h2>
             <div className="w-24 h-px bg-amber-400 mx-auto mb-8"></div>
-            <p className="text-xl md:text-2xl font-light tracking-widest mb-8 text-gray-300 max-w-4xl mx-auto">
-              Descubre nuestro catálogo completo de servicios diseñados para despertar todos tus sentidos y ofrecerte experiencias transformadoras en un ambiente de máximo lujo y privacidad.
-            </p>
+            <p className="text-xl md:text-2xl font-light mb-8 text-gray-300 tenali-ramakrishna">Descubre nuestro catálogo completo de servicios diseñados para despertar todos tus sentidos y ofrecerte experiencias transformadoras en un ambiente de máximo lujo</p>
           </div>
 
           {/* Services Grid */}
@@ -166,7 +166,7 @@ const ServicesPage = () => {
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
-                    src="/images/PlaceDeluxe_01.jpg"
+                    src={service.image}
                     alt={service.title}
                     width={400}
                     height={300}
@@ -362,7 +362,7 @@ const ServicesPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <Image
-                      src="/images/PlaceDeluxe_01.jpg"
+                      src={selectedService.image}
                       alt={selectedService.title}
                       width={500}
                       height={400}
@@ -406,56 +406,7 @@ const ServicesPage = () => {
         )}
 
         {/* Footer */}
-        <footer className="border-t border-amber-900/20 py-12 px-4 mt-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl font-light tracking-wider gradiente-dorado mb-4">
-                  TANTRIC LUXE
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Un santuario exclusivo de lujo y sensualidad en el corazón de Mallorca.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">ENLACES RÁPIDOS</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="#inicio" className="hover:text-amber-400 transition-colors">Inicio</a></li>
-                  <li><a href="#servicios" className="hover:text-amber-400 transition-colors">Servicios</a></li>
-                  <li><a href="#eventos" className="hover:text-amber-400 transition-colors">Eventos</a></li>
-                  <li><a href="#contacto" className="hover:text-amber-400 transition-colors">Contacto</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SERVICIOS</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li>Tantric Deluxe</li>
-                  <li>Sensual Premium</li>
-                  <li>Exotic Paradise</li>
-                  <li>Couples Harmony</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SÍGUENOS</h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
-                    <span className="text-amber-400">📷</span>
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
-                    <span className="text-amber-400">💬</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="border-t border-amber-900/20 pt-8 text-center">
-              <p className="text-sm text-gray-400">
-                © 2024 Tantric Luxe Mallorca. Todos los derechos reservados. | 
-                <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Política de Privacidad</a> | 
-                <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Términos y Condiciones</a>
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );

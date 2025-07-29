@@ -42,10 +42,10 @@ const Header = () => {
 
                         <div className="hidden md:flex space-x-8 text-xl tracking-wider tenali-ramakrishna">
                             <Link href="/" className="hover:text-amber-400 transition-colors uppercase">Inicio</Link>
-                            <Link href="/about" className="hover:text-amber-400 transition-colors uppercase">Acerca</Link>
-                            <Link href="/services" className="hover:text-amber-400 transition-colors uppercase">Servicios</Link>
-                            <Link href="/events" className="hover:text-amber-400 transition-colors uppercase">Eventos</Link>
-                            <Link href="/contact" className="hover:text-amber-400 transition-colors uppercase">Contacto</Link>
+                            <Link href="/acerca" className="hover:text-amber-400 transition-colors uppercase">Acerca</Link>
+                            <Link href="/servicios" className="hover:text-amber-400 transition-colors uppercase">Servicios</Link>
+                            <Link href="/masajistas" className="hover:text-amber-400 transition-colors uppercase">Masajistas</Link>
+                            <Link href="/contacto" className="hover:text-amber-400 transition-colors uppercase">Contacto</Link>
                         </div>
                     </div>
                 </nav>
@@ -109,28 +109,28 @@ const Header = () => {
                                 Inicio
                             </Link>
                             <Link
-                                href="/about"
+                                href="/acerca"
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Acerca
                             </Link>
                             <Link
-                                href="/services"
+                                href="/servicios"
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Servicios
                             </Link>
                             <Link
-                                href="/events"
+                                href="/masajistas"
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Eventos
+                                Masajistas
                             </Link>
                             <Link
-                                href="/contact"
+                                href="/contacto"
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >

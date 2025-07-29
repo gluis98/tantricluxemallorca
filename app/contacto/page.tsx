@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/ui/sections/Header';
+import Footer from '@/components/ui/sections/Footer';
 
 const ContactPage = () => {
   const [formData, setFormData] = React.useState({
@@ -108,19 +109,11 @@ const ContactPage = () => {
           
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <p className="text-sm md:text-md mb-8 font-light tracking-widest text-amber-400 tenali-ramakrishna">
-              CONTACTO
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-wider mb-4 gradiente-dorado">
-              RESERVA TU
-            </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">
-              EXPERIENCIA
-            </h2>
+            <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">CONTACTO</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">RESERVA TU</h1>
+            <h2 className="text-2xl md:text-3xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">EXPERIENCIA</h2>
             <div className="w-24 h-px bg-amber-400 mx-auto mb-8"></div>
-            <p className="text-xl md:text-2xl font-light tracking-widest mb-8 text-gray-300 max-w-4xl mx-auto">
-              Estamos aquí para hacer realidad tu experiencia perfecta. Contáctanos para reservar o consultar cualquier duda sobre nuestros servicios exclusivos.
-            </p>
+            <p className="text-xl md:text-2xl font-light mb-8 text-gray-300 tenali-ramakrishna">Estamos aquí para hacer realidad tu experiencia perfecta. Contáctanos para reservar o consultar cualquier duda sobre nuestros servicios exclusivos</p>
           </div>
 
           {/* Contact Content */}
@@ -134,7 +127,7 @@ const ContactPage = () => {
               
               <div className="space-y-8 mb-12">
                 <div className="flex items-start group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
+                  <div className="w-16 h-16 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                     <span className="text-amber-400 text-2xl">📍</span>
                   </div>
                   <div>
@@ -146,36 +139,36 @@ const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
+                  <div className="w-16 h-16 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                     <span className="text-amber-400 text-2xl">📱</span>
                   </div>
                   <div>
                     <h4 className="text-xl text-amber-400 mb-2 tenali-ramakrishna">WHATSAPP PREFERIDO</h4>
-                    <p className="text-gray-300 text-lg">+34 XXX XXX XXX</p>
+                    <p className="text-gray-300 text-lg">+34 691 53 61 35</p>
                     <p className="text-sm text-gray-400 mt-1">Respuesta garantizada en menos de 1 hora</p>
                     <p className="text-sm text-gray-400">Atención personalizada 24/7</p>
                   </div>
                 </div>
 
                 <div className="flex items-start group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
+                  <div className="w-16 h-16 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                     <span className="text-amber-400 text-2xl">⏰</span>
                   </div>
                   <div>
                     <h4 className="text-xl text-amber-400 mb-2 tenali-ramakrishna">HORARIOS</h4>
                     <p className="text-gray-300 text-lg">Lunes a Domingo</p>
-                    <p className="text-sm text-gray-400 mt-1">11:00 - 02:00</p>
+                    <p className="text-sm text-gray-400 mt-1">09:00 - 23:00</p>
                     <p className="text-sm text-gray-400">Servicios con cita previa</p>
                   </div>
                 </div>
 
                 <div className="flex items-start group">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
+                  <div className="w-16 h-16 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-6 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                     <span className="text-amber-400 text-2xl">📧</span>
                   </div>
                   <div>
                     <h4 className="text-xl text-amber-400 mb-2 tenali-ramakrishna">EMAIL</h4>
-                    <p className="text-gray-300 text-lg">info@tantricluxe.com</p>
+                    <p className="text-gray-300 text-lg">info@tantricluxemallorca.com</p>
                     <p className="text-sm text-gray-400 mt-1">Para consultas generales y reservas</p>
                     <p className="text-sm text-gray-400">Respuesta en 24 horas máximo</p>
                   </div>
@@ -185,7 +178,7 @@ const ContactPage = () => {
               {/* Quick Access Buttons */}
               <div className="space-y-4">
                 <a 
-                  href="https://wa.me/34XXXXXXXXX" 
+                  href="https://wa.me/34691536135" 
                   target="_blank"
                   className="w-full flex items-center justify-center tenali-ramakrishna border-1 border-green-400 bg-gradient-to-r from-green-900/30 to-green-800/30 rounded-3xl hover:from-green-600/40 hover:to-green-600/40 text-white px-8 py-4 text-lg font-medium tracking-wider transition-all duration-300"
                 >
@@ -193,7 +186,7 @@ const ContactPage = () => {
                   WHATSAPP DIRECTO
                 </a>
                 <a 
-                  href="tel:+34XXXXXXXXX"
+                  href="tel:+34691536135"
                   className="w-full flex items-center justify-center tenali-ramakrishna border-1 border-amber-400 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-amber-600/40 hover:to-amber-600/40 text-white px-8 py-4 text-lg font-medium tracking-wider transition-all duration-300"
                 >
                   <span className="mr-3 text-2xl">📞</span>
@@ -214,7 +207,7 @@ const ContactPage = () => {
 
             {/* Reservation Form */}
             <div>
-              <div className="bg-gradient-to-br from-amber-900/15 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
+              <div className="bg-gradient-to-br from-amber-900/15 to-black/40 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-600/30">
                 <h3 className="text-3xl font-light tracking-wider text-amber-400 mb-8 tenali-ramakrishna">
                   FORMULARIO DE RESERVA
                 </h3>
@@ -337,53 +330,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Additional Information */}
-          <section className="py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-                INFORMACIÓN ADICIONAL
-              </h2>
-              <div className="w-24 h-px bg-amber-400 mx-auto"></div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center">
-                  <span className="text-3xl">🚗</span>
-                </div>
-                <h3 className="text-xl font-light tracking-wider text-amber-400 mb-4 tenali-ramakrishna">
-                  PARKING PRIVADO
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Disponemos de parking privado y discreto para nuestros clientes. No tendrás que preocuparte por encontrar aparcamiento en el centro de Palma.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center">
-                  <span className="text-3xl">🛎️</span>
-                </div>
-                <h3 className="text-xl font-light tracking-wider text-amber-400 mb-4 tenali-ramakrishna">
-                  SERVICIO CONCIERGE
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Nuestro equipo de concierge puede ayudarte con transporte, reservas en restaurantes exclusivos y cualquier necesidad durante tu estancia en Mallorca.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center">
-                  <span className="text-3xl">💳</span>
-                </div>
-                <h3 className="text-xl font-light tracking-wider text-amber-400 mb-4 tenali-ramakrishna">
-                  MÉTODOS DE PAGO
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Aceptamos efectivo, tarjetas de crédito/débito y transferencias bancarias. Pago seguro y discreto garantizado en todas las transacciones.
-                </p>
-              </div>
-            </div>
-          </section>
+          
 
           {/* Map Section */}
           <section className="py-16">
@@ -434,56 +381,7 @@ const ContactPage = () => {
         </div>
 
         {/* Footer */}
-        <footer className="border-t border-amber-900/20 py-12 px-4 mt-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl font-light tracking-wider gradiente-dorado mb-4">
-                  TANTRIC LUXE
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Un santuario exclusivo de lujo y sensualidad en el corazón de Mallorca.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">ENLACES RÁPIDOS</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li><a href="#inicio" className="hover:text-amber-400 transition-colors">Inicio</a></li>
-                  <li><a href="#servicios" className="hover:text-amber-400 transition-colors">Servicios</a></li>
-                  <li><a href="#eventos" className="hover:text-amber-400 transition-colors">Eventos</a></li>
-                  <li><a href="#contacto" className="hover:text-amber-400 transition-colors">Contacto</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SERVICIOS</h4>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li>Tantric Deluxe</li>
-                  <li>Sensual Premium</li>
-                  <li>Exotic Paradise</li>
-                  <li>Couples Harmony</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-amber-400 mb-4 tenali-ramakrishna">SÍGUENOS</h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
-                    <span className="text-amber-400">📷</span>
-                  </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors">
-                    <span className="text-amber-400">💬</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="border-t border-amber-900/20 pt-8 text-center">
-              <p className="text-sm text-gray-400">
-                © 2024 Tantric Luxe Mallorca. Todos los derechos reservados. | 
-                <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Política de Privacidad</a> | 
-                <a href="#" className="text-amber-400 hover:text-amber-300 ml-2">Términos y Condiciones</a>
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );

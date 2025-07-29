@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Header from '@/components/ui/sections/Header';
+
 
 // Define el tipo para un evento
 type Event = {
@@ -219,7 +219,7 @@ const EventsPage = () => {
       </div>
 
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
       {/* Main Content */}
       <main className="relative z-10 px-4 md:px-8 py-8">

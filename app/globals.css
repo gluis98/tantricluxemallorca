@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, span {
   font-family: var(--font-tenali), 'Tenali Ramakrishna', sans-serif;
 }
 
+.cormorant-garamond {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+}
+
 .bg-gradient-carnemarron {
   background: linear-gradient(90deg, #b48952, #d2a47b, #b48952);
 }

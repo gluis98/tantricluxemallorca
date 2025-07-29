@@ -1,5 +1,6 @@
 import { Urbanist } from 'next/font/google';
 import { Tenali_Ramakrishna } from 'next/font/google';
+import { Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 
 const urbanist = Urbanist({
@@ -12,6 +13,13 @@ const tenali = Tenali_Ramakrishna({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-tenali',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -143,7 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${urbanist.variable} ${tenali.variable} antialiased`}>
+      <body className={`${urbanist.variable} ${tenali.variable} ${cormorant.variable} antialiased`}>
         {children}
       </body>
     </html>
