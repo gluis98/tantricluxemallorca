@@ -135,7 +135,10 @@ const TantricLuxeSpa = () => {
                   Relajación y conexión espiritual absoluta
                 </p>
                 <div className='flex flex-col w-[200px] justify-self-center'>
-                  <button className="tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors">
+                  <button 
+                    onClick={() => window.location.href = '/whatsapp'}
+                    className="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors"
+                  >
                     RESERVAR AHORA
                   </button>
 
@@ -238,7 +241,9 @@ const TantricLuxeSpa = () => {
                   Conexión sagrada y relajación profunda
                 </p>
                 <div className='flex flex-col w-[200px] justify-self-center'>
-                  <button className="tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors">
+                  <button 
+                  onClick={() => window.location.href = '/whatsapp'}
+                  className="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors">
                     RESERVAR AHORA
                   </button>
 
@@ -514,7 +519,7 @@ const TantricLuxeSpa = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
+                    className="w-full tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
                   >
                     RESERVAR MASAJE TANTRICO
                   </button>

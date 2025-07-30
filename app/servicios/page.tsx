@@ -163,14 +163,14 @@ const ServicesPage = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-amber-900/80 backdrop-blur-sm rounded-full px-3 py-1">
+                  {/* <div className="absolute top-4 right-4 bg-amber-900/80 backdrop-blur-sm rounded-full px-3 py-1">
                     <span className="text-amber-400 text-sm font-light">{service.duration}</span>
-                  </div>
+                  </div> */}
                   <div className="absolute bottom-4 left-4">
                     <h3 className="text-xl font-light tracking-wider text-amber-400 mb-1">
                       {service.title}
                     </h3>
-                    <p className="text-2xl font-light text-white">{service.price}</p>
+                    {/* <p className="text-2xl font-light text-white">{service.price}</p> */}
                   </div>
                 </div>
                 
@@ -237,7 +237,7 @@ const ServicesPage = () => {
                    </div>
                    <button 
                      onClick={() => window.location.href = '/whatsapp'}
-                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                     className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
                    >
                      RESERVAR JUEVES
                    </button>
@@ -260,7 +260,7 @@ const ServicesPage = () => {
                    </div>
                    <button 
                      onClick={() => window.location.href = '/whatsapp'}
-                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                     className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
                    >
                      RESERVAR SÁBADO
                    </button>
@@ -283,7 +283,7 @@ const ServicesPage = () => {
                    </div>
                    <button 
                      onClick={() => window.location.href = '/whatsapp'}
-                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                     className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
                    >
                      RESERVAR DOMINGO
                    </button>
@@ -343,8 +343,8 @@ const ServicesPage = () => {
                       {selectedService.title}
                     </h2>
                     <div className="flex items-center gap-4">
-                      <span className="text-2xl font-light text-white">{selectedService.price}</span>
-                      <span className="text-amber-500">{selectedService.duration}</span>
+                      {/* <span className="text-2xl font-light text-white">{selectedService.price}</span> */}
+                      {/* <span className="text-amber-500">{selectedService.duration}</span> */}
                     </div>
                   </div>
                   <button 
@@ -389,11 +389,11 @@ const ServicesPage = () => {
                     <div className="space-y-4">
                       <button 
                         onClick={() => window.location.href = '/whatsapp'}
-                        className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
+                        className="w-full tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
                       >
                         RESERVAR AHORA
                       </button>
-                      <button className="w-full border border-amber-600/30 rounded-3xl text-amber-400 px-8 py-3 text-sm hover:bg-amber-600/10 transition-colors">
+                      <button className="w-full border border-amber-600/30 cursor-pointer rounded-3xl text-amber-400 px-8 py-3 text-sm hover:bg-amber-600/10 transition-colors">
                         MÁS INFORMACIÓN
                       </button>
                     </div>

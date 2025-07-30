@@ -102,7 +102,11 @@ const MasajistasModal = () => {
                 >
                     
                      <div className="relative h-full">
-                      <div className="w-full h-full rounded-lg bg-gradient-to-br from-amber-900/30 to-gray-800/50 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                      <a 
+                        href="/whatsapp" 
+                        rel="noreferrer"
+                        className="w-full h-full rounded-lg bg-gradient-to-br from-amber-900/30 to-gray-800/50 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      >
                         <Image
                           src={masajista.image}
                           alt={masajista.name}
@@ -114,7 +118,7 @@ const MasajistasModal = () => {
                           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse "></div>
                           <span className="text-md tenali-ramakrishna pr-2">Disponible ahora</span>
                         </div>
-                      </div>
+                      </a>
                       
                       {/* Badge de especialidad */}
                       <div className="absolute -top-2 -right-2 bg-gradient-to-r from-amber-600 to-amber-500 text-white text-xs px-3 py-1 rounded-full font-medium">

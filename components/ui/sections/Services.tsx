@@ -94,7 +94,9 @@ export default function ServicesSection() {
                                 ))}
                             </ul>
                         </div>
-                        <button className="w-full tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-6 py-3 text-sm font-medium tracking-wider transition-all duration-300 mt-4">
+                        <button 
+                        onClick={() => window.location.href = '/whatsapp'}
+                        className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-6 py-3 text-sm font-medium tracking-wider transition-all duration-300 mt-4">
                             RESERVAR AHORA
                         </button>
                     </div>
