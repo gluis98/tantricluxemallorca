@@ -20,63 +20,53 @@ type Service = {
 const services = [
   {
     id: 1,
-    title: "TANTRIC DELUXE",
-    duration: "90 min",
-    price: "€450",
-    description: "Una experiencia sensorial completa que combina técnicas ancestrales tántricas con el lujo moderno. Incluye aromaterapia personalizada y ambientación exclusiva.",
-    features: ["Aromaterapia premium", "Música personalizada", "Aceites esenciales importados", "Ambiente privado"],
-    fullDescription: "Sumérgete en una experiencia transformadora donde el arte ancestral del tantra se encuentra con el lujo contemporáneo. Nuestro servicio Tantric Deluxe está diseñado para despertar todos tus sentidos a través de técnicas milenarias adaptadas al mundo moderno. Cada sesión comienza con una consulta personalizada para adaptar la experiencia a tus necesidades específicas.",
-    image: "/images/tantric_deluxe.webp"
+    title: "PARAÍSO EXÓTICO & FANTASÍA",
+    duration: "75 min",
+    price: "€180",
+    description: "Déjate llevar a un mundo donde todo es posible. Cada detalle se adapta a tus deseos y fantasías más íntimas. Tu placer no tiene límites en tu propio Paraíso de Fantasías.",
+    features: ["Fantasías personalizadas", "Accesorios especiales", "Disfraces provocadores", "Experiencia única"],
+    fullDescription: "En este masaje exclusivo, cada detalle se adapta a tus deseos y fantasías más íntimas. Si sueñas con una caricia distinta, un disfraz provocador, una mirada dominante o incluso una experiencia con accesorios (como vendas, esposas, grilletes, látigos suaves, arnés, disfraz y mucho más), este es tu espacio. Aquí, tu fantasía es la protagonista. Solo tienes que contarnos qué enciende tus sentidos... y lo haremos realidad.",
+    image: "/images/exotic_paradise.webp"
   },
   {
     id: 2,
-    title: "SENSUAL PREMIUM",
-    duration: "120 min",
-    price: "€650",
-    description: "Nuestro servicio más exclusivo, diseñado para despertar todos los sentidos. Una experiencia transformadora en un ambiente de absoluta privacidad.",
-    features: ["Champagne de bienvenida", "Jacuzzi privado", "Masaje cuatro manos", "Suite VIP"],
-    fullDescription: "La experiencia más lujosa y exclusiva de Tantric Luxe Mallorca. El Sensual Premium representa la cumbre de nuestros servicios, ofreciendo una experiencia inmersiva de dos horas en nuestra suite VIP. Esta experiencia única incluye rituales de preparación, técnicas avanzadas de masaje tántrico y un ambiente diseñado específicamente para el máximo placer y relajación.",
+    title: "PREMIUM SENSUAL 4 MANOS",
+    duration: "90 min",
+    price: "€280",
+    description: "Show exclusivo de striptease con baile sensual de pole dance. Ducha erótica compartida y masaje tántrico erótico profesional a cuatro manos.",
+    features: ["Show de striptease", "Pole dance sensual", "Ducha erótica compartida", "Masaje 4 manos"],
+    fullDescription: "Una experiencia única que incluye show exclusivo de striptease, baile sensual con pole dance, ducha erótica compartida con las dos masajistas, masaje tántrico erótico profesional a cuatro manos, momentos de complicidad y juego en el diván. Las masajistas visten lencería fina y exclusiva, elegida solo para ti. Sesión creada a tu ritmo y a tu deseo.",
     image: "/images/sensual_premium.webp"
   },
   {
     id: 3,
-    title: "EXOTIC PARADISE",
-    duration: "60 min",
-    price: "€350",
-    description: "Un viaje sensorial inspirado en las técnicas orientales más refinadas. Perfecto para una primera experiencia en nuestro exclusivo spa.",
-    features: ["Técnicas orientales", "Velas aromáticas", "Música ambiental", "Toallas calientes"],
-    fullDescription: "Descubre el paraíso exótico con este servicio inspirado en las tradiciones más refinadas de Oriente. Exotic Paradise es perfecto para quienes se inician en el mundo del masaje tántrico, ofreciendo una introducción suave pero profundamente satisfactoria a nuestros servicios. Cada elemento ha sido cuidadosamente seleccionado para crear una atmósfera de serenidad y despertar sensorial.",
-    image: "/images/exotic_paradise.webp"
+    title: "TANTRIC DELUXE",
+    duration: "85 min",
+    price: "€220",
+    description: "Ducha erótica compartida con tu masajista. Masaje sensual cuerpo a cuerpo por delante y por detrás con técnicas eróticas profesionales.",
+    features: ["Ducha erótica compartida", "Masaje cuerpo a cuerpo", "Doble terminación", "Ambiente romántico"],
+    fullDescription: "En tu experiencia Tantric Deluxe disfrutarás de ducha erótica compartida con tu masajista, masaje sensual cuerpo a cuerpo por delante y por detrás, técnicas eróticas profesionales y seductoras, doble terminación manual (doble placer garantizado). Habitación ambientada con pétalos de rosa, velas y aromas delicados. Incluye copa de champán, vino o cerveza para acompañar el momento.",
+    image: "/images/tantric_deluxe.webp"
   },
   {
     id: 4,
-    title: "COUPLES HARMONY",
+    title: "ARMONÍA TANTRA EN PAREJA",
     duration: "90 min",
-    price: "€800",
-    description: "Experiencia diseñada para parejas que buscan reconectar en un ambiente íntimo y lujoso. Incluye instrucción tántrica básica.",
-    features: ["Sala para parejas", "Instructor especializado", "Ritual de conexión", "Aceites afrodisíacos"],
-    fullDescription: "Fortalece la conexión con tu pareja a través de esta experiencia única diseñada específicamente para dos. Couples Harmony combina técnicas tántricas tradicionales con enfoques modernos de terapia de pareja, creando un espacio sagrado donde explorar la intimidad y profundizar la conexión emocional y física. Incluye instrucción personalizada y rituales de conexión.",
+    price: "€320",
+    description: "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en esta experiencia compartida.",
+    features: ["Masaje para parejas", "Vela caliente", "Botella de champán", "Terminación compartida"],
+    fullDescription: "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en un masaje sensual cuerpo a cuerpo, donde ambos participaréis activamente con caricias, toques y juegos compartidos, recuperando la complicidad perdida. La sesión incluye masaje con vela caliente sobre el cuerpo, ambiente romántico con velas y pétalos, y una botella de champán para brindar mientras el placer fluye entre vosotros. El final será el momento más esperado: una terminación manual para ambos, sellando la experiencia en total armonía.",
     image: "/images/couples_harmony.webp"
   },
   {
     id: 5,
-    title: "MYSTICAL JOURNEY",
-    duration: "150 min",
-    price: "€850",
-    description: "Un viaje espiritual y sensorial de 2.5 horas que combina meditación, tantra y rituales ancestrales en un ambiente místico único.",
-    features: ["Ritual de purificación", "Meditación guiada", "Ceremonias ancestrales", "Ambiente místico"],
-    fullDescription: "Embárcate en un viaje profundo hacia el autodescubrimiento y la expansión de conciencia. Mystical Journey es nuestra experiencia más transformadora, diseñada para aquellos que buscan algo más que relajación física. Esta experiencia incluye rituales de purificación, meditación guiada, trabajo energético avanzado y técnicas tántricas que han sido transmitidas a través de generaciones.",
+    title: "YACHT MASSAGE EXPERIENCE",
+    duration: "80 min",
+    price: "€350",
+    description: "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Conexión profunda entre cuerpo y deseo.",
+    features: ["Experiencia en yate", "Aromas envolventes", "Música sensual", "Aceites cálidos"],
+    fullDescription: "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Cuidamos cada detalle: aromas envolventes, música sensual, aceites cálidos y una ambientación que transforma tu embarcación en un oasis de placer flotante. Este masaje es más que una sesión: es una conexión profunda entre cuerpo y deseo, guiada por manos expertas en un entorno íntimo y exclusivo. Ideal para quienes buscan desconectar del mundo y entregarse al arte del placer con total privacidad, entre el vaivén del mar y la magia del tacto.",
     image: "/images/experiencias_eroticas_unicas.webp"
-  },
-  {
-    id: 6,
-    title: "ROYAL TREATMENT",
-    duration: "180 min",
-    price: "€1200",
-    description: "El summum del lujo y la exclusividad. Una experiencia de 3 horas en nuestras instalaciones más privadas con servicios premium únicos.",
-    features: ["Chef privado", "Mayordomo personal", "Limousine incluida", "Suite presidencial"],
-    fullDescription: "Vive como la realeza con nuestro servicio más exclusivo y lujoso. El Royal Treatment es una experiencia completa de tres horas que incluye servicios de mayordomo personal, chef privado, transporte en limousine y acceso a nuestra suite presidencial. Esta experiencia está limitada a solo dos reservas por mes, garantizando la máxima exclusividad y personalización.",
-    image: "/images/espacio_exclusivo_tantrico.webp"
   }
 ];
 
@@ -197,7 +187,10 @@ const ServicesPage = () => {
                     ))}
                   </ul>
                   <div className="flex gap-3">
-                    <button className="flex-1 tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-4 py-2 text-sm font-medium tracking-wider transition-all duration-300">
+                    <button 
+                      onClick={() => window.location.href = '/whatsapp'}
+                      className="flex-1 tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-4 py-2 text-sm font-medium tracking-wider transition-all duration-300"
+                    >
                       RESERVAR
                     </button>
                     <button 
@@ -227,69 +220,76 @@ const ServicesPage = () => {
               <div className="w-24 h-px bg-amber-400 mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-amber-900/20 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
-                <div className="text-center">
-                  <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-4">
-                    PAQUETE LUNA DE MIEL
-                  </h3>
-                  <p className="text-4xl font-light text-white mb-2">€1,200</p>
-                  <p className="text-sm text-gray-400 mb-6">3 sesiones • Válido por 6 meses</p>
-                  <ul className="space-y-2 mb-8 text-left">
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      2x Couples Harmony (90 min cada una)
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      1x Sensual Premium (120 min)
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Champagne premium incluido
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Descuento del 25%
-                    </li>
-                  </ul>
-                  <button className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors">
-                    RESERVAR PAQUETE
-                  </button>
-                </div>
-              </div>
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div className="bg-gradient-to-br from-amber-900/20 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
+                 <div className="text-left flex flex-col h-full">
+                   <div className="flex-1">
+                     <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-2">
+                       DESCUENTO PARA CLIENTES FIELES
+                     </h3>
+                     <p className="text-lg font-light text-white mb-4 tenali-ramakrishna">
+                       TODOS LOS JUEVES
+                     </p>
+                     <div className="w-16 h-px bg-amber-400 mb-6"></div>
+                     <p className="text-gray-300 leading-relaxed text-sm">
+                       Los fieles merecen premio. Si ya has disfrutado de nuestros masajes antes, este jueves obtén un cupón de <span className="text-amber-400 font-semibold">20€ de descuento</span> en tu sesión de masaje. Una forma especial de agradecer tu confianza y lealtad.
+                     </p>
+                   </div>
+                   <button 
+                     onClick={() => window.location.href = '/whatsapp'}
+                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                   >
+                     RESERVAR JUEVES
+                   </button>
+                 </div>
+               </div>
 
-              <div className="bg-gradient-to-br from-amber-900/20 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
-                <div className="text-center">
-                  <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-4">
-                    MEMBRESÍA VIP
-                  </h3>
-                  <p className="text-4xl font-light text-white mb-2">€2,500</p>
-                  <p className="text-sm text-gray-400 mb-6">Acceso ilimitado • 12 meses</p>
-                  <ul className="space-y-2 mb-8 text-left">
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Servicios ilimitados (excepto Royal Treatment)
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Prioridad en reservas
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Acceso a eventos exclusivos
-                    </li>
-                    <li className="flex items-center text-sm text-gray-300">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      Concierge personal
-                    </li>
-                  </ul>
-                  <button className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors">
-                    SOLICITAR VIP
-                  </button>
-                </div>
-              </div>
-            </div>
+               <div className="bg-gradient-to-br from-amber-900/20 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
+                 <div className="text-left flex flex-col h-full">
+                   <div className="flex-1">
+                     <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-2">
+                       PLACER COMPARTIDO
+                     </h3>
+                     <p className="text-lg font-light text-white mb-4 tenali-ramakrishna">
+                       TODOS LOS SÁBADOS
+                     </p>
+                     <div className="w-16 h-px bg-amber-400 mb-6"></div>
+                     <p className="text-gray-300 leading-relaxed text-sm">
+                       Cada sábado, ven acompañado... Si compartes el momento con un amigo, ambos disfrutaréis de un <span className="text-amber-400 font-semibold">10% de descuento</span> en vuestra experiencia. Porque el placer... se disfruta más entre dos.
+                     </p>
+                   </div>
+                   <button 
+                     onClick={() => window.location.href = '/whatsapp'}
+                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                   >
+                     RESERVAR SÁBADO
+                   </button>
+                 </div>
+               </div>
+
+               <div className="bg-gradient-to-br from-amber-900/20 to-black/40 backdrop-blur-sm rounded-lg p-8 border border-amber-600/30">
+                 <div className="text-left flex flex-col h-full">
+                   <div className="flex-1">
+                     <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-2">
+                       DOMINGOS PARA PECAR
+                     </h3>
+                     <p className="text-lg font-light text-white mb-4 tenali-ramakrishna">
+                       TODOS LOS DOMINGOS
+                     </p>
+                     <div className="w-16 h-px bg-amber-400 mb-6"></div>
+                     <p className="text-gray-300 leading-relaxed text-sm">
+                       Elige un masaje a cuatro manos con un precio exclusivo. Más manos... más placer. Una experiencia intensificada que multiplica las sensaciones y el éxtasis. Perfecto para quienes buscan una experiencia más profunda y envolvente.
+                     </p>
+                   </div>
+                   <button 
+                     onClick={() => window.location.href = '/whatsapp'}
+                     className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors mt-8"
+                   >
+                     RESERVAR DOMINGO
+                   </button>
+                 </div>
+               </div>
+             </div>
           </section>
 
           {/* FAQ Section */}
@@ -317,10 +317,6 @@ const ServicesPage = () => {
                 {
                   question: "¿Qué medidas de privacidad tienen?",
                   answer: "Garantizamos absoluta discreción y privacidad. Nuestras instalaciones cuentan con entradas privadas, no compartimos información de clientes y todo nuestro personal firma acuerdos de confidencialidad."
-                },
-                {
-                  question: "¿Cuál es la política de cancelación?",
-                  answer: "Las cancelaciones con más de 24 horas de anticipación no tienen costo. Cancelaciones con menos tiempo pueden estar sujetas a una tarifa del 50%. Para servicios premium, se requiere 48 horas de anticipación para cancelación sin costo."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-6 border border-amber-900/20">
@@ -391,7 +387,10 @@ const ServicesPage = () => {
                     </p>
                     
                     <div className="space-y-4">
-                      <button className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors">
+                      <button 
+                        onClick={() => window.location.href = '/whatsapp'}
+                        className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
+                      >
                         RESERVAR AHORA
                       </button>
                       <button className="w-full border border-amber-600/30 rounded-3xl text-amber-400 px-8 py-3 text-sm hover:bg-amber-600/10 transition-colors">
