@@ -8,39 +8,48 @@ import Image from 'next/image';
 export const services = [
     {
         id: 1,
-        title: "TANTRIC DELUXE",
-        image: "/images/tantric_deluxe.webp",
-        duration: "90 min",
-        price: "€450",
-        description: "Una experiencia sensorial completa que combina técnicas ancestrales tántricas con el lujo moderno. Incluye aromaterapia personalizada y ambientación exclusiva.",
-        features: ["Aromaterapia premium", "Música personalizada", "Aceites esenciales importados", "Ambiente privado"]
+        title: "PARAÍSO EXÓTICO & FANTASÍA",
+        image: "/images/exotic_paradise.webp",
+        duration: "75 min",
+        price: "€180",
+        description: "Déjate llevar a un mundo donde todo es posible. Cada detalle se adapta a tus deseos y fantasías más íntimas. Tu placer no tiene límites en tu propio Paraíso de Fantasías.",
+        features: ["Fantasías personalizadas", "Accesorios especiales", "Disfraces provocadores", "Experiencia única"]
     },
     {
         id: 2,
-        title: "SENSUAL PREMIUM",
+        title: "PREMIUM SENSUAL 4 MANOS",
         image: "/images/sensual_premium.webp",
-        duration: "120 min",
-        price: "€650",
-        description: "Nuestro servicio más exclusivo, diseñado para despertar todos los sentidos. Una experiencia transformadora en un ambiente de absoluta privacidad.",
-        features: ["Champagne de bienvenida", "Jacuzzi privado", "Masaje cuatro manos", "Suite VIP"]
+        duration: "90 min",
+        price: "€280",
+        description: "Show exclusivo de striptease con baile sensual de pole dance. Ducha erótica compartida y masaje tántrico erótico profesional a cuatro manos.",
+        features: ["Show de striptease", "Pole dance sensual", "Ducha erótica compartida", "Masaje 4 manos"]
     },
     {
         id: 3,
-        title: "EXOTIC PARADISE",
-        image: "/images/exotic_paradise.webp",
-        duration: "60 min",
-        price: "€350",
-        description: "Un viaje sensorial inspirado en las técnicas orientales más refinadas. Perfecto para una primera experiencia en nuestro exclusivo spa.",
-        features: ["Técnicas orientales", "Velas aromáticas", "Música ambiental", "Toallas calientes"]
+        title: "TANTRIC DELUXE",
+        image: "/images/tantric_deluxe.webp",
+        duration: "85 min",
+        price: "€220",
+        description: "Ducha erótica compartida con tu masajista. Masaje sensual cuerpo a cuerpo por delante y por detrás con técnicas eróticas profesionales.",
+        features: ["Ducha erótica compartida", "Masaje cuerpo a cuerpo", "Doble terminación", "Ambiente romántico"]
     },
     {
         id: 4,
-        title: "COUPLES HARMONY",
+        title: "ARMONÍA TANTRA EN PAREJA",
         image: "/images/couples_harmony.webp",
         duration: "90 min",
-        price: "€800",
-        description: "Experiencia diseñada para parejas que buscan reconectar en un ambiente íntimo y lujoso. Incluye instrucción tántrica básica.",
-        features: ["Sala para parejas", "Instructor especializado", "Ritual de conexión", "Aceites afrodisíacos"]
+        price: "€320",
+        description: "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en esta experiencia compartida.",
+        features: ["Masaje para parejas", "Vela caliente", "Botella de champán", "Terminación compartida"]
+    },
+    {
+        id: 5,
+        title: "YACHT MASSAGE EXPERIENCE",
+        image: "/images/experiencias_eroticas_unicas.webp",
+        duration: "80 min",
+        price: "€350",
+        description: "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Conexión profunda entre cuerpo y deseo.",
+        features: ["Experiencia en yate", "Aromas envolventes", "Música sensual", "Aceites cálidos"]
     }
 ];
 
@@ -77,10 +86,10 @@ export default function ServicesSection() {
                                 <h3 className="text-2xl font-light tracking-wider text-amber-400">
                                     {service.title}
                                 </h3>
-                                <div className="text-right">
+                                {/* <div className="text-right">
                                     <p className="text-xl font-light text-amber-500">{service.price}</p>
                                     <p className="text-sm text-gray-400">{service.duration}</p>
-                                </div>
+                                </div> */}
                             </div>
                             <p className="text-gray-300 mb-6 leading-relaxed">
                                 {service.description}
