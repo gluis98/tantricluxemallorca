@@ -68,8 +68,8 @@ export default function ServicesSection() {
                 <div className="w-24 h-px bg-amber-400 mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {services.map((service) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {services.slice(0, 2).map((service) => (
                     <div
                         key={service.id}
                         className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full"
@@ -110,6 +110,16 @@ export default function ServicesSection() {
                         </button>
                     </div>
                 ))}
+            </div>
+
+            {/* Botón para ver todos los servicios */}
+            <div className="text-center">
+                <button 
+                    onClick={() => window.location.href = '/servicios'}
+                    className="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
+                >
+                    VER TODOS LOS SERVICIOS
+                </button>
             </div>
         </section>
     )

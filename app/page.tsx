@@ -9,6 +9,59 @@ import MasajistasModal from '@/components/banners/MasseursModal';
 import Footer from '@/components/ui/sections/Footer';
 
 const TantricLuxeSpa = () => {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Enviar email usando la API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   // const events = [
   //   {
   //     title: "RITUAL LUNA LLENA TANTRICO",
@@ -470,7 +523,7 @@ const TantricLuxeSpa = () => {
             </div>
 
             <div>
-              <form className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20">
+              <form onSubmit={handleSubmit} className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20">
                 <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-8">
                   RESERVA MASAJE TANTRICO PALMA
                 </h3>
@@ -479,6 +532,10 @@ const TantricLuxeSpa = () => {
                     <label className="block text-sm text-amber-400 mb-2">Nombre</label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-amber-600/50 focus:outline-none transition-colors"
                       placeholder="Tu nombre"
                     />
@@ -487,6 +544,10 @@ const TantricLuxeSpa = () => {
                     <label className="block text-sm text-amber-400 mb-2">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-amber-600/50 focus:outline-none transition-colors"
                       placeholder="tu@email.com"
                     />
@@ -495,16 +556,26 @@ const TantricLuxeSpa = () => {
                     <label className="block text-sm text-amber-400 mb-2">Teléfono</label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-amber-600/50 focus:outline-none transition-colors"
                       placeholder="+34 XXX XXX XXX"
                     />
                   </div>
                   <div>
                     <label className="block text-sm text-amber-400 mb-2">Tipo de Masaje Tantrico</label>
-                    <select className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white focus:border-amber-600/50 focus:outline-none transition-colors">
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white focus:border-amber-600/50 focus:outline-none transition-colors"
+                    >
                       <option value="">Selecciona tu masaje tantrico</option>
                       {services.map((service) => (
-                        <option key={service.id} value={service.id}>
+                        <option key={service.id} value={service.title}>
                           {service.title} - {service.price}
                         </option>
                       ))}
@@ -513,15 +584,37 @@ const TantricLuxeSpa = () => {
                   <div>
                     <label className="block text-sm text-amber-400 mb-2">Mensaje (Opcional)</label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full bg-black/30 border border-amber-900/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-amber-600/50 focus:outline-none transition-colors h-24 resize-none"
                       placeholder="Cuéntanos sobre tu experiencia ideal de masaje tantrico"
                     ></textarea>
                   </div>
+                  {/* Status Messages */}
+                                     {submitStatus === 'success' && (
+                     <div className="bg-green-900/30 border border-green-600/30 rounded-lg p-4 text-green-300 text-center">
+                       ✅ ¡Reserva enviada con éxito! Te contactaremos pronto.
+                       <p className="text-sm mt-2 text-amber-300">
+                         📧 Email temporalmente en configuración - Revisa la consola del servidor
+                       </p>
+                     </div>
+                   )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-900/30 border border-red-600/30 rounded-lg p-4 text-red-300 text-center">
+                      ❌ Error al enviar la reserva. Por favor, intenta de nuevo o contacta por WhatsApp.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
+                    disabled={isSubmitting}
+                    className={`w-full tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors ${
+                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
                   >
-                    RESERVAR MASAJE TANTRICO
+                    {isSubmitting ? 'ENVIANDO...' : 'RESERVAR MASAJE TANTRICO'}
                   </button>
                 </div>
               </form>

@@ -9,19 +9,19 @@ const MasajistasModal = () => {
     {
       id: 1,
       name: "Masajista 1",
-      image: "/images/masseurs/masseur_02.webp", // Reemplaza con tus imágenes reales
+      image: "/images/masseurs/masseur_01.webp", // Reemplaza con tus imágenes reales
       specialty: "Especialista en Tantrico Clásico"
     },
     {
       id: 2,
       name: "Masajista 2", 
-      image: "/images/masseurs/masseur_03.webp",
+      image: "/images/masseurs/masseur_02.webp",
       specialty: "Experta en Relajación Profunda"
     },
     {
       id: 3,
       name: "Masajista 3",
-      image: "/images/masseurs/masseur_06.webp", 
+      image: "/images/masseurs/masseur_03.webp", 
       specialty: "Maestra en Técnicas Ancestrales"
     },
     {

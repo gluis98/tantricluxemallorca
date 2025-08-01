@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Header from '@/components/ui/sections/Header';
 import Footer from '@/components/ui/sections/Footer';
 
+
 const ContactPage = () => {
   const [formData, setFormData] = React.useState({
     name: '',
@@ -30,10 +31,44 @@ const ContactPage = () => {
     "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Aquí iría la lógica de envío del formulario
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Enviar email usando la API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          date: '',
+          time: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -319,11 +354,30 @@ const ContactPage = () => {
                     <p>• Para reservas del mismo día, contacta por WhatsApp</p>
                   </div>
 
+                  {/* Status Messages */}
+                                     {submitStatus === 'success' && (
+                     <div className="bg-green-900/30 border border-green-600/30 rounded-lg p-4 text-green-300 text-center">
+                       ✅ ¡Reserva enviada con éxito! Te contactaremos pronto.
+                       <p className="text-sm mt-2 text-amber-300">
+                         📧 Email temporalmente en configuración - Revisa la consola del servidor
+                       </p>
+                     </div>
+                   )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-900/30 border border-red-600/30 rounded-lg p-4 text-red-300 text-center">
+                      ❌ Error al enviar la reserva. Por favor, intenta de nuevo o contacta por WhatsApp.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-4 text-lg font-medium tracking-wider transition-colors"
+                    disabled={isSubmitting}
+                    className={`w-full tenali-ramakrishna border-1 border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-4 text-lg font-medium tracking-wider transition-colors ${
+                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
                   >
-                    ENVIAR RESERVA
+                    {isSubmitting ? 'ENVIANDO...' : 'ENVIAR RESERVA'}
                   </button>
                 </form>
               </div>
@@ -369,11 +423,16 @@ const ContactPage = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="h-64 bg-black/30 rounded-lg flex items-center justify-center border border-amber-900/20">
-                  <p className="text-amber-400 text-lg tenali-ramakrishna">
-                    MAPA INTERACTIVO
-                  </p>
-                  <span className="text-2xl ml-3">🗺️</span>
+                <div className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d384.42335882479!2d2.6414189753300223!3d39.573430493787484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sponle%20Paseo%20de%20Mallorca%2C%C2%A05B!5e0!3m2!1ses!2sve!4v1754062527548!5m2!1ses!2sve" 
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ubicación Tantric Luxe Mallorca - Centro de masaje tantrico en Palma"
+                  />
                 </div>
               </div>
             </div>

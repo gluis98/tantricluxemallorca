@@ -7,21 +7,16 @@ import Footer from '../../components/ui/sections/Footer';
 
 const masajistas = [
   {
-    id: 1,
+    id: 5,
     name: "Aurora",
     age: 28,
     specialty: "Masaje Tantrico Deluxe",
-    image: "/images/masseurs/Aurora/aurora01.jpg",
+    image: "/images/masseurs/Aurora/aurora01.webp",
     images: [
-      "/images/masseurs/Aurora/aurora01.jpg",
-      "/images/masseurs/Aurora/aurora02.jpg",
-      "/images/masseurs/Aurora/aurora03.jpg",
-      "/images/masseurs/Aurora/aurora04.jpg",
-      "/images/masseurs/Aurora/aurora05.jpg",
-      "/images/masseurs/Aurora/aurora06.jpg",
-      "/images/masseurs/Aurora/aurora07.jpg",
-      "/images/masseurs/Aurora/aurora08.jpg",
-      "/images/masseurs/Aurora/aurora09.jpg"
+      "/images/masseurs/Aurora/aurora01.webp",
+      "/images/masseurs/Aurora/aurora02.webp",
+      "/images/masseurs/Aurora/aurora03.webp",
+      "/images/masseurs/Aurora/aurora04.webp",
     ],
     description: "Especialista en masaje tantrico con técnicas ancestrales. Su toque suave y experto te transportará a un estado de relajación profunda y conexión espiritual.",
     skills: ["Masaje Tantrico", "Relajación Profunda", "Técnicas Ancestrales", "Conexión Espiritual"],
@@ -29,19 +24,14 @@ const masajistas = [
     reviews: 47
   },
   {
-    id: 2,
+    id: 4,
     name: "Venus",
     age: 25,
     specialty: "Masaje Tantrico Premium",
-    image: "/images/masseurs/Venus/venus01.jpg",
+    image: "/images/masseurs/Venus/venus01.webp",
     images: [
-      "/images/masseurs/Venus/venus01.jpg",
-      "/images/masseurs/Venus/venus02.jpg",
-      "/images/masseurs/Venus/venus03.jpg",
-      "/images/masseurs/Venus/venus04.jpg",
-      "/images/masseurs/Venus/venus05.jpg",
-      "/images/masseurs/Venus/venus06.jpg",
-      "/images/masseurs/Venus/venus07.jpg"
+      "/images/masseurs/Venus/venus01.webp",
+      "/images/masseurs/Venus/venus02.webp",
     ],
     description: "Maestra en el arte del masaje tantrico premium. Su experiencia y dedicación crean experiencias únicas de bienestar y armonía corporal.",
     skills: ["Masaje Premium", "Bienestar Integral", "Armonía Corporal", "Experiencia Única"],
@@ -53,14 +43,10 @@ const masajistas = [
     name: "Selena",
     age: 27,
     specialty: "Experiencia Tantrica Parejas",
-    image: "/images/masseurs/Selena/selena01.jpg",
+    image: "/images/masseurs/Selena/selena01.webp",
     images: [
-      "/images/masseurs/Selena/selena01.jpg",
-      "/images/masseurs/Selena/selena02.jpg",
-      "/images/masseurs/Selena/selena03.jpg",
-      "/images/masseurs/Selena/selena04.jpg",
-      "/images/masseurs/Selena/selena05.jpg",
-      "/images/masseurs/Selena/selena06.jpg"
+      "/images/masseurs/Selena/selena01.webp",
+      "/images/masseurs/Selena/selena02.webp",
     ],
     description: "Especialista en experiencias tantricas para parejas. Su enfoque único fortalece la conexión emocional y física entre parejas.",
     skills: ["Parejas", "Conexión Emocional", "Armonía de Pareja", "Experiencia Compartida"],
@@ -68,19 +54,15 @@ const masajistas = [
     reviews: 38
   },
   {
-    id: 4,
+    id: 1,
     name: "Luna",
     age: 26,
     specialty: "Ritual Tantrico Personalizado",
-    image: "/images/masseurs/Luna/luna01.jpg",
+    image: "/images/masseurs/Luna/luna01.webp",
     images: [
-      "/images/masseurs/Luna/luna01.jpg",
-      "/images/masseurs/Luna/luna02.jpg",
-      "/images/masseurs/Luna/luna03.jpg",
-      "/images/masseurs/Luna/luna04.jpg",
-      "/images/masseurs/Luna/luna05.jpg",
-      "/images/masseurs/Luna/luna06.jpg",
-      "/images/masseurs/Luna/luna07.jpg"
+      "/images/masseurs/Luna/luna01.webp",
+      "/images/masseurs/Luna/luna02.webp",
+      "/images/masseurs/Luna/luna03.webp",
     ],
     description: "Creadora de rituales tantricos personalizados. Cada sesión es una experiencia única adaptada a tus necesidades específicas.",
     skills: ["Rituales Personalizados", "Adaptación Individual", "Experiencia Única", "Bienestar Personal"],
@@ -88,16 +70,16 @@ const masajistas = [
     reviews: 41
   },
   {
-    id: 5,
+    id: 2,
     name: "Valeria",
     age: 24,
     specialty: "Masaje Sensual Premium",
-    image: "/images/masseurs/Valeria/valeria01.jpg",
+    image: "/images/masseurs/Valeria/valeria01.webp",
     images: [
-      "/images/masseurs/Valeria/valeria01.jpg",
-      "/images/masseurs/Valeria/valeria02.jpg",
-      "/images/masseurs/Valeria/valeria03.jpg",
-      "/images/masseurs/Valeria/valeria04.jpg"
+      "/images/masseurs/Valeria/valeria01.webp",
+      "/images/masseurs/Valeria/valeria02.webp",
+      "/images/masseurs/Valeria/valeria03.webp",
+      "/images/masseurs/Valeria/valeria04.webp"
     ],
     description: "Especialista en masaje sensual premium. Su técnica refinada combina sensualidad y profesionalismo para una experiencia inolvidable.",
     skills: ["Masaje Sensual", "Técnica Refinada", "Profesionalismo", "Experiencia Inolvidable"],
@@ -109,17 +91,12 @@ const masajistas = [
     name: "Natalia",
     age: 29,
     specialty: "Masaje Tantrico Exclusivo",
-    image: "/images/masseurs/Natalia/natalia01.jpg",
+    image: "/images/masseurs/Natalia/natalia01.webp",
     images: [
-      "/images/masseurs/Natalia/natalia01.jpg",
-      "/images/masseurs/Natalia/natalia02.jpg",
-      "/images/masseurs/Natalia/natalia03.jpg",
-      "/images/masseurs/Natalia/natalia04.jpg",
-      "/images/masseurs/Natalia/natalia05.jpg",
-      "/images/masseurs/Natalia/natalia06.jpg",
-      "/images/masseurs/Natalia/natalia07.jpg",
-      "/images/masseurs/Natalia/natalia08.jpg",
-      "/images/masseurs/Natalia/natalia09.jpg"
+      "/images/masseurs/Natalia/natalia01.webp",
+      "/images/masseurs/Natalia/natalia02.webp",
+      "/images/masseurs/Natalia/natalia03.webp",
+      "/images/masseurs/Natalia/natalia04.webp",
     ],
     description: "Maestra en masaje tantrico exclusivo. Su experiencia y elegancia crean momentos de lujo y bienestar incomparables.",
     skills: ["Masaje Exclusivo", "Elegancia", "Lujo", "Bienestar Incomparable"],
@@ -243,7 +220,7 @@ const MasajistasPage = () => {
             <p className="text-xl md:text-2xl font-light mb-8 text-gray-300 tenali-ramakrishna">Descubre la galería y el perfil de cada una de nuestras masajistas eróticas, conoce su experiencia y reserva tu cita</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-            {masajistas.map((masajista) => (
+            {masajistas.sort((a, b) => a.id - b.id).map((masajista) => (
               <MasajistaCard key={masajista.id} masajista={masajista} />
             ))}
           </div>
