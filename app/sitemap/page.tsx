@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import Link from 'next/link';
 import Header from '../../components/ui/sections/Header';
 import Footer from '../../components/ui/sections/Footer';
 
@@ -93,24 +94,24 @@ const SitemapPage = () => {
                         {page.description}
                       </p>
                       <div className="flex items-center gap-4">
-                        <a
+                        <Link
                           href={page.url}
                           className="text-amber-400 hover:text-amber-300 transition-colors font-medium"
                         >
                           {page.url}
-                        </a>
+                        </Link>
                         <span className="text-sm text-gray-400">
                           Prioridad: {page.priority}
                         </span>
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <a
+                      <Link
                         href={page.url}
                         className="tenali-ramakrishna border border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-6 py-2 text-sm font-medium tracking-wider transition-all duration-300 hover:scale-105"
                       >
                         VISITAR
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -126,12 +127,12 @@ const SitemapPage = () => {
                 <div>
                   <h4 className="text-amber-300 font-medium mb-2">Sitemap XML</h4>
                   <p className="mb-2">Nuestro sitemap XML está disponible en:</p>
-                  <a
+                  <Link
                     href="/sitemap.xml"
                     className="text-amber-400 hover:text-amber-300 transition-colors"
                   >
                     /sitemap.xml
-                  </a>
+                  </Link>
                 </div>
                 <div>
                   <h4 className="text-amber-300 font-medium mb-2">Optimización SEO</h4>
@@ -153,24 +154,24 @@ const SitemapPage = () => {
                 ENLACES ÚTILES
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a
+                <Link
                   href="/"
                   className="text-amber-400 hover:text-amber-300 transition-colors"
                 >
                   Página Principal
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/servicios"
                   className="text-amber-400 hover:text-amber-300 transition-colors"
                 >
                   Servicios
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contacto"
                   className="text-amber-400 hover:text-amber-300 transition-colors"
                 >
                   Contacto
-                </a>
+                </Link>
               </div>
             </div>
           </div>
