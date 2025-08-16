@@ -358,9 +358,6 @@ const ContactPage = () => {
                                      {submitStatus === 'success' && (
                      <div className="bg-green-900/30 border border-green-600/30 rounded-lg p-4 text-green-300 text-center">
                        ✅ ¡Reserva enviada con éxito! Te contactaremos pronto.
-                       <p className="text-sm mt-2 text-amber-300">
-                         📧 Email temporalmente en configuración - Revisa la consola del servidor
-                       </p>
                      </div>
                    )}
                   

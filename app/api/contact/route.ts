@@ -1,42 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { name, email, phone, service, date, time, message } = body;
 
-    console.log('📧 NUEVA RESERVA RECIBIDA:');
-    console.log('=====================================');
-    console.log(`👤 Nombre: ${name}`);
-    console.log(`📧 Email: ${email}`);
-    console.log(`📱 Teléfono: ${phone}`);
-    console.log(`💆‍♀️ Servicio: ${service}`);
-    console.log(`📅 Fecha: ${date}`);
-    console.log(`⏰ Hora: ${time}`);
-    if (message) {
-      console.log(`💬 Mensaje: ${message}`);
-    }
-    console.log('=====================================');
-    console.log('📋 ACCIÓN REQUERIDA: Contactar al cliente para confirmar la reserva');
-    console.log('📧 Email configurado temporalmente - DNS en proceso de configuración');
-    console.log('');
+    const nodemailer = (await import('nodemailer')).default;
 
-    // Simular envío exitoso mientras se configuran los DNS
-    // TODO: Descomentar el código de email cuando los DNS estén listos
-    
-    /*
-    // Configurar transporter para SpaceMail
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: 'mail.spacemail.com',
-      port: 587,
-      secure: false, // STARTTLS
+      port: 465,
+      secure: true, // SSL
       auth: {
         user: 'info@tantricluxemallorca.com',
         pass: 'Ruka2215.'
-      },
-      tls: {
-        rejectUnauthorized: false,
-        ciphers: 'SSLv3'
       }
     });
 
@@ -52,17 +30,17 @@ export async function POST(request: NextRequest) {
             🧘‍♀️ Nueva Reserva de Masaje Tantrico
           </h2>
           
-          <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <div style="background: #f3f4f6; color: #222,padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #374151; margin-top: 0;">📋 Detalles de la Reserva</h3>
             
-            <p><strong>👤 Nombre:</strong> ${name}</p>
-            <p><strong>📧 Email:</strong> ${email}</p>
-            <p><strong>📱 Teléfono:</strong> ${phone}</p>
-            <p><strong>💆‍♀️ Servicio:</strong> ${service}</p>
-            <p><strong>📅 Fecha:</strong> ${date}</p>
-            <p><strong>⏰ Hora:</strong> ${time}</p>
+            <p style="color: #222"><strong>👤 Nombre:</strong> ${name}</p>
+            <p style="color: #222"><strong>📧 Email:</strong> ${email}</p>
+            <p style="color: #222"><strong>📱 Teléfono:</strong> ${phone}</p>
+            <p style="color: #222"><strong>💆‍♀️ Servicio:</strong> ${service}</p>
+            <p style="color: #222"><strong>📅 Fecha:</strong> ${date}</p>
+            <p style="color: #222"><strong>⏰ Hora:</strong> ${time}</p>
             
-            ${message ? `<p><strong>💬 Mensaje:</strong> ${message}</p>` : ''}
+            ${message ? `<p style="color: #222"><strong>💬 Mensaje:</strong> ${message}</p>` : ''}
           </div>
           
           <div style="background: #fef3c7; padding: 15px; border-radius: 8px; border-left: 4px solid #d97706;">
@@ -78,9 +56,7 @@ export async function POST(request: NextRequest) {
       `
     };
 
-    // Enviar email
-    await transporter.sendMail(mailOptions);
-    */
+   await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -90,4 +66,4 @@ export async function POST(request: NextRequest) {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   }
-} 
+}

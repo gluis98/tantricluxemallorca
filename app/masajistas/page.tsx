@@ -54,22 +54,6 @@ const masajistas = [
     reviews: 38
   },
   {
-    id: 1,
-    name: "Luna",
-    age: 26,
-    specialty: "Ritual Tantrico Personalizado",
-    image: "/images/masseurs/Luna/luna01.webp",
-    images: [
-      "/images/masseurs/Luna/luna01.webp",
-      "/images/masseurs/Luna/luna02.webp",
-      "/images/masseurs/Luna/luna03.webp",
-    ],
-    description: "Creadora de rituales tantricos personalizados. Cada sesión es una experiencia única adaptada a tus necesidades específicas.",
-    skills: ["Rituales Personalizados", "Adaptación Individual", "Experiencia Única", "Bienestar Personal"],
-    rating: 5,
-    reviews: 41
-  },
-  {
     id: 2,
     name: "Valeria",
     age: 24,
