@@ -1,10 +1,21 @@
 'use client';
 
 import React from 'react';
-import { i18n } from '@/i18n-config';
 import Image from 'next/image';
 
-export default function AboutSection({ dictionary }: { dictionary: any }) {
+interface AboutSectionDictionary {
+  pre_title: string;
+  title: string;
+  p1: string;
+  p2: string;
+  stat1_title: string;
+  stat1_text: string;
+  stat2_title: string;
+  stat2_text: string;
+  stat3_title: string;
+  stat3_text: string;
+}
+export default function AboutSection({ dictionary }: { dictionary: AboutSectionDictionary }) {
 
     return (
 

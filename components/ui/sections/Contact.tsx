@@ -1,10 +1,45 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import ContactForm from './ContactForm';
 
-export default function ContactSection({ dictionary, services }: { dictionary: any, services: any[] }) {
+type Service = {
+    id: number;
+    title: string;
+};
+
+interface ContactSectionDictionary {
+    pre_title: string;
+    title: string;
+    info_title: string;
+    location_title: string;
+    location_address: string;
+    location_note: string;
+    whatsapp_title: string;
+    whatsapp_number: string;
+    whatsapp_note: string;
+    schedule_title: string;
+    schedule_days: string;
+    schedule_hours: string;
+    privacy_title: string;
+    privacy_text: string;
+    form_title: string;
+    name_label: string;
+    name_placeholder: string;
+    email_label: string;
+    email_placeholder: string;
+    phone_label: string;
+    phone_placeholder: string;
+    service_label: string;
+    service_placeholder: string;
+    message_label: string;
+    message_placeholder: string;
+    submit_button: string;
+    submitting_button: string;
+    success_message: string;
+    error_message: string;
+}
+export default function ContactSection({ dictionary, services }: { dictionary: ContactSectionDictionary, services: Service[] }) {
 
     return (
 

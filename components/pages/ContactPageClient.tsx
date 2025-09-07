@@ -15,8 +15,46 @@ type ContactInfo = {
   line3: string;
 };
 
+interface ContactPageDictionary {
+  pre_title: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  info_title: string;
+  contact_info: ContactInfo[];
+  whatsapp_button_text: string;
+  call_button_text: string;
+  privacy_title: string;
+  privacy_text: string;
+  form_title: string;
+  name_label: string;
+  name_placeholder: string;
+  email_label: string;
+  email_placeholder: string;
+  phone_label: string;
+  phone_placeholder: string;
+  service_label: string;
+  service_default_option: string;
+  service_consultation_option: string;
+  date_label: string;
+  time_label: string;
+  time_default_option: string;
+  message_label: string;
+  message_placeholder: string;
+  form_notes: string[];
+  success_message: string;
+  error_message: string;
+  submit_button: string;
+  submitting_button: string;
+  map_section_title: string;
+  map_section_subtitle: string;
+  map_section_p1: string;
+  map_section_points: string[];
+  timeSlots: string[];
+}
+
 interface ContactPageClientProps {
-  dictionary: any;
+  dictionary: ContactPageDictionary;
   services: Service[];
 }
 

@@ -16,9 +16,19 @@ type Masseuse = {
   reviews: number;
 };
 
+interface MasseusesPageDictionary {
+  pre_title: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  age_text: string;
+  reviews_text: string;
+  reserve_button_text: string;
+}
+
 interface MasseuseCardProps {
   masseuse: Masseuse;
-  dictionary: any;
+  dictionary: MasseusesPageDictionary;
 }
 
 function MasajistaCard({ masseuse, dictionary }: MasseuseCardProps) {
@@ -97,7 +107,7 @@ function MasajistaCard({ masseuse, dictionary }: MasseuseCardProps) {
   );
 }
 
-export default function MasseusesPageClient({ dictionary, masseuses }: { dictionary: any, masseuses: Masseuse[] }) {
+export default function MasseusesPageClient({ dictionary, masseuses }: { dictionary: MasseusesPageDictionary, masseuses: Masseuse[] }) {
   return (
     <main className="relative z-10 px-4 md:px-8 py-8">
       <div className="max-w-5xl mx-auto">

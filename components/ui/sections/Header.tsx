@@ -7,7 +7,22 @@ import Image from 'next/image';
 import { i18n } from '@/i18n-config';
 import LanguageSwitcher from '@/components/ui/buttons/LanguageSwitcher';
 
-const Header = ({ lang, dictionary }: { lang: string, dictionary: any }) => {
+interface HeaderDictionary {
+  location: string;
+  openMenu: string;
+  closeMenu: string;
+  nav: {
+    home: string;
+    about: string;
+    services: string;
+    masseuses: string;
+    contact: string;
+  };
+  paths: {
+    [key: string]: string;
+  };
+}
+const Header = ({ lang, dictionary }: { lang: string, dictionary: HeaderDictionary }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     return (
