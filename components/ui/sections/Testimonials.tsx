@@ -5,7 +5,13 @@ type Testimonial = {
     author: string;
 };
 
-export default function TestimonialsSection({ dictionary }: { dictionary: any }) {
+export default function TestimonialsSection({ dictionary }: {
+    dictionary: {
+        pre_title: string;
+        title: string;
+        testimonials: Testimonial[];
+    }
+}) {
 
     return (
         <section className="py-12 sm:py-24 px-4 max-w-7xl mx-auto">

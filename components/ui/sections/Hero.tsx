@@ -4,7 +4,27 @@ import React from 'react';
 import Image from 'next/image';
 import ReserveNowButton from '@/components/ui/buttons/ReserveNowButton';
 
-export default function HeroSection({ dictionary }: { dictionary: any }) {
+export default function HeroSection({ dictionary }: {
+    dictionary: {
+        subtitle: string;
+        title: string;
+        main_heading: string;
+        secondary_heading: string;
+        reserve_button_text: string;
+        hero_section: {
+            card1_title: string;
+            card1_text: string;
+            icon1_title: string;
+            icon1_text: string;
+            icon2_title: string;
+            icon2_text: string;
+            icon3_title: string;
+            icon3_text: string;
+            card2_title: string;
+            card2_text: string;
+        };
+    }
+}) {
 
     return (
 

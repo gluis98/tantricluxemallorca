@@ -3,7 +3,20 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function AboutSection({ dictionary }: { dictionary: any }) {
+export default function AboutSection({ dictionary }: {
+    dictionary: {
+        pre_title: string;
+        title: string;
+        p1: string;
+        p2: string;
+        stat1_title: string;
+        stat1_text: string;
+        stat2_title: string;
+        stat2_text: string;
+        stat3_title: string;
+        stat3_text: string;
+    }
+}) {
 
     return (
 

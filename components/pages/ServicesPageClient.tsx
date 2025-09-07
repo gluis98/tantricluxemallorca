@@ -30,7 +30,22 @@ interface ServicesPageClientProps {
   services: Service[];
   packages: Package[];
   faqs: Faq[];
-  dictionary: any;
+  dictionary: {
+    pre_title: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    reserve_button: string;
+    see_more_button: string;
+    packages_pre_title: string;
+    packages_title: string;
+    faq_pre_title: string;
+    faq_title: string;
+    modal_includes: string;
+    modal_description: string;
+    modal_reserve_button: string;
+    modal_more_info_button: string;
+  };
 }
 
 const ServicesPageClient: React.FC<ServicesPageClientProps> = ({ services, packages, faqs, dictionary }) => {

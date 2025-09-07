@@ -3,7 +3,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function GallerySection({ dictionary }: { dictionary: any }) {
+export default function GallerySection({ dictionary }: {
+  dictionary: {
+    item1: string; item2: string; item3: string;
+  }
+}) {
 
     return (
 

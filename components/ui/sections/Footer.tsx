@@ -2,8 +2,30 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { i18n } from '@/i18n-config';
 
-const Footer = ({ lang, dictionary }: { lang: string, dictionary: any }) => {
+const Footer = ({ lang, dictionary }: {
+  lang: string, dictionary: {
+    navigation: string;
+    paths: {
+      home: string;
+      services: string;
+      masseuses: string;
+      contact: string;
+    };
+    nav_home: string;
+    nav_services: string;
+    nav_masseuses: string;
+    nav_contact: string;
+    massages_title: string;
+    follow_us: string;
+    instagram_aria: string;
+    whatsapp_aria: string;
+    copyright: string;
+    privacy_policy: string;
+    terms_conditions: string;
+  }
+}) => {
   return (
     <footer className="border-t relative text-center md:text-left border-amber-900/20 py-12 px-4 mt-12">
       <div className="max-w-7xl mx-auto">
@@ -22,10 +44,10 @@ const Footer = ({ lang, dictionary }: { lang: string, dictionary: any }) => {
           <div>
             <h4 className="text-amber-400 mb-4 tenali-ramakrishna">{dictionary.navigation}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href={`/${lang}${dictionary.paths.home}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_home}</Link></li>
-              <li><Link href={`/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_services}</Link></li>
-              <li><Link href={`/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_masseuses}</Link></li>
-              <li><Link href={`/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_contact}</Link></li>
+              <li><Link href={lang === i18n.defaultLocale ? '/' : `/${lang}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_home}</Link></li>
+              <li><Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_services}</Link></li>
+              <li><Link href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_masseuses}</Link></li>
+              <li><Link href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_contact}</Link></li>
             </ul>
           </div>
           <div>
