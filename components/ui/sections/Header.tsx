@@ -4,12 +4,15 @@ import React from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { i18n } from '@/i18n-config';
+import LanguageSwitcher from '@/components/ui/buttons/LanguageSwitcher';
 
-const Header = () => {
+const Header = ({ lang, dictionary }: { lang: string, dictionary: any }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     return (
-        <header className="relative z-50 px-4 py-6 lg:px-8">
+        <>
+        <header className="z-50 px-4 py-6 lg:px-8 absolute w-full">
             {/* Gold Line */}
             <div style={{
                 position: 'absolute',
@@ -21,34 +24,33 @@ const Header = () => {
             }}>
             </div>
 
-            <div className="flex justify-between max-w-7xl mx-auto">
+            <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Top bar */}
-                <div className="flex justify-between items-center">
+                <div className="flex-1 flex justify-start">
                     <div className="text-2xl tracking-wider text-gray-300 tenali-ramakrishna">
-                        PALMA DE MALLORCA
+                        {dictionary.location}
                     </div>
                 </div>
 
                 {/* Main navigation */}
-                <nav className="flex justify-between items-center">
-                    <div className="flex items-center">
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="md:hidden text-white"
-                            aria-label="Abrir menú"
-                        >
-                            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-
-                        <div className="hidden md:flex space-x-8 text-xl tracking-wider tenali-ramakrishna">
-                            <Link href="/" className="hover:text-amber-400 transition-colors uppercase">Inicio</Link>
-                            <Link href="/acerca" className="hover:text-amber-400 transition-colors uppercase">Acerca</Link>
-                            <Link href="/servicios" className="hover:text-amber-400 transition-colors uppercase">Servicios</Link>
-                            <Link href="/masajistas" className="hover:text-amber-400 transition-colors uppercase">Masajistas</Link>
-                            <Link href="/contacto" className="hover:text-amber-400 transition-colors uppercase">Contacto</Link>
-                        </div>
-                    </div>
+                <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-xl tracking-wider tenali-ramakrishna">
+                    <Link href={lang === i18n.defaultLocale ? '/' : `/${lang}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.home}</Link>
+                    <Link href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}${dictionary.paths.about}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.about}</Link>
+                    <Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.services}</Link>
+                    <Link href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.masseuses}</Link>
+                    <Link href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.contact}</Link>
                 </nav>
+
+                <div className="flex flex-1 justify-end items-center gap-4">
+                    <LanguageSwitcher />
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden text-white"
+                        aria-label={isMenuOpen ? dictionary.closeMenu : dictionary.openMenu}
+                    >
+                        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
 
                 {/* Mobile Drawer Menu */}
                 <div
@@ -94,7 +96,7 @@ const Header = () => {
                         <button
                             onClick={() => setIsMenuOpen(false)}
                             className="absolute top-4 right-4 w-12 h-12 rounded-full bg-amber-900/30 hover:bg-amber-900/60 flex items-center justify-center transition-colors group"
-                            aria-label="Cerrar menú"
+                            aria-label={dictionary.closeMenu}
                         >
                             <X className="w-8 h-8 text-amber-300 group-hover:rotate-90 transition-transform duration-300" />
                         </button>
@@ -102,39 +104,39 @@ const Header = () => {
                         {/* Opciones de menú */}
                         <nav className="flex flex-col justify-center h-full px-8 space-y-8 mt-24">
                             <Link
-                                href="/"
+                                href={lang === i18n.defaultLocale ? '/' : `/${lang}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Inicio
+                                {dictionary.nav.home}
                             </Link>
                             <Link
-                                href="/acerca"
+                                href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}/acerca`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Acerca
+                                {dictionary.nav.about}
                             </Link>
                             <Link
-                                href="/servicios"
+                                href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Servicios
+                                {dictionary.nav.services}
                             </Link>
                             <Link
-                                href="/masajistas"
+                                href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}/masajistas`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Masajistas
+                                {dictionary.nav.masseuses}
                             </Link>
                             <Link
-                                href="/contacto"
+                                href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}/contacto`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Contacto
+                                {dictionary.nav.contact}
                             </Link>
                         </nav>
                         <div className="flex-1" />
@@ -152,6 +154,8 @@ const Header = () => {
                 </div>
             </div>
         </header>
+        <div className="h-20" /> {/* Spacer to prevent content being hidden behind fixed header */}
+        </>
     );
 };
 

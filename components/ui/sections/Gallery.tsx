@@ -3,8 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Gallery = () => {
-  return (
+export default function GallerySection({ dictionary }: { dictionary: any }) {
+
+    return (
+
     <section className="py-16 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
@@ -24,7 +26,7 @@ const Gallery = () => {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-light tracking-wider text-white tenali-ramakrishna">
-                ESPACIO EXCLUSIVO
+                {dictionary.item1}
               </h3>
             </div>
           </div>
@@ -43,7 +45,7 @@ const Gallery = () => {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-light tracking-wider text-white tenali-ramakrishna">
-                AMBIENTE RELAJANTE
+                {dictionary.item2}
               </h3>
             </div>
           </div>
@@ -62,7 +64,7 @@ const Gallery = () => {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-light tracking-wider text-white tenali-ramakrishna">
-                EXPERIENCIA ÚNICA
+                {dictionary.item3}
               </h3>
             </div>
           </div>
@@ -71,5 +73,3 @@ const Gallery = () => {
     </section>
   );
 };
-
-export default Gallery; 

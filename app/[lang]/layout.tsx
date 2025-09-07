@@ -1,7 +1,16 @@
+import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
 import { Tenali_Ramakrishna } from 'next/font/google';
 import { Cormorant_Garamond } from 'next/font/google';
-import './globals.css';
+import { getDictionary } from '@/dictionaries/get-dictionary';
+import { i18n, type Locale } from '@/i18n-config';
+import Header from '@/components/ui/sections/Header';
+import Footer from '@/components/ui/sections/Footer';
+import '../../app/globals.css';
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -23,9 +32,17 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { lang: Locale };
+}) {
+  const dictionary = await getDictionary(params.lang);
+
   return (
-    <html lang="es">
+    <html lang={params.lang}>
       <head>
         <script
           type="application/ld+json"
@@ -152,7 +169,71 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${urbanist.variable} ${tenali.variable} ${cormorant.variable} antialiased`}>
-        {children}
+
+        { /* Start background design */ }
+        <div className="min-h-screen relative">
+
+          {/* Complex background with multiple gradients and radial effects */}
+          <div className="absolute inset-0 bg-gray-950"></div>
+
+          {/* Multiple radial gradients for depth */}
+          <div className="absolute inset-0 bg-gradient-radial from-amber-900/30 via-transparent to-transparent"
+            style={{
+              background: 'radial-gradient(circle at 20% 30%, rgba(120, 53, 15, 0.4) 0%, transparent 50%)'
+            }}></div>
+
+          <div className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 80% 20%, rgba(92, 51, 23, 0.3) 0%, transparent 40%)'
+            }}></div>
+
+          <div className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 60% 80%, rgba(69, 39, 17, 0.25) 0%, transparent 35%)'
+            }}></div>
+
+          <div className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(circle at 10% 70%, rgba(53, 45, 40, 0.2) 0%, transparent 45%)'
+            }}></div>
+
+          {/* Linear gradients for overall tone */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-amber-950/10 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-amber-950/10"></div>
+
+          {/* Mandalas in the corners */}
+          <div className="fixed inset-0 w-screen h-screen pointer-events-none z-0">
+            {/* left Mandala */}
+            <div className="absolute top-0 left-0 -translate-x-[60%] md:-translate-x-1/2 w-[600px] h-[600px]">
+              <span className="glow-mandala"></span>
+              <Image
+                src="/images/Mandala.webp"
+                alt="Left Mandala"
+                width={600}
+                height={600}
+                className="object-contain w-full h-full relative z-10"
+              />
+            </div>
+            {/* Right Mandala */}
+            <div className="absolute top-0 right-0 translate-x-[60%] md:translate-x-1/2 w-[600px] h-[600px]">
+              <span className="glow-mandala"></span>
+              <Image
+                src="/images/Mandala.webp"
+                alt="Right Mandala"
+                width={600}
+                height={600}
+                className="object-contain w-full h-full relative z-10"
+                style={{ transform: 'scaleX(-1)' }}
+              />
+            </div>
+          </div>
+
+          <Header lang={params.lang} dictionary={dictionary.header} />
+          {children}
+          <Footer lang={params.lang} dictionary={dictionary.footer} />
+
+        </div>
+
       </body>
     </html>
   );

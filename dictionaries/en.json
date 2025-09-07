@@ -1,0 +1,299 @@
+{
+  "header": {
+    "location": "PALMA DE MALLORCA",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "masseuses": "Masseuses",
+      "contact": "Contact"
+    },
+    "paths": {
+      "home": "/",
+      "about": "/about",
+      "services": "/services",
+      "masseuses": "/masseuses",
+      "contact": "/contact"
+    }
+  },
+  "footer": {
+    "navigation": "NAVIGATION",
+    "nav_home": "Tantric Massage Mallorca",
+    "nav_services": "Tantric Services",
+    "nav_masseuses": "Erotic Masseuses",
+    "nav_contact": "Contact",
+    "paths": {
+      "home": "/",
+      "services": "/services",
+      "masseuses": "/masseuses",
+      "contact": "/contact"
+    },
+    "massages_title": "TANTRIC MASSAGES",
+    "follow_us": "FOLLOW US",
+    "instagram_aria": "Instagram tantric massage Mallorca",
+    "whatsapp_aria": "WhatsApp tantric massage Palma",
+    "copyright": "© 2025 Tantric Luxe Mallorca - Specialized Center in Tantric Massage Palma. All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms and Conditions"
+  },
+  "homepage": {
+    "subtitle": "EROTIC MASSAGE",
+    "title": "TANTRIC LUXE",
+    "main_heading": "TANTRIC MASSAGE PALMA",
+    "secondary_heading": "EXCLUSIVE TANTRIC MASSAGE EXPERIENCE IN MALLORCA",
+    "about_us_section": {
+      "pre_title": "ABOUT US",
+      "title": "SPECIALISTS IN TANTRIC MASSAGE MALLORCA",
+      "p1": "At Tantric Luxe, we are pioneers of tantric massage in Palma de Mallorca. Our specialized center combines ancestral tantric massage techniques with the luxury and privacy you deserve in the heart of Mallorca.",
+      "p2": "Each tantric massage session in Mallorca is designed to awaken your senses and connect you with your inner energy. We use premium essential oils and traditional Palma tantric massage techniques for a unique transformative experience.",
+      "stat1_title": "10+",
+      "stat1_text": "Years in tantric massage",
+      "stat2_title": "500+",
+      "stat2_text": "Satisfied clients",
+      "stat3_title": "100%",
+      "stat3_text": "Privacy guaranteed"
+    },
+    "contact_section": {
+      "pre_title": "CONTACT",
+      "title": "BOOK YOUR TANTRIC MASSAGE IN MALLORCA",
+      "form_title": "BOOK TANTRIC MASSAGE PALMA",
+      "info_title": "CONTACT INFORMATION",
+      "location_title": "Tantric Massage Center",
+      "location_address": "Palma de Mallorca, Balearic Islands",
+      "location_note": "Exact location provided upon confirmed reservation",
+      "whatsapp_title": "WhatsApp",
+      "whatsapp_number": "+34 691536135",
+      "whatsapp_note": "Immediate response for bookings",
+      "schedule_title": "Schedule",
+      "schedule_days": "Monday to Sunday",
+      "schedule_hours": "09:00 - 23:00",
+      "privacy_title": "PRIVACY POLICY",
+      "privacy_text": "At our Tantric Massage Palma center, we value your privacy. We maintain absolute confidentiality in every Tantric Massage Mallorca session. We do not share personal information and guarantee total discretion in your tantric experience.",
+      "name_label": "Name",
+      "name_placeholder": "Your name",
+      "email_label": "Email",
+      "email_placeholder": "you@email.com",
+      "phone_label": "Phone",
+      "phone_placeholder": "+34 XXX XXX XXX",
+      "service_label": "Tantric Massage Type",
+      "service_placeholder": "Select your tantric massage",
+      "message_label": "Message (Optional)",
+      "message_placeholder": "Tell us about your ideal tantric massage experience",
+      "submit_button": "BOOK TANTRIC MASSAGE",
+      "submitting_button": "SENDING...",
+      "success_message": "✅ Booking sent successfully! We will contact you soon.",
+      "error_message": "❌ Error sending booking. Please try again or contact us via WhatsApp."
+    },
+    "services_section": {
+      "pre_title": "OUR SERVICES",
+      "title": "EXCLUSIVE EXPERIENCES",
+      "see_all_button": "SEE ALL SERVICES",
+      "reserve_button": "BOOK NOW"
+    },
+    "gallery_section": {
+      "item1": "EXCLUSIVE SPACE",
+      "item2": "RELAXING ATMOSPHERE",
+      "item3": "UNIQUE EXPERIENCE"
+    },
+    "testimonials_section": {
+      "pre_title": "TESTIMONIALS",
+      "title": "REVIEWS OF TANTRIC LUXE",
+      "testimonials": [
+        { "quote": "The best tantric massage in Mallorca I have ever experienced. The technique and atmosphere create a unique transformative experience. Highly recommended.", "author": "Sofia M." },
+        { "quote": "Exceptional professionalism in tantric massage in Palma. The luxury and discretion make each session an unforgettable sacred experience.", "author": "Carlos R." },
+        { "quote": "The tantric massage workshop for couples in Mallorca strengthened our connection. An extraordinary experience of personal and spiritual growth.", "author": "Ana & David" }
+      ]
+    },
+    "reserve_button_text": "BOOK NOW",
+    "hero_section": {
+      "card1_title": "EXCLUSIVE<br />TANTRIC MASSAGE",
+      "card1_text": "Experience our premium Palma tantric massage - Absolute relaxation and spiritual connection",
+      "card2_title": "PREMIUM<br />EROTIC MASSAGE",
+      "card2_text": "Discover the true Mallorca tantric massage - Sacred connection and deep relaxation",
+      "icon1_title": "TANTRIC",
+      "icon1_text": "special",
+      "icon2_title": "DELUXE",
+      "icon2_text": "massages",
+      "icon3_title": "UNIQUE",
+      "icon3_text": "moments"
+    }
+  },
+  "servicesPage": {
+    "pre_title": "WE OFFER EXPERIENCES",
+    "title": "EROTIC SERVICES",
+    "subtitle": "EXCLUSIVITY AND PRIVACY",
+    "description": "Discover our complete catalog of services designed to awaken all your senses and offer you transformative experiences in an environment of maximum luxury.",
+    "packages_pre_title": "SPECIAL PACKAGES",
+    "packages_title": "EXCLUSIVE OFFERS",
+    "faq_pre_title": "FREQUENTLY ASKED QUESTIONS",
+    "faq_title": "EVERYTHING YOU NEED TO KNOW",
+    "reserve_button": "BOOK",
+    "see_more_button": "SEE MORE",
+    "modal_includes": "INCLUDES:",
+    "modal_description": "FULL DESCRIPTION:",
+    "modal_reserve_button": "BOOK NOW",
+    "modal_more_info_button": "MORE INFORMATION",
+    "services": [
+      { "id": 1, "title": "EXOTIC PARADISE & FANTASY", "duration": "75 min", "price": "€180", "description": "Let yourself be carried away to a world where anything is possible. Every detail is tailored to your most intimate desires and fantasies. Your pleasure has no limits in your own Fantasy Paradise.", "features": ["Customized fantasies", "Special accessories", "Provocative costumes", "Unique experience"], "fullDescription": "In this exclusive massage, every detail is tailored to your most intimate desires and fantasies. If you dream of a different caress, a provocative costume, a dominant gaze, or even an experience with accessories (like blindfolds, handcuffs, shackles, soft whips, harnesses, costumes, and much more), this is your space. Here, your fantasy is the protagonist. You just have to tell us what ignites your senses... and we will make it a reality.", "image": "/images/exotic_paradise.webp" },
+      { "id": 2, "title": "PREMIUM SENSUAL 4-HANDS", "duration": "90 min", "price": "€280", "description": "Exclusive striptease show with sensual pole dance. Shared erotic shower and professional four-hands erotic tantric massage.", "features": ["Striptease show", "Sensual pole dance", "Shared erotic shower", "4-hands massage"], "fullDescription": "A unique experience that includes an exclusive striptease show, sensual pole dance, a shared erotic shower with both masseuses, a professional four-hands erotic tantric massage, and moments of complicity and play on the divan. The masseuses wear fine and exclusive lingerie, chosen just for you. A session created at your pace and to your desire.", "image": "/images/sensual_premium.webp" },
+      { "id": 3, "title": "TANTRIC DELUXE", "duration": "85 min", "price": "€220", "description": "Shared erotic shower with your masseuse. Sensual body-to-body massage, front and back, with professional erotic techniques.", "features": ["Shared erotic shower", "Body-to-body massage", "Double release", "Romantic atmosphere"], "fullDescription": "In your Tantric Deluxe experience, you will enjoy a shared erotic shower with your masseuse, a sensual body-to-body massage front and back, professional and seductive erotic techniques, and a double manual release (guaranteed double pleasure). The room is set with rose petals, candles, and delicate aromas. Includes a glass of champagne, wine, or beer to accompany the moment.", "image": "/images/tantric_deluxe.webp" },
+      { "id": 4, "title": "COUPLE'S TANTRA HARMONY", "duration": "90 min", "price": "€320", "description": "An intimate ritual designed to reconnect with your partner and awaken desire together. One or two masseuses will guide you in this shared experience.", "features": ["Couples massage", "Hot candle wax", "Bottle of champagne", "Shared release"], "fullDescription": "An intimate ritual designed to reconnect with your partner and awaken desire together. One or two masseuses will guide you in a sensual body-to-body massage, where both of you will actively participate with caresses, touches, and shared games, recovering lost complicity. The session includes a hot candle wax massage on the body, a romantic atmosphere with candles and petals, and a bottle of champagne to toast as pleasure flows between you. The finale will be the most anticipated moment: a manual release for both, sealing the experience in total harmony.", "image": "/images/couples_harmony.webp" },
+      { "id": 5, "title": "YACHT MASSAGE EXPERIENCE", "duration": "80 min", "price": "€350", "description": "Immerse yourself in a luxury tantric experience designed especially for you, aboard your private yacht. A deep connection between body and desire.", "features": ["Yacht experience", "Enveloping aromas", "Sensual music", "Warm oils"], "fullDescription": "Immerse yourself in a luxury tantric experience designed especially for you, aboard your private yacht. We take care of every detail: enveloping aromas, sensual music, warm oils, and an ambiance that transforms your vessel into a floating oasis of pleasure. This massage is more than a session: it is a deep connection between body and desire, guided by expert hands in an intimate and exclusive environment. Ideal for those looking to disconnect from the world and surrender to the art of pleasure with total privacy, between the sway of the sea and the magic of touch.", "image": "/images/experiencias_eroticas_unicas.webp" }
+    ],
+    "packages": [
+      { "title": "DISCOUNT FOR LOYAL CLIENTS", "day": "EVERY THURSDAY", "description": "Loyalty deserves a reward. If you've enjoyed our massages before, this Thursday get a <span class='text-amber-400 font-semibold'>€20 discount</span> on your massage session. A special way to thank you for your trust and loyalty.", "buttonText": "BOOK THURSDAY" },
+      { "title": "SHARED PLEASURE", "day": "EVERY SATURDAY", "description": "Every Saturday, come with a friend... If you share the moment with a friend, you both will enjoy a <span class='text-amber-400 font-semibold'>10% discount</span> on your experience. Because pleasure... is better enjoyed together.", "buttonText": "BOOK SATURDAY" },
+      { "title": "SUNDAYS FOR SINNING", "day": "EVERY SUNDAY", "description": "Choose a four-hands massage at an exclusive price. More hands... more pleasure. An intensified experience that multiplies sensations and ecstasy. Perfect for those seeking a deeper and more enveloping experience.", "buttonText": "BOOK SUNDAY" }
+    ],
+    "faqs": [
+      { "question": "What do the services include?", "answer": "All our services include a personalized consultation, climate-controlled environment, ambient music, premium oils, and hot towels. Premium services include additional amenities such as champagne, private jacuzzi, and other specified luxuries." },
+      { "question": "How can I make a reservation?", "answer": "You can book via WhatsApp, our online form, or by calling directly. We recommend booking at least 24 hours in advance. For premium services, a 48-hour advance reservation is required." },
+      { "question": "What privacy measures do you have?", "answer": "We guarantee absolute discretion and privacy. Our facilities have private entrances, we do not share client information, and all our staff sign confidentiality agreements." }
+    ]
+  },
+  "aboutPage": {
+    "pre_title": "ABOUT US",
+    "title": "OUR STORY",
+    "subtitle": "LUXURY TANTRIC SPA",
+    "description": "Since 2019, we have been pioneers in creating luxury tantric experiences that transform lives and elevate consciousness in the heart of Mallorca.",
+    "story_title": "A SANCTUARY OF LUXURY AND SENSUALITY",
+    "story_p1": "At Tantric Luxe Mallorca, we have created more than a spa; we have developed a sanctuary where the ancestral art of tantra meets the most refined contemporary luxury. Our vision is to provide a sacred space where our guests can explore, heal, and transform.",
+    "story_p2": "Every detail of our facilities has been meticulously designed to create an atmosphere that awakens all the senses. From essential oils imported directly from their places of origin to ambient music composed specifically for each type of experience.",
+    "story_p3": "Our team is composed of highly trained and internationally certified professionals, committed to maintaining the highest standards of excellence, privacy, and respect in every interaction.",
+    "stat1_val": "5000+",
+    "stat1_text": "Satisfied clients",
+    "stat2_val": "6",
+    "stat2_text": "Years of excellence",
+    "stat3_val": "100%",
+    "stat3_text": "Privacy guaranteed",
+    "timeline_title": "OUR JOURNEY",
+    "milestones": [
+      { "year": "2019", "title": "FOUNDATION", "description": "Tantric Luxe Mallorca opens its doors as the first luxury tantric spa in Palma." },
+      { "year": "2020", "title": "EXPANSION", "description": "Expansion of facilities with new VIP suites and private jacuzzis." },
+      { "year": "2021", "title": "RECOGNITION", "description": "Award for the best alternative wellness spa in the Balearic Islands." },
+      { "year": "2022", "title": "CERTIFICATION", "description": "International certification in traditional tantric practices and wellness therapies." },
+      { "year": "2023", "title": "INNOVATION", "description": "Introduction of advanced technology for immersive and personalized experiences." },
+      { "year": "2024", "title": "EXCELLENCE", "description": "Over 5000 satisfied clients and recognition as a benchmark in wellness tourism." }
+    ],
+    "philosophy_title": "OUR PHILOSOPHY",
+    "philosophy_quote": "Tantra is not just a practice; it is a path to deep self-understanding and authentic connection with others. In every experience we create, we honor this ancestral wisdom while embracing the beauty of the present moment.",
+    "philosophy_author": "— Tantric Luxe Mallorca",
+    "philosophy_points": [
+      {
+        "title": "AUTHENTIC CONNECTION",
+        "text": "We facilitate genuine encounters with yourself and others, free from judgment and full of acceptance."
+      },
+      {
+        "title": "HOLISTIC HEALING",
+        "text": "We believe in the healing power of conscious touch and mindful presence to restore balance."
+      },
+      {
+        "title": "CONSCIOUS TRANSFORMATION",
+        "text": "Each experience is designed to catalyze positive and lasting changes in your life."
+      }
+    ]
+  },
+  "masseusesPage": {
+    "pre_title": "OUR SPECIALISTS",
+    "title": "TANTRIC MASSEUSES",
+    "subtitle": "BEAUTY, ART, AND ENERGY IN EVERY SESSION",
+    "description": "Discover the gallery and profile of each of our erotic masseuses, learn about their experience, and book your appointment.",
+    "reviews_text": "reviews",
+    "age_text": "years",
+    "reserve_button_text": "BOOK WITH",
+    "masseuses": [
+      {
+        "id": 5,
+        "name": "Aurora",
+        "age": 28,
+        "specialty": "Tantric Deluxe Massage",
+        "image": "/images/masseurs/Aurora/aurora01.webp",
+        "images": ["/images/masseurs/Aurora/aurora01.webp", "/images/masseurs/Aurora/aurora02.webp", "/images/masseurs/Aurora/aurora03.webp", "/images/masseurs/Aurora/aurora04.webp"],
+        "description": "Specialist in tantric massage with ancestral techniques. Her soft and expert touch will transport you to a state of deep relaxation and spiritual connection.",
+        "skills": ["Tantric Massage", "Deep Relaxation", "Ancestral Techniques", "Spiritual Connection"],
+        "rating": 5,
+        "reviews": 47
+      },
+      {
+        "id": 4,
+        "name": "Venus",
+        "age": 25,
+        "specialty": "Premium Tantric Massage",
+        "image": "/images/masseurs/Venus/venus01.webp",
+        "images": ["/images/masseurs/Venus/venus01.webp", "/images/masseurs/Venus/venus02.webp"],
+        "description": "Master in the art of premium tantric massage. Her experience and dedication create unique experiences of well-being and bodily harmony.",
+        "skills": ["Premium Massage", "Holistic Wellness", "Body Harmony", "Unique Experience"],
+        "rating": 5,
+        "reviews": 52
+      },
+      {
+        "id": 3,
+        "name": "Selena",
+        "age": 27,
+        "specialty": "Couples Tantric Experience",
+        "image": "/images/masseurs/Selena/selena01.webp",
+        "images": ["/images/masseurs/Selena/selena01.webp", "/images/masseurs/Selena/selena02.webp"],
+        "description": "Specialist in tantric experiences for couples. Her unique approach strengthens the emotional and physical connection between partners.",
+        "skills": ["Couples", "Emotional Connection", "Partner Harmony", "Shared Experience"],
+        "rating": 5,
+        "reviews": 38
+      }
+    ]
+  },
+  "contactPage": {
+    "pre_title": "CONTACT",
+    "title": "BOOK YOUR",
+    "subtitle": "EXPERIENCE",
+    "description": "We are here to make your perfect experience a reality. Contact us to book or ask any questions about our exclusive services.",
+    "info_title": "CONTACT INFORMATION",
+    "contact_info": [
+      { "icon": "📍", "title": "LOCATION", "line1": "Palma de Mallorca", "line2": "Exact location provided upon booking confirmation", "line3": "Exclusive and discreet area in the historic center" },
+      { "icon": "📱", "title": "WHATSAPP PREFERRED", "line1": "+34 691 53 61 35", "line2": "Guaranteed response in less than 1 hour", "line3": "24/7 personalized attention" },
+      { "icon": "⏰", "title": "HOURS", "line1": "Monday to Sunday", "line2": "09:00 - 23:00", "line3": "Services by appointment" },
+      { "icon": "📧", "title": "EMAIL", "line1": "info@tantricluxemallorca.com", "line2": "For general inquiries and bookings", "line3": "Response within 24 hours maximum" }
+    ],
+    "whatsapp_button_text": "DIRECT WHATSAPP",
+    "call_button_text": "CALL NOW",
+    "privacy_title": "🔒 PRIVACY GUARANTEE",
+    "privacy_text": "At Tantric Luxe Mallorca, your privacy is our absolute priority. All personal information is treated with the utmost confidentiality and is never shared with third parties. Our facilities ensure discreet access and complete privacy during your visit.",
+    "form_title": "RESERVATION FORM",
+    "name_label": "NAME *",
+    "name_placeholder": "Your name",
+    "email_label": "EMAIL *",
+    "email_placeholder": "you@email.com",
+    "phone_label": "PHONE / WHATSAPP *",
+    "phone_placeholder": "+34 XXX XXX XXX",
+    "service_label": "DESIRED SERVICE *",
+    "service_default_option": "Select a service",
+    "service_consultation_option": "Personalized consultation",
+    "date_label": "PREFERRED DATE",
+    "time_label": "PREFERRED TIME",
+    "time_default_option": "Select a time",
+    "message_label": "ADDITIONAL MESSAGE",
+    "message_placeholder": "Any special requests or questions? (Optional)",
+    "form_notes": [
+      "Fields marked with * are required",
+      "You will receive confirmation within a maximum of 2 hours",
+      "For same-day bookings, please contact via WhatsApp"
+    ],
+    "success_message": "✅ Booking sent successfully! We will contact you soon.",
+    "error_message": "❌ Error sending booking. Please try again or contact us via WhatsApp.",
+    "submit_button": "SEND BOOKING",
+    "submitting_button": "SENDING...",
+    "map_section_title": "OUR LOCATION",
+    "map_section_subtitle": "IN THE HEART OF PALMA",
+    "map_section_p1": "Our exclusive spa is strategically located in a discreet area of the historic center of Palma de Mallorca, offering easy access from anywhere in the city while maintaining maximum privacy.",
+    "map_section_points": [
+      "5 minutes from the shopping center",
+      "10 minutes from the cathedral",
+      "15 minutes from the airport",
+      "Direct vehicle access"
+    ],
+    "timeSlots": [
+      "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
+      "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00"
+    ]
+  }
+}

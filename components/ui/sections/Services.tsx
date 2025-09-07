@@ -1,69 +1,30 @@
-
-
 'use client';
 
 import React from 'react';
+import { i18n } from '@/i18n-config';
 import Image from 'next/image';
 
-export const services = [
-    {
-        id: 1,
-        title: "PARAÍSO EXÓTICO & FANTASÍA",
-        image: "/images/exotic_paradise.webp",
-        duration: "75 min",
-        price: "€180",
-        description: "Déjate llevar a un mundo donde todo es posible. Cada detalle se adapta a tus deseos y fantasías más íntimas. Tu placer no tiene límites en tu propio Paraíso de Fantasías.",
-        features: ["Fantasías personalizadas", "Accesorios especiales", "Disfraces provocadores", "Experiencia única"]
-    },
-    {
-        id: 2,
-        title: "PREMIUM SENSUAL 4 MANOS",
-        image: "/images/sensual_premium.webp",
-        duration: "90 min",
-        price: "€280",
-        description: "Show exclusivo de striptease con baile sensual de pole dance. Ducha erótica compartida y masaje tántrico erótico profesional a cuatro manos.",
-        features: ["Show de striptease", "Pole dance sensual", "Ducha erótica compartida", "Masaje 4 manos"]
-    },
-    {
-        id: 3,
-        title: "TANTRIC DELUXE",
-        image: "/images/tantric_deluxe.webp",
-        duration: "85 min",
-        price: "€220",
-        description: "Ducha erótica compartida con tu masajista. Masaje sensual cuerpo a cuerpo por delante y por detrás con técnicas eróticas profesionales.",
-        features: ["Ducha erótica compartida", "Masaje cuerpo a cuerpo", "Doble terminación", "Ambiente romántico"]
-    },
-    {
-        id: 4,
-        title: "ARMONÍA TANTRA EN PAREJA",
-        image: "/images/couples_harmony.webp",
-        duration: "90 min",
-        price: "€320",
-        description: "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en esta experiencia compartida.",
-        features: ["Masaje para parejas", "Vela caliente", "Botella de champán", "Terminación compartida"]
-    },
-    {
-        id: 5,
-        title: "YACHT MASSAGE EXPERIENCE",
-        image: "/images/experiencias_eroticas_unicas.webp",
-        duration: "80 min",
-        price: "€350",
-        description: "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Conexión profunda entre cuerpo y deseo.",
-        features: ["Experiencia en yate", "Aromas envolventes", "Música sensual", "Aceites cálidos"]
-    }
-];
+type Service = {
+    id: number;
+    title: string;
+    image: string;
+    duration: string;
+    price: string;
+    description: string;
+    features: string[];
+};
 
-export default function ServicesSection() {
+export default function ServicesSection({ lang, dictionary, services }: { lang: string, dictionary: any, services: Service[] }) {
 
     return (
 
         <section id="servicios" className="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
             <div className="text-center mb-12">
                 <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
-                    NUESTROS SERVICIOS
+                    {dictionary.pre_title}
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-                    EXPERIENCIAS EXCLUSIVAS
+                    {dictionary.title}
                 </h2>
                 <div className="w-24 h-px bg-amber-400 mx-auto"></div>
             </div>
@@ -106,7 +67,7 @@ export default function ServicesSection() {
                         <button 
                         onClick={() => window.location.href = '/whatsapp'}
                         className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-6 py-3 text-sm font-medium tracking-wider transition-all duration-300 mt-4">
-                            RESERVAR AHORA
+                            {dictionary.reserve_button}
                         </button>
                     </div>
                 ))}
@@ -115,10 +76,10 @@ export default function ServicesSection() {
             {/* Botón para ver todos los servicios */}
             <div className="text-center">
                 <button 
-                    onClick={() => window.location.href = '/servicios'}
+                    onClick={() => window.location.href = (lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`)}
                     className="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-3 text-sm font-medium tracking-wider transition-colors"
                 >
-                    VER TODOS LOS SERVICIOS
+                    {dictionary.see_all_button}
                 </button>
             </div>
         </section>
