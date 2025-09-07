@@ -49,11 +49,11 @@ const Header = ({ lang, dictionary }: { lang: string, dictionary: HeaderDictiona
 
                 {/* Main navigation */}
                 <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-xl tracking-wider tenali-ramakrishna">
-                    <Link href={lang === i18n.defaultLocale ? '/' : `/${lang}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.home}</Link>
-                    <Link href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}${dictionary.paths.about}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.about}</Link>
-                    <Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.services}</Link>
-                    <Link href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.masseuses}</Link>
-                    <Link href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.contact}</Link>
+                    <Link href={`/${lang}${dictionary.paths.home}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.home}</Link>
+                    <Link href={`/${lang}${dictionary.paths.about}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.about}</Link>
+                    <Link href={`/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.services}</Link>
+                    <Link href={`/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.masseuses}</Link>
+                    <Link href={`/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.contact}</Link>
                 </nav>
 
                 <div className="flex flex-1 justify-end items-center gap-4">
@@ -119,35 +119,35 @@ const Header = ({ lang, dictionary }: { lang: string, dictionary: HeaderDictiona
                         {/* Opciones de menú */}
                         <nav className="flex flex-col justify-center h-full px-8 space-y-8 mt-24">
                             <Link
-                                href={lang === i18n.defaultLocale ? '/' : `/${lang}`}
+                                href={`/${lang}${dictionary.paths.home}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.home}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}/acerca`}
+                                href={`/${lang}${dictionary.paths.about}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.about}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`}
+                                href={`/${lang}${dictionary.paths.services}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.services}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}/masajistas`}
+                                href={`/${lang}${dictionary.paths.masseuses}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.masseuses}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}/contacto`}
+                                href={`/${lang}${dictionary.paths.contact}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >

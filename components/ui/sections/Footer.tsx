@@ -43,10 +43,10 @@ const Footer = ({ lang, dictionary }: { lang: string, dictionary: FooterDictiona
           <div>
             <h4 className="text-amber-400 mb-4 tenali-ramakrishna">{dictionary.navigation}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href={lang === i18n.defaultLocale ? '/' : `/${lang}${dictionary.paths.home}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_home}</Link></li>
-              <li><Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_services}</Link></li>
-              <li><Link href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_masseuses}</Link></li>
-              <li><Link href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_contact}</Link></li>
+              <li><Link href={`/${lang}${dictionary.paths.home}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_home}</Link></li>
+              <li><Link href={`/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_services}</Link></li>
+              <li><Link href={`/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_masseuses}</Link></li>
+              <li><Link href={`/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors">{dictionary.nav_contact}</Link></li>
             </ul>
           </div>
           <div>

@@ -48,58 +48,46 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  // --- Caso 1: La ruta tiene un prefijo de idioma (ej: /en/about, /es/acerca) ---
+  // --- Caso 1: La ruta ya tiene un prefijo de idioma (ej: /en/about) ---
   if (pathnameHasLocale) {
     const locale = pathname.split('/')[1];
-
-    // Si es el idioma por defecto, redirigir a la ruta sin prefijo.
-    // Esto asegura que la URL para el idioma por defecto siempre sea limpia.
-    // ej: /es/acerca -> /acerca
-    if (locale === i18n.defaultLocale) {
-      const newPath = pathname.replace(`/${i18n.defaultLocale}`, '') || '/';
-      return NextResponse.redirect(new URL(newPath, request.url));
-    }
 
     // Para idiomas no predeterminados, reescribimos a la ruta canónica que Next.js entiende (el nombre de la carpeta).
     // ej: El usuario ve /en/about, pero Next.js necesita renderizar /en/acerca.
     const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
     
     let canonicalPath = '';
-    // Buscar la ruta canónica (ej: '/acerca') que corresponde a la ruta localizada (ej: '/about').
     for (const [key, translations] of Object.entries(pathTranslations)) {
       if (translations[locale] === pathWithoutLocale) {
         canonicalPath = key;
         break;
       }
     }
-
-    // Si se encontró una traducción y es diferente, reescribir a la ruta canónica.
+    
     if (canonicalPath && canonicalPath !== pathWithoutLocale) {
         return NextResponse.rewrite(new URL(`/${locale}${canonicalPath}`, request.url));
     }
     
-    // Si no se define una traducción, se asume que la ruta ya es canónica.
     return;
   }
 
-  // --- Caso 2: La ruta NO tiene prefijo de idioma (ej: /, /acerca, /about) ---
+  // --- Caso 2: La ruta NO tiene prefijo de idioma. Hay que redirigir. ---
 
-  // Primero, verificar si la ruta corresponde a una traducción de un idioma no predeterminado.
-  // ej: /about es la traducción de /acerca para 'en'.
+  // Buscar si el `pathname` es una ruta traducida (ej: /about).
   for (const [canonicalPath, translations] of Object.entries(pathTranslations)) {
     for (const [locale, translatedPath] of Object.entries(translations)) {
-      if (translatedPath === pathname && locale !== i18n.defaultLocale) {
-        // Redirigir a la URL con prefijo de idioma para consistencia.
-        // ej: /about -> /en/about (y el resto del middleware se encargará de reescribir a /en/acerca)
+      if (translatedPath === pathname) {
+        // Encontramos una traducción, redirigimos a la URL con el prefijo de idioma correcto.
+        // ej: /about -> /en/about
         return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
       }
     }
   }
 
-  // Si no es una traducción, es una ruta del idioma por defecto.
-  // Reescribimos internamente para que Next.js la encuentre, pero el usuario ve la URL limpia.
-  // ej: /acerca -> Next.js renderiza /es/acerca
-  return NextResponse.rewrite(new URL(`/${i18n.defaultLocale}${pathname}`, request.url));
+  // Si no es una ruta traducida, usamos el locale detectado (o el por defecto) y redirigimos.
+  // ej: /acerca -> /es/acerca, / -> /es
+  const locale = getLocale(request);
+  return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
 }
 
 export const config = {

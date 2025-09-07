@@ -46,12 +46,8 @@ export default function LanguageSwitcher() {
     }
 
     // 3. Construir la nueva URL
-    // Si el nuevo idioma es el predeterminado, usamos la ruta canónica sin prefijo
-    if (locale === i18n.defaultLocale) {
-      return canonicalPath;
-    }
-
-    // Si no, buscamos la traducción y la anteponemos con el prefijo del idioma
+    // Siempre se antepone el prefijo del idioma para mantener la consistencia.
+    // Buscamos la traducción para el nuevo `locale`. Si no existe, usamos la ruta canónica.
     const translatedSlug = pathTranslations[canonicalPath]?.[locale] || canonicalPath;
     return `/${locale}${translatedSlug}`;
   };
@@ -59,7 +55,7 @@ export default function LanguageSwitcher() {
   return (
     <div className="flex gap-2 items-center">
       {i18n.locales.map((locale) => (
-        <Link key={locale} href={getTranslatedPath(locale)} className={`uppercase text-sm font-semibold transition-colors ${pathname.startsWith(`/${locale}`) || (locale === i18n.defaultLocale && !i18n.locales.some(l => pathname.startsWith(`/${l}/`))) ? 'text-amber-400' : 'text-gray-400 hover:text-white'}`}>
+        <Link key={locale} href={getTranslatedPath(locale)} className={`uppercase text-sm font-semibold transition-colors ${pathname.startsWith(`/${locale}/`) || pathname === `/${locale}` ? 'text-amber-400' : 'text-gray-400 hover:text-white'}`}>
           {locale}
         </Link>
       ))}
