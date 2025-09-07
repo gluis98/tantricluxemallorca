@@ -2,11 +2,7 @@ import { getDictionary } from '@/dictionaries/get-dictionary';
 import { Locale } from '@/i18n-config';
 import ServicesPageClient from '@/components/pages/ServicesPageClient';
 
-type PageProps = {
-  params: { lang: Locale };
-};
-
-export default async function ServicesPage({ params }: PageProps) {
+export default async function ServicesPage({ params }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(params.lang);
 
   return (

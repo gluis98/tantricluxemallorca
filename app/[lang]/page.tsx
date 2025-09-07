@@ -9,11 +9,7 @@ import TestimonialsSection from '@/components/ui/sections/Testimonials';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
 
-type PageProps = {
-  params: { lang: Locale };
-};
-
-export default async function TantricLuxeSpa({ params }: PageProps) {
+export default async function TantricLuxeSpa({ params }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(params.lang);
 
   return (
