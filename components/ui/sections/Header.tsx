@@ -126,28 +126,28 @@ const Header = ({ lang, dictionary }: { lang: string, dictionary: HeaderDictiona
                                 {dictionary.nav.home}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}/acerca`}
+                                href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}${dictionary.paths.about}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.about}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`}
+                                href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.services}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}/masajistas`}
+                                href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {dictionary.nav.masseuses}
                             </Link>
                             <Link
-                                href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}/contacto`}
+                                href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
                                 onClick={() => setIsMenuOpen(false)}
                             >
