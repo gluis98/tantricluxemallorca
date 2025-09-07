@@ -1,6 +1,5 @@
 'use client';
 
-import { i18n } from '@/i18n-config';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -4,7 +4,6 @@ import React from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { i18n } from '@/i18n-config';
 import LanguageSwitcher from '@/components/ui/buttons/LanguageSwitcher';
 
 interface HeaderDictionary {
