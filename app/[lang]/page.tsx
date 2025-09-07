@@ -10,12 +10,12 @@ import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
 
 export default async function TantricLuxeSpa({
-  params: { lang },
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>; 
 }) {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
-
   return (
     <>
       <main className="relative z-10 px-0 md:px-8 py-8">

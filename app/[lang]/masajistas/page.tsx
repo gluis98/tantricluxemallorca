@@ -3,10 +3,11 @@ import { Locale } from '@/i18n-config';
 import MasseusesPageClient from '@/components/pages/MasseusesPageClient';
 
 export default async function MasajistasPage({
-  params: { lang },
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>; 
 }) {
+  const { lang } = await params; 
   const dictionary = await getDictionary(lang);
 
   return (

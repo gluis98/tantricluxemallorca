@@ -3,10 +3,11 @@ import { Locale } from '@/i18n-config';
 import ContactPageClient from '@/components/pages/ContactPageClient';
 
 export default async function ContactPage({
-  params: { lang },
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>; 
 }) {
+  const { lang } = await params; 
   const dictionary = await getDictionary(lang);
 
   return (

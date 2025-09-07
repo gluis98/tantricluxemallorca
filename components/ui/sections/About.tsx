@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { i18n } from '@/i18n-config';
 import Image from 'next/image';
 
 export default function AboutSection({ dictionary }: { dictionary: any }) {

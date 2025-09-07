@@ -37,12 +37,13 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }) {
-  const dictionary = await getDictionary(params.lang);
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <head>
         <script
           type="application/ld+json"
@@ -228,9 +229,9 @@ export default async function RootLayout({
             </div>
           </div>
 
-          <Header lang={params.lang} dictionary={dictionary.header} />
+          <Header lang={lang} dictionary={dictionary.header} />
           {children}
-          <Footer lang={params.lang} dictionary={dictionary.footer} />
+          <Footer lang={lang} dictionary={dictionary.footer} />
 
         </div>
 

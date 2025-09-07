@@ -3,10 +3,11 @@ import { Locale } from '@/i18n-config';
 import ServicesPageClient from '@/components/pages/ServicesPageClient';
 
 export default async function ServicesPage({
-  params: { lang },
+  params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }) {
+  const { lang } = await params;
   const dictionary = await getDictionary(lang);
 
   return (
