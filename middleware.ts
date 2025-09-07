@@ -84,11 +84,21 @@ export function middleware(request: NextRequest) {
 
   // --- Caso 2: La ruta NO tiene prefijo de idioma (ej: /, /acerca, /about) ---
 
-  // Si la ruta no tiene un prefijo de idioma, SIEMPRE la tratamos como el idioma por defecto.
-  // Simplemente reescribimos la URL internamente para que Next.js pueda encontrar la página correcta,
-  // pero la URL que ve el usuario no cambia.
-  // ej: /acerca -> Next.js renderiza /es/acerca, el usuario sigue viendo /acerca.
-  // ej: / -> Next.js renderiza /es/, el usuario sigue viendo /
+  // Primero, verificar si la ruta corresponde a una traducción de un idioma no predeterminado.
+  // ej: /about es la traducción de /acerca para 'en'.
+  for (const [canonicalPath, translations] of Object.entries(pathTranslations)) {
+    for (const [locale, translatedPath] of Object.entries(translations)) {
+      if (translatedPath === pathname && locale !== i18n.defaultLocale) {
+        // Redirigir a la URL con prefijo de idioma para consistencia.
+        // ej: /about -> /en/about (y el resto del middleware se encargará de reescribir a /en/acerca)
+        return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+      }
+    }
+  }
+
+  // Si no es una traducción, es una ruta del idioma por defecto.
+  // Reescribimos internamente para que Next.js la encuentre, pero el usuario ve la URL limpia.
+  // ej: /acerca -> Next.js renderiza /es/acerca
   return NextResponse.rewrite(new URL(`/${i18n.defaultLocale}${pathname}`, request.url));
 }
 
