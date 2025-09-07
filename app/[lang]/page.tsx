@@ -9,8 +9,12 @@ import TestimonialsSection from '@/components/ui/sections/Testimonials';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
 
-export default async function TantricLuxeSpa({ params }: { params: { lang: Locale } }) {
-  const dictionary = await getDictionary(params.lang);
+export default async function TantricLuxeSpa({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const dictionary = await getDictionary(lang);
 
   return (
     <>
@@ -23,7 +27,7 @@ export default async function TantricLuxeSpa({ params }: { params: { lang: Local
         <Gallery dictionary={dictionary.homepage.gallery_section} />
 
         {/* Services Section */}
-        <ServicesSection lang={params.lang} dictionary={dictionary.homepage.services_section} services={dictionary.servicesPage.services} />
+        <ServicesSection lang={lang} dictionary={dictionary.homepage.services_section} services={dictionary.servicesPage.services} />
 
         {/* About Us Section */}
         <AboutSection dictionary={dictionary.homepage.about_us_section} />
