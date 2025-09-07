@@ -14,14 +14,7 @@ type Service = {
     features: string[];
 };
 
-interface ServicesSectionDictionary {
-  pre_title: string;
-  title: string;
-  reserve_button: string;
-  see_all_button: string;
-}
-
-export default function ServicesSection({ lang, dictionary, services }: { lang: string, dictionary: ServicesSectionDictionary, services: Service[] }) {
+export default function ServicesSection({ lang, dictionary, services }: { lang: string, dictionary: any, services: Service[] }) {
 
     return (
 

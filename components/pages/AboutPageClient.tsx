@@ -14,30 +14,8 @@ type PhilosophyPoint = {
   text: string;
 };
 
-interface AboutPageDictionary {
-  pre_title: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  story_title: string;
-  story_p1: string;
-  story_p2: string;
-  story_p3: string;
-  stat1_val: string;
-  stat1_text: string;
-  stat2_val: string;
-  stat2_text: string;
-  stat3_val: string;
-  stat3_text: string;
-  timeline_title: string;
-  philosophy_title: string;
-  philosophy_quote: string;
-  philosophy_author: string;
-  philosophy_points: PhilosophyPoint[];
-}
-
 interface AboutPageClientProps {
-  dictionary: AboutPageDictionary;
+  dictionary: any; 
   milestones: Milestone[];
 }
 

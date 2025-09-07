@@ -2,29 +2,7 @@
 
 import React from 'react';
 
-type Service = {
-  id: number;
-  title: string;
-};
-
-interface ContactFormDictionary {
-  form_title: string;
-  name_label: string;
-  name_placeholder: string;
-  email_label: string;
-  email_placeholder: string;
-  phone_label: string;
-  phone_placeholder: string;
-  service_label: string;
-  service_placeholder: string;
-  message_label: string;
-  message_placeholder: string;
-  submit_button: string;
-  submitting_button: string;
-  success_message: string;
-  error_message: string;
-}
-export default function ContactForm({ services, dictionary }: { services: Service[], dictionary: ContactFormDictionary }) {
+export default function ContactForm({ services, dictionary }: { services: any[], dictionary: any }) {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',

@@ -3,27 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface FooterDictionary {
-  navigation: string;
-  nav_home: string;
-  nav_services: string;
-  nav_masseuses: string;
-  nav_contact: string;
-  paths: {
-    home: string;
-    services: string;
-    masseuses: string;
-    contact: string;
-  };
-  massages_title: string;
-  follow_us: string;
-  instagram_aria: string;
-  whatsapp_aria: string;
-  copyright: string;
-  privacy_policy: string;
-  terms_conditions: string;
-}
-const Footer = ({ lang, dictionary }: { lang: string, dictionary: FooterDictionary }) => {
+const Footer = ({ lang, dictionary }: { lang: string, dictionary: any }) => {
   return (
     <footer className="border-t relative text-center md:text-left border-amber-900/20 py-12 px-4 mt-12">
       <div className="max-w-7xl mx-auto">

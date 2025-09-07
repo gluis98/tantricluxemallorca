@@ -5,13 +5,7 @@ type Testimonial = {
     author: string;
 };
 
-interface TestimonialsDictionary {
-    pre_title: string;
-    title: string;
-    testimonials: Testimonial[];
-}
-
-export default function TestimonialsSection({ dictionary }: { dictionary: TestimonialsDictionary }) {
+export default function TestimonialsSection({ dictionary }: { dictionary: any }) {
 
     return (
         <section className="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
