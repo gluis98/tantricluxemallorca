@@ -9,18 +9,27 @@ import Negotiator from 'negotiator';
 const pathTranslations: Record<string, Record<string, string>> = {
   '/acerca': {
     en: '/about',
+    de: '/uber-uns',
+  },
+  '/': {
+    en: '/',
+    de: '/',
   },
   '/servicios': {
     en: '/services',
+    de: '/leistungen',
   },
   '/contacto': {
     en: '/contact',
+    de: '/kontakt',
   },
   '/masajistas': {
     en: '/masseuses',
+    de: '/masseurinnen',
   },
   '/whatsapp': {
     en: '/whatsapp',
+    de: '/whatsapp',
   },
 };
 // --- FIN: Configuración ---
