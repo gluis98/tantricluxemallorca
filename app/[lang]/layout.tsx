@@ -32,18 +32,27 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
+// ✅ Cambia esta interfaz para especificar el tipo correcto
+interface LayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>; // Cambiado de Locale a string
+}
+
 export default async function RootLayout({
   children,
   params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
-}) {
+}: LayoutProps) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  
+  // ✅ Validación para asegurar que lang es un Locale válido
+  const locale: Locale = (i18n.locales as readonly string[]).includes(lang) 
+    ? (lang as Locale) 
+    : i18n.defaultLocale;
+  
+  const dictionary = await getDictionary(locale);
 
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <head>
         <script
           type="application/ld+json"
@@ -59,7 +68,7 @@ export default async function RootLayout({
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer Fray Luis de León, 7,
+    "streetAddress": "Carrer Fray Luis de León, 7",
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
     "postalCode": "07011",
@@ -229,9 +238,9 @@ export default async function RootLayout({
             </div>
           </div>
 
-          <Header lang={lang} dictionary={dictionary.header} />
+          <Header lang={locale} dictionary={dictionary.header} />
           {children}
-          <Footer lang={lang} dictionary={dictionary.footer} />
+          <Footer lang={locale} dictionary={dictionary.footer} />
 
         </div>
 
