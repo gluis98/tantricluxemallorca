@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/en/whatsapp`,
+      url: `${baseUrl}/whatsapp`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
@@ -111,7 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/de/whatsapp`,
+      url: `${baseUrl}/whatsapp`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,

@@ -1,17 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuración para que funcione con Netlify
-  // NO uses output: 'export' si quieres sitemap dinámico
-  
-  images: {
-    domains: ['tantricluxemallorca.com'],
-  },
+  // La configuración de `output: 'export'` ha sido eliminada.
+  // Las otras opciones como `trailingSlash` y `images.unoptimized`
+  // a menudo se usan para exportaciones estáticas. Puedes eliminarlas también
+  // o ajustarlas según necesites para un despliegue en servidor.
+};
 
-  // Asegurar que no hay trailing slash
-  trailingSlash: false,
-
-  // i18n routing si lo necesitas (opcional con App Router)
-  // El App Router maneja i18n diferente con carpetas [lang]
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;
