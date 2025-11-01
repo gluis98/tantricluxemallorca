@@ -1,10 +1,49 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // La configuración de `output: 'export'` ha sido eliminada.
-  // Las otras opciones como `trailingSlash` y `images.unoptimized`
-  // a menudo se usan para exportaciones estáticas. Puedes eliminarlas también
-  // o ajustarlas según necesites para un despliegue en servidor.
+  // Importante para Netlify
   output: 'standalone',
-};
+  
+  // Configuración de imágenes
+  images: {
+    domains: ['tantricluxemallorca.com'],
+    unoptimized: false, // Cambiar a true si tienes problemas con imágenes en Netlify
+  },
 
-module.exports = nextConfig;
+  // Asegurar trailing slashes consistentes
+  trailingSlash: false,
+
+  // Configuración i18n si usas next-intl o similar
+  // i18n: {
+  //   locales: ['es', 'en', 'de'],
+  //   defaultLocale: 'es',
+  // },
+
+  // Headers de seguridad
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+        ],
+      },
+    ]
+  },
+
+  // Redirecciones si las necesitas
+  async redirects() {
+    return [
+      // Ejemplo: redireccionar /servicios a /es/servicios si es necesario
+      // {
+      //   source: '/old-path',
+      //   destination: '/new-path',
+      //   permanent: true,
+      // },
+    ]
+  },
+}
+
+module.exports = nextConfig
