@@ -1,131 +1,30 @@
-[images]
-remote_images = [
-  "^(?:http(?:s)?:\\/\\/tantricluxemallorca\\.com(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
-]
+# Configuración mínima para Next.js 15 + Netlify
 
 [build]
-command = "npm run build"
-publish = ".next"
+  command = "npm run build"
+  publish = ".next"
 
+# Plugin esencial de Netlify para Next.js
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"
+
+# Headers básicos
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-for = "/*"
-
+  for = "/_next/static/*"
   [headers.values]
-  X-Frame-Options = "DENY"
-  X-Content-Type-Options = "nosniff"
-  Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-for = "/sitemap.xml"
+# NO añadas redirects para sitemap.xml o robots.txt
+# El plugin de Netlify los manejará automáticamente
 
-  [headers.values]
-  Content-Type = "application/xml"
-  Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-for = "/robots.txt"
-
-  [headers.values]
-  Content-Type = "text/plain"
-  Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-for = "/_next/static/*"
-
-  [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
-
-[[redirects]]
-from = "/_next/image"
-to = "/.netlify/images?url=:url&w=:width&q=:quality"
-status = 200
-
-  [redirects.query]
-  url = ":url"
-  w = ":width"
-  q = ":quality"
-
-[[redirects]]
-from = "/_ipx/*"
-to = "/.netlify/images?url=:url&w=:width&q=:quality"
-status = 200
-
-  [redirects.query]
-  url = ":url"
-  w = ":width"
-  q = ":quality"
-
-[context]
-
-  [context.production]
-
-    [context.production.images]
-    remote_images = [
-      "^(?:http(?:s)?:\\/\\/tantricluxemallorca\\.com(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
-    ]
-
-    [[context.production.headers]]
-    for = "/*"
-
-      [context.production.headers.values]
-      X-Frame-Options = "DENY"
-      X-Content-Type-Options = "nosniff"
-      Referrer-Policy = "strict-origin-when-cross-origin"
-
-    [[context.production.headers]]
-    for = "/sitemap.xml"
-
-      [context.production.headers.values]
-      Content-Type = "application/xml"
-      Cache-Control = "public, max-age=3600, must-revalidate"
-
-    [[context.production.headers]]
-    for = "/robots.txt"
-
-      [context.production.headers.values]
-      Content-Type = "text/plain"
-      Cache-Control = "public, max-age=3600, must-revalidate"
-
-    [[context.production.headers]]
-    for = "/_next/static/*"
-
-      [context.production.headers.values]
-      Cache-Control = "public, max-age=31536000, immutable"
-
-  [context.main]
-
-    [context.main.images]
-    remote_images = [
-      "^(?:http(?:s)?:\\/\\/tantricluxemallorca\\.com(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
-    ]
-
-    [[context.main.headers]]
-    for = "/*"
-
-      [context.main.headers.values]
-      X-Frame-Options = "DENY"
-      X-Content-Type-Options = "nosniff"
-      Referrer-Policy = "strict-origin-when-cross-origin"
-
-    [[context.main.headers]]
-    for = "/sitemap.xml"
-
-      [context.main.headers.values]
-      Content-Type = "application/xml"
-      Cache-Control = "public, max-age=3600, must-revalidate"
-
-    [[context.main.headers]]
-    for = "/robots.txt"
-
-      [context.main.headers.values]
-      Content-Type = "text/plain"
-      Cache-Control = "public, max-age=3600, must-revalidate"
-
-    [[context.main.headers]]
-    for = "/_next/static/*"
-
-      [context.main.headers.values]
-      Cache-Control = "public, max-age=31536000, immutable"
+[images]
+  remote_images = [
+    "^https://tantricluxemallorca\\.com/.*$"
+  ]
