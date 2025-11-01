@@ -8,6 +8,9 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
 # Redirecciones para archivos estáticos en public/
 [[redirects]]
   from = "/sitemap.xml"
