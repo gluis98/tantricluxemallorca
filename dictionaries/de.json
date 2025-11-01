@@ -1,0 +1,311 @@
+{
+  "header": {
+    "location": "PALMA DE MALLORCA",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "nav": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "services": "Leistungen",
+      "masseuses": "Masseurinnen",
+      "contact": "Kontakt"
+    },
+    "paths": {
+      "home": "/",
+      "about": "/uber-uns",
+      "services": "/leistungen",
+      "masseuses": "/masseurinnen",
+      "contact": "/kontakt"
+    }
+  },
+  "footer": {
+    "navigation": "NAVIGATION",
+    "nav_home": "Tantra Massage Mallorca",
+    "nav_services": "Tantra-Leistungen",
+    "nav_masseuses": "Erotische Masseurinnen",
+    "nav_contact": "Kontakt",
+    "paths": {
+      "home": "/",
+      "services": "/leistungen",
+      "masseuses": "/masseurinnen",
+      "contact": "/kontakt"
+    },
+    "massages_title": "TANTRA-MASSAGEN",
+    "follow_us": "FOLGEN SIE UNS",
+    "instagram_aria": "Instagram Tantra-Massage Mallorca",
+    "whatsapp_aria": "WhatsApp Tantra-Massage Palma",
+    "copyright": "© 2025 Tantric Luxe Mallorca - Spezialisiertes Zentrum für Tantra-Massage Palma. Alle Rechte vorbehalten.",
+    "privacy_policy": "Datenschutzerklärung",
+    "terms_conditions": "Allgemeine Geschäftsbedingungen"
+  },
+  "homepage": {
+    "subtitle": "EROTISCHE MASSAGE",
+    "title": "TANTRIC LUXE",
+    "main_heading": "TANTRA-MASSAGE PALMA",
+    "secondary_heading": "EXKLUSIVES TANTRA-MASSAGE-ERLEBNIS AUF MALLORCA",
+    "about_us_section": {
+      "pre_title": "ÜBER UNS",
+      "title": "SPEZIALISTEN FÜR TANTRA-MASSAGE MALLORCA",
+      "p1": "Bei Tantric Luxe sind wir Pioniere der Tantra-Massage in Palma de Mallorca. Unser spezialisiertes Zentrum verbindet uralte Tantra-Massage-Techniken mit dem Luxus und der Privatsphäre, die Sie im Herzen Mallorcas verdienen.",
+      "p2": "Jede Tantra-Massage-Sitzung auf Mallorca ist darauf ausgelegt, Ihre Sinne zu erwecken und Sie mit Ihrer inneren Energie zu verbinden. Wir verwenden hochwertige ätherische Öle und traditionelle Palma-Tantra-Massage-Techniken für ein einzigartiges transformatives Erlebnis.",
+      "stat1_title": "10+",
+      "stat1_text": "Jahre Tantra-Massage",
+      "stat2_title": "500+",
+      "stat2_text": "Zufriedene Kunden",
+      "stat3_title": "100%",
+      "stat3_text": "Garantierte Privatsphäre"
+    },
+    "contact_section": {
+      "pre_title": "KONTAKT",
+      "title": "BUCHEN SIE IHRE TANTRA-MASSAGE AUF MALLORCA",
+      "form_title": "TANTRA-MASSAGE PALMA BUCHEN",
+      "info_title": "KONTAKTINFORMATIONEN",
+      "location_title": "Tantra-Massage-Zentrum",
+      "location_address": "Palma de Mallorca, Balearen",
+      "location_note": "Genaue Adresse wird nach bestätigter Reservierung mitgeteilt",
+      "whatsapp_title": "WhatsApp",
+      "whatsapp_number": "+34 691536135",
+      "whatsapp_note": "Sofortige Antwort für Buchungen",
+      "schedule_title": "Öffnungszeiten",
+      "schedule_days": "Montag bis Sonntag",
+      "schedule_hours": "09:00 - 23:00",
+      "privacy_title": "DATENSCHUTZERKLÄRUNG",
+      "privacy_text": "In unserem Tantra-Massage-Zentrum Palma legen wir Wert auf Ihre Privatsphäre. Wir wahren absolute Vertraulichkeit bei jeder Tantra-Massage-Sitzung auf Mallorca. Wir geben keine persönlichen Informationen weiter und garantieren vollständige Diskretion bei Ihrem Tantra-Erlebnis.",
+      "name_label": "Name",
+      "name_placeholder": "Ihr Name",
+      "email_label": "E-Mail",
+      "email_placeholder": "ihre@email.com",
+      "phone_label": "Telefon",
+      "phone_placeholder": "+34 XXX XXX XXX",
+      "service_label": "Tantra-Massage-Art",
+      "service_placeholder": "Wählen Sie Ihre Tantra-Massage",
+      "message_label": "Nachricht (Optional)",
+      "message_placeholder": "Erzählen Sie uns von Ihrem idealen Tantra-Massage-Erlebnis",
+      "submit_button": "TANTRA-MASSAGE BUCHEN",
+      "submitting_button": "WIRD GESENDET...",
+      "success_message": "✅ Buchung erfolgreich gesendet! Wir werden uns bald bei Ihnen melden.",
+      "error_message": "❌ Fehler beim Senden der Buchung. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp."
+    },
+    "services_section": {
+      "pre_title": "UNSERE LEISTUNGEN",
+      "title": "EXKLUSIVE ERLEBNISSE",
+      "see_all_button": "ALLE LEISTUNGEN ANSEHEN",
+      "reserve_button": "JETZT BUCHEN"
+    },
+    "gallery_section": {
+      "item1": "EXKLUSIVER RAUM",
+      "item2": "ENTSPANNENDE ATMOSPHÄRE",
+      "item3": "EINZIGARTIGES ERLEBNIS"
+    },
+    "testimonials_section": {
+      "pre_title": "ERFAHRUNGSBERICHTE",
+      "title": "BEWERTUNGEN VON TANTRIC LUXE",
+      "testimonials": [
+        { "quote": "Die beste Tantra-Massage auf Mallorca, die ich je erlebt habe. Die Technik und Atmosphäre schaffen ein einzigartiges transformatives Erlebnis. Sehr empfehlenswert.", "author": "Sofia M." },
+        { "quote": "Außergewöhnliche Professionalität bei der Tantra-Massage in Palma. Der Luxus und die Diskretion machen jede Sitzung zu einem unvergesslichen heiligen Erlebnis.", "author": "Carlos R." },
+        { "quote": "Der Tantra-Massage-Workshop für Paare auf Mallorca hat unsere Verbindung gestärkt. Ein außergewöhnliches Erlebnis der persönlichen und spirituellen Entwicklung.", "author": "Ana & David" }
+      ]
+    },
+    "reserve_button_text": "JETZT BUCHEN",
+    "hero_section": {
+      "card1_title": "EXKLUSIVE<br />TANTRA-MASSAGE",
+      "card1_text": "Erleben Sie unsere Premium-Tantra-Massage in Palma - Absolute Entspannung und spirituelle Verbindung",
+      "card2_title": "PREMIUM<br />EROTISCHE MASSAGE",
+      "card2_text": "Entdecken Sie die wahre Tantra-Massage auf Mallorca - Heilige Verbindung und tiefe Entspannung",
+      "icon1_title": "TANTRISCH",
+      "icon1_text": "speziell",
+      "icon2_title": "DELUXE",
+      "icon2_text": "Massagen",
+      "icon3_title": "EINZIGARTIG",
+      "icon3_text": "Momente"
+    }
+  },
+  "servicesPage": {
+    "pre_title": "WIR BIETEN ERLEBNISSE",
+    "title": "EROTISCHE LEISTUNGEN",
+    "subtitle": "EXKLUSIVITÄT UND PRIVATSPHÄRE",
+    "description": "Entdecken Sie unseren kompletten Leistungskatalog, der entwickelt wurde, um alle Ihre Sinne zu erwecken und Ihnen transformative Erlebnisse in einer Umgebung von maximalem Luxus zu bieten.",
+    "packages_pre_title": "SPEZIELLE PAKETE",
+    "packages_title": "EXKLUSIVE ANGEBOTE",
+    "faq_pre_title": "HÄUFIG GESTELLTE FRAGEN",
+    "faq_title": "ALLES, WAS SIE WISSEN MÜSSEN",
+    "reserve_button": "BUCHEN",
+    "see_more_button": "MEHR SEHEN",
+    "modal_includes": "BEINHALTET:",
+    "modal_description": "VOLLSTÄNDIGE BESCHREIBUNG:",
+    "modal_reserve_button": "JETZT BUCHEN",
+    "modal_more_info_button": "MEHR INFORMATIONEN",
+    "services": [
+      { "id": 1, "title": "EXOTISCHES PARADIES & FANTASIE", "duration": "75 Min.", "price": "180 €", "description": "Lassen Sie sich in eine Welt entführen, in der alles möglich ist. Jedes Detail ist auf Ihre intimsten Wünsche und Fantasien zugeschnitten. Ihre Lust kennt keine Grenzen in Ihrem eigenen Fantasie-Paradies.", "features": ["Maßgeschneiderte Fantasien", "Spezielles Zubehör", "Provokante Kostüme", "Einzigartiges Erlebnis"], "fullDescription": "Bei dieser exklusiven Massage ist jedes Detail auf Ihre intimsten Wünsche und Fantasien zugeschnitten. Wenn Sie von einer anderen Berührung träumen, einem provokanten Kostüm, einem dominanten Blick oder sogar einem Erlebnis mit Accessoires (wie Augenbinden, Handschellen, Fesseln, weichen Peitschen, Geschirr, Kostümen und vielem mehr), ist dies Ihr Raum. Hier steht Ihre Fantasie im Mittelpunkt. Sie müssen uns nur sagen, was Ihre Sinne entfacht... und wir machen es zur Realität.", "image": "/images/exotic_paradise.webp" },
+      { "id": 2, "title": "PREMIUM SINNLICH 4-HÄNDIG", "duration": "90 Min.", "price": "280 €", "description": "Exklusive Striptease-Show mit sinnlichem Poledance. Gemeinsame erotische Dusche und professionelle erotische Tantra-Massage mit vier Händen.", "features": ["Striptease-Show", "Sinnlicher Poledance", "Gemeinsame erotische Dusche", "4-händige Massage"], "fullDescription": "Ein einzigartiges Erlebnis, das eine exklusive Striptease-Show, sinnlichen Poledance, eine gemeinsame erotische Dusche mit beiden Masseurinnen, eine professionelle erotische Tantra-Massage mit vier Händen und Momente der Komplizenschaft und des Spiels auf dem Diwan umfasst. Die Masseurinnen tragen feine und exklusive Lingerie, die nur für Sie ausgewählt wurde. Eine Sitzung, die nach Ihrem Tempo und Ihrem Wunsch gestaltet ist.", "image": "/images/sensual_premium.webp" },
+      { "id": 3, "title": "TANTRA DELUXE", "duration": "85 Min.", "price": "220 €", "description": "Gemeinsame erotische Dusche mit Ihrer Masseurin. Sinnliche Body-to-Body-Massage, vorne und hinten, mit professionellen erotischen Techniken.", "features": ["Gemeinsame erotische Dusche", "Body-to-Body-Massage", "Doppelte Entspannung", "Romantische Atmosphäre"], "fullDescription": "Bei Ihrem Tantra Deluxe Erlebnis genießen Sie eine gemeinsame erotische Dusche mit Ihrer Masseurin, eine sinnliche Body-to-Body-Massage vorne und hinten, professionelle und verführerische erotische Techniken und eine doppelte manuelle Entspannung (garantiertes doppeltes Vergnügen). Der Raum ist mit Rosenblättern, Kerzen und zarten Düften gestaltet. Inklusive einem Glas Champagner, Wein oder Bier, um den Moment zu begleiten.", "image": "/images/tantric_deluxe.webp" },
+      { "id": 4, "title": "TANTRA-HARMONIE FÜR PAARE", "duration": "90 Min.", "price": "320 €", "description": "Ein intimes Ritual, das entwickelt wurde, um sich mit Ihrem Partner wieder zu verbinden und gemeinsam das Verlangen zu erwecken. Eine oder zwei Masseurinnen werden Sie bei diesem gemeinsamen Erlebnis begleiten.", "features": ["Paarmassage", "Heißes Kerzenwachs", "Flasche Champagner", "Gemeinsame Entspannung"], "fullDescription": "Ein intimes Ritual, das entwickelt wurde, um sich mit Ihrem Partner wieder zu verbinden und gemeinsam das Verlangen zu erwecken. Eine oder zwei Masseurinnen werden Sie bei einer sinnlichen Body-to-Body-Massage begleiten, bei der Sie beide aktiv mit Liebkosungen, Berührungen und gemeinsamen Spielen teilnehmen und die verlorene Komplizenschaft wiederfinden. Die Sitzung umfasst eine Massage mit heißem Kerzenwachs auf dem Körper, eine romantische Atmosphäre mit Kerzen und Blütenblättern und eine Flasche Champagner zum Anstoßen, während das Vergnügen zwischen Ihnen fließt. Das Finale wird der am meisten erwartete Moment sein: eine manuelle Entspannung für beide, die das Erlebnis in totaler Harmonie besiegelt.", "image": "/images/couples_harmony.webp" },
+      { "id": 5, "title": "YACHT-MASSAGE-ERLEBNIS", "duration": "80 Min.", "price": "350 €", "description": "Tauchen Sie ein in ein luxuriöses Tantra-Erlebnis, das speziell für Sie entwickelt wurde, an Bord Ihrer Privatyacht. Eine tiefe Verbindung zwischen Körper und Verlangen.", "features": ["Yacht-Erlebnis", "Umhüllende Düfte", "Sinnliche Musik", "Warme Öle"], "fullDescription": "Tauchen Sie ein in ein luxuriöses Tantra-Erlebnis, das speziell für Sie entwickelt wurde, an Bord Ihrer Privatyacht. Wir kümmern uns um jedes Detail: umhüllende Düfte, sinnliche Musik, warme Öle und ein Ambiente, das Ihr Schiff in eine schwimmende Oase des Vergnügens verwandelt. Diese Massage ist mehr als eine Sitzung: Sie ist eine tiefe Verbindung zwischen Körper und Verlangen, geführt von erfahrenen Händen in einer intimen und exklusiven Umgebung. Ideal für diejenigen, die sich von der Welt abkoppeln und sich der Kunst des Vergnügens mit vollständiger Privatsphäre hingeben möchten, zwischen dem Schwanken des Meeres und der Magie der Berührung.", "image": "/images/experiencias_eroticas_unicas.webp" }
+    ],
+    "packages": [
+      { "title": "RABATT FÜR STAMMKUNDEN", "day": "JEDEN DONNERSTAG", "description": "Loyalität verdient eine Belohnung. Wenn Sie unsere Massagen schon einmal genossen haben, erhalten Sie an diesem Donnerstag einen <span class='text-amber-400 font-semibold'>Rabatt von 20 €</span> auf Ihre Massage-Sitzung. Eine besondere Art, Ihnen für Ihr Vertrauen und Ihre Treue zu danken.", "buttonText": "DONNERSTAG BUCHEN" },
+      { "title": "GEMEINSAMES VERGNÜGEN", "day": "JEDEN SAMSTAG", "description": "Jeden Samstag kommen Sie mit einem Freund... Wenn Sie den Moment mit einem Freund teilen, genießen Sie beide einen <span class='text-amber-400 font-semibold'>Rabatt von 10 %</span> auf Ihr Erlebnis. Denn Vergnügen... genießt man besser zusammen.", "buttonText": "SAMSTAG BUCHEN" },
+      { "title": "SONNTAGS ZUM SÜNDIGEN", "day": "JEDEN SONNTAG", "description": "Wählen Sie eine vier-händige Massage zu einem exklusiven Preis. Mehr Hände... mehr Vergnügen. Ein intensiviertes Erlebnis, das Empfindungen und Ekstase vervielfacht. Perfekt für diejenigen, die ein tieferes und umhüllenderes Erlebnis suchen.", "buttonText": "SONNTAG BUCHEN" }
+    ],
+    "faqs": [
+      { "question": "Was beinhalten die Leistungen?", "answer": "Alle unsere Leistungen umfassen eine personalisierte Beratung, klimatisierte Umgebung, Ambiente-Musik, Premium-Öle und heiße Handtücher. Premium-Leistungen beinhalten zusätzliche Annehmlichkeiten wie Champagner, privaten Whirlpool und andere spezifizierte Luxusartikel." },
+      { "question": "Wie kann ich eine Reservierung vornehmen?", "answer": "Sie können per WhatsApp, über unser Online-Formular oder durch direkten Anruf buchen. Wir empfehlen eine Buchung mindestens 24 Stunden im Voraus. Für Premium-Leistungen ist eine Reservierung 48 Stunden im Voraus erforderlich." },
+      { "question": "Welche Datenschutzmaßnahmen haben Sie?", "answer": "Wir garantieren absolute Diskretion und Privatsphäre. Unsere Einrichtungen verfügen über private Eingänge, wir geben keine Kundeninformationen weiter und alle unsere Mitarbeiter unterschreiben Vertraulichkeitsvereinbarungen." }
+    ]
+  },
+  "aboutPage": {
+    "pre_title": "ÜBER UNS",
+    "title": "UNSERE GESCHICHTE",
+    "subtitle": "LUXUS-TANTRA-SPA",
+    "description": "Seit 2019 sind wir Pioniere bei der Schaffung luxuriöser Tantra-Erlebnisse, die Leben verändern und das Bewusstsein im Herzen Mallorcas erhöhen.",
+    "story_title": "EIN HEILIGTUM VON LUXUS UND SINNLICHKEIT",
+    "story_p1": "Bei Tantric Luxe Mallorca haben wir mehr als ein Spa geschaffen; wir haben ein Heiligtum entwickelt, in dem die uralte Kunst des Tantra auf den raffiniertesten zeitgenössischen Luxus trifft. Unsere Vision ist es, einen heiligen Raum zu bieten, in dem unsere Gäste erkunden, heilen und sich verwandeln können.",
+    "story_p2": "Jedes Detail unserer Einrichtungen wurde sorgfältig entworfen, um eine Atmosphäre zu schaffen, die alle Sinne erweckt. Von ätherischen Ölen, die direkt aus ihren Ursprungsorten importiert werden, bis hin zu Ambiente-Musik, die speziell für jede Art von Erlebnis komponiert wurde.",
+    "story_p3": "Unser Team besteht aus hochqualifizierten und international zertifizierten Fachleuten, die sich verpflichten, die höchsten Standards an Exzellenz, Privatsphäre und Respekt in jeder Interaktion aufrechtzuerhalten.",
+    "stat1_val": "5000+",
+    "stat1_text": "Zufriedene Kunden",
+    "stat2_val": "6",
+    "stat2_text": "Jahre Exzellenz",
+    "stat3_val": "100%",
+    "stat3_text": "Garantierte Privatsphäre",
+    "timeline_title": "UNSERE REISE",
+    "milestones": [
+      { "year": "2019", "title": "GRÜNDUNG", "description": "Tantric Luxe Mallorca öffnet seine Türen als erstes Luxus-Tantra-Spa in Palma." },
+      { "year": "2020", "title": "EXPANSION", "description": "Erweiterung der Einrichtungen mit neuen VIP-Suiten und privaten Whirlpools." },
+      { "year": "2021", "title": "ANERKENNUNG", "description": "Auszeichnung für das beste alternative Wellness-Spa auf den Balearen." },
+      { "year": "2022", "title": "ZERTIFIZIERUNG", "description": "Internationale Zertifizierung in traditionellen tantrischen Praktiken und Wellness-Therapien." },
+      { "year": "2023", "title": "INNOVATION", "description": "Einführung fortschrittlicher Technologie für immersive und personalisierte Erlebnisse." },
+      { "year": "2024", "title": "EXZELLENZ", "description": "Über 5000 zufriedene Kunden und Anerkennung als Maßstab im Wellness-Tourismus." }
+    ],
+    "philosophy_title": "UNSERE PHILOSOPHIE",
+    "philosophy_quote": "Tantra ist nicht nur eine Praxis; es ist ein Weg zu tiefem Selbstverständnis und authentischer Verbindung mit anderen. In jedem Erlebnis, das wir schaffen, ehren wir diese uralte Weisheit und umarmen gleichzeitig die Schönheit des gegenwärtigen Moments.",
+    "philosophy_author": "— Tantric Luxe Mallorca",
+    "philosophy_points": [
+      {
+        "title": "AUTHENTISCHE VERBINDUNG",
+        "text": "Wir ermöglichen echte Begegnungen mit sich selbst und anderen, frei von Urteilen und voller Akzeptanz."
+      },
+      {
+        "title": "GANZHEITLICHE HEILUNG",
+        "text": "Wir glauben an die heilende Kraft bewusster Berührung und achtsamer Präsenz, um das Gleichgewicht wiederherzustellen."
+      },
+      {
+        "title": "BEWUSSTE TRANSFORMATION",
+        "text": "Jedes Erlebnis ist darauf ausgelegt, positive und dauerhafte Veränderungen in Ihrem Leben zu katalysieren."
+      }
+    ]
+  },
+  "masseusesPage": {
+    "pre_title": "UNSERE SPEZIALISTINNEN",
+    "title": "TANTRA-MASSEURINNEN",
+    "subtitle": "SCHÖNHEIT, KUNST UND ENERGIE IN JEDER SITZUNG",
+    "description": "Entdecken Sie die Galerie und das Profil jeder unserer erotischen Masseurinnen, erfahren Sie mehr über ihre Erfahrung und buchen Sie Ihren Termin.",
+    "reviews_text": "Bewertungen",
+    "age_text": "Jahre",
+    "reserve_button_text": "BUCHEN MIT",
+    "masseuses": [
+      {
+        "id": 5,
+        "name": "Aurora",
+        "age": 19,
+        "specialty": "Tantra Deluxe Massage",
+        "image": "/images/masseurs/Aurora/aurora1.webp",
+        "images": ["/images/masseurs/Aurora/aurora1.webp", "/images/masseurs/Aurora/aurora2.webp"],
+        "description": "Spezialistin für Tantra-Massage mit uralten Techniken. Ihre sanfte und erfahrene Berührung wird Sie in einen Zustand tiefer Entspannung und spiritueller Verbindung versetzen.",
+        "skills": ["Tantra-Massage", "Tiefe Entspannung", "Uralte Techniken", "Spirituelle Verbindung"],
+        "rating": 5,
+        "reviews": 47
+      },
+      {
+        "id": 4,
+        "name": "Venus",
+        "age": 21,
+        "specialty": "Premium Tantra-Massage",
+        "image": "/images/masseurs/Venus/venus1.webp",
+        "images": ["/images/masseurs/Venus/venus1.webp", "/images/masseurs/Venus/venus2.webp"],
+        "description": "Meisterin in der Kunst der Premium-Tantra-Massage. Ihre Erfahrung und Hingabe schaffen einzigartige Erlebnisse von Wohlbefinden und körperlicher Harmonie.",
+        "skills": ["Premium-Massage", "Ganzheitliches Wohlbefinden", "Körperliche Harmonie", "Einzigartiges Erlebnis"],
+        "rating": 5,
+        "reviews": 52
+      },
+      {
+        "id": 3,
+        "name": "Selena",
+        "age": 19,
+        "specialty": "Tantra-Erlebnis für Paare",
+        "image": "/images/masseurs/Selena/selena1.webp",
+        "images": ["/images/masseurs/Selena/selena1.webp", "/images/masseurs/Selena/selena2.webp"],
+        "description": "Spezialistin für Tantra-Erlebnisse für Paare. Ihr einzigartiger Ansatz stärkt die emotionale und physische Verbindung zwischen Partnern.",
+        "skills": ["Paare", "Emotionale Verbindung", "Partner-Harmonie", "Gemeinsames Erlebnis"],
+        "rating": 5,
+        "reviews": 38
+      },
+      {
+        "id": 4,
+        "name": "Angela",
+        "age": 22,
+        "specialty": "Tantra-Erlebnis für Paare",
+        "image": "/images/masseurs/Angela/angela1.webp",
+        "images": ["/images/masseurs/Angela/angela1.webp", "/images/masseurs/Angela/angela2.webp"],
+        "description": "Erstaunliche Masseurin mit einer einzigartigen Fähigkeit, sich mit Paaren zu verbinden. Ihre Sitzungen sind transformativ und zutiefst befriedigend.",
+        "skills": ["Paare", "Emotionale Verbindung", "Partner-Harmonie", "Gemeinsames Erlebnis"],
+        "rating": 5,
+        "reviews": 38
+      }
+    ]
+  },
+  "contactPage": {
+    "pre_title": "KONTAKT",
+    "title": "BUCHEN SIE IHR",
+    "subtitle": "ERLEBNIS",
+    "description": "Wir sind hier, um Ihr perfektes Erlebnis Wirklichkeit werden zu lassen. Kontaktieren Sie uns, um zu buchen oder Fragen zu unseren exklusiven Leistungen zu stellen.",
+    "info_title": "KONTAKTINFORMATIONEN",
+    "contact_info": [
+      { "icon": "📍", "title": "STANDORT", "line1": "Palma de Mallorca", "line2": "Genaue Adresse wird nach Buchungsbestätigung mitgeteilt", "line3": "Exklusiver und diskreter Bereich im historischen Zentrum" },
+      { "icon": "📱", "title": "WHATSAPP BEVORZUGT", "line1": "+34 691 53 61 35", "line2": "Garantierte Antwort in weniger als 1 Stunde", "line3": "24/7 personalisierte Betreuung" },
+      { "icon": "⏰", "title": "ÖFFNUNGSZEITEN", "line1": "Montag bis Sonntag", "line2": "09:00 - 23:00", "line3": "Leistungen nach Vereinbarung" },
+      { "icon": "📧", "title": "E-MAIL", "line1": "info@tantricluxemallorca.com", "line2": "Für allgemeine Anfragen und Buchungen", "line3": "Antwort innerhalb von maximal 24 Stunden" }
+    ],
+    "whatsapp_button_text": "DIREKTES WHATSAPP",
+    "call_button_text": "JETZT ANRUFEN",
+    "privacy_title": "🔒 DATENSCHUTZGARANTIE",
+    "privacy_text": "Bei Tantric Luxe Mallorca ist Ihre Privatsphäre unsere absolute Priorität. Alle persönlichen Informationen werden mit höchster Vertraulichkeit behandelt und niemals an Dritte weitergegeben. Unsere Einrichtungen gewährleisten diskreten Zugang und vollständige Privatsphäre während Ihres Besuchs.",
+    "form_title": "RESERVIERUNGSFORMULAR",
+    "name_label": "NAME *",
+    "name_placeholder": "Ihr Name",
+    "email_label": "E-MAIL *",
+    "email_placeholder": "ihre@email.com",
+    "phone_label": "TELEFON / WHATSAPP *",
+    "phone_placeholder": "+34 XXX XXX XXX",
+    "service_label": "GEWÜNSCHTE LEISTUNG *",
+    "service_default_option": "Wählen Sie eine Leistung",
+    "service_consultation_option": "Personalisierte Beratung",
+    "date_label": "BEVORZUGTES DATUM",
+    "time_label": "BEVORZUGTE UHRZEIT",
+    "time_default_option": "Wählen Sie eine Uhrzeit",
+    "message_label": "ZUSÄTZLICHE NACHRICHT",
+    "message_placeholder": "Besondere Wünsche oder Fragen? (Optional)",
+    "form_notes": [
+      "Mit * gekennzeichnete Felder sind Pflichtfelder",
+      "Sie erhalten innerhalb von maximal 2 Stunden eine Bestätigung",
+      "Für Buchungen am selben Tag kontaktieren Sie uns bitte per WhatsApp"
+    ],
+    "success_message": "✅ Buchung erfolgreich gesendet! Wir werden uns bald bei Ihnen melden.",
+    "error_message": "❌ Fehler beim Senden der Buchung. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp.",
+    "submit_button": "BUCHUNG SENDEN",
+    "submitting_button": "WIRD GESENDET...",
+    "map_section_title": "UNSER STANDORT",
+    "map_section_subtitle": "IM HERZEN VON PALMA",
+    "map_section_p1": "Unser exklusives Spa befindet sich strategisch günstig in einem diskreten Bereich des historischen Zentrums von Palma de Mallorca und bietet einfachen Zugang von überall in der Stadt bei gleichzeitiger maximaler Privatsphäre.",
+    "map_section_points": [
+      "5 Minuten vom Einkaufszentrum",
+      "10 Minuten von der Kathedrale",
+      "15 Minuten vom Flughafen",
+      "Direkter Fahrzeugzugang"
+    ],
+    "timeSlots": [
+      "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
+      "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00"
+    ]
+  }
+}

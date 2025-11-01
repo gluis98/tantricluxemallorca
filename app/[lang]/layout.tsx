@@ -50,34 +50,34 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `{
   "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
+  "@type": "Masaje erótico",
   "name": "Tantric Luxe Mallorca",
   "alternateName": "Tantric Luxe",
   "description": "Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas de masaje tantrico en Palma de Mallorca con máxima privacidad y profesionalidad.",
-  "url": "https://tu-dominio.com",
-  "telephone": "+34-XXX-XXX-XXX",
+  "url": "https://tantricluxemallorca.com/",
+  "telephone": "+34-691-53-61-35",
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Dirección específica (agregar cuando sea público)",
+    "streetAddress": "Carrer Fray Luis de León, 7,
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
-    "postalCode": "07001",
+    "postalCode": "07011",
     "addressCountry": "ES"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "39.5696",
-    "longitude": "2.6502"
+    "latitude": "39.5736032",
+    "longitude": "2.6386885"
   },
   "openingHours": [
-    "Mo-Su 11:00-02:00"
+    "Mo-Su 09:00-23:00"
   ],
-  "priceRange": "€€€",
+  "priceRange": "99€-499€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": "Cash, Credit Card",
   "servedCuisine": [],
-  "hasMap": "https://maps.google.com/?q=Palma+de+Mallorca",
+  "hasMap": "https://maps.app.goo.gl/325Sq6mRB9zq8p8R7",
   "areaServed": {
     "@type": "City",
     "name": "Palma de Mallorca"
@@ -86,8 +86,8 @@ export default async function RootLayout({
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": "39.5696",
-      "longitude": "2.6502"
+      "latitude": "39.5736032",
+      "longitude": "2.6386885"
     },
     "geoRadius": "50000"
   },
@@ -119,10 +119,10 @@ export default async function RootLayout({
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "47",
+    "ratingValue": "5",
+    "reviewCount": "4",
     "bestRating": "5",
-    "worstRating": "1"
+    "worstRating": "5"
   },
   "review": [
     {
