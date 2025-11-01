@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { i18n, type Locale } from '@/i18n-config';
+import { i18n } from '@/i18n-config';
 
 // Mapeo completo: ruta canónica (español) → traducciones
 const pathTranslations: Record<string, Record<string, string>> = {
