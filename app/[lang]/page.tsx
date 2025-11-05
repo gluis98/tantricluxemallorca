@@ -5,7 +5,7 @@ import HeroSection from '@/components/ui/sections/Hero';
 import Gallery from '@/components/ui/sections/Gallery';
 import ServicesSection from '@/components/ui/sections/Services';
 import AboutSection from '@/components/ui/sections/About';
-import TestimonialsSection from '@/components/ui/sections/Testimonials';
+// import TestimonialsSection from '@/components/ui/sections/Testimonials';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
 
