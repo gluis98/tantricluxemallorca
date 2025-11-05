@@ -33,7 +33,7 @@ export default async function TantricLuxeSpa({
         <AboutSection dictionary={dictionary.homepage.about_us_section} />
 
         {/* Testimonials Section */}
-        <TestimonialsSection dictionary={dictionary.homepage.testimonials_section} />
+        {/* <TestimonialsSection dictionary={dictionary.homepage.testimonials_section} /> */}
 
         {/* Contact Section */}
         <ContactSection dictionary={dictionary.homepage.contact_section} services={dictionary.servicesPage.services} />
