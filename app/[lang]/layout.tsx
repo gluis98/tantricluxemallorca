@@ -68,10 +68,10 @@ export default async function RootLayout({
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer Fray Luis de León, 7",
+    "streetAddress": "Carrer del Pare Bartomeu Pou, 44",
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
-    "postalCode": "07011",
+    "postalCode": "07003",
     "addressCountry": "ES"
   },
   "geo": {

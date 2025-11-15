@@ -292,7 +292,7 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
               </div>
               <div className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d384.42335882479!2d2.6414189753300223!3d39.573430493787484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sponle%20Paseo%20de%20Mallorca%2C%C2%A05B!5e0!3m2!1ses!2sve!4v1754062527548!5m2!1ses!2sve"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.0567287736594!2d2.6436748897564013!3d39.58087183283581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793d4f862b319%3A0xe5362cc17cc4db26!2sTantric%20Luxe%20Mallorca%20-%20Masajes%20Tantricos!5e0!3m2!1ses!2sve!4v1763166388129!5m2!1ses!2sve"
                   className="w-full h-full"
                   style={{ border: 0 }}
                   allowFullScreen
