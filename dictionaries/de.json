@@ -210,7 +210,7 @@
         "age": 19,
         "specialty": "Tantra Deluxe Massage",
         "image": "/images/masseurs/Aurora/aurora1.webp",
-        "images": ["/images/masseurs/Aurora/aurora1.webp", "/images/masseurs/Aurora/aurora2.webp"],
+        "images": ["/images/masseurs/Aurora/aurora1.webp", "/images/masseurs/Aurora/aurora2.webp", "/images/masseurs/Aurora/aurora3.webp", "/images/masseurs/Aurora/aurora4.webp", "/images/masseurs/Aurora/aurora5.webp", "/images/masseurs/Aurora/aurora6.webp"],
         "description": "Spezialistin für Tantra-Massage mit uralten Techniken. Ihre sanfte und erfahrene Berührung wird Sie in einen Zustand tiefer Entspannung und spiritueller Verbindung versetzen.",
         "skills": ["Tantra-Massage", "Tiefe Entspannung", "Uralte Techniken", "Spirituelle Verbindung"],
         "rating": 5,
@@ -241,12 +241,12 @@
         "reviews": 38
       },
       {
-        "id": 4,
+        "id": 2,
         "name": "Angela",
         "age": 22,
         "specialty": "Tantra-Erlebnis für Paare",
         "image": "/images/masseurs/Angela/angela1.webp",
-        "images": ["/images/masseurs/Angela/angela1.webp", "/images/masseurs/Angela/angela2.webp"],
+        "images": ["/images/masseurs/Angela/angela1.webp", "/images/masseurs/Angela/angela2.webp", "/images/masseurs/Angela/angela3.webp", "/images/masseurs/Angela/angela4.webp", "/images/masseurs/Angela/angela5.webp", "/images/masseurs/Angela/angela6.webp"],
         "description": "Erstaunliche Masseurin mit einer einzigartigen Fähigkeit, sich mit Paaren zu verbinden. Ihre Sitzungen sind transformativ und zutiefst befriedigend.",
         "skills": ["Paare", "Emotionale Verbindung", "Partner-Harmonie", "Gemeinsames Erlebnis"],
         "rating": 5,
