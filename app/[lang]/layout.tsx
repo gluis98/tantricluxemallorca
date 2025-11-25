@@ -6,6 +6,7 @@ import { getDictionary } from '@/dictionaries/get-dictionary';
 import { i18n, type Locale } from '@/i18n-config';
 import Header from '@/components/ui/sections/Header';
 import Footer from '@/components/ui/sections/Footer';
+import FloatingWhatsAppButton from '@/components/ui/buttons/FloatingWhatsAppButton';
 import '../../app/globals.css';
 
 export async function generateStaticParams() {
@@ -241,6 +242,9 @@ export default async function RootLayout({
           <Header lang={locale} dictionary={dictionary.header} />
           {children}
           <Footer lang={locale} dictionary={dictionary.footer} />
+
+          {/* Floating WhatsApp Button */}
+          <FloatingWhatsAppButton />
 
         </div>
 
