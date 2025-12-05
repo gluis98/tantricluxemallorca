@@ -8,14 +8,28 @@ import AboutSection from '@/components/ui/sections/About';
 // import TestimonialsSection from '@/components/ui/sections/Testimonials';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
+import MaintenanceModal from '@/components/modals/MaintenanceModal';
 
 export default async function TantricLuxeSpa({
   params,
 }: {
-  params: Promise<{ lang: Locale }>; 
+  params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
+
+  // MODO MANTENIMIENTO ACTIVADO
+  const maintenanceMode = true;
+
+  if (maintenanceMode) {
+    return (
+      <>
+        {/* Modal de Mantenimiento - No puede cerrarse */}
+        <MaintenanceModal />
+      </>
+    );
+  }
+
   return (
     <>
       <main className="relative z-10 px-0 md:px-8 py-8">
@@ -23,7 +37,7 @@ export default async function TantricLuxeSpa({
         {/* Hero Section */}
         <HeroSection dictionary={dictionary.homepage} />
 
-        {/* Gallery Section */} 
+        {/* Gallery Section */}
         <Gallery dictionary={dictionary.homepage.gallery_section} />
 
         {/* Services Section */}

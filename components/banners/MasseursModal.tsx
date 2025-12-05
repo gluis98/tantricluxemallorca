@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 const MasajistasModal = () => {
+  // DESHABILITADO - Modal de masajistas
   const [showModal, setShowModal] = useState(false);
   const [animateCards, setAnimateCards] = useState(false);
 
@@ -36,16 +37,16 @@ const MasajistasModal = () => {
   ];
 
   useEffect(() => {
-    // Modal aparece después de 5 segundos
-    const timer = setTimeout(() => {
-      setShowModal(true);
-      // Animación de las tarjetas después de que aparece el modal
-      setTimeout(() => {
-        setAnimateCards(true);
-      }, 200);
-    }, 5000);
+    // DESHABILITADO - Modal aparece después de 5 segundos
+    // const timer = setTimeout(() => {
+    //   setShowModal(true);
+    //   // Animación de las tarjetas después de que aparece el modal
+    //   setTimeout(() => {
+    //     setAnimateCards(true);
+    //   }, 200);
+    // }, 5000);
 
-    return () => clearTimeout(timer);
+    // return () => clearTimeout(timer);
   }, []);
 
   const closeModal = () => {

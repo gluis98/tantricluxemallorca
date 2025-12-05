@@ -38,7 +38,7 @@ const pathTranslations: Record<string, Record<string, string>> = {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  
+
   // Ignorar archivos estáticos, API, etc.
   if (
     pathname.startsWith('/api') ||
@@ -50,64 +50,42 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Verificar si tiene prefijo /en o /de
+  // ====================================
+  // MODO MANTENIMIENTO ACTIVADO
+  // ====================================
+  // Redirigir todas las rutas al home según el idioma
+
+  // Detectar el idioma de la URL actual
   const pathnameHasLocale = i18n.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  // CASO 1: URL con prefijo /en o /de
   if (pathnameHasLocale) {
     const segments = pathname.split('/').filter(Boolean);
-    const locale = segments[0]; // 'en' o 'de'
+    const locale = segments[0]; // 'es', 'en', o 'de'
     const pathWithoutLocale = '/' + segments.slice(1).join('/') || '/';
 
-    // Si alguien intenta acceder a /es/algo, redirigir a /algo (sin prefijo)
-    if (locale === 'es') {
-      const cleanPath = pathname.replace('/es', '') || '/';
-      return NextResponse.redirect(new URL(cleanPath, request.url));
-    }
-
-    // Encontrar la ruta canónica (nombre de carpeta real) para /en y /de
-    let canonicalPath = pathWithoutLocale;
-    
-    for (const [canonical, translations] of Object.entries(pathTranslations)) {
-      if (translations[locale as keyof typeof translations] === pathWithoutLocale) {
-        canonicalPath = canonical;
-        break;
+    // Si no está en el home, redirigir al home del idioma correspondiente
+    if (pathWithoutLocale !== '/') {
+      if (locale === 'es') {
+        return NextResponse.redirect(new URL('/', request.url));
+      } else {
+        return NextResponse.redirect(new URL(`/${locale}`, request.url));
       }
     }
 
-    // Reescribir a la ruta canónica si es diferente
-    // ej: /en/about → /en/acerca (Next.js usa carpeta /acerca)
-    if (canonicalPath !== pathWithoutLocale) {
-      return NextResponse.rewrite(new URL(`/${locale}${canonicalPath}`, request.url));
+    // Permitir el acceso al home con el idioma correspondiente
+    return NextResponse.rewrite(new URL(`/${locale}/`, request.url));
+  } else {
+    // URL sin prefijo de idioma
+    // Si no es la raíz, redirigir a la raíz
+    if (pathname !== '/') {
+      return NextResponse.redirect(new URL('/', request.url));
     }
-    
-    return NextResponse.next();
-  }
 
-  // CASO 2: URL sin prefijo (potencialmente español o traducción sin prefijo)
-  
-  // Verificar si la ruta es una traducción de inglés o alemán SIN el prefijo correcto
-  // ej: Si alguien va a /about (sin /en), debe ir a /en/about
-  for (const [canonical, translations] of Object.entries(pathTranslations)) {
-    // Verificar inglés
-    if (translations.en === pathname && translations.es !== pathname) {
-      // Esta es una URL en inglés sin el prefijo /en
-      return NextResponse.redirect(new URL(`/en${pathname}`, request.url));
-    }
-    
-    // Verificar alemán
-    if (translations.de === pathname && translations.es !== pathname) {
-      // Esta es una URL en alemán sin el prefijo /de
-      return NextResponse.redirect(new URL(`/de${pathname}`, request.url));
-    }
+    // Reescribir al home español
+    return NextResponse.rewrite(new URL('/es/', request.url));
   }
-
-  // Si llegamos aquí, es una ruta en español (default)
-  // Reescribir internamente para que Next.js encuentre la carpeta correcta
-  // ej: /servicios → /es/servicios (interno, usuario ve /servicios)
-  return NextResponse.rewrite(new URL(`/es${pathname}`, request.url));
 }
 
 export const config = {
