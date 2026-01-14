@@ -290,17 +290,27 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                   ))}
                 </ul>
               </div>
-              <div className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Torrent+8+Ponent+07014+Palma+Illes+Balears"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl block group cursor-pointer"
+              >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.0567287736594!2d2.6436748897564013!3d39.58087183283581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793d4f862b319%3A0xe5362cc17cc4db26!2sTantric%20Luxe%20Mallorca%20-%20Masajes%20Tantricos!5e0!3m2!1ses!2sve!4v1763166388129!5m2!1ses!2sve"
-                  className="w-full h-full"
+                  src="https://www.google.com/maps?q=Carrer+del+Torrent+8+Ponent+07014+Palma+Illes+Balears&output=embed"
+                  className="w-full h-full pointer-events-none"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación Tantric Luxe Mallorca - Centro de masaje tantrico en Palma"
                 />
-              </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-amber-900/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/50">
+                    <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">📍 Haz clic para abrir en Google Maps</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </section>

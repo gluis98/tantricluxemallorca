@@ -69,7 +69,7 @@ export default async function RootLayout({
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer del Pare Bartomeu Pou, 44",
+    "streetAddress": "Carrer del Torrent, 8, Ponent, 07014 Palma, Illes Balears",
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
     "postalCode": "07003",

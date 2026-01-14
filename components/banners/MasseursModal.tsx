@@ -86,6 +86,22 @@ const MasajistasModal = () => {
           }}
         >
 
+                     {/* Mensaje de nuevas masajistas en camino */}
+          <div className="mb-6 bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-900/30">
+            <div className="text-center">
+              <div className="inline-block mb-3">
+                <span className="text-4xl">✨</span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-light tracking-wider mb-3 text-amber-400 cormorant-garamond">
+                Nuevas Masajistas en Camino
+              </h3>
+              <p className="text-sm md:text-base font-light text-gray-300 leading-relaxed tenali-ramakrishna">
+                Estamos actualizando nuestros servicios para ofrecerte una experiencia aún más excepcional. 
+                Pronto tendremos nuevas especialistas que se unirán a nuestro equipo.
+              </p>
+            </div>
+          </div>
+
                      {/* Grid de Masajistas */}
           <div className="flex flex-col h-full gap-2 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4">
             {masajistas.map((masajista, index) => {
