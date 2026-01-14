@@ -141,12 +141,6 @@ export default function MasseusesPageClient({ dictionary, masseuses }: {
             </p>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {masseuses.sort((a, b) => a.id - b.id).map((masseuse) => (
-            <MasajistaCard key={masseuse.id} masseuse={masseuse} dictionary={dictionary} />
-          ))}
-        </div>
       </div>
     </main>
   );

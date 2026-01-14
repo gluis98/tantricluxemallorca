@@ -9,25 +9,6 @@ export default function GallerySection({ dictionary }: {
   }
 }) {
 
-    // Aurora images
-    const auroraImages = [
-      { src: '/images/masseurs/Aurora/aurora1.webp', alt: 'Aurora - Masajista Tantrica Mallorca 1' },
-      { src: '/images/masseurs/Aurora/aurora2.webp', alt: 'Aurora - Masajista Tantrica Mallorca 2' },
-      { src: '/images/masseurs/Aurora/aurora3.webp', alt: 'Aurora - Masajista Tantrica Mallorca 3' },
-      { src: '/images/masseurs/Aurora/aurora4.webp', alt: 'Aurora - Masajista Tantrica Mallorca 4' },
-      { src: '/images/masseurs/Aurora/aurora5.webp', alt: 'Aurora - Masajista Tantrica Mallorca 5' },
-      { src: '/images/masseurs/Aurora/aurora6.webp', alt: 'Aurora - Masajista Tantrica Mallorca 6' },
-    ];
-
-    // Angela images
-    const angelaImages = [
-      { src: '/images/masseurs/Angela/angela1.webp', alt: 'Angela - Masajista Tantrica Palma 1' },
-      { src: '/images/masseurs/Angela/angela2.webp', alt: 'Angela - Masajista Tantrica Palma 2' },
-      { src: '/images/masseurs/Angela/angela3.webp', alt: 'Angela - Masajista Tantrica Palma 3' },
-      { src: '/images/masseurs/Angela/angela4.webp', alt: 'Angela - Masajista Tantrica Palma 4' },
-      { src: '/images/masseurs/Angela/angela5.webp', alt: 'Angela - Masajista Tantrica Palma 5' },
-      { src: '/images/masseurs/Angela/angela6.webp', alt: 'Angela - Masajista Tantrica Palma 6' },
-    ];
 
     return (
 
@@ -94,53 +75,22 @@ export default function GallerySection({ dictionary }: {
           </div>
         </div>
 
-        {/* Aurora Gallery Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-light tracking-wider text-amber-400 cormorant-garamond">
-              Aurora
-            </h2>
-            <div className="w-24 h-px bg-amber-400 mx-auto mt-4"></div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {auroraImages.map((image, index) => (
-              <div key={`aurora-${index}`} className="relative group">
-                <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white aspect-square">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover rounded-xs transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Angela Gallery Section */}
-        <div>
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-light tracking-wider text-amber-400 cormorant-garamond">
-              Angela
-            </h2>
-            <div className="w-24 h-px bg-amber-400 mx-auto mt-4"></div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {angelaImages.map((image, index) => (
-              <div key={`angela-${index}`} className="relative group">
-                <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white aspect-square">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover rounded-xs transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            ))}
+        {/* Mensaje de nuevas masajistas en camino */}
+        <div className="mb-12 bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
+          <div className="text-center">
+            <div className="inline-block mb-4">
+              <span className="text-5xl md:text-6xl">✨</span>
+            </div>
+            <h3 className="text-2xl md:text-4xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">
+              Nuevas Masajistas en Camino
+            </h3>
+            <div className="w-24 h-px bg-amber-400 mx-auto mb-6"></div>
+            <p className="text-lg md:text-xl font-light text-gray-300 leading-relaxed max-w-3xl mx-auto tenali-ramakrishna">
+              Estamos actualizando nuestros servicios para ofrecerte una experiencia aún más excepcional. 
+              Pronto tendremos nuevas especialistas que se unirán a nuestro equipo, cada una con su toque único 
+              y profesional. Mientras tanto, nuestras masajistas actuales están listas para brindarte el mejor 
+              servicio de masaje tántrico en Mallorca.
+            </p>
           </div>
         </div>
       </div>
