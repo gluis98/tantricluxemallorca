@@ -42,8 +42,9 @@ const Header = ({ lang, dictionary }: {
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Top bar */}
                 <div className="flex-1 flex justify-start">
-                    <div className="text-2xl tracking-wider text-gray-300 tenali-ramakrishna">
-                        {dictionary.location}
+                    <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight">
+                        <span className="hidden sm:inline">{dictionary.location}</span>
+                        <span className="sm:hidden">Carrer del Torrent, 8<br />Ponent, 07014 Palma</span>
                     </div>
                 </div>
 
