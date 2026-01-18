@@ -48,8 +48,8 @@ const Header = ({ lang, dictionary }: {
                     </div>
                 </div>
 
-                {/* Main navigation */}
-                <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-xl tracking-wider tenali-ramakrishna">
+                {/* Main navigation - Solo visible en pantallas grandes (lg y superiores) */}
+                <nav className="hidden lg:flex flex-1 justify-center items-center space-x-8 text-xl tracking-wider tenali-ramakrishna">
                     <Link href={lang === i18n.defaultLocale ? '/' : `/${lang}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.home}</Link>
                     <Link href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}${dictionary.paths.about}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.about}</Link>
                     <Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.services}</Link>
@@ -59,9 +59,10 @@ const Header = ({ lang, dictionary }: {
 
                 <div className="flex flex-1 justify-end items-center gap-4">
                     <LanguageSwitcher />
+                    {/* Botón de hamburguesa - Visible en móvil y tablets (hasta lg) */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden text-white"
+                        className="lg:hidden text-white hover:text-amber-400 transition-colors"
                         aria-label={isMenuOpen ? dictionary.closeMenu : dictionary.openMenu}
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
