@@ -1,16 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 
 export default function FloatingWhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
-  const pathname = usePathname();
-
-  // Extraer el idioma actual del pathname (ej: /es/about -> es)
-  const currentLang = pathname?.split('/')[1] || 'es';
-  const whatsappPath = `/${currentLang}/whatsapp`;
 
   useEffect(() => {
     // Mostrar el botón después de un pequeño delay para efecto de entrada
@@ -21,9 +14,16 @@ export default function FloatingWhatsAppButton() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent("Hola, me gustaría información sobre los servicios TL Mallorca.");
+    const phoneNumber = "34602560426"; // +34 602 560 426
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
-    <Link
-      href={whatsappPath}
+    <button
+      onClick={handleWhatsAppClick}
       className={`fixed bottom-6 right-6 z-[100] group transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
@@ -58,6 +58,6 @@ export default function FloatingWhatsAppButton() {
           <div className="border-8 border-transparent border-l-gray-900"></div>
         </div>
       </div>
-    </Link>
+    </button>
   );
 }
