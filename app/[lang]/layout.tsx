@@ -7,6 +7,7 @@ import { i18n, type Locale } from '@/i18n-config';
 import Header from '@/components/ui/sections/Header';
 import Footer from '@/components/ui/sections/Footer';
 import FloatingWhatsAppButton from '@/components/ui/buttons/FloatingWhatsAppButton';
+import { headers } from 'next/headers';
 import '../../app/globals.css';
 
 export async function generateStaticParams() {
@@ -52,9 +53,88 @@ export default async function RootLayout({
   
   const dictionary = await getDictionary(locale);
 
+  // Obtener la ruta actual desde los headers (agregada por el middleware)
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '';
+  
+  // Función para generar URLs alternativas (hreflang)
+  const getAlternateUrls = () => {
+    const baseUrl = 'https://tantricluxemallorca.com';
+    const pathTranslations: Record<string, Record<string, string>> = {
+      '/': { es: '/', en: '/', de: '/' },
+      '/acerca': { es: '/acerca', en: '/about', de: '/uber-uns' },
+      '/servicios': { es: '/servicios', en: '/services', de: '/leistungen' },
+      '/contacto': { es: '/contacto', en: '/contact', de: '/kontakt' },
+      '/masajistas': { es: '/masajistas', en: '/masseuses', de: '/masseurinnen' },
+      '/whatsapp': { es: '/whatsapp', en: '/whatsapp', de: '/whatsapp' },
+      // Servicios Golden - se manejan dinámicamente en las páginas individuales
+    };
+
+    // Detectar la ruta canónica actual
+    let currentPath = pathname.replace(`/${locale}`, '') || '/';
+    if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
+    
+    // Si es una ruta dinámica de servicio, las páginas individuales manejan su propio hreflang
+    if (currentPath.startsWith('/servicios/') && currentPath.split('/').length > 2) {
+      // Para rutas dinámicas, retornar solo la versión actual (las páginas individuales manejan hreflang)
+      return [{
+        hreflang: locale,
+        href: `${baseUrl}${pathname}`,
+      }];
+    }
+    
+    // Encontrar la ruta canónica
+    let canonicalPath = currentPath;
+    for (const [canonical, translations] of Object.entries(pathTranslations)) {
+      if (translations[locale] === currentPath) {
+        canonicalPath = canonical;
+        break;
+      }
+    }
+
+    // Generar alternativas para todos los idiomas
+    const alternates: Array<{ hreflang: string; href: string }> = [];
+    
+    i18n.locales.forEach((loc) => {
+      const translatedPath = pathTranslations[canonicalPath]?.[loc] || canonicalPath;
+      const url = translatedPath === '/' 
+        ? `${baseUrl}/${loc}` 
+        : `${baseUrl}/${loc}${translatedPath}`;
+      
+      alternates.push({
+        hreflang: loc,
+        href: url,
+      });
+    });
+    
+    // x-default apunta al español
+    const defaultPath = pathTranslations[canonicalPath]?.['es'] || canonicalPath;
+    const defaultUrl = defaultPath === '/' 
+      ? `${baseUrl}/es` 
+      : `${baseUrl}/es${defaultPath}`;
+    
+    alternates.push({
+      hreflang: 'x-default',
+      href: defaultUrl,
+    });
+
+    return alternates;
+  };
+
+  const alternateUrls = getAlternateUrls();
+
   return (
     <html lang={locale}>
       <head>
+        {/* hreflang tags para SEO multiidioma */}
+        {alternateUrls.map((alt) => (
+          <link
+            key={alt.hreflang}
+            rel="alternate"
+            hrefLang={alt.hreflang}
+            href={alt.href}
+          />
+        ))}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -239,7 +319,15 @@ export default async function RootLayout({
             </div>
           </div>
 
-          <Header lang={locale} dictionary={dictionary.header} />
+          <Header 
+            lang={locale} 
+            dictionary={dictionary.header}
+            services={Object.values(dictionary.goldenServices || {}).map((service: any) => ({
+              slug: service.slug || '',
+              title: service.title || '',
+              description: service.description || '',
+            }))}
+          />
           {children}
           <Footer lang={locale} dictionary={dictionary.footer} />
 

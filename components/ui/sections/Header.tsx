@@ -1,13 +1,19 @@
 'use client';
 
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { i18n } from '@/i18n-config';
 import LanguageSwitcher from '@/components/ui/buttons/LanguageSwitcher';
 
-const Header = ({ lang, dictionary }: {
+type Service = {
+    slug: string;
+    title: string;
+    description: string;
+};
+
+const Header = ({ lang, dictionary, services = [] }: {
     lang: string,
     dictionary: {
         location: string;
@@ -21,9 +27,11 @@ const Header = ({ lang, dictionary }: {
         paths: { about: string; services: string; masseuses: string; contact: string; };
         openMenu: string;
         closeMenu: string;
-    }
+    };
+    services?: Service[];
 }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isServicesDropdownOpen, setIsServicesDropdownOpen] = React.useState(false);
 
     return (
         <>
@@ -52,7 +60,59 @@ const Header = ({ lang, dictionary }: {
                 <nav className="hidden lg:flex flex-1 justify-center items-center space-x-8 text-xl tracking-wider tenali-ramakrishna">
                     <Link href={lang === i18n.defaultLocale ? '/' : `/${lang}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.home}</Link>
                     <Link href={lang === i18n.defaultLocale ? '/acerca' : `/${lang}${dictionary.paths.about}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.about}</Link>
-                    <Link href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.services}</Link>
+                    
+                    {/* Services Dropdown */}
+                    <div 
+                        className="relative group"
+                        onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                        onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                    >
+                        <Link 
+                            href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`}
+                            className="hover:text-amber-400 transition-colors uppercase flex items-center gap-1"
+                        >
+                            {dictionary.nav.services}
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                        </Link>
+                        
+                        {/* Dropdown Menu */}
+                        {isServicesDropdownOpen && services.length > 0 && (
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-gradient-to-br from-black/95 via-gray-950/95 to-amber-950/90 backdrop-blur-md rounded-2xl shadow-2xl border border-amber-900/30 overflow-hidden z-50">
+                                <div className="p-2">
+                                    {services.map((service, index) => (
+                                        <Link
+                                            key={index}
+                                            href={`/${lang}/servicios/${service.slug}`}
+                                            className="block px-4 py-3 rounded-xl hover:bg-amber-900/30 transition-all duration-300 group/item"
+                                        >
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-amber-400 text-lg mt-1 group-hover/item:scale-110 transition-transform">✨</span>
+                                                <div className="flex-1">
+                                                    <h4 className="text-amber-300 font-light text-sm tracking-wider mb-1 group-hover/item:text-amber-200 transition-colors">
+                                                        {service.title}
+                                                    </h4>
+                                                    <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 group-hover/item:text-gray-300 transition-colors">
+                                                        {service.description.substring(0, 80)}...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                    <div className="mt-2 pt-2 border-t border-amber-900/30">
+                                        <Link
+                                            href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`}
+                                            className="block px-4 py-3 rounded-xl hover:bg-amber-600/20 transition-all duration-300 text-center"
+                                        >
+                                            <span className="text-amber-400 text-sm font-light tracking-wider uppercase">
+                                                {lang === 'es' ? 'Ver Todos los Servicios' : lang === 'en' ? 'View All Services' : 'Alle Leistungen anzeigen'}
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    
                     <Link href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.masseuses}</Link>
                     <Link href={lang === i18n.defaultLocale ? '/contacto' : `/${lang}${dictionary.paths.contact}`} className="hover:text-amber-400 transition-colors uppercase">{dictionary.nav.contact}</Link>
                 </nav>
@@ -119,7 +179,7 @@ const Header = ({ lang, dictionary }: {
                         </button>
 
                         {/* Opciones de menú */}
-                        <nav className="flex flex-col justify-center h-full px-8 space-y-8 mt-24">
+                        <nav className="flex flex-col justify-center h-full px-8 space-y-8 mt-24 overflow-y-auto">
                             <Link
                                 href={lang === i18n.defaultLocale ? '/' : `/${lang}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
@@ -134,13 +194,44 @@ const Header = ({ lang, dictionary }: {
                             >
                                 {dictionary.nav.about}
                             </Link>
-                            <Link
-                                href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`}
-                                className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {dictionary.nav.services}
-                            </Link>
+                            
+                            {/* Services Section with Dropdown */}
+                            <div className="border-b border-amber-400/20 pb-2">
+                                <Link
+                                    href={lang === i18n.defaultLocale ? '/servicios' : `/${lang}${dictionary.paths.services}`}
+                                    className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase flex items-center justify-between"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {dictionary.nav.services}
+                                </Link>
+                                
+                                {/* Services Dropdown in Mobile */}
+                                {services.length > 0 && (
+                                    <div className="mt-4 space-y-3 pl-4">
+                                        {services.map((service, index) => (
+                                            <Link
+                                                key={index}
+                                                href={`/${lang}/servicios/${service.slug}`}
+                                                className="block py-2 px-3 rounded-lg hover:bg-amber-900/30 transition-all duration-300 group"
+                                                onClick={() => setIsMenuOpen(false)}
+                                            >
+                                                <div className="flex items-start gap-2">
+                                                    <span className="text-amber-400 text-sm mt-1">✨</span>
+                                                    <div>
+                                                        <h4 className="text-amber-300 text-sm font-light tracking-wide mb-1 group-hover:text-amber-200">
+                                                            {service.title}
+                                                        </h4>
+                                                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">
+                                                            {service.description.substring(0, 60)}...
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                            
                             <Link
                                 href={lang === i18n.defaultLocale ? '/masajistas' : `/${lang}${dictionary.paths.masseuses}`}
                                 className="text-2xl tracking-widest tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-2"

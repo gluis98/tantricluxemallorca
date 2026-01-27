@@ -42,7 +42,7 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
 
   const getTranslatedPath = (targetLocale: string) => {
-    if (!pathname) return targetLocale === 'es' ? '/' : `/${targetLocale}`;
+    if (!pathname) return `/${targetLocale}`;
 
     // 1. Detectar el idioma actual desde la ruta
     let currentLocale: string = 'es'; // Por defecto español
@@ -54,8 +54,11 @@ export default function LanguageSwitcher() {
     } else if (pathname.startsWith('/de/') || pathname === '/de') {
       currentLocale = 'de';
       pathWithoutLocale = pathname.replace('/de', '') || '/';
+    } else if (pathname.startsWith('/es/') || pathname === '/es') {
+      currentLocale = 'es';
+      pathWithoutLocale = pathname.replace('/es', '') || '/';
     }
-    // Si no tiene prefijo, ya es español
+    // Si no tiene prefijo, ya es español (legacy)
 
     // 2. Encontrar la ruta canónica (española) desde la ruta actual
     let canonicalPath = pathWithoutLocale;
@@ -70,21 +73,19 @@ export default function LanguageSwitcher() {
     // 3. Obtener la traducción al idioma destino
     const translatedPath = pathTranslations[canonicalPath]?.[targetLocale] || canonicalPath;
 
-    // 4. Construir la URL final
-    if (targetLocale === 'es') {
-      // Español SIN prefijo
-      return translatedPath;
-    } else {
-      // Inglés y alemán CON prefijo
-      return `/${targetLocale}${translatedPath}`;
+    // 4. Construir la URL final - TODOS los idiomas con prefijo
+    if (translatedPath === '/') {
+      return `/${targetLocale}`;
     }
+    return `/${targetLocale}${translatedPath}`;
   };
 
   // Detectar idioma actual para resaltar el botón activo
   const getCurrentLocale = (): string => {
     if (pathname.startsWith('/en')) return 'en';
     if (pathname.startsWith('/de')) return 'de';
-    return 'es';
+    if (pathname.startsWith('/es')) return 'es';
+    return 'es'; // Por defecto español
   };
 
   const currentLocale = getCurrentLocale();

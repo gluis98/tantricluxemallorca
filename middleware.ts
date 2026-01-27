@@ -34,6 +34,72 @@ const pathTranslations: Record<string, Record<string, string>> = {
     en: '/whatsapp',
     de: '/whatsapp',
   },
+  // Servicios Golden
+  '/servicios/golden-relax': {
+    es: '/servicios/golden-relax',
+    en: '/servicios/golden-relax',
+    de: '/servicios/golden-relax',
+  },
+  '/servicios/golden-sensitivo': {
+    es: '/servicios/golden-sensitivo',
+    en: '/servicios/golden-sensitive',
+    de: '/servicios/golden-sensitiv',
+  },
+  '/servicios/golden-sensitive': {
+    es: '/servicios/golden-sensitivo',
+    en: '/servicios/golden-sensitive',
+    de: '/servicios/golden-sensitiv',
+  },
+  '/servicios/golden-sensitiv': {
+    es: '/servicios/golden-sensitivo',
+    en: '/servicios/golden-sensitive',
+    de: '/servicios/golden-sensitiv',
+  },
+  '/servicios/experiencia-golden': {
+    es: '/servicios/experiencia-golden',
+    en: '/servicios/golden-experience',
+    de: '/servicios/golden-erlebnis',
+  },
+  '/servicios/golden-experience': {
+    es: '/servicios/experiencia-golden',
+    en: '/servicios/golden-experience',
+    de: '/servicios/golden-erlebnis',
+  },
+  '/servicios/golden-erlebnis': {
+    es: '/servicios/experiencia-golden',
+    en: '/servicios/golden-experience',
+    de: '/servicios/golden-erlebnis',
+  },
+  '/servicios/golden-suite-experiencia': {
+    es: '/servicios/golden-suite-experiencia',
+    en: '/servicios/golden-suite-experience',
+    de: '/servicios/golden-suite-erlebnis',
+  },
+  '/servicios/golden-suite-experience': {
+    es: '/servicios/golden-suite-experiencia',
+    en: '/servicios/golden-suite-experience',
+    de: '/servicios/golden-suite-erlebnis',
+  },
+  '/servicios/golden-suite-erlebnis': {
+    es: '/servicios/golden-suite-experiencia',
+    en: '/servicios/golden-suite-experience',
+    de: '/servicios/golden-suite-erlebnis',
+  },
+  '/servicios/velvet-duet-pareja': {
+    es: '/servicios/velvet-duet-pareja',
+    en: '/servicios/velvet-duet-couple',
+    de: '/servicios/velvet-duet-paar',
+  },
+  '/servicios/velvet-duet-couple': {
+    es: '/servicios/velvet-duet-pareja',
+    en: '/servicios/velvet-duet-couple',
+    de: '/servicios/velvet-duet-paar',
+  },
+  '/servicios/velvet-duet-paar': {
+    es: '/servicios/velvet-duet-pareja',
+    en: '/servicios/velvet-duet-couple',
+    de: '/servicios/velvet-duet-paar',
+  },
 };
 
 export function middleware(request: NextRequest) {
@@ -45,7 +111,9 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/images') ||
     pathname.includes('.') ||
-    pathname === '/favicon.ico'
+    pathname === '/favicon.ico' ||
+    pathname === '/sitemap.xml' ||
+    pathname === '/robots.txt'
   ) {
     return NextResponse.next();
   }
@@ -56,25 +124,40 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) {
-    // URL con prefijo de idioma (ej: /en/about, /de/uber-uns)
+    // URL con prefijo de idioma (ej: /es/, /en/about, /de/uber-uns)
     const segments = pathname.split('/').filter(Boolean);
     const locale = segments[0] as string; // 'es', 'en', o 'de'
     const pathWithoutLocale = '/' + segments.slice(1).join('/') || '/';
 
+    // Si es una ruta de servicio dinámico (/servicios/[slug]), permitir que pase directamente
+    // Next.js manejará la ruta dinámica
+    if (pathWithoutLocale.startsWith('/servicios/') && segments.length >= 3) {
+      // Es una ruta dinámica de servicio, reescribir directamente
+      const response = NextResponse.rewrite(new URL(`/${locale}${pathWithoutLocale}`, request.url));
+      response.headers.set('x-pathname', pathname);
+      return response;
+    }
+
     // Buscar la ruta canónica desde la ruta traducida
     let canonicalPath = pathWithoutLocale;
+    let found = false;
+    
+    // Primero buscar rutas exactas
     for (const [canonical, translations] of Object.entries(pathTranslations)) {
       if (translations[locale] === pathWithoutLocale) {
         canonicalPath = canonical;
+        found = true;
         break;
       }
     }
 
     // Reescribir a la ruta canónica con el idioma
-    return NextResponse.rewrite(new URL(`/${locale}${canonicalPath}`, request.url));
+    const response = NextResponse.rewrite(new URL(`/${locale}${canonicalPath}`, request.url));
+    // Agregar header con la ruta para hreflang
+    response.headers.set('x-pathname', pathname);
+    return response;
   } else {
-    // URL sin prefijo de idioma (español por defecto)
-    // Buscar si la ruta existe en las traducciones
+    // URL sin prefijo de idioma - Redirigir a /es/ (español por defecto)
     let locale = 'es';
     let canonicalPath = pathname;
 
@@ -86,8 +169,11 @@ export function middleware(request: NextRequest) {
       }
     }
 
-    // Reescribir al español (sin prefijo)
-    return NextResponse.rewrite(new URL(`/${locale}${canonicalPath}`, request.url));
+    // Redirigir a /es/ con la ruta correcta
+    const newPath = canonicalPath === '/' ? '/es' : `/es${canonicalPath}`;
+    const url = request.nextUrl.clone();
+    url.pathname = newPath;
+    return NextResponse.redirect(url);
   }
 }
 
