@@ -65,11 +65,11 @@ export default async function RootLayout({
   "alternateName": "Tantric Luxe",
   "description": "Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas de masaje tantrico en Palma de Mallorca con máxima privacidad y profesionalidad.",
   "url": "https://tantricluxemallorca.com/",
-  "telephone": "+34-691-53-61-35",
+  "telephone": "+34-602-560-426",
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer del Torrent, 8, Ponent, 07014 Palma, Illes Balears",
+    "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
     "postalCode": "07003",

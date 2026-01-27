@@ -1,6 +1,6 @@
 {
   "header": {
-    "location": "Carrer del Torrent, 8, Ponent, 07014 Palma, Illes Balears",
+    "location": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "nav": {
@@ -61,10 +61,10 @@
       "form_title": "BOOK TANTRIC MASSAGE PALMA",
       "info_title": "CONTACT INFORMATION",
       "location_title": "Tantric Massage Center",
-      "location_address": "Carrer del Torrent, 8, Ponent, 07014 Palma, Illes Balears",
+      "location_address": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
       "location_note": "Palma de Mallorca",
       "whatsapp_title": "WhatsApp",
-      "whatsapp_number": "+34 691536135",
+      "whatsapp_number": "+34 602 560 426",
       "whatsapp_note": "Immediate response for bookings",
       "schedule_title": "Schedule",
       "schedule_days": "Monday to Sunday",
@@ -261,8 +261,8 @@
     "description": "We are here to make your perfect experience a reality. Contact us to book or ask any questions about our exclusive services.",
     "info_title": "CONTACT INFORMATION",
     "contact_info": [
-      { "icon": "📍", "title": "LOCATION", "line1": "Carrer del Torrent, 8, Ponent", "line2": "07014 Palma, Illes Balears", "line3": "Exclusive and discreet area in the historic center" },
-      { "icon": "📱", "title": "WHATSAPP PREFERRED", "line1": "+34 691 53 61 35", "line2": "Guaranteed response in less than 1 hour", "line3": "24/7 personalized attention" },
+      { "icon": "📍", "title": "LOCATION", "line1": "Carrer del Pare Bartomeu Pou, 44, Nord", "line2": "07003 Palma, Illes Balears", "line3": "Exclusive and discreet area in the historic center" },
+      { "icon": "📱", "title": "WHATSAPP PREFERRED", "line1": "+34 602 560 426", "line2": "Guaranteed response in less than 1 hour", "line3": "24/7 personalized attention" },
       { "icon": "⏰", "title": "HOURS", "line1": "Monday to Sunday", "line2": "09:00 - 23:00", "line3": "Services by appointment" },
       { "icon": "📧", "title": "EMAIL", "line1": "info@tantricluxemallorca.com", "line2": "For general inquiries and bookings", "line3": "Response within 24 hours maximum" }
     ],

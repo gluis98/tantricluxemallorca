@@ -6,7 +6,7 @@ export default function WhatsAppRedirect() {
   useEffect(() => {
     // Mensaje personalizado para WhatsApp
     const message = encodeURIComponent("Hola, me gustaría información sobre los servicios TL Mallorca.");
-    const phoneNumber = "34691536135";
+    const phoneNumber = "34602560426";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     // Redirigir automáticamente a WhatsApp
@@ -32,7 +32,7 @@ export default function WhatsAppRedirect() {
         <button
           onClick={() => {
             const message = encodeURIComponent("Hola, me gustaría información sobre los servicios TL Mallorca.");
-            const phoneNumber = "34691536135";
+            const phoneNumber = "34602560426";
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappUrl, '_blank');
           }}

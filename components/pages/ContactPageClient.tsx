@@ -154,7 +154,7 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
             {/* Quick Access Buttons */}
             <div className="space-y-4">
               <a
-                href="https://wa.me/34691536135"
+                href="https://wa.me/34602560426"
                 target="_blank"
                 className="w-full flex items-center justify-center tenali-ramakrishna border-1 border-green-400 bg-gradient-to-r from-green-900/30 to-green-800/30 rounded-3xl hover:from-green-600/40 hover:to-green-600/40 text-white px-8 py-4 text-lg font-medium tracking-wider transition-all duration-300"
               >
@@ -162,7 +162,7 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 {dictionary.whatsapp_button_text}
               </a>
               <a
-                href="tel:+34691536135"
+                href="tel:+34602560426"
                 className="w-full flex items-center justify-center tenali-ramakrishna border-1 border-amber-400 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-amber-600/40 hover:to-amber-600/40 text-white px-8 py-4 text-lg font-medium tracking-wider transition-all duration-300"
               >
                 <span className="mr-3 text-2xl">📞</span>
@@ -291,13 +291,13 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 </ul>
               </div>
               <a 
-                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Torrent+8+Ponent+07014+Palma+Illes+Balears"
+                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl block group cursor-pointer"
               >
                 <iframe
-                  src="https://www.google.com/maps?q=Carrer+del+Torrent+8+Ponent+07014+Palma+Illes+Balears&output=embed"
+                  src="https://www.google.com/maps?q=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears&output=embed"
                   className="w-full h-full pointer-events-none"
                   style={{ border: 0 }}
                   allowFullScreen

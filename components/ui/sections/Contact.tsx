@@ -65,8 +65,8 @@ export default function ContactSection({ dictionary, services }: { dictionary: D
                             <div className="flex-1 min-w-0">
                                 <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna">{dictionary.location_title}</h4>
                                 <p className="text-gray-300 break-words leading-relaxed text-sm sm:text-base">
-                                    <span className="block sm:inline">Carrer del Torrent, 8, Ponent,</span>
-                                    <span className="block sm:inline"> 07014 Palma, Illes Balears</span>
+                                    <span className="block sm:inline">Carrer del Pare Bartomeu Pou, 44, Nord,</span>
+                                    <span className="block sm:inline"> 07003 Palma, Illes Balears</span>
                                 </p>
                                 <p className="text-sm text-gray-400">{dictionary.location_note}</p>
                             </div>
