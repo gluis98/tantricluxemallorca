@@ -99,20 +99,6 @@ export default async function ServicesPage({
           },
         },
       })) || []),
-      ...(Object.values(dictionary.goldenServices || {}).map((service: any, index: number) => ({
-        '@type': 'ListItem',
-        position: (dictionary.servicesPage.services?.length || 0) + index + 1,
-        item: {
-          '@type': 'Service',
-          name: service.title,
-          description: service.description,
-          offers: {
-            '@type': 'Offer',
-            price: service.price,
-            priceCurrency: 'EUR',
-          },
-        },
-      })) || []),
     ],
   };
 
