@@ -322,11 +322,11 @@ export default async function RootLayout({
           <Header 
             lang={locale} 
             dictionary={dictionary.header}
-            services={Object.values(dictionary.goldenServices || {}).map((service: any) => ({
+            services={dictionary.servicesPage?.services?.map((service: any) => ({
               slug: service.slug || '',
               title: service.title || '',
               description: service.description || '',
-            }))}
+            })) || []}
           />
           {children}
           <Footer lang={locale} dictionary={dictionary.footer} />

@@ -142,11 +142,11 @@
     "modal_reserve_button": "RESERVAR AHORA",
     "modal_more_info_button": "MÁS INFORMACIÓN",
     "services": [
-      { "id": 1, "title": "PARAÍSO EXÓTICO & FANTASÍA", "duration": "75 min", "price": "€180", "description": "Déjate llevar a un mundo donde todo es posible. Cada detalle se adapta a tus deseos y fantasías más íntimas. Tu placer no tiene límites en tu propio Paraíso de Fantasías.", "features": ["Fantasías personalizadas", "Accesorios especiales", "Disfraces provocadores", "Experiencia única"], "fullDescription": "En este masaje exclusivo, cada detalle se adapta a tus deseos y fantasías más íntimas. Si sueñas con una caricia distinta, un disfraz provocador, una mirada dominante o incluso una experiencia con accesorios (como vendas, esposas, grilletes, látigos suaves, arnés, disfraz y mucho más), este es tu espacio. Aquí, tu fantasía es la protagonista. Solo tienes que contarnos qué enciende tus sentidos... y lo haremos realidad.", "image": "/images/exotic_paradise.webp" },
-      { "id": 2, "title": "PREMIUM SENSUAL 4 MANOS", "duration": "90 min", "price": "€280", "description": "Show exclusivo de striptease con baile sensual de pole dance. Ducha erótica compartida y masaje tántrico erótico profesional a cuatro manos.", "features": ["Show de striptease", "Pole dance sensual", "Ducha erótica compartida", "Masaje 4 manos"], "fullDescription": "Una experiencia única que incluye show exclusivo de striptease, baile sensual con pole dance, ducha erótica compartida con las dos masajistas, masaje tántrico erótico profesional a cuatro manos, momentos de complicidad y juego en el diván. Las masajistas visten lencería fina y exclusiva, elegida solo para ti. Sesión creada a tu ritmo y a tu deseo.", "image": "/images/sensual_premium.webp" },
-      { "id": 3, "title": "TANTRIC DELUXE", "duration": "85 min", "price": "€220", "description": "Ducha erótica compartida con tu masajista. Masaje sensual cuerpo a cuerpo por delante y por detrás con técnicas eróticas profesionales.", "features": ["Ducha erótica compartida", "Masaje cuerpo a cuerpo", "Doble terminación", "Ambiente romántico"], "fullDescription": "En tu experiencia Tantric Deluxe disfrutarás de ducha erótica compartida con tu masajista, masaje sensual cuerpo a cuerpo por delante y por detrás, técnicas eróticas profesionales y seductoras, doble terminación manual (doble placer garantizado). Habitación ambientada con pétalos de rosa, velas y aromas delicados. Incluye copa de champán, vino o cerveza para acompañar el momento.", "image": "/images/tantric_deluxe.webp" },
-      { "id": 4, "title": "ARMONÍA TANTRA EN PAREJA", "duration": "90 min", "price": "€320", "description": "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en esta experiencia compartida.", "features": ["Masaje para parejas", "Vela caliente", "Botella de champán", "Terminación compartida"], "fullDescription": "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en un masaje sensual cuerpo a cuerpo, donde ambos participaréis activamente con caricias, toques y juegos compartidos, recuperando la complicidad perdida. La sesión incluye masaje con vela caliente sobre el cuerpo, ambiente romántico con velas y pétalos, y una botella de champán para brindar mientras el placer fluye entre vosotros. El final será el momento más esperado: una terminación manual para ambos, sellando la experiencia en total armonía.", "image": "/images/couples_harmony.webp" },
-      { "id": 5, "title": "YACHT MASSAGE EXPERIENCE", "duration": "80 min", "price": "€350", "description": "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Conexión profunda entre cuerpo y deseo.", "features": ["Experiencia en yate", "Aromas envolventes", "Música sensual", "Aceites cálidos"], "fullDescription": "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Cuidamos cada detalle: aromas envolventes, música sensual, aceites cálidos y una ambientación que transforma tu embarcación en un oasis de placer flotante. Este masaje es más que una sesión: es una conexión profunda entre cuerpo y deseo, guiada por manos expertas en un entorno íntimo y exclusivo. Ideal para quienes buscan desconectar del mundo y entregarse al arte del placer con total privacidad, entre el vaivén del mar y la magia del tacto.", "image": "/images/experiencias_eroticas_unicas.webp" }
+      { "id": 1, "slug": "paraiso-exotico-fantasia", "title": "PARAÍSO EXÓTICO & FANTASÍA", "duration": "75 min", "price": "€180", "description": "Déjate llevar a un mundo donde todo es posible. Cada detalle se adapta a tus deseos y fantasías más íntimas. Tu placer no tiene límites en tu propio Paraíso de Fantasías.", "meta_title": "Paraíso Exótico & Fantasía Palma | Masaje Erótico Personalizado Mallorca", "meta_description": "Paraíso Exótico & Fantasía en Palma de Mallorca. Masaje erótico personalizado donde tus fantasías se hacen realidad. Accesorios especiales, disfraces y experiencia única en nuestro spa de lujo. Reserva ahora.", "meta_keywords": "paraiso exotico fantasia palma, masaje erotico personalizado mallorca, masajes eroticos palma, fantasias personalizadas palma, masaje erotico con accesorios mallorca, masajes palma, spa palma, luxe massage palma, masaje erotico palma, masajes eroticos mallorca, masaje fantasia palma, masajes en palma", "features": ["Fantasías personalizadas", "Accesorios especiales", "Disfraces provocadores", "Experiencia única"], "fullDescription": "En este masaje exclusivo, cada detalle se adapta a tus deseos y fantasías más íntimas. Si sueñas con una caricia distinta, un disfraz provocador, una mirada dominante o incluso una experiencia con accesorios (como vendas, esposas, grilletes, látigos suaves, arnés, disfraz y mucho más), este es tu espacio. Aquí, tu fantasía es la protagonista. Solo tienes que contarnos qué enciende tus sentidos... y lo haremos realidad.", "image": "/images/exotic_paradise.webp" },
+      { "id": 2, "slug": "premium-sensual-4-manos", "title": "PREMIUM SENSUAL 4 MANOS", "duration": "90 min", "price": "€280", "description": "Show exclusivo de striptease con baile sensual de pole dance. Ducha erótica compartida y masaje tántrico erótico profesional a cuatro manos.", "meta_title": "Premium Sensual 4 Manos Palma | Masaje Erótico 4 Manos y Striptease Mallorca", "meta_description": "Premium Sensual 4 Manos en Palma de Mallorca. Masaje erótico a cuatro manos con show de striptease y pole dance. Dos masajistas profesionales, ducha erótica compartida y experiencia única en spa de lujo. Reserva ahora.", "meta_keywords": "premium sensual 4 manos palma, masaje 4 manos palma, masaje erotico 4 manos mallorca, masaje tantrico 4 manos palma, striptease palma, pole dance palma, masajes eroticos palma, masajes mallorca, spa palma, masaje erotico palma, masajes en palma, luxe 4 hands massage", "features": ["Show de striptease", "Pole dance sensual", "Ducha erótica compartida", "Masaje 4 manos"], "fullDescription": "Una experiencia única que incluye show exclusivo de striptease, baile sensual con pole dance, ducha erótica compartida con las dos masajistas, masaje tántrico erótico profesional a cuatro manos, momentos de complicidad y juego en el diván. Las masajistas visten lencería fina y exclusiva, elegida solo para ti. Sesión creada a tu ritmo y a tu deseo.", "image": "/images/sensual_premium.webp" },
+      { "id": 3, "slug": "tantric-deluxe", "title": "TANTRIC DELUXE", "duration": "85 min", "price": "€220", "description": "Ducha erótica compartida con tu masajista. Masaje sensual cuerpo a cuerpo por delante y por detrás con técnicas eróticas profesionales.", "meta_title": "Tantric Deluxe Palma | Masaje Erótico Cuerpo a Cuerpo y Spa Mallorca", "meta_description": "Tantric Deluxe en Palma de Mallorca. Masaje erótico cuerpo a cuerpo con ducha compartida. Técnicas profesionales, ambiente romántico y doble terminación. Experiencia exclusiva en spa de lujo. Reserva ahora.", "meta_keywords": "tantric deluxe palma, masaje tantrico deluxe mallorca, masaje cuerpo a cuerpo palma, masaje erotico cuerpo a cuerpo mallorca, tantric deluxe palma, masajes eroticos palma, masaje erotico palma, masajes mallorca, spa palma, masajes en palma, luxe tantric deluxe, masaje tantrico palma", "features": ["Ducha erótica compartida", "Masaje cuerpo a cuerpo", "Doble terminación", "Ambiente romántico"], "fullDescription": "En tu experiencia Tantric Deluxe disfrutarás de ducha erótica compartida con tu masajista, masaje sensual cuerpo a cuerpo por delante y por detrás, técnicas eróticas profesionales y seductoras, doble terminación manual (doble placer garantizado). Habitación ambientada con pétalos de rosa, velas y aromas delicados. Incluye copa de champán, vino o cerveza para acompañar el momento.", "image": "/images/tantric_deluxe.webp" },
+      { "id": 4, "slug": "armonia-tantra-pareja", "title": "ARMONÍA TANTRA EN PAREJA", "duration": "90 min", "price": "€320", "description": "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en esta experiencia compartida.", "meta_title": "Armonía Tantra en Pareja Palma | Masaje en Pareja y Spa Romántico Mallorca", "meta_description": "Armonía Tantra en Pareja en Palma de Mallorca. Masaje en pareja exclusivo para reconectar y despertar el deseo juntos. Masaje sensual cuerpo a cuerpo, vela caliente y ambiente romántico en spa de lujo. Reserva ahora.", "meta_keywords": "armonia tantra pareja palma, masaje en pareja mallorca, masaje parejas palma, masaje tantrico parejas mallorca, masaje romantico palma, spa parejas palma, masaje en pareja palma, masajes en pareja mallorca, masajes palma, spa mallorca, luxe couples massage, masaje erotico parejas palma", "features": ["Masaje para parejas", "Vela caliente", "Botella de champán", "Terminación compartida"], "fullDescription": "Un ritual íntimo diseñado para reconectar con tu pareja y despertar juntos el deseo. Una o dos masajistas os guiarán en un masaje sensual cuerpo a cuerpo, donde ambos participaréis activamente con caricias, toques y juegos compartidos, recuperando la complicidad perdida. La sesión incluye masaje con vela caliente sobre el cuerpo, ambiente romántico con velas y pétalos, y una botella de champán para brindar mientras el placer fluye entre vosotros. El final será el momento más esperado: una terminación manual para ambos, sellando la experiencia en total armonía.", "image": "/images/couples_harmony.webp" },
+      { "id": 5, "slug": "yacht-massage-experience", "title": "YACHT MASSAGE EXPERIENCE", "duration": "80 min", "price": "€350", "description": "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Conexión profunda entre cuerpo y deseo.", "meta_title": "Yacht Massage Experience Palma | Masaje Erótico en Yate Privado Mallorca", "meta_description": "Yacht Massage Experience en Palma de Mallorca. Masaje erótico de lujo a bordo de tu yate privado. Masajista a domicilio en yate, experiencia exclusiva con aromas, música sensual y aceites cálidos. Privacidad total. Reserva ahora.", "meta_keywords": "yacht massage experience palma, masaje yate palma, masaje erotico yate mallorca, masaje en yate palma, masajista a domicilio yate mallorca, masaje privado yate palma, masajes eroticos palma, masajes mallorca, spa palma, masaje erotico palma, luxe yacht massage, masaje exclusivo yate palma", "features": ["Experiencia en yate", "Aromas envolventes", "Música sensual", "Aceites cálidos"], "fullDescription": "Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Cuidamos cada detalle: aromas envolventes, música sensual, aceites cálidos y una ambientación que transforma tu embarcación en un oasis de placer flotante. Este masaje es más que una sesión: es una conexión profunda entre cuerpo y deseo, guiada por manos expertas en un entorno íntimo y exclusivo. Ideal para quienes buscan desconectar del mundo y entregarse al arte del placer con total privacidad, entre el vaivén del mar y la magia del tacto.", "image": "/images/experiencias_eroticas_unicas.webp" }
     ],
     "packages": [
       { "title": "DESCUENTO PARA CLIENTES FIELES", "day": "TODOS LOS JUEVES", "description": "Los fieles merecen premio. Si ya has disfrutado de nuestros masajes antes, este jueves obtén un cupón de <span class='text-amber-400 font-semibold'>20€ de descuento</span> en tu sesión de masaje. Una forma especial de agradecer tu confianza y lealtad.", "buttonText": "RESERVAR JUEVES" },
@@ -323,137 +323,5 @@
       "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
       "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00"
     ]
-  },
-  "goldenServices": {
-    "goldenRelax": {
-      "slug": "golden-relax",
-      "title": "GOLDEN RELAX",
-      "meta_title": "Masaje Golden Relax Palma | Masaje Relajante y Spa Mallorca",
-      "meta_description": "Descubre el masaje Golden Relax en Palma de Mallorca. Masaje relajante profesional con aromaterapia y aceites especiales en nuestro spa de lujo. Reduce el estrés y renueva tu energía. Reserva ahora.",
-      "meta_keywords": "masaje golden relax palma, masaje relajante palma, masajes mallorca, masaje palma, spa mallorca, spa palma, masaje relajación mallorca, tratamiento bienestar palma, masaje antiestrés mallorca, relajación profunda palma, masaje terapéutico palma, spa relajación mallorca, masajes palma ofertas, luxe massage palma",
-      "description": "Un masaje Golden Relax es un tratamiento de relajación integral enfocado en liberar tensiones físicas y mentales. Combina movimientos suaves y profundos, aromaterapia y aceites especiales para reducir el estrés y proporcionar una sensación de bienestar y descanso profundo. Es ideal para quienes buscan desconectarse y renovar energía.",
-      "full_description": "El masaje Golden Relax en Palma de Mallorca es mucho más que un simple tratamiento de relajación. Es una experiencia diseñada para liberar todas las tensiones acumuladas en tu cuerpo y mente. Nuestras técnicas especializadas combinan movimientos suaves y profundos que trabajan sobre los puntos de tensión, mientras que la aromaterapia cuidadosamente seleccionada y los aceites premium crean una atmósfera de calma y serenidad. Este tratamiento es perfecto para personas que buscan desconectarse del ritmo acelerado de la vida diaria, reducir el estrés acumulado y renovar su energía vital. Cada sesión está personalizada según tus necesidades específicas, garantizando una experiencia única y transformadora.",
-      "features": ["Movimientos suaves y profundos", "Aromaterapia especializada", "Aceites premium", "Reducción de estrés", "Renovación de energía"],
-      "duration": "60 min",
-      "price": "Desde €120",
-      "faqs": [
-        {
-          "question": "¿Qué incluye el masaje Golden Relax?",
-          "answer": "El masaje Golden Relax incluye una sesión completa de 60 minutos con técnicas de relajación profunda, aromaterapia especializada, uso de aceites premium, ambiente climatizado y música relajante. Todo diseñado para proporcionar una experiencia de bienestar integral."
-        },
-        {
-          "question": "¿Es adecuado para personas con dolores musculares?",
-          "answer": "Sí, el masaje Golden Relax es ideal para aliviar dolores musculares y tensiones. Nuestras técnicas suaves y profundas trabajan específicamente sobre las áreas de tensión, proporcionando alivio y relajación."
-        },
-        {
-          "question": "¿Necesito reservar con anticipación?",
-          "answer": "Recomendamos reservar con al menos 24 horas de anticipación para garantizar disponibilidad. Sin embargo, también aceptamos reservas del mismo día según disponibilidad."
-        }
-      ]
-    },
-    "goldenSensitivo": {
-      "slug": "golden-sensitivo",
-      "title": "GOLDEN SENSITIVO",
-      "meta_title": "Masaje Golden Sensitivo Palma | Masaje Suave y Spa Sensible Mallorca",
-      "meta_description": "Masaje Golden Sensitivo en Palma de Mallorca. Masaje suave y delicado en nuestro spa de lujo, ideal para piel sensible. Técnicas cuidadosas, aceites especiales y relajación profunda. Reserva tu sesión.",
-      "meta_keywords": "masaje golden sensitivo palma, masaje palma, masajes mallorca, spa palma, masaje piel sensible mallorca, tratamiento delicado palma, masaje suave mallorca, relajación armoniosa palma, masaje hipoalergénico mallorca, spa mallorca, masajes en palma, luxe sensitive massage",
-      "description": "Un masaje Golden Sensitivo es un tratamiento suave y delicado, diseñado para personas con piel sensible o que buscan una experiencia de relajación profunda y armoniosa. Utiliza técnicas lentas y cuidadosas, junto con aceites especiales, para brindar confort, calma emocional y una sensación de equilibrio y bienestar total.",
-      "full_description": "El masaje Golden Sensitivo está especialmente diseñado para aquellas personas con piel sensible o que prefieren un contacto más suave y delicado. Nuestras técnicas son extremadamente cuidadosas y lentas, permitiendo que tu cuerpo se relaje de manera gradual y natural. Utilizamos aceites especiales hipoalergénicos que nutren la piel sin causar irritaciones. Este tratamiento no solo trabaja a nivel físico, sino que también proporciona calma emocional y equilibrio mental, creando una sensación de bienestar total. Es perfecto para quienes buscan una experiencia de relajación profunda sin la intensidad de técnicas más vigorosas.",
-      "features": ["Técnicas suaves y delicadas", "Ideal para piel sensible", "Aceites especiales", "Calma emocional", "Equilibrio y bienestar"],
-      "duration": "60 min",
-      "price": "Desde €120",
-      "faqs": [
-        {
-          "question": "¿Es adecuado para pieles muy sensibles?",
-          "answer": "Absolutamente. El masaje Golden Sensitivo está específicamente diseñado para pieles sensibles. Utilizamos aceites hipoalergénicos y técnicas extremadamente suaves que respetan la sensibilidad de tu piel."
-        },
-        {
-          "question": "¿Qué tipo de aceites se utilizan?",
-          "answer": "Utilizamos aceites especiales hipoalergénicos de alta calidad, seleccionados específicamente para pieles sensibles. Todos nuestros aceites son naturales y están formulados para nutrir sin causar irritaciones."
-        },
-        {
-          "question": "¿Cuánto tiempo dura la sesión?",
-          "answer": "La sesión completa tiene una duración de 60 minutos, tiempo suficiente para proporcionar una relajación profunda y armoniosa sin sobrecargar la piel sensible."
-        }
-      ]
-    },
-    "experienciaGolden": {
-      "slug": "experiencia-golden",
-      "title": "EXPERIENCIA GOLDEN",
-      "meta_title": "Experiencia Golden Palma | Masaje Erótico Exclusivo Cuerpo a Cuerpo",
-      "meta_description": "Vive la Experiencia Golden en Palma de Mallorca. Masaje erótico exclusivo cuerpo a cuerpo en nuestro spa de lujo. Combina relajación y sensorialidad. Conexión profunda y bienestar integral. Reserva ahora.",
-      "meta_keywords": "experiencia golden palma, masaje erotico palma, masaje cuerpo a cuerpo mallorca, masaje sensorial palma, masajes eroticos mallorca, experiencia exclusiva mallorca, spa palma, conexión profunda palma, masaje íntimo palma, experiencia sensorial mallorca, masajes palma, luxe experience mallorca, masaje erotico mallorca",
-      "description": "La Experiencia Golden es un masaje exclusivo y sensorial que integra todo lo mejor del Golden Relax y el Golden Sensitivo en una sola sesión. Incluye técnicas suaves y envolventes, aceites especiales y aromaterapia, creando un estado profundo de relajación y bienestar. Es un masaje cuerpo a cuerpo, donde se genera una conexión muy profunda y una atmósfera de complicidad, permitiendo que las energías fluyan y se fusionen en una experiencia única, armoniosa y consciente.",
-      "full_description": "La Experiencia Golden representa la cúspide de nuestros tratamientos de relajación en Palma de Mallorca. Esta experiencia exclusiva combina magistralmente las mejores técnicas del Golden Relax y el Golden Sensitivo, creando una sesión única de 90 minutos que trasciende lo físico para alcanzar un nivel de conexión profunda y armoniosa. El masaje cuerpo a cuerpo permite que las energías fluyan libremente, creando una atmósfera de complicidad y entrega consciente. Cada movimiento está diseñado para despertar los sentidos, mientras que los aceites especiales y la aromaterapia crean un ambiente envolvente que transporta a un estado de bienestar integral. Es una experiencia que invita a la presencia plena, al disfrute consciente y a la conexión auténtica con uno mismo.",
-      "features": ["Masaje cuerpo a cuerpo", "Técnicas suaves y envolventes", "Aromaterapia especializada", "Conexión profunda", "Experiencia única y armoniosa"],
-      "duration": "90 min",
-      "price": "Desde €180",
-      "faqs": [
-        {
-          "question": "¿En qué se diferencia la Experiencia Golden de otros masajes?",
-          "answer": "La Experiencia Golden es única porque combina lo mejor de dos tratamientos en uno: la relajación profunda del Golden Relax y la delicadeza del Golden Sensitivo. Además, es un masaje cuerpo a cuerpo que genera una conexión muy profunda y una atmósfera de complicidad única."
-        },
-        {
-          "question": "¿Qué duración tiene la Experiencia Golden?",
-          "answer": "La Experiencia Golden tiene una duración de 90 minutos, tiempo suficiente para disfrutar de todas las técnicas y alcanzar un estado profundo de relajación y conexión."
-        },
-        {
-          "question": "¿Es necesario tener experiencia previa en masajes?",
-          "answer": "No es necesario. La Experiencia Golden está diseñada para todos, tanto para quienes tienen experiencia previa como para quienes es su primera vez. Nuestras profesionales se adaptan a tu ritmo y necesidades."
-        }
-      ]
-    },
-    "goldenSuiteExperiencia": {
-      "slug": "golden-suite-experiencia",
-      "title": "GOLDEN SUITE EXPERIENCIA (HOTEL)",
-      "meta_title": "Golden Suite Experience Hotel Palma | Masaje Erótico en Suite Privada",
-      "meta_description": "Golden Suite Experience en hotel de Palma de Mallorca. Masaje erótico de lujo en suite privada. Masajista a domicilio, spa exclusivo en tu hotel. Conexión profunda y placer sensorial elevado. Reserva ahora.",
-      "meta_keywords": "golden suite experience palma, masaje hotel mallorca, masaje erotico palma, experiencia suite palma, masaje lujo hotel mallorca, masajista a domicilio mallorca, experiencia exclusiva suite palma, masaje hotel palma, servicio a domicilio mallorca, spa hotel palma, masajes palma, luxe suite massage, masajes eroticos mallorca hotel",
-      "description": "La Golden Suite Experience (Hotel) es una experiencia de lujo intensa y profundamente sensorial, creada para vivirse en la intimidad de una suite de hotel. El ambiente exclusivo, los aromas envolventes y las técnicas de masaje cuidadosamente integradas despiertan los sentidos y llevan la relajación a otro nivel. Es una vivencia donde la conexión, la complicidad y la entrega consciente se hacen protagonistas, permitiendo una fusión energética profunda en un espacio íntimo y sofisticado. Ideal para quienes buscan algo más que un masaje: una experiencia poderosa de bienestar, desconexión total y placer sensorial elevado.",
-      "full_description": "La Golden Suite Experience representa el máximo nivel de exclusividad y lujo en Palma de Mallorca. Esta experiencia única se desarrolla en la intimidad de tu suite de hotel, transformando el espacio en un santuario de bienestar y placer sensorial. Cada detalle ha sido cuidadosamente diseñado: desde los aromas envolventes que despiertan los sentidos hasta las técnicas de masaje que se integran perfectamente con el ambiente exclusivo. La conexión que se genera es profunda y auténtica, creando una atmósfera de complicidad donde la entrega consciente permite una fusión energética única. Es más que un masaje: es una experiencia poderosa que combina bienestar, desconexión total del mundo exterior y placer sensorial elevado. Perfecta para quienes buscan lo extraordinario en un entorno íntimo y sofisticado.",
-      "features": ["Experiencia en suite de hotel", "Ambiente exclusivo y sofisticado", "Aromas envolventes", "Fusión energética profunda", "Desconexión total"],
-      "duration": "90 min",
-      "price": "Desde €250",
-      "faqs": [
-        {
-          "question": "¿Cómo funciona el servicio en hotel?",
-          "answer": "Nuestras profesionales se desplazan a tu suite de hotel en Palma de Mallorca. Traemos todo el equipo necesario para crear el ambiente perfecto: aceites, aromas, música y todo lo necesario para una experiencia completa."
-        },
-        {
-          "question": "¿Qué hoteles cubren?",
-          "answer": "Ofrecemos el servicio en cualquier hotel de Palma de Mallorca y alrededores. Solo necesitas proporcionarnos la dirección del hotel y el número de habitación al hacer la reserva."
-        },
-        {
-          "question": "¿Cuánto tiempo de anticipación necesito para reservar?",
-          "answer": "Para la Golden Suite Experience recomendamos reservar con al menos 48 horas de anticipación para garantizar disponibilidad y permitirnos preparar todos los detalles de tu experiencia exclusiva."
-        }
-      ]
-    },
-    "velvetDuet": {
-      "slug": "velvet-duet-pareja",
-      "title": "VELVET DUET (PAREJA)",
-      "meta_title": "Velvet Duet Pareja Palma | Masaje en Pareja y Spa Romántico Mallorca",
-      "meta_description": "Velvet Duet para parejas en Palma de Mallorca. Masaje en pareja en nuestro spa de lujo. Experiencia compartida de armonía y conexión profunda. Fortalece el vínculo emocional. Ritual romántico. Reserva ahora.",
-      "meta_keywords": "velvet duet pareja palma, masaje en pareja mallorca, masaje parejas mallorca, experiencia parejas palma, masaje romántico mallorca, spa parejas palma, conexión pareja palma, masaje para dos palma, experiencia íntima parejas mallorca, masajes en pareja palma, spa mallorca parejas, luxe couples massage, masaje tantrico parejas mallorca",
-      "description": "Velvet Duet (Pareja) es una experiencia diseñada para ser compartida, donde dos personas se sumergen juntas en un ambiente de armonía, calma y conexión profunda. A través de técnicas de masaje suaves y envolventes, aromas delicados y una atmósfera cuidadosamente creada, se fortalece el vínculo emocional y sensorial entre la pareja. Es un ritual de bienestar que invita a la complicidad, la sincronía y la presencia consciente, permitiendo disfrutar de un momento íntimo de relajación, equilibrio y unión en perfecta sintonía.",
-      "full_description": "El Velvet Duet es una experiencia única diseñada especialmente para parejas que buscan reconectar, fortalecer su vínculo y disfrutar juntos de un momento de bienestar profundo. Esta experiencia compartida en Palma de Mallorca crea un espacio sagrado donde ambos miembros de la pareja se sumergen juntos en un ambiente de armonía, calma y conexión profunda. Las técnicas de masaje suaves y envolventes, combinadas con aromas delicados y una atmósfera cuidadosamente diseñada, facilitan la sincronía y la presencia consciente. Es un ritual de bienestar que invita a la complicidad, fortalece el vínculo emocional y sensorial, y permite disfrutar de un momento íntimo de relajación, equilibrio y unión en perfecta sintonía. Ideal para parejas que buscan renovar su conexión o celebrar un momento especial juntos.",
-      "features": ["Experiencia para parejas", "Técnicas suaves y envolventes", "Aromas delicados", "Fortalece vínculo emocional", "Unión en perfecta sintonía"],
-      "duration": "90 min",
-      "price": "Desde €280",
-      "faqs": [
-        {
-          "question": "¿Cómo funciona el masaje para parejas?",
-          "answer": "El Velvet Duet está diseñado para que ambos miembros de la pareja disfruten juntos de la experiencia. Las técnicas se aplican de manera que ambos participen activamente, fortaleciendo su vínculo emocional y sensorial en un ambiente de armonía y complicidad."
-        },
-        {
-          "question": "¿Es necesario que ambos tengan experiencia previa?",
-          "answer": "No es necesario. El Velvet Duet está diseñado para todas las parejas, independientemente de su experiencia previa. Nuestras profesionales guían la experiencia adaptándose al ritmo y necesidades de ambos."
-        },
-        {
-          "question": "¿Puede ser una experiencia romántica?",
-          "answer": "Absolutamente. El Velvet Duet está diseñado para crear un ambiente íntimo y romántico que fortalece la conexión entre la pareja. Es perfecto para celebraciones especiales, aniversarios o simplemente para reconectar."
-        }
-      ]
-    }
   }
 }
