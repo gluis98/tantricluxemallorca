@@ -14,6 +14,7 @@ type ServiceDetail = {
   features: string[];
   duration: string;
   price: string;
+  image?: string;
   faqs?: Array<{
     question: string;
     answer: string;
