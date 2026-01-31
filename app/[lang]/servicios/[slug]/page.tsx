@@ -34,21 +34,20 @@ const slugToIndexMap: Record<string, number> = {
   // Español
   'paraiso-exotico-fantasia': 0,
   'premium-sensual-4-manos': 1,
-  'tantric-deluxe': 2,
   'armonia-tantra-pareja': 3,
-  'yacht-massage-experience': 4,
   // Inglés
   'exotic-paradise-fantasy': 0,
   'premium-sensual-4-hands': 1,
-  'tantric-deluxe': 2,
   'couples-tantra-harmony': 3,
-  'yacht-massage-experience': 4,
   // Alemán
   'exotisches-paradies-fantasie': 0,
   'premium-sinnlich-4-handig': 1,
   'tantra-deluxe': 2,
   'tantra-harmonie-paare': 3,
   'yacht-massage-erlebnis': 4,
+  // Slugs compartidos entre idiomas
+  'tantric-deluxe': 2,
+  'yacht-massage-experience': 4,
 };
 
 // Función para generar metadata dinámica
