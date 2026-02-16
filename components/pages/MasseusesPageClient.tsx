@@ -115,7 +115,7 @@ export default function MasseusesPageClient({ dictionary, masseuses }: {
 }) {
   return (
     <main className="relative z-10 px-4 md:px-8 py-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">{dictionary.pre_title}</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">{dictionary.title}</h1>
@@ -123,23 +123,12 @@ export default function MasseusesPageClient({ dictionary, masseuses }: {
           <div className="w-24 h-px bg-amber-400 mx-auto mb-8"></div>
           <p className="text-xl md:text-2xl font-light mb-8 text-gray-300 tenali-ramakrishna">{dictionary.description}</p>
         </div>
-        {/* Mensaje de nuevas masajistas en camino */}
-        <div className="mb-12 bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
-          <div className="text-center">
-            <div className="inline-block mb-4">
-              <span className="text-5xl md:text-6xl">✨</span>
-            </div>
-            <h3 className="text-2xl md:text-4xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">
-              Nuevas Masajistas en Camino
-            </h3>
-            <div className="w-24 h-px bg-amber-400 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl font-light text-gray-300 leading-relaxed max-w-3xl mx-auto tenali-ramakrishna">
-              Estamos actualizando nuestros servicios para ofrecerte una experiencia aún más excepcional. 
-              Pronto tendremos nuevas especialistas que se unirán a nuestro equipo, cada una con su toque único 
-              y profesional. Mientras tanto, nuestras masajistas actuales están listas para brindarte el mejor 
-              servicio de masaje tántrico en Mallorca.
-            </p>
-          </div>
+        
+        {/* Grid de Masajistas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {masseuses.map((masseuse) => (
+            <MasajistaCard key={masseuse.id} masseuse={masseuse} dictionary={dictionary} />
+          ))}
         </div>
       </div>
     </main>

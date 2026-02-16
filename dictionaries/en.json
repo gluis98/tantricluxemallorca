@@ -46,6 +46,11 @@
     "title": "TANTRIC LUXE",
     "main_heading": "TANTRIC MASSAGE PALMA",
     "secondary_heading": "EXCLUSIVE TANTRIC MASSAGE EXPERIENCE IN MALLORCA",
+    "masseuse_section": {
+      "title": "Meet Our Specialist",
+      "description": "Erika, our exceptional masseuse, combines natural beauty, refined elegance, and masterful command of the most sophisticated tantric techniques. Discover the unique experience that awaits you.",
+      "button_text": "MORE INFORMATION ABOUT ERIKA"
+    },
     "about_us_section": {
       "pre_title": "ABOUT US",
       "title": "SPECIALISTS IN TANTRIC MASSAGE MALLORCA",
@@ -217,52 +222,16 @@
     "reserve_button_text": "BOOK WITH",
     "masseuses": [
       {
-        "id": 5,
-        "name": "Aurora",
-        "age": 19,
-        "specialty": "Tantric Deluxe Massage",
-        "image": "/images/masseurs/Aurora/aurora1.webp",
-        "images": ["/images/masseurs/Aurora/aurora1.webp", "/images/masseurs/Aurora/aurora2.webp", "/images/masseurs/Aurora/aurora3.webp", "/images/masseurs/Aurora/aurora4.webp", "/images/masseurs/Aurora/aurora5.webp", "/images/masseurs/Aurora/aurora6.webp"],
-        "description": "Specialist in tantric massage with ancestral techniques. Her soft and expert touch will transport you to a state of deep relaxation and spiritual connection.",
-        "skills": ["Tantric Massage", "Deep Relaxation", "Ancestral Techniques", "Spiritual Connection"],
+        "id": 1,
+        "name": "Erika",
+        "age": 24,
+        "specialty": "Deluxe Sensual Tantric Massage",
+        "image": "/images/masseurs/Erika/IMG_0843.jpeg",
+        "images": ["/images/masseurs/Erika/IMG_0843.jpeg", "/images/masseurs/Erika/IMG_0844.jpeg", "/images/masseurs/Erika/IMG_0865.jpeg", "/images/masseurs/Erika/IMG_0866.jpeg", "/images/masseurs/Erika/IMG_0872.jpeg", "/images/masseurs/Erika/IMG_0878.jpeg", "/images/masseurs/Erika/IMG_0880.jpeg"],
+        "description": "Erika combines natural beauty with exceptional mastery of sophisticated tantric techniques. Her intuitive touch and captivating presence create unique experiences that awaken your senses and connect you with the deepest pleasure.",
+        "skills": ["Advanced Tantric Massage", "Premium Body to Body", "Deep Relaxation", "Energy Connection", "Sensual Techniques", "Personalized Experience"],
         "rating": 5,
-        "reviews": 47
-      },
-      {
-        "id": 4,
-        "name": "Venus",
-        "age": 21,
-        "specialty": "Premium Tantric Massage",
-        "image": "/images/masseurs/Venus/venus1.webp",
-        "images": ["/images/masseurs/Venus/venus1.webp", "/images/masseurs/Venus/venus2.webp"],
-        "description": "Master in the art of premium tantric massage. Her experience and dedication create unique experiences of well-being and bodily harmony.",
-        "skills": ["Premium Massage", "Holistic Wellness", "Body Harmony", "Unique Experience"],
-        "rating": 5,
-        "reviews": 52
-      },
-      {
-        "id": 3,
-        "name": "Selena",
-        "age": 19,
-        "specialty": "Couples Tantric Experience",
-        "image": "/images/masseurs/Selena/selena1.webp",
-        "images": ["/images/masseurs/Selena/selena1.webp", "/images/masseurs/Selena/selena2.webp"],
-        "description": "Specialist in tantric experiences for couples. Her unique approach strengthens the emotional and physical connection between partners.",
-        "skills": ["Couples", "Emotional Connection", "Partner Harmony", "Shared Experience"],
-        "rating": 5,
-        "reviews": 38
-      },
-      {
-        "id": 2,
-        "name": "Angela",
-        "age": 22,
-        "specialty": "Couples Tantric Experience",
-        "image": "/images/masseurs/Angela/angela1.webp",
-        "images": ["/images/masseurs/Angela/angela1.webp", "/images/masseurs/Angela/angela2.webp", "/images/masseurs/Angela/angela3.webp", "/images/masseurs/Angela/angela4.webp", "/images/masseurs/Angela/angela5.webp", "/images/masseurs/Angela/angela6.webp"],
-        "description": "Amazing masseuse with a unique ability to connect with couples. Her sessions are transformative and deeply satisfying.",
-        "skills": ["Couples", "Emotional Connection", "Partner Harmony", "Shared Experience"],
-        "rating": 5,
-        "reviews": 38
+        "reviews": 89
       }
     ]
   },
