@@ -58,18 +58,23 @@ export default function ContactSection({ dictionary, services }: { dictionary: D
                         {dictionary.info_title}
                     </h3>
                     <div className="space-y-6">
-                        <div className="flex items-start">
-                            <div className="w-12 h-12 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-4 flex-shrink-0">
+                        <div className="flex items-start group cursor-pointer">
+                            <div className="w-12 h-12 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                                 <span className="text-amber-400">📍</span>
                             </div>
-                            <div className="flex-1 min-w-0">
-                                <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna">{dictionary.location_title}</h4>
-                                <p className="text-gray-300 break-words leading-relaxed text-sm sm:text-base">
+                            <a 
+                                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 min-w-0 hover:text-amber-300 transition-colors"
+                            >
+                                <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna group-hover:text-amber-300">{dictionary.location_title}</h4>
+                                <p className="text-gray-300 break-words leading-relaxed text-sm sm:text-base group-hover:underline">
                                     <span className="block sm:inline">Carrer del Pare Bartomeu Pou, 44, Nord,</span>
                                     <span className="block sm:inline"> 07003 Palma, Illes Balears</span>
                                 </p>
-                                <p className="text-sm text-gray-400">{dictionary.location_note}</p>
-                            </div>
+                                <p className="text-sm text-gray-400 group-hover:text-gray-300">{dictionary.location_note}</p>
+                            </a>
                         </div>
                         <div className="flex items-start">
                             <div className="w-12 h-12 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-4 flex-shrink-0">

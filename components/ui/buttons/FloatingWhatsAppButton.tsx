@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react';
 
 export default function FloatingWhatsAppButton() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    // Mostrar el botón después de un pequeño delay para efecto de entrada
+    // Activar animación después de montar el componente
     const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
+      setShouldAnimate(true);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,9 +26,10 @@ export default function FloatingWhatsAppButton() {
     <button
       onClick={handleWhatsAppClick}
       className={`fixed bottom-6 right-6 z-[100] group transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+        shouldAnimate ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
       aria-label="Contactar por WhatsApp"
+      suppressHydrationWarning
     >
       {/* Glow effect */}
       <div className="absolute inset-0 bg-green-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 animate-pulse"></div>

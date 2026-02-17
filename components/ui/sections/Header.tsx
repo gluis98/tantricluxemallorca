@@ -50,10 +50,16 @@ const Header = ({ lang, dictionary, services = [] }: {
             <div className="flex justify-between items-center max-w-7xl mx-auto">
                 {/* Top bar */}
                 <div className="flex-1 flex justify-start">
-                    <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight">
-                        <span className="hidden sm:inline">{dictionary.location}</span>
-                        <span className="sm:hidden">Carrer del Pare Bartomeu Pou, 44<br />Nord, 07003 Palma</span>
-                    </div>
+                    <a 
+                        href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight hover:text-amber-400 transition-colors cursor-pointer group"
+                        title="Abrir en Google Maps"
+                    >
+                        <span className="hidden sm:inline group-hover:underline">{dictionary.location}</span>
+                        <span className="sm:hidden group-hover:underline">Carrer del Pare Bartomeu Pou, 44<br />Nord, 07003 Palma</span>
+                    </a>
                 </div>
 
                 {/* Main navigation - Solo visible en pantallas grandes (lg y superiores) */}
