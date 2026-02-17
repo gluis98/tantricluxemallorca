@@ -63,7 +63,7 @@ export default function ContactSection({ dictionary, services }: { dictionary: D
                                 <span className="text-amber-400">📍</span>
                             </div>
                             <a 
-                                href="https://www.google.com/maps?q=39.5736032,2.6386885"
+                                href="https://www.google.com/maps/place/Tantric+Luxe+Mallorca+-+Masajes+Tantricos/@39.5809825,2.6480904,17.96z/data=!4m6!3m5!1s0x129793d4f862b319:0xe5362cc17cc4db26!8m2!3d39.5808678!4d2.6485458!16s%2Fg%2F11xrx_6gkn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 min-w-0 hover:text-amber-300 transition-colors"

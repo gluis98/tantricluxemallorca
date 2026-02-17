@@ -291,13 +291,13 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 </ul>
               </div>
               <a 
-                href="https://www.google.com/maps?q=39.5736032,2.6386885"
+                href="https://www.google.com/maps/place/Tantric+Luxe+Mallorca+-+Masajes+Tantricos/@39.5809825,2.6480904,17.96z/data=!4m6!3m5!1s0x129793d4f862b319:0xe5362cc17cc4db26!8m2!3d39.5808678!4d2.6485458!16s%2Fg%2F11xrx_6gkn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl block group cursor-pointer"
               >
                 <iframe
-                  src="https://www.google.com/maps?q=39.5736032,2.6386885&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.4669753984845!2d2.6480904!3d39.5809825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793d4f862b319%3A0xe5362cc17cc4db26!2sTantric%20Luxe%20Mallorca%20-%20Masajes%20Tantricos!5e0!3m2!1ses!2ses!4v1234567890"
                   className="w-full h-full pointer-events-none"
                   style={{ border: 0 }}
                   allowFullScreen
