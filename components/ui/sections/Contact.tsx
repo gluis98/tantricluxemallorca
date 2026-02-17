@@ -63,7 +63,7 @@ export default function ContactSection({ dictionary, services }: { dictionary: D
                                 <span className="text-amber-400">📍</span>
                             </div>
                             <a 
-                                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
+                                href="https://www.google.com/maps?q=39.5736032,2.6386885"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 min-w-0 hover:text-amber-300 transition-colors"

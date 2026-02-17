@@ -51,7 +51,7 @@ const Header = ({ lang, dictionary, services = [] }: {
                 {/* Top bar */}
                 <div className="flex-1 flex justify-start">
                     <a 
-                        href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
+                        href="https://www.google.com/maps?q=39.5736032,2.6386885"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight hover:text-amber-400 transition-colors cursor-pointer group"

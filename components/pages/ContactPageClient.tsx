@@ -291,13 +291,13 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 </ul>
               </div>
               <a 
-                href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears"
+                href="https://www.google.com/maps?q=39.5736032,2.6386885"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl block group cursor-pointer"
               >
                 <iframe
-                  src="https://www.google.com/maps?q=Carrer+del+Pare+Bartomeu+Pou+44+Nord+07003+Palma+Illes+Balears&output=embed"
+                  src="https://www.google.com/maps?q=39.5736032,2.6386885&output=embed"
                   className="w-full h-full pointer-events-none"
                   style={{ border: 0 }}
                   allowFullScreen
