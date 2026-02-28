@@ -149,10 +149,10 @@ export default async function RootLayout({
   "email": "info@tantricluxemallorca.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
+    "streetAddress": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
     "addressLocality": "Palma",
     "addressRegion": "Islas Baleares",
-    "postalCode": "07003",
+    "postalCode": "07012",
     "addressCountry": "ES"
   },
   "geo": {

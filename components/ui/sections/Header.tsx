@@ -51,14 +51,14 @@ const Header = ({ lang, dictionary, services = [] }: {
                 {/* Top bar */}
                 <div className="flex-1 flex justify-start">
                     <a 
-                        href="https://www.google.com/maps/place/Tantric+Luxe+Mallorca+-+Masajes+Tantricos/@39.5809825,2.6480904,17.96z/data=!4m6!3m5!1s0x129793d4f862b319:0xe5362cc17cc4db26!8m2!3d39.5808678!4d2.6485458!16s%2Fg%2F11xrx_6gkn?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+                        href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight hover:text-amber-400 transition-colors cursor-pointer group"
                         title="Abrir en Google Maps"
                     >
                         <span className="hidden sm:inline group-hover:underline">{dictionary.location}</span>
-                        <span className="sm:hidden group-hover:underline">Carrer del Pare Bartomeu Pou, 44<br />Nord, 07003 Palma</span>
+                        <span className="sm:hidden group-hover:underline">Plaça de Santa Magdalena, 3A<br />Centre, 07012 Palma</span>
                     </a>
                 </div>
 

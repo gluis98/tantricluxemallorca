@@ -94,11 +94,11 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
              {/* Modal Container */}
        <div className="relative z-10 w-full max-w-3xl mx-4 h-auto overflow-hidden">
                  <div 
-          className="bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-amber-900/30 p-6 md:p-8 h-full flex flex-col relative"
-         style={{
+           className="bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-2xl border border-amber-900/30 p-6 md:p-8 h-full flex flex-col relative"
+          style={{
            animation: isOpen ? 'modalSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'modalSlideOut 0.3s ease-in'
-         }}
-       >
+          }}
+        >
 
                      {/* Título del Modal */}
           <div className="text-center mb-6">
@@ -108,7 +108,7 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
             <div className="w-24 h-px bg-amber-400 mx-auto mb-4"></div>
             <p className="text-base md:text-lg font-light text-gray-300 tenali-ramakrishna">
               {t.subtitle}
-            </p>
+              </p>
           </div>
 
                      {/* Card de Erika - Centrada */}
@@ -133,9 +133,9 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
                         className="block w-full h-[400px] md:h-[500px] rounded-2xl bg-gradient-to-br from-amber-900/30 to-gray-800/50 overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-2xl border border-amber-900/20"
                       >
                         <div className="relative w-full h-full">
-                          <Image
-                            src={masajista.image}
-                            alt={masajista.name}
+                        <Image
+                          src={masajista.image}
+                          alt={masajista.name}
                             fill
                             className="object-cover"
                             priority

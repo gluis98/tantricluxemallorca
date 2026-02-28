@@ -1,6 +1,6 @@
 {
   "header": {
-    "location": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
+    "location": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "nav": {
@@ -69,7 +69,7 @@
       "form_title": "RESERVA MASAJE TANTRICO PALMA",
       "info_title": "INFORMACIÓN DE CONTACTO",
       "location_title": "Centro Masaje Tantrico",
-      "location_address": "Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears",
+      "location_address": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
       "location_note": "Palma de Mallorca",
       "whatsapp_title": "WhatsApp",
       "whatsapp_number": "+34 602 560 426",
@@ -238,7 +238,7 @@
   },
   "contactPage": {
     "meta_title": "Contacto | Tantric Luxe Mallorca - Reserva Masajes Eróticos y Tantricos Palma",
-    "meta_description": "Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Ubicados en Carrer del Pare Bartomeu Pou, 44. Horario: Lunes a Domingo 09:00-23:00.",
+    "meta_description": "Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Ubicados en Plaça de Santa Magdalena, 3A. Horario: Lunes a Domingo 09:00-23:00.",
     "meta_keywords": "contacto masajes palma, reservar masaje erotico palma, contacto masaje tantrico palma, reservar masajes mallorca, tantric luxe contacto, whatsapp masaje tantrico, whatsapp masajista palma, ubicacion spa palma, reserva masaje en pareja mallorca, contacto spa mallorca",
     "pre_title": "CONTACTO",
     "title": "RESERVA TU",
@@ -246,7 +246,7 @@
     "description": "Estamos aquí para hacer realidad tu experiencia perfecta. Contáctanos para reservar o consultar cualquier duda sobre nuestros servicios exclusivos.",
     "info_title": "INFORMACIÓN DE CONTACTO",
     "contact_info": [
-      { "icon": "📍", "title": "UBICACIÓN", "line1": "Carrer del Pare Bartomeu Pou, 44, Nord", "line2": "07003 Palma, Illes Balears", "line3": "Zona exclusiva y discreta del centro histórico" },
+      { "icon": "📍", "title": "UBICACIÓN", "line1": "Plaça de Santa Magdalena, 3A, Centre", "line2": "07012 Palma, Illes Balears", "line3": "Zona exclusiva y discreta del centro histórico" },
       { "icon": "📱", "title": "WHATSAPP PREFERIDO", "line1": "+34 602 560 426", "line2": "Respuesta garantizada en menos de 1 hora", "line3": "Atención personalizada 24/7" },
       { "icon": "⏰", "title": "HORARIOS", "line1": "Lunes a Domingo", "line2": "09:00 - 23:00", "line3": "Servicios con cita previa" },
       { "icon": "📧", "title": "EMAIL", "line1": "info@tantricluxemallorca.com", "line2": "Para consultas generales y reservas", "line3": "Respuesta en 24 horas máximo" }
