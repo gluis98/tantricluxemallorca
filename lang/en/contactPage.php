@@ -1,0 +1,107 @@
+<?php
+
+return array (
+  'meta_title' => 'Contact | Tantric Luxe Mallorca - Book Erotic & Tantric Massage Palma',
+  'meta_description' => 'Contact Tantric Luxe Mallorca. Book your erotic, tantric or couples massage in Palma. WhatsApp: +34 602 560 426. Located at Plaça de Santa Magdalena, 3A. Hours: Monday to Sunday 09:00-23:00.',
+  'meta_keywords' => 'contact massage palma, book erotic massage palma, contact tantric massage palma, book massage mallorca, tantric luxe contact, whatsapp tantric massage, whatsapp masseuse palma, spa location palma, book couples massage mallorca, contact spa mallorca, massage near me contact',
+  'pre_title' => 'CONTACT',
+  'title' => 'BOOK YOUR',
+  'subtitle' => 'EXPERIENCE',
+  'description' => 'We are here to make your perfect experience a reality. Contact us to book or ask any questions about our exclusive services.',
+  'info_title' => 'CONTACT INFORMATION',
+  'contact_info' => 
+  array (
+    0 => 
+    array (
+      'icon' => '📍',
+      'title' => 'LOCATION',
+      'line1' => 'Plaça de Santa Magdalena, 3A, Centre',
+      'line2' => '07012 Palma, Illes Balears',
+      'line3' => 'Exclusive and discreet area in the historic center',
+    ),
+    1 => 
+    array (
+      'icon' => '📱',
+      'title' => 'WHATSAPP PREFERRED',
+      'line1' => '+34 602 560 426',
+      'line2' => 'Guaranteed response in less than 1 hour',
+      'line3' => '24/7 personalized attention',
+    ),
+    2 => 
+    array (
+      'icon' => '⏰',
+      'title' => 'HOURS',
+      'line1' => 'Monday to Sunday',
+      'line2' => '09:00 - 23:00',
+      'line3' => 'Services by appointment',
+    ),
+    3 => 
+    array (
+      'icon' => '📧',
+      'title' => 'EMAIL',
+      'line1' => 'info@tantricluxemallorca.com',
+      'line2' => 'For general inquiries and bookings',
+      'line3' => 'Response within 24 hours maximum',
+    ),
+  ),
+  'whatsapp_button_text' => 'DIRECT WHATSAPP',
+  'call_button_text' => 'CALL NOW',
+  'privacy_title' => '🔒 PRIVACY GUARANTEE',
+  'privacy_text' => 'At Tantric Luxe Mallorca, your privacy is our absolute priority. All personal information is treated with the utmost confidentiality and is never shared with third parties. Our facilities ensure discreet access and complete privacy during your visit.',
+  'form_title' => 'RESERVATION FORM',
+  'name_label' => 'NAME *',
+  'name_placeholder' => 'Your name',
+  'email_label' => 'EMAIL *',
+  'email_placeholder' => 'you@email.com',
+  'phone_label' => 'PHONE / WHATSAPP *',
+  'phone_placeholder' => '+34 XXX XXX XXX',
+  'service_label' => 'DESIRED SERVICE *',
+  'service_default_option' => 'Select a service',
+  'service_consultation_option' => 'Personalized consultation',
+  'date_label' => 'PREFERRED DATE',
+  'time_label' => 'PREFERRED TIME',
+  'time_default_option' => 'Select a time',
+  'message_label' => 'ADDITIONAL MESSAGE',
+  'message_placeholder' => 'Any special requests or questions? (Optional)',
+  'form_notes' => 
+  array (
+    0 => 'Fields marked with * are required',
+    1 => 'You will receive confirmation within a maximum of 2 hours',
+    2 => 'For same-day bookings, please contact via WhatsApp',
+  ),
+  'success_message' => '✅ Booking sent successfully! We will contact you soon.',
+  'error_message' => '❌ Error sending booking. Please try again or contact us via WhatsApp.',
+  'submit_button' => 'SEND BOOKING',
+  'submitting_button' => 'SENDING...',
+  'map_section_title' => 'OUR LOCATION',
+  'map_section_subtitle' => 'IN THE HEART OF PALMA',
+  'map_section_p1' => 'Our exclusive spa is strategically located in a discreet area of the historic center of Palma de Mallorca, offering easy access from anywhere in the city while maintaining maximum privacy.',
+  'map_section_points' => 
+  array (
+    0 => '5 minutes from the shopping center',
+    1 => '10 minutes from the cathedral',
+    2 => '15 minutes from the airport',
+    3 => 'Direct vehicle access',
+  ),
+  'open_maps_text' => 'Open in Google Maps',
+  'whatsapp_button_tooltip' => 'Chat with us!',
+  'whatsapp_default_message' => 'Hello, I would like information about TL Mallorca services.',
+  'timeSlots' => 
+  array (
+    0 => '11:00',
+    1 => '12:00',
+    2 => '13:00',
+    3 => '14:00',
+    4 => '15:00',
+    5 => '16:00',
+    6 => '17:00',
+    7 => '18:00',
+    8 => '19:00',
+    9 => '20:00',
+    10 => '21:00',
+    11 => '22:00',
+    12 => '23:00',
+    13 => '00:00',
+    14 => '01:00',
+  ),
+);

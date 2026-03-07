@@ -1,0 +1,107 @@
+<?php
+
+return array (
+  'meta_title' => 'Contacto | Tantric Luxe Mallorca - Reserva Masajes Eróticos y Tantricos Palma',
+  'meta_description' => 'Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Ubicados en Plaça de Santa Magdalena, 3A. Horario: Lunes a Domingo 09:00-23:00.',
+  'meta_keywords' => 'contacto masajes palma, reservar masaje erotico palma, contacto masaje tantrico palma, reservar masajes mallorca, tantric luxe contacto, whatsapp masaje tantrico, whatsapp masajista palma, ubicacion spa palma, reserva masaje en pareja mallorca, contacto spa mallorca',
+  'pre_title' => 'CONTACTO',
+  'title' => 'RESERVA TU',
+  'subtitle' => 'EXPERIENCIA',
+  'description' => 'Estamos aquí para hacer realidad tu experiencia perfecta. Contáctanos para reservar o consultar cualquier duda sobre nuestros servicios exclusivos.',
+  'info_title' => 'INFORMACIÓN DE CONTACTO',
+  'contact_info' => 
+  array (
+    0 => 
+    array (
+      'icon' => '📍',
+      'title' => 'UBICACIÓN',
+      'line1' => 'Plaça de Santa Magdalena, 3A, Centre',
+      'line2' => '07012 Palma, Illes Balears',
+      'line3' => 'Zona exclusiva y discreta del centro histórico',
+    ),
+    1 => 
+    array (
+      'icon' => '📱',
+      'title' => 'WHATSAPP PREFERIDO',
+      'line1' => '+34 602 560 426',
+      'line2' => 'Respuesta garantizada en menos de 1 hora',
+      'line3' => 'Atención personalizada 24/7',
+    ),
+    2 => 
+    array (
+      'icon' => '⏰',
+      'title' => 'HORARIOS',
+      'line1' => 'Lunes a Domingo',
+      'line2' => '09:00 - 23:00',
+      'line3' => 'Servicios con cita previa',
+    ),
+    3 => 
+    array (
+      'icon' => '📧',
+      'title' => 'EMAIL',
+      'line1' => 'info@tantricluxemallorca.com',
+      'line2' => 'Para consultas generales y reservas',
+      'line3' => 'Respuesta en 24 horas máximo',
+    ),
+  ),
+  'whatsapp_button_text' => 'WHATSAPP DIRECTO',
+  'call_button_text' => 'LLAMAR AHORA',
+  'privacy_title' => '🔒 GARANTÍA DE PRIVACIDAD',
+  'privacy_text' => 'En Tantric Luxe Mallorca, tu privacidad es nuestra prioridad absoluta. Toda la información personal es tratada con máxima confidencialidad y nunca se comparte con terceros. Nuestras instalaciones garantizan acceso discreto y completa privacidad durante tu visita.',
+  'form_title' => 'FORMULARIO DE RESERVA',
+  'name_label' => 'NOMBRE *',
+  'name_placeholder' => 'Tu nombre',
+  'email_label' => 'EMAIL *',
+  'email_placeholder' => 'tu@email.com',
+  'phone_label' => 'TELÉFONO / WHATSAPP *',
+  'phone_placeholder' => '+34 XXX XXX XXX',
+  'service_label' => 'SERVICIO DESEADO *',
+  'service_default_option' => 'Selecciona un servicio',
+  'service_consultation_option' => 'Consulta personalizada',
+  'date_label' => 'FECHA PREFERIDA',
+  'time_label' => 'HORA PREFERIDA',
+  'time_default_option' => 'Selecciona una hora',
+  'message_label' => 'MENSAJE ADICIONAL',
+  'message_placeholder' => '¿Alguna petición especial o pregunta? (Opcional)',
+  'form_notes' => 
+  array (
+    0 => 'Los campos marcados con * son obligatorios',
+    1 => 'Recibirás confirmación en un plazo máximo de 2 horas',
+    2 => 'Para reservas del mismo día, contacta por WhatsApp',
+  ),
+  'success_message' => '✅ ¡Reserva enviada con éxito! Te contactaremos pronto.',
+  'error_message' => '❌ Error al enviar la reserva. Por favor, intenta de nuevo o contacta por WhatsApp.',
+  'submit_button' => 'ENVIAR RESERVA',
+  'submitting_button' => 'ENVIANDO...',
+  'map_section_title' => 'NUESTRA UBICACIÓN',
+  'map_section_subtitle' => 'EN EL CORAZÓN DE PALMA',
+  'map_section_p1' => 'Nuestro exclusivo spa se encuentra estratégicamente ubicado en una zona discreta del centro histórico de Palma de Mallorca, ofreciendo fácil acceso desde cualquier punto de la ciudad mientras mantenemos la máxima privacidad.',
+  'map_section_points' => 
+  array (
+    0 => '5 minutos del centro comercial',
+    1 => '10 minutos de la catedral',
+    2 => '15 minutos del aeropuerto',
+    3 => 'Acceso directo en vehículo',
+  ),
+  'open_maps_text' => 'Abrir en Google Maps',
+  'whatsapp_button_tooltip' => '¡Chatea con nosotros!',
+  'whatsapp_default_message' => 'Hola, me gustaría información sobre los servicios TL Mallorca.',
+  'timeSlots' => 
+  array (
+    0 => '11:00',
+    1 => '12:00',
+    2 => '13:00',
+    3 => '14:00',
+    4 => '15:00',
+    5 => '16:00',
+    6 => '17:00',
+    7 => '18:00',
+    8 => '19:00',
+    9 => '20:00',
+    10 => '21:00',
+    11 => '22:00',
+    12 => '23:00',
+    13 => '00:00',
+    14 => '01:00',
+  ),
+);
