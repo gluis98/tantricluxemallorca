@@ -47,28 +47,76 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
     
     @php
-        // Leer manifest.json si existe
-        $manifestPath = public_path('build/manifest.json');
+        // Intentar obtener assets compilados
         $cssFile = null;
         $jsFile = null;
+        $manifestPath = public_path('build/manifest.json');
         
-        if (file_exists($manifestPath)) {
-            $manifest = json_decode(file_get_contents($manifestPath), true);
-            if (isset($manifest['resources/css/app.css']['file'])) {
-                $cssFile = asset('build/' . $manifest['resources/css/app.css']['file']);
-            }
-            if (isset($manifest['resources/js/app.js']['file'])) {
-                $jsFile = asset('build/' . $manifest['resources/js/app.js']['file']);
+        // Verificar si existe el manifest y es legible
+        if (file_exists($manifestPath) && is_readable($manifestPath)) {
+            try {
+                $manifestContent = file_get_contents($manifestPath);
+                $manifest = json_decode($manifestContent, true);
+                
+                if (json_last_error() === JSON_ERROR_NONE && is_array($manifest)) {
+                    // Buscar CSS
+                    if (isset($manifest['resources/css/app.css']['file'])) {
+                        $cssFileName = $manifest['resources/css/app.css']['file'];
+                        $cssPath = public_path('build/' . $cssFileName);
+                        if (file_exists($cssPath) && is_readable($cssPath)) {
+                            $cssFile = asset('build/' . $cssFileName);
+                        }
+                    }
+                    
+                    // Buscar JS
+                    if (isset($manifest['resources/js/app.js']['file'])) {
+                        $jsFileName = $manifest['resources/js/app.js']['file'];
+                        $jsPath = public_path('build/' . $jsFileName);
+                        if (file_exists($jsPath) && is_readable($jsPath)) {
+                            $jsFile = asset('build/' . $jsFileName);
+                        }
+                    }
+                }
+            } catch (\Exception $e) {
+                // Si hay error, usar fallback
             }
         }
     @endphp
     
     <!-- CSS -->
     @if($cssFile)
+        <!-- Usando CSS compilado desde Vite -->
         <link rel="stylesheet" href="{{ $cssFile }}">
     @else
-        <!-- Fallback: usar CDN de Tailwind o CSS compilado estático -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css">
+        <!-- Fallback: Tailwind Play CDN + Estilos personalizados -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <!-- Tailwind Play CDN - Incluye todas las utilidades -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            amber: {
+                                50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
+                                400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
+                                800: '#92400e', 900: '#78350f', 950: '#451a03',
+                            }
+                        },
+                        fontFamily: {
+                            'cormorant': ['Cormorant Garamond', 'serif'],
+                            'tenali': ['Tenali Ramakrishna', 'sans-serif'],
+                            'urbanist': ['Urbanist', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+        
+        <!-- Estilos personalizados adicionales -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');

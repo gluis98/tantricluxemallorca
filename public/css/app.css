@@ -1,0 +1,9 @@
+/* Este archivo es un fallback si no existe el build de Vite */
+/* Para producción, se recomienda compilar con: npm run build */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Nota: Este archivo requiere que Tailwind esté disponible via CDN o compilado */
+/* Para mejor rendimiento, compila los assets con: npm run build */

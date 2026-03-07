@@ -1,23 +1,41 @@
 <?php
 
-if (!function_exists('vite_asset')) {
+if (!function_exists('get_vite_asset')) {
     /**
      * Obtiene la URL del asset compilado desde el manifest de Vite
-     * Si no existe el manifest, devuelve el asset directo
+     * Retorna null si no se encuentra
      */
-    function vite_asset($path)
+    function get_vite_asset($resourcePath)
     {
         $manifestPath = public_path('build/manifest.json');
         
-        if (file_exists($manifestPath)) {
-            $manifest = json_decode(file_get_contents($manifestPath), true);
-            
-            if (isset($manifest[$path]['file'])) {
-                return asset('build/' . $manifest[$path]['file']);
-            }
+        if (!file_exists($manifestPath) || !is_readable($manifestPath)) {
+            return null;
         }
         
-        // Fallback: devolver el asset directo si no hay manifest
-        return asset(str_replace('resources/', '', $path));
+        try {
+            $manifestContent = file_get_contents($manifestPath);
+            $manifest = json_decode($manifestContent, true);
+            
+            if (json_last_error() !== JSON_ERROR_NONE || !is_array($manifest)) {
+                return null;
+            }
+            
+            if (!isset($manifest[$resourcePath]['file'])) {
+                return null;
+            }
+            
+            $fileName = $manifest[$resourcePath]['file'];
+            $fullPath = public_path('build/' . $fileName);
+            
+            // Verificar que el archivo realmente existe
+            if (!file_exists($fullPath) || !is_readable($fullPath)) {
+                return null;
+            }
+            
+            return asset('build/' . $fileName);
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 }
