@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@php
+    // Definir las variables al inicio para que estén disponibles en todas las secciones
+    $masseusesPage = trans('masseusesPage', [], $locale);
+    $masseuses = $masseusesPage['masseuses'] ?? [];
+@endphp
+
 @section('title', trans('masseusesPage.meta_title', [], $locale))
 @section('description', trans('masseusesPage.meta_description', [], $locale))
 @section('keywords', trans('masseusesPage.meta_keywords', [], $locale))
@@ -13,6 +19,7 @@
 @endsection
 
 @section('structured_data')
+@if(count($masseuses) > 0)
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -36,13 +43,10 @@
     ]
 }
 </script>
+@endif
 @endsection
 
 @section('content')
-@php
-    $masseusesPage = trans('masseusesPage', [], $locale);
-    $masseuses = $masseusesPage['masseuses'] ?? [];
-@endphp
 
 <div class="relative z-10 px-4 md:px-8 py-8">
     <div class="max-w-7xl mx-auto">
