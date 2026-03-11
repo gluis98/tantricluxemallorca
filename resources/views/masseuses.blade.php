@@ -34,8 +34,9 @@
                 "name": "{{ $masseuse['name'] ?? '' }}",
                 "jobTitle": "{{ $masseuse['specialty'] ?? '' }}",
                 "worksFor": {
-                    "@type": "Spa",
-                    "name": "Tantric Luxe Mallorca"
+                    "@type": "LocalBusiness",
+                    "name": "Tantric Luxe Mallorca",
+                    "url": "https://tantricluxemallorca.com"
                 }
             }
         }{{ $index < count($masseuses) - 1 ? ',' : '' }}

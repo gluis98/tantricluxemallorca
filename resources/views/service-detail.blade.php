@@ -49,8 +49,9 @@
     },
     "offers": {
         "@type": "Offer",
-        "price": "{{ $service['price'] ?? '' }}",
-        "priceCurrency": "EUR"
+        "price": "{{ preg_replace('/[^0-9.]/', '', $service['price'] ?? '') }}",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
     }
 }
 </script>

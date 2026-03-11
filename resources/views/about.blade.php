@@ -18,11 +18,12 @@
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "mainEntity": {
-        "@type": "Spa",
+        "@type": "LocalBusiness",
         "name": "Tantric Luxe Mallorca",
         "description": "{{ trans('aboutPage.meta_description', [], $locale) }}",
-        "url": "{{ url()->current() }}",
+        "url": "https://tantricluxemallorca.com",
         "logo": "{{ asset('images/LogoFull.png') }}",
+        "foundingDate": "2019",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",
@@ -30,6 +31,14 @@
             "postalCode": "07012",
             "addressRegion": "Illes Balears",
             "addressCountry": "ES"
+        },
+        "telephone": "+34-602-560-426",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "89",
+            "bestRating": "5",
+            "worstRating": "1"
         }
     }
 }

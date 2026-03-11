@@ -16,12 +16,14 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Spa",
+    "@type": "HealthAndBeautyBusiness",
     "name": "Tantric Luxe Mallorca",
     "description": "{{ trans('homepage.meta_description', [], $locale) }}",
-    "url": "{{ url()->current() }}",
+    "url": "https://tantricluxemallorca.com",
     "logo": "{{ asset('images/LogoFull.png') }}",
     "image": "{{ asset('images/LogoFull.png') }}",
+    "telephone": "+34-602-560-426",
+    "email": "info@tantricluxemallorca.com",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",
@@ -30,9 +32,26 @@
         "addressRegion": "Illes Balears",
         "addressCountry": "ES"
     },
-    "telephone": "+34 602 560 426",
-    "priceRange": "$$$",
-    "openingHours": "Mo-Su 09:00-23:00"
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.5736032",
+        "longitude": "2.6386885"
+    },
+    "openingHours": "Mo-Su 09:00-23:00",
+    "priceRange": "€99-€499",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "89",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "sameAs": [
+        "https://instagram.com/tantricluxemallorca",
+        "https://facebook.com/tantricluxemallorca"
+    ]
 }
 </script>
 @endsection
