@@ -34,72 +34,6 @@ const pathTranslations: Record<string, Record<string, string>> = {
     en: '/whatsapp',
     de: '/whatsapp',
   },
-  // Servicios Golden
-  '/servicios/golden-relax': {
-    es: '/servicios/golden-relax',
-    en: '/servicios/golden-relax',
-    de: '/servicios/golden-relax',
-  },
-  '/servicios/golden-sensitivo': {
-    es: '/servicios/golden-sensitivo',
-    en: '/servicios/golden-sensitive',
-    de: '/servicios/golden-sensitiv',
-  },
-  '/servicios/golden-sensitive': {
-    es: '/servicios/golden-sensitivo',
-    en: '/servicios/golden-sensitive',
-    de: '/servicios/golden-sensitiv',
-  },
-  '/servicios/golden-sensitiv': {
-    es: '/servicios/golden-sensitivo',
-    en: '/servicios/golden-sensitive',
-    de: '/servicios/golden-sensitiv',
-  },
-  '/servicios/experiencia-golden': {
-    es: '/servicios/experiencia-golden',
-    en: '/servicios/golden-experience',
-    de: '/servicios/golden-erlebnis',
-  },
-  '/servicios/golden-experience': {
-    es: '/servicios/experiencia-golden',
-    en: '/servicios/golden-experience',
-    de: '/servicios/golden-erlebnis',
-  },
-  '/servicios/golden-erlebnis': {
-    es: '/servicios/experiencia-golden',
-    en: '/servicios/golden-experience',
-    de: '/servicios/golden-erlebnis',
-  },
-  '/servicios/golden-suite-experiencia': {
-    es: '/servicios/golden-suite-experiencia',
-    en: '/servicios/golden-suite-experience',
-    de: '/servicios/golden-suite-erlebnis',
-  },
-  '/servicios/golden-suite-experience': {
-    es: '/servicios/golden-suite-experiencia',
-    en: '/servicios/golden-suite-experience',
-    de: '/servicios/golden-suite-erlebnis',
-  },
-  '/servicios/golden-suite-erlebnis': {
-    es: '/servicios/golden-suite-experiencia',
-    en: '/servicios/golden-suite-experience',
-    de: '/servicios/golden-suite-erlebnis',
-  },
-  '/servicios/velvet-duet-pareja': {
-    es: '/servicios/velvet-duet-pareja',
-    en: '/servicios/velvet-duet-couple',
-    de: '/servicios/velvet-duet-paar',
-  },
-  '/servicios/velvet-duet-couple': {
-    es: '/servicios/velvet-duet-pareja',
-    en: '/servicios/velvet-duet-couple',
-    de: '/servicios/velvet-duet-paar',
-  },
-  '/servicios/velvet-duet-paar': {
-    es: '/servicios/velvet-duet-pareja',
-    en: '/servicios/velvet-duet-couple',
-    de: '/servicios/velvet-duet-paar',
-  },
 };
 
 export function middleware(request: NextRequest) {
@@ -135,10 +69,25 @@ export function middleware(request: NextRequest) {
     const locale = segments[0] as string; // 'es', 'en', o 'de'
     const pathWithoutLocale = '/' + segments.slice(1).join('/') || '/';
 
-    // Si es una ruta de servicio dinámico (/servicios/[slug]), permitir que pase directamente
-    // Next.js manejará la ruta dinámica
+    // Si es una ruta de servicio dinámico (/servicios/[slug])
     if (pathWithoutLocale.startsWith('/servicios/') && segments.length >= 3) {
-      // Es una ruta dinámica de servicio, reescribir directamente
+      const serviceSlug = segments[2]; // El slug del servicio
+      
+      // Servicios antiguos que ya no existen - redirigir a la página de servicios
+      const deprecatedServices: Record<string, string[]> = {
+        es: ['golden-relax', 'golden-sensitivo', 'experiencia-golden', 'golden-suite-experiencia', 'velvet-duet-pareja'],
+        en: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
+        de: ['golden-relax', 'golden-sensitiv', 'golden-erlebnis', 'golden-suite-erlebnis', 'velvet-duet-paar'],
+      };
+      
+      // Si es un servicio antiguo, redirigir a la página de servicios
+      if (deprecatedServices[locale]?.includes(serviceSlug)) {
+        const servicesPath = locale === 'es' ? '/servicios' : locale === 'en' ? '/services' : '/leistungen';
+        const redirectUrl = new URL(`/${locale}${servicesPath}`, request.url);
+        return NextResponse.redirect(redirectUrl, 301); // 301 = permanente
+      }
+      
+      // Es una ruta dinámica de servicio válida, reescribir directamente
       const response = NextResponse.rewrite(new URL(`/${locale}${pathWithoutLocale}`, request.url));
       response.headers.set('x-pathname', pathname);
       return response;
@@ -167,6 +116,21 @@ export function middleware(request: NextRequest) {
     // Esto evita problemas de indexación y permite que las URLs funcionen directamente
     let locale = 'es';
     let canonicalPath = pathname;
+
+    // Verificar si es un servicio antiguo sin prefijo de idioma
+    if (pathname.startsWith('/servicios/')) {
+      const segments = pathname.split('/').filter(Boolean);
+      if (segments.length >= 2) {
+        const serviceSlug = segments[1];
+        const deprecatedServices = ['golden-relax', 'golden-sensitivo', 'experiencia-golden', 'golden-suite-experiencia', 'velvet-duet-pareja'];
+        
+        // Si es un servicio antiguo, redirigir a la página de servicios
+        if (deprecatedServices.includes(serviceSlug)) {
+          const redirectUrl = new URL('/es/servicios', request.url);
+          return NextResponse.redirect(redirectUrl, 301); // 301 = permanente
+        }
+      }
+    }
 
     // Verificar si la ruta es una traducción en español
     for (const [canonical, translations] of Object.entries(pathTranslations)) {
