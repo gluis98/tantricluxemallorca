@@ -71,7 +71,23 @@ export default async function RootLayout({
     };
 
     // Detectar la ruta canónica actual
-    let currentPath = pathname.replace(`/${locale}`, '') || '/';
+    // Si pathname no tiene prefijo de idioma, es una URL sin prefijo (español por defecto)
+    let currentPath = pathname;
+    const pathnameHasLocale = i18n.locales.some(
+      (loc) => pathname.startsWith(`/${loc}/`) || pathname === `/${loc}`
+    );
+    
+    if (pathnameHasLocale) {
+      // Tiene prefijo de idioma, extraer la ruta sin el prefijo
+      currentPath = pathname.replace(`/${locale}`, '') || '/';
+    } else if (pathname && pathname !== '/') {
+      // No tiene prefijo, es una URL sin prefijo (español por defecto)
+      currentPath = pathname;
+    } else {
+      // Es la raíz
+      currentPath = '/';
+    }
+    
     if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
     
     // Si es una ruta dinámica de servicio, las páginas individuales manejan su propio hreflang
@@ -95,23 +111,40 @@ export default async function RootLayout({
     // Generar alternativas para todos los idiomas
     const alternates: Array<{ hreflang: string; href: string }> = [];
     
+    // Si la URL original no tiene prefijo de idioma, incluirla como versión en español
+    if (!pathnameHasLocale && pathname && pathname !== '/') {
+      alternates.push({
+        hreflang: 'es',
+        href: `${baseUrl}${pathname}`,
+      });
+    }
+    
     i18n.locales.forEach((loc) => {
       const translatedPath = pathTranslations[canonicalPath]?.[loc] || canonicalPath;
       const url = translatedPath === '/' 
         ? `${baseUrl}/${loc}` 
         : `${baseUrl}/${loc}${translatedPath}`;
       
-      alternates.push({
-        hreflang: loc,
-        href: url,
-      });
+      // Solo agregar si no es español sin prefijo (ya se agregó arriba)
+      if (!(loc === 'es' && !pathnameHasLocale && pathname && pathname !== '/')) {
+        alternates.push({
+          hreflang: loc,
+          href: url,
+        });
+      }
     });
     
     // x-default apunta al español
-    const defaultPath = pathTranslations[canonicalPath]?.['es'] || canonicalPath;
-    const defaultUrl = defaultPath === '/' 
-      ? `${baseUrl}/es` 
-      : `${baseUrl}/es${defaultPath}`;
+    // Si la URL original no tiene prefijo, usar esa URL como default
+    let defaultUrl: string;
+    if (!pathnameHasLocale && pathname && pathname !== '/') {
+      defaultUrl = `${baseUrl}${pathname}`;
+    } else {
+      const defaultPath = pathTranslations[canonicalPath]?.['es'] || canonicalPath;
+      defaultUrl = defaultPath === '/' 
+        ? `${baseUrl}/es` 
+        : `${baseUrl}/es${defaultPath}`;
+    }
     
     alternates.push({
       hreflang: 'x-default',

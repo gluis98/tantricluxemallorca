@@ -103,7 +103,7 @@ const pathTranslations: Record<string, Record<string, string>> = {
 };
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  let pathname = request.nextUrl.pathname;
 
   // Ignorar archivos estáticos, API, etc.
   if (
@@ -116,6 +116,12 @@ export function middleware(request: NextRequest) {
     pathname === '/robots.txt'
   ) {
     return NextResponse.next();
+  }
+
+  // Normalizar trailing slash: remover trailing slash excepto para la raíz
+  // Esto ayuda a manejar URLs con y sin trailing slash de manera consistente
+  if (pathname !== '/' && pathname.endsWith('/')) {
+    pathname = pathname.slice(0, -1);
   }
 
   // Detectar el idioma de la URL actual
@@ -157,7 +163,8 @@ export function middleware(request: NextRequest) {
     response.headers.set('x-pathname', pathname);
     return response;
   } else {
-    // URL sin prefijo de idioma - Redirigir a /es/ (español por defecto)
+    // URL sin prefijo de idioma - Servir en español por defecto SIN redirigir
+    // Esto evita problemas de indexación y permite que las URLs funcionen directamente
     let locale = 'es';
     let canonicalPath = pathname;
 
@@ -169,11 +176,21 @@ export function middleware(request: NextRequest) {
       }
     }
 
-    // Redirigir a /es/ con la ruta correcta
-    const newPath = canonicalPath === '/' ? '/es' : `/es${canonicalPath}`;
-    const url = request.nextUrl.clone();
-    url.pathname = newPath;
-    return NextResponse.redirect(url);
+    // Construir la ruta de rewrite (mismo formato que cuando hay prefijo de idioma)
+    // Asegurarse de que la ruta tenga el formato correcto para Next.js
+    const rewritePath = canonicalPath === '/' ? '/es' : `/es${canonicalPath}`;
+    
+    // Construir la URL de destino usando la misma base que request.url
+    const rewriteUrl = new URL(rewritePath, request.url);
+    
+    // Usar rewrite en lugar de redirect para mantener la URL original visible
+    // pero servir el contenido en español (mismo formato que cuando hay prefijo)
+    const response = NextResponse.rewrite(rewriteUrl);
+    // Agregar header con la ruta original para hreflang y SEO
+    response.headers.set('x-pathname', pathname);
+    // Indicar que se está sirviendo en español por defecto
+    response.headers.set('x-default-locale', 'es');
+    return response;
   }
 }
 

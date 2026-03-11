@@ -114,6 +114,19 @@
         { "quote": "El taller de masaje tantrico Mallorca para parejas fortaleció nuestra conexión. Una experiencia de crecimiento personal y espiritual extraordinaria.", "author": "Ana & David" }
       ]
     },
+    "features_section": {
+      "pre_title": "POR QUÉ ELEGIRNOS",
+      "title": "EXPERIENCIA PREMIUM GARANTIZADA"
+    },
+    "process_section": {
+      "pre_title": "CÓMO FUNCIONA",
+      "title": "TU EXPERIENCIA EN 4 PASOS"
+    },
+    "cta_section": {
+      "title": "¿LISTO PARA TU EXPERIENCIA?",
+      "subtitle": "Reserva ahora y descubre el verdadero arte del masaje tántrico en Palma de Mallorca. Tu transformación comienza aquí.",
+      "button_text": "RESERVAR AHORA"
+    },
     "reserve_button_text": "RESERVAR AHORA",
     "hero_section": {
       "card1_title": "MASAJE TANTRICO<br />EXCLUSIVO",

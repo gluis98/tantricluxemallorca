@@ -6,8 +6,15 @@ import HeroSection from '@/components/ui/sections/Hero';
 import Gallery from '@/components/ui/sections/Gallery';
 import ServicesSection from '@/components/ui/sections/Services';
 import AboutSection from '@/components/ui/sections/About';
+import TestimonialsSection from '@/components/ui/sections/Testimonials';
+import SpecialPackagesSection from '@/components/ui/sections/SpecialPackages';
+import FeaturesSection from '@/components/ui/sections/Features';
+import ProcessSection from '@/components/ui/sections/Process';
+import FAQSection from '@/components/ui/sections/FAQ';
+import CTASection from '@/components/ui/sections/CTA';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
+import ImageGalleryModal from '@/components/modals/ImageGalleryModal';
 import { Locale } from '@/i18n-config';
 
 export default function HomePageClient({ lang, dictionary }: {
@@ -15,6 +22,7 @@ export default function HomePageClient({ lang, dictionary }: {
   dictionary: any;
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
   const erikaImages = [
@@ -57,13 +65,16 @@ export default function HomePageClient({ lang, dictionary }: {
 
               {/* Grid de fotos de Erika */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {erikaImages.slice(0, 4).map((image, index) => (
+                {erikaImages.slice(0, 4).map((image, index) => {
+                  // Encontrar el índice real en el array completo
+                  const realIndex = erikaImages.indexOf(image);
+                  return (
                   <div 
                     key={index}
                     className="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300"
                     onClick={() => {
-                      setCurrentImage(index);
-                      setIsModalOpen(true);
+                      setCurrentImage(realIndex >= 0 ? realIndex : index);
+                      setIsImageGalleryOpen(true);
                     }}
                   >
                     <div className="relative aspect-[3/4]">
@@ -77,12 +88,13 @@ export default function HomePageClient({ lang, dictionary }: {
                       {/* Overlay oscuro en hover */}
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="text-white text-sm font-medium tenali-ramakrishna">
-                          Ver más
+                          {lang === 'en' ? 'View more' : lang === 'de' ? 'Mehr anzeigen' : 'Ver más'}
                         </span>
                       </div>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Nombre ERIKA prominente */}
@@ -138,8 +150,39 @@ export default function HomePageClient({ lang, dictionary }: {
         {/* Services Section */}
         <ServicesSection lang={lang} dictionary={dictionary.homepage.services_section} services={dictionary.servicesPage.services} />
 
+        {/* Special Packages Section */}
+        <SpecialPackagesSection 
+          lang={lang} 
+          dictionary={{
+            pre_title: dictionary.servicesPage.packages_pre_title,
+            title: dictionary.servicesPage.packages_title
+          }} 
+          packages={dictionary.servicesPage.packages} 
+        />
+
+        {/* Features Section */}
+        <FeaturesSection lang={lang} dictionary={dictionary.homepage.features_section} />
+
         {/* About Us Section */}
         <AboutSection dictionary={dictionary.homepage.about_us_section} />
+
+        {/* Process Section */}
+        <ProcessSection lang={lang} dictionary={dictionary.homepage.process_section} />
+
+        {/* Testimonials Section */}
+        <TestimonialsSection dictionary={dictionary.homepage.testimonials_section} />
+
+        {/* FAQ Section */}
+        <FAQSection 
+          dictionary={{
+            pre_title: dictionary.servicesPage.faq_pre_title,
+            title: dictionary.servicesPage.faq_title
+          }} 
+          faqs={dictionary.servicesPage.faqs.slice(0, 3)} 
+        />
+
+        {/* CTA Section */}
+        <CTASection dictionary={dictionary.homepage.cta_section} />
 
         {/* Contact Section */}
         <ContactSection dictionary={dictionary.homepage.contact_section} services={dictionary.servicesPage.services} />
@@ -147,6 +190,16 @@ export default function HomePageClient({ lang, dictionary }: {
 
       {/* Masseuses Modal */}
       <MasajistasModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} lang={lang} />
+
+      {/* Image Gallery Modal */}
+      <ImageGalleryModal
+        isOpen={isImageGalleryOpen}
+        onClose={() => setIsImageGalleryOpen(false)}
+        images={erikaImages}
+        currentIndex={currentImage}
+        onIndexChange={setCurrentImage}
+        name="Erika"
+      />
     </>
   );
 }

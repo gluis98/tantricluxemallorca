@@ -114,6 +114,19 @@
         { "quote": "The tantric massage workshop for couples in Mallorca strengthened our connection. An extraordinary experience of personal and spiritual growth.", "author": "Ana & David" }
       ]
     },
+    "features_section": {
+      "pre_title": "WHY CHOOSE US",
+      "title": "GUARANTEED PREMIUM EXPERIENCE"
+    },
+    "process_section": {
+      "pre_title": "HOW IT WORKS",
+      "title": "YOUR EXPERIENCE IN 4 STEPS"
+    },
+    "cta_section": {
+      "title": "READY FOR YOUR EXPERIENCE?",
+      "subtitle": "Book now and discover the true art of tantric massage in Palma de Mallorca. Your transformation begins here.",
+      "button_text": "BOOK NOW"
+    },
     "reserve_button_text": "BOOK NOW",
     "hero_section": {
       "card1_title": "EXCLUSIVE<br />TANTRIC MASSAGE",

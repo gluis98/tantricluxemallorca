@@ -114,6 +114,19 @@
         { "quote": "Der Tantra-Massage-Workshop für Paare auf Mallorca hat unsere Verbindung gestärkt. Ein außergewöhnliches Erlebnis der persönlichen und spirituellen Entwicklung.", "author": "Ana & David" }
       ]
     },
+    "features_section": {
+      "pre_title": "WARUM UNS WÄHLEN",
+      "title": "GARANTIERTE PREMIUM-ERFAHRUNG"
+    },
+    "process_section": {
+      "pre_title": "WIE ES FUNKTIONIERT",
+      "title": "IHR ERLEBNIS IN 4 SCHRITTEN"
+    },
+    "cta_section": {
+      "title": "BEREIT FÜR IHR ERLEBNIS?",
+      "subtitle": "Buchen Sie jetzt und entdecken Sie die wahre Kunst der Tantra-Massage in Palma de Mallorca. Ihre Transformation beginnt hier.",
+      "button_text": "JETZT BUCHEN"
+    },
     "reserve_button_text": "JETZT BUCHEN",
     "hero_section": {
       "card1_title": "EXKLUSIVE<br />TANTRA-MASSAGE",
