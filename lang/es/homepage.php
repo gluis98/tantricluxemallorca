@@ -12,7 +12,7 @@ return array (
   array (
     'title' => 'Conoce a Nuestra Especialista',
     'description' => 'Erika, nuestra masajista excepcional, combina belleza natural, elegancia refinada y un dominio magistral de las técnicas tantricas más sofisticadas. Descubre la experiencia única que te espera.',
-    'button_text' => 'MÁS INFORMACIÓN SOBRE ERIKA',
+    'button_text' => 'MÁS INFORMACIÓN DE NUESTRAS MASAJISTAS',
     'specialty_text' => 'Especialista en Masaje Tantrico Sensual Deluxe',
     'available_text' => 'Disponible Ahora',
     'reviews_text' => 'opiniones',

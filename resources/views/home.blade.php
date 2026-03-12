@@ -413,7 +413,7 @@
             <div class="text-center">
                 <a href="/{{ $locale }}/masajistas"
                    class="inline-block tenali-ramakrishna border-2 border-amber-400/60 hover:border-amber-400 bg-gradient-to-r from-amber-900/20 to-amber-800/10 rounded-full text-amber-300 px-12 py-4 text-base font-medium tracking-widest transition-all duration-300 hover:scale-105 shadow-lg uppercase">
-                    {{ $homepage['masseuse_section']['button_text'] ?? 'VER TODAS LAS MASAJISTAS' }}
+                    {{ $homepage['masseuse_section']['button_text'] ?? 'MÁS INFORMACIÓN DE NUESTRAS MASAJISTAS' }}
                 </a>
             </div>
 
