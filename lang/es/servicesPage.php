@@ -125,6 +125,111 @@ return array (
       'fullDescription' => 'Sumérgete en una experiencia tántrica de lujo diseñada especialmente para ti, a bordo de tu yate privado. Cuidamos cada detalle: aromas envolventes, música sensual, aceites cálidos y una ambientación que transforma tu embarcación en un oasis de placer flotante. Este masaje es más que una sesión: es una conexión profunda entre cuerpo y deseo, guiada por manos expertas en un entorno íntimo y exclusivo. Ideal para quienes buscan desconectar del mundo y entregarse al arte del placer con total privacidad, entre el vaivén del mar y la magia del tacto.',
       'image' => '/images/experiencias_eroticas_unicas.webp',
     ),
+    5 => 
+    array (
+      'id' => 6,
+      'slug' => 'masaje-prostatico',
+      'title' => 'MASAJE PROSTÁTICO',
+      'duration' => '60 min',
+      'price' => '€200',
+      'description' => 'Un masaje enfocado en el bienestar y la estimulación de una de las zonas más sensibles del cuerpo masculino. Libera tensiones, aumenta la sensibilidad y proporciona una sensación profunda de placer y relajación.',
+      'meta_title' => 'Masaje Prostático Palma | Estimulación Íntima y Bienestar Masculino Mallorca',
+      'meta_description' => 'Masaje prostático en Palma de Mallorca. Técnicas cuidadosas en ambiente íntimo y relajante para liberar tensiones y maximizar el placer masculino. Privacidad total. Reserva ahora.',
+      'meta_keywords' => 'masaje prostatico palma, masaje prostatico mallorca, masaje intimo masculino palma, bienestar masculino mallorca, masajes eroticos palma, masaje erotico palma, masajes mallorca, spa palma',
+      'features' => 
+      array (
+        0 => 'Técnicas especializadas',
+        1 => 'Ambiente íntimo y relajante',
+        2 => 'Máxima privacidad',
+        3 => 'Profesionales certificadas',
+      ),
+      'fullDescription' => 'Un masaje enfocado en el bienestar y la estimulación de una de las zonas más sensibles del cuerpo masculino. A través de técnicas cuidadosas y un ambiente íntimo y relajante, esta experiencia busca liberar tensiones, aumentar la sensibilidad y proporcionar una sensación profunda de placer y relajación. Todo en un entorno de absoluta privacidad y con el máximo respeto y profesionalidad.',
+      'image' => '/images/sensual_premium.webp',
+    ),
+    6 => 
+    array (
+      'id' => 7,
+      'slug' => 'striptease-privado',
+      'title' => 'STRIPTEASE PRIVADO',
+      'duration' => '60 min',
+      'price' => '€250',
+      'description' => 'Un espectáculo privado lleno de sensualidad y elegancia, donde cada movimiento está pensado para despertar los sentidos y crear una atmósfera íntima y seductora.',
+      'meta_title' => 'Striptease Privado Palma | Espectáculo Erótico Exclusivo Mallorca',
+      'meta_description' => 'Striptease privado en Palma de Mallorca. Espectáculo íntimo y seductor con baile, actitud y juego de miradas. Experiencia visual y erótica exclusiva en spa de lujo. Reserva ahora.',
+      'meta_keywords' => 'striptease privado palma, striptease mallorca, espectaculo erotico palma, show privado mallorca, striptease palma, masajes eroticos palma, spa palma, experiencia erotica palma',
+      'features' => 
+      array (
+        0 => 'Show privado exclusivo',
+        1 => 'Baile sensual y elegante',
+        2 => 'Juego de miradas y actitud',
+        3 => 'Atmósfera íntima y seductora',
+      ),
+      'fullDescription' => 'Un espectáculo privado lleno de sensualidad y elegancia, donde cada movimiento está pensado para despertar los sentidos y crear una atmósfera íntima y seductora. Una experiencia visual y erótica que combina baile, actitud y juego de miradas para disfrutar de un momento único y excitante. Diseñado exclusivamente para ti, en un entorno privado y de máximo lujo.',
+      'image' => '/images/exotic_paradise.webp',
+    ),
+    7 => 
+    array (
+      'id' => 8,
+      'slug' => 'experiencia-premium',
+      'title' => 'EXPERIENCIA PREMIUM',
+      'duration' => '70 min',
+      'price' => '€300',
+      'description' => 'Una experiencia exclusiva que combina striptease privado, experiencia íntima en la ducha y masaje cuerpo a cuerpo PLUS. Todo acompañado de una copa de champagne para un momento aún más especial.',
+      'meta_title' => 'Experiencia Premium Palma | Striptease, Ducha y Cuerpo a Cuerpo Mallorca',
+      'meta_description' => 'Experiencia Premium en Palma de Mallorca. Striptease privado, ducha íntima, masaje cuerpo a cuerpo PLUS y copa de champagne. La experiencia más completa de sensualidad y placer en spa de lujo. Reserva ahora.',
+      'meta_keywords' => 'experiencia premium palma, masaje premium mallorca, striptease ducha masaje palma, experiencia completa erotica mallorca, masajes eroticos palma, spa palma, masaje cuerpo a cuerpo palma, champagne masaje mallorca',
+      'features' => 
+      array (
+        0 => 'Striptease privado',
+        1 => 'Experiencia íntima en la ducha',
+        2 => 'Masaje cuerpo a cuerpo PLUS',
+        3 => 'Copa de champagne incluida',
+      ),
+      'fullDescription' => 'Una experiencia exclusiva diseñada para quienes desean disfrutar de un momento completo de sensualidad, relajación y placer. Esta sesión combina un striptease privado, una experiencia íntima en la ducha y un masaje cuerpo a cuerpo PLUS, creando un ambiente envolvente y seductor. Todo acompañado de una copa de champagne para hacer de este momento algo aún más especial y memorable. (Striptease, ducha, cuerpo a cuerpo PLUS y champagne)',
+      'image' => '/images/sensual_premium.webp',
+    ),
+    8 => 
+    array (
+      'id' => 9,
+      'slug' => 'masaje-4-manos',
+      'title' => 'MASAJE A 4 MANOS',
+      'duration' => '60 min',
+      'price' => '€300',
+      'description' => 'Una experiencia intensamente sensual donde dos masajistas se sincronizan para recorrer tu cuerpo al mismo tiempo, combinando caricias suaves y movimientos fluidos que despiertan los sentidos.',
+      'meta_title' => 'Masaje a 4 Manos Palma | Dos Masajistas Sincronizadas Mallorca',
+      'meta_description' => 'Masaje a 4 manos en Palma de Mallorca. Dos masajistas sincronizadas para una experiencia de placer profundo y relajación total. Sensualidad y bienestar únicos en spa de lujo. Reserva ahora.',
+      'meta_keywords' => 'masaje 4 manos palma, masaje cuatro manos mallorca, dos masajistas palma, masaje sincronizado mallorca, masajes eroticos palma, masajes mallorca, spa palma, masaje erotico palma, masaje sensual 4 manos palma',
+      'features' => 
+      array (
+        0 => 'Dos masajistas sincronizadas',
+        1 => 'Caricias simultáneas',
+        2 => 'Movimientos fluidos y envolventes',
+        3 => 'Placer profundo y relajación total',
+      ),
+      'fullDescription' => 'Una experiencia intensamente sensual y envolvente, donde dos masajistas se sincronizan para recorrer tu cuerpo al mismo tiempo, combinando caricias suaves y movimientos fluidos que despiertan los sentidos. El contacto simultáneo crea una sensación de placer profundo, excitación y relajación total, convirtiendo cada instante en un momento íntimo y memorable.',
+      'image' => '/images/exotic_paradise.webp',
+    ),
+    9 => 
+    array (
+      'id' => 10,
+      'slug' => 'masaje-en-pareja',
+      'title' => 'MASAJE EN PAREJA',
+      'duration' => '60 min',
+      'price' => '€280',
+      'description' => 'Disfruta de un momento íntimo junto a tu pareja con un masaje diseñado para compartir sensaciones de placer y relajación. Con uno o dos masajistas, una experiencia erótica y profundamente conectada.',
+      'meta_title' => 'Masaje en Pareja Palma | Experiencia Íntima y Sensual para Parejas Mallorca',
+      'meta_description' => 'Masaje en pareja en Palma de Mallorca. Con uno o dos masajistas, disfruta de caricias suaves, sensualidad y conexión profunda. Experiencia erótica y relajante para parejas en spa de lujo. Reserva ahora.',
+      'meta_keywords' => 'masaje en pareja palma, masaje parejas mallorca, masaje erotico parejas palma, experiencia pareja mallorca, masaje sensual pareja palma, masajes eroticos palma, spa palma, masaje romantico palma, masajes mallorca',
+      'features' => 
+      array (
+        0 => 'Opción 1 o 2 masajistas',
+        1 => 'Caricias suaves y envolventes',
+        2 => 'Ambiente sensual y relajante',
+        3 => 'Conexión profunda en pareja',
+      ),
+      'fullDescription' => 'Disfruta de un momento íntimo junto a tu pareja con un masaje diseñado para compartir sensaciones de placer y relajación. Con uno o dos masajistas, los cuerpos se sincronizan mientras las caricias suaves y envolventes despiertan los sentidos, creando una experiencia erótica, sensual y profundamente conectada. Un ritual para relajarse, excitar y disfrutar juntos. Precio: 60 min – 280€ (1 masajista) / 60 min – 320€ (2 masajistas).',
+      'image' => '/images/couples_harmony.webp',
+    ),
   ),
   'packages' => 
   array (
