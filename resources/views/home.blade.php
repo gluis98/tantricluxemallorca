@@ -437,35 +437,88 @@
             <div class="w-24 h-px bg-amber-400 mx-auto"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            @foreach(array_slice($services, 0, 2) as $service)
-            <div class="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full">
-                <div class="flex-grow">
-                    <img src="{{ route('img.serve', ['src' => ltrim($service['image'] ?? 'images/default.webp', '/'), 'w' => 700, 'q' => 82]) }}"
-                         alt="{{ $service['title'] ?? '' }}"
-                         width="700" height="160"
-                         class="w-full h-40 object-cover rounded-md mb-4"
-                         loading="lazy" decoding="async">
-                    <h3 class="text-2xl font-light tracking-wider text-amber-400 mb-4">
-                        {{ $service['title'] ?? '' }}
+        @php
+        $homeServices = [
+            [
+                'icon'        => '🌿',
+                'title'       => 'MASAJE RELAJANTE',
+                'description' => 'Ideal para desconectar del estrés y recuperar la armonía del cuerpo. Mediante técnicas suaves y relajantes se alivian las tensiones acumuladas, permitiendo que el cuerpo y la mente entren en un estado de profunda relajación.',
+                'prices'      => ['30 min – 60€', '60 min – 100€'],
+                'wa_text'     => 'Hola, me gustaría información sobre el Masaje Relajante',
+                'accent'      => 'from-emerald-900/20 to-black/40',
+                'badge'       => 'Relajación',
+            ],
+            [
+                'icon'        => '✨',
+                'title'       => 'MASAJE CUERPO A CUERPO',
+                'description' => 'Una experiencia íntima y sensorial donde el contacto piel con piel crea una conexión especial entre los cuerpos. A través de movimientos suaves, fluidos y envolventes, este masaje despierta los sentidos y genera una sensación profunda de relajación, sensualidad y bienestar.',
+                'prices'      => ['30 min – 80€', '45 min – 120€', '60 min – 150€ 💫'],
+                'wa_text'     => 'Hola, me gustaría información sobre el Masaje Cuerpo a Cuerpo',
+                'accent'      => 'from-amber-900/20 to-black/40',
+                'badge'       => 'Más Popular',
+            ],
+            [
+                'icon'        => '💧',
+                'title'       => 'EXPERIENCIA ERÓTICA EN LA DUCHA',
+                'description' => 'Una experiencia íntima y sensorial bajo el agua, donde el ambiente cálido y el contacto cercano crean un momento de profunda relajación y sensualidad. La combinación del agua, las caricias suaves y la cercanía del cuerpo despiertan los sentidos.',
+                'prices'      => ['60 min – 200€ 💧✨'],
+                'wa_text'     => 'Hola, me gustaría información sobre la Experiencia Erótica en la Ducha',
+                'accent'      => 'from-blue-900/20 to-black/40',
+                'badge'       => 'Exclusivo',
+            ],
+        ];
+        @endphp
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+            @foreach($homeServices as $svc)
+            <div class="bg-gradient-to-br {{ $svc['accent'] }} backdrop-blur-sm rounded-2xl border border-amber-900/25 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col group">
+
+                <!-- Cabecera con icono -->
+                <div class="relative px-6 pt-8 pb-4 text-center">
+                    <!-- Badge -->
+                    <span class="absolute top-4 right-4 text-[10px] tracking-widest tenali-ramakrishna text-amber-400/80 border border-amber-400/30 rounded-full px-3 py-0.5 uppercase">
+                        {{ $svc['badge'] }}
+                    </span>
+                    <!-- Icono -->
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {{ $svc['icon'] }}
+                    </div>
+                    <!-- Separador dorado -->
+                    <div class="h-px w-12 bg-amber-400/50 mx-auto mb-4"></div>
+                    <!-- Título -->
+                    <h3 class="text-lg sm:text-xl font-light tracking-widest gradiente-dorado cormorant-garamond leading-tight">
+                        {{ $svc['title'] }}
                     </h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        {{ $service['description'] ?? '' }}
-                    </p>
-                    <ul class="space-y-2 mb-6">
-                        @foreach(array_slice($service['features'] ?? [], 0, 3) as $feature)
-                        <li class="flex items-center text-sm text-gray-400">
-                            <span class="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                            {{ $feature }}
-                        </li>
-                        @endforeach
-                    </ul>
                 </div>
-                <a href="https://wa.me/34602560426?text={{ urlencode('Hola, me gustaría información sobre ' . ($service['title'] ?? 'los servicios')) }}" 
-                   target="_blank"
-                   class="w-full text-center tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-6 py-3 text-sm font-medium tracking-wider transition-all duration-300 mt-4">
-                    {{ $homepage['services_section']['reserve_button'] ?? 'RESERVAR AHORA' }}
-                </a>
+
+                <!-- Cuerpo -->
+                <div class="flex-grow px-6 pb-4">
+                    <p class="text-gray-400 text-sm leading-relaxed text-center tenali-ramakrishna">
+                        {{ $svc['description'] }}
+                    </p>
+                </div>
+
+                <!-- Precios -->
+                <div class="px-6 pb-5">
+                    <div class="border-t border-amber-900/30 pt-4 space-y-2">
+                        <p class="text-xs tracking-widest text-amber-400/70 tenali-ramakrishna uppercase text-center mb-3">Duración &amp; Precio</p>
+                        @foreach($svc['prices'] as $price)
+                        <div class="flex items-center justify-between bg-black/20 rounded-lg px-4 py-2">
+                            <span class="text-sm text-amber-300 tenali-ramakrishna">{{ $price }}</span>
+                            <span class="text-amber-400/50 text-xs">✦</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Botón reservar -->
+                <div class="px-6 pb-7">
+                    <a href="https://wa.me/34602560426?text={{ urlencode($svc['wa_text']) }}"
+                       target="_blank" rel="noopener noreferrer"
+                       class="block w-full text-center tenali-ramakrishna border border-amber-400/50 hover:border-amber-400 bg-gradient-to-r from-amber-900/30 to-amber-800/20 hover:from-amber-700/40 hover:to-amber-600/30 rounded-full text-amber-300 px-6 py-3 text-xs font-medium tracking-widest transition-all duration-300 hover:scale-105 uppercase">
+                        {{ $homepage['services_section']['reserve_button'] ?? 'RESERVAR AHORA' }}
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>
