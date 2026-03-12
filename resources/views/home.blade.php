@@ -13,7 +13,13 @@
 @endsection
 
 @section('page_preload')
-    <link rel="preload" as="image" href="{{ asset('images/hero%20section/1.jpg') }}" type="image/jpeg" fetchpriority="high">
+    {{-- Precarga responsiva del LCP: el navegador descarga el tamaño correcto según la pantalla --}}
+    <link rel="preload" as="image"
+          href="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }}"
+          imagesrcset="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 420, 'q' => 85]) }} 420w,
+                       {{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+          imagesizes="(max-width: 1024px) 90vw, 50vw"
+          fetchpriority="high">
 @endsection
 
 @section('structured_data')
@@ -181,9 +187,12 @@
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
                         <!-- SLIDE 1 — LCP (eager + fetchpriority) -->
-                        <img src="{{ asset('images/hero%20section/1.jpg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 420, 'q' => 85]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
                              alt="Masajista tantrica exclusiva Palma de Mallorca - Tantric Luxe"
-                             width="700" height="875"
+                             width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="0"
                              fetchpriority="high"
@@ -191,29 +200,26 @@
                              decoding="async">
 
                         <!-- SLIDE 2 -->
-                        <img src="{{ asset('images/hero%20section/2.jpg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 800, 'q' => 85]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 420, 'q' => 85]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
                              alt="Experiencia tantrica exclusiva Mallorca"
-                             width="700" height="875"
+                             width="800" height="954"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="1"
                              loading="lazy"
                              decoding="async">
 
                         <!-- SLIDE 3 -->
-                        <img src="{{ asset('images/hero%20section/3.jpg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 800, 'q' => 85]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 420, 'q' => 85]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
                              alt="Masaje tantrico sensual Palma de Mallorca"
-                             width="700" height="875"
+                             width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="2"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 4 -->
-                        <img src="{{ asset('images/hero%20section/4.jpeg') }}"
-                             alt="Lujo y bienestar masaje tantrico Mallorca"
-                             width="700" height="875"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="3"
                              loading="lazy"
                              decoding="async">
 
@@ -232,7 +238,6 @@
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
-                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
                         </div>
                     </div>
 
@@ -251,8 +256,12 @@
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ asset('images/extras%20sections/ESPACIO%20EXLUSIVO.jpeg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 750, 'q' => 82]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                             sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Espacio Exclusivo Tantrico Palma Mallorca"
+                             width="750" height="500"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -265,8 +274,12 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ asset('images/extras%20sections/Ambiente%20relajante.jpeg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 750, 'q' => 82]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                             sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Ambiente Relajante Masaje Tantrico Palma"
+                             width="750" height="500"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -279,8 +292,12 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ asset('images/extras%20sections/Experiencia%20%C3%BAnica.jpeg') }}"
+                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 750, 'q' => 82]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                             sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Experiencia Única Masaje Tantrico Mallorca"
+                             width="750" height="500"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -818,10 +835,12 @@
     .hero-slide {
         opacity: 0;
         transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: opacity, transform;
+        /* will-change solo en slide activo (ahorra GPU en móvil) */
     }
     .hero-slide.is-active {
         opacity: 1;
+        will-change: opacity, transform;
+        /* Ken Burns activo solo en desktop (GPU limitada en móvil) */
         animation: hero-ken-burns 9s ease-in-out forwards;
     }
     .hero-slide.is-leaving {
@@ -831,6 +850,22 @@
     @keyframes hero-ken-burns {
         0%   { transform: scale(1.06) translate(0px,    0px); }
         100% { transform: scale(1.00) translate(-6px, -4px); }
+    }
+    /* En móvil: sin Ken Burns (ahorra CPU/GPU y evita jank) */
+    @media (max-width: 1024px) {
+        .hero-slide.is-active {
+            animation: none;
+            transform: none;
+        }
+    }
+    /* Respeta preferencia de movimiento reducido (accesibilidad + rendimiento) */
+    @media (prefers-reduced-motion: reduce) {
+        .hero-slide,
+        .hero-slide.is-active,
+        .hero-slide.is-leaving {
+            animation: none !important;
+            transition-duration: 0.3s !important;
+        }
     }
     /* Dots */
     .hero-dot.is-active { width: 20px; background-color: rgba(251,191,36,1);   }
