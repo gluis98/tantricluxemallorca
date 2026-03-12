@@ -336,7 +336,7 @@
             </div>
 
             <!-- Grid 4 cards -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-12">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-12 max-w-4xl mx-auto w-full">
                 @foreach($masseusesData as $m)
                 <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
                      style="border: 1px solid rgba(120,53,15,0.35);">
