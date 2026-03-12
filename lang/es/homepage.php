@@ -10,8 +10,8 @@ return array (
   'secondary_heading' => 'EXPERIENCIA SENSUAL Y EXCLUSIVA EN PALMA MALLORCA',
   'masseuse_section' => 
   array (
-    'title' => 'Conoce a Nuestra Especialista',
-    'description' => 'Erika, nuestra masajista excepcional, combina belleza natural, elegancia refinada y un dominio magistral de las técnicas tantricas más sofisticadas. Descubre la experiencia única que te espera.',
+    'title' => 'NUESTRAS MASAJISTAS',
+    'description' => 'Conoce a nuestras masajistas especializadas en masaje tántrico y erótico. Belleza, elegancia y técnicas exclusivas para una experiencia única en Palma de Mallorca.',
     'button_text' => 'MÁS INFORMACIÓN DE NUESTRAS MASAJISTAS',
     'specialty_text' => 'Especialista en Masaje Tantrico Sensual Deluxe',
     'available_text' => 'Disponible Ahora',

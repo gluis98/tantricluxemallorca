@@ -82,9 +82,14 @@
                     @foreach(array_slice($masseuse['images'], 0, 4) as $index => $image)
                     <div class="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300">
                         <div class="relative aspect-[3/4]">
-                            <img src="{{ asset($image) }}" 
-                                 alt="{{ $masseuse['name'] ?? '' }} - {{ $index + 1 }}" 
-                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="{{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 400, 'q' => 82]) }}"
+                             srcset="{{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 400, 'q' => 82]) }} 400w,
+                                     {{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 700, 'q' => 82]) }} 700w"
+                             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
+                             alt="{{ $masseuse['name'] ?? '' }} - Masajista Tantrica Palma Mallorca"
+                             width="400" height="533"
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <span class="text-white text-sm font-medium tenali-ramakrishna">
                                     {{ $masseusesPage['view_more_text'] ?? 'Ver más' }}
@@ -96,9 +101,11 @@
                 </div>
                 @else
                 <div class="mb-8">
-                    <img src="{{ asset($masseuse['image'] ?? '') }}" 
-                         alt="{{ $masseuse['name'] ?? '' }}" 
-                         class="w-full max-w-md mx-auto h-auto rounded-2xl shadow-xl">
+                    <img src="{{ route('img.serve', ['src' => ltrim($masseuse['image'] ?? 'images/default.webp', '/'), 'w' => 500, 'q' => 82]) }}"
+                         alt="{{ $masseuse['name'] ?? '' }}"
+                         width="500" height="667"
+                         class="w-full max-w-md mx-auto h-auto rounded-2xl shadow-xl"
+                         loading="lazy" decoding="async">
                 </div>
                 @endif
 

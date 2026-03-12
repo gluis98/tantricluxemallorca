@@ -18,36 +18,6 @@ return array (
   array (
     0 =>
     array (
-      'id' => 1,
-      'name' => 'Erika',
-      'age' => 24,
-      'specialty' => 'Deluxe Sinnliche Tantra-Massage',
-      'image' => '/images/masseurs/Erika/IMG_0843.jpeg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Erika/IMG_0843.jpeg',
-        1 => '/images/masseurs/Erika/IMG_0844.jpeg',
-        2 => '/images/masseurs/Erika/IMG_0865.jpeg',
-        3 => '/images/masseurs/Erika/IMG_0866.jpeg',
-        4 => '/images/masseurs/Erika/IMG_0872.jpeg',
-        5 => '/images/masseurs/Erika/IMG_0878.jpeg',
-        6 => '/images/masseurs/Erika/IMG_0880.jpeg',
-      ),
-      'description' => 'Erika vereint natürliche Schönheit mit außergewöhnlicher Beherrschung raffinierter tantrischer Techniken. Ihre intuitive Berührung und fesselnde Präsenz schaffen einzigartige Erlebnisse, die Ihre Sinne erwecken und Sie mit dem tiefsten Vergnügen verbinden.',
-      'skills' =>
-      array (
-        0 => 'Fortgeschrittene Tantra-Massage',
-        1 => 'Premium Body-to-Body',
-        2 => 'Tiefe Entspannung',
-        3 => 'Energieverbindung',
-        4 => 'Sinnliche Techniken',
-        5 => 'Personalisiertes Erlebnis',
-      ),
-      'rating' => 5,
-      'reviews' => 89,
-    ),
-    1 =>
-    array (
       'id' => 2,
       'name' => 'Sharon',
       'age' => 26,
@@ -72,7 +42,7 @@ return array (
       'rating' => 5,
       'reviews' => 64,
     ),
-    2 =>
+    1 =>
     array (
       'id' => 3,
       'name' => 'April',
@@ -98,7 +68,7 @@ return array (
       'rating' => 5,
       'reviews' => 51,
     ),
-    3 =>
+    2 =>
     array (
       'id' => 4,
       'name' => 'Anny',

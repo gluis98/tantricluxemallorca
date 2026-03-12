@@ -7,11 +7,15 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\MasseusesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ImageController;
 
 // Redireccionar raíz a español
 Route::get('/', function () {
     return redirect('/es');
 });
+
+// Optimizador de imágenes (resize + WebP)
+Route::get('/img', [ImageController::class, 'serve'])->name('img.serve');
 
 // Sitemap
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');

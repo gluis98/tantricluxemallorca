@@ -18,36 +18,6 @@ return array (
   array (
     0 =>
     array (
-      'id' => 1,
-      'name' => 'Erika',
-      'age' => 24,
-      'specialty' => 'Masaje Tantrico Sensual Deluxe',
-      'image' => '/images/masseurs/Erika/IMG_0843.jpeg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Erika/IMG_0843.jpeg',
-        1 => '/images/masseurs/Erika/IMG_0844.jpeg',
-        2 => '/images/masseurs/Erika/IMG_0865.jpeg',
-        3 => '/images/masseurs/Erika/IMG_0866.jpeg',
-        4 => '/images/masseurs/Erika/IMG_0872.jpeg',
-        5 => '/images/masseurs/Erika/IMG_0878.jpeg',
-        6 => '/images/masseurs/Erika/IMG_0880.jpeg',
-      ),
-      'description' => 'Erika combina belleza natural con un dominio excepcional de técnicas tantricas sofisticadas. Su toque intuitivo y presencia cautivadora crean experiencias únicas que despiertan tus sentidos y te conectan con el placer más profundo.',
-      'skills' =>
-      array (
-        0 => 'Masaje Tantrico Avanzado',
-        1 => 'Body to Body Premium',
-        2 => 'Relajación Profunda',
-        3 => 'Conexión Energética',
-        4 => 'Técnicas Sensuales',
-        5 => 'Experiencia Personalizada',
-      ),
-      'rating' => 5,
-      'reviews' => 89,
-    ),
-    1 =>
-    array (
       'id' => 2,
       'name' => 'Sharon',
       'age' => 26,
@@ -72,7 +42,7 @@ return array (
       'rating' => 5,
       'reviews' => 64,
     ),
-    2 =>
+    1 =>
     array (
       'id' => 3,
       'name' => 'April',
@@ -98,7 +68,7 @@ return array (
       'rating' => 5,
       'reviews' => 51,
     ),
-    3 =>
+    2 =>
     array (
       'id' => 4,
       'name' => 'Anny',

@@ -10,9 +10,9 @@ return array (
   'secondary_heading' => 'EXKLUSIVES TANTRA-MASSAGE-ERLEBNIS AUF MALLORCA',
   'masseuse_section' => 
   array (
-    'title' => 'Lernen Sie Unsere Spezialistin Kennen',
-    'description' => 'Erika, unsere außergewöhnliche Masseurin, vereint natürliche Schönheit, raffinierte Eleganz und meisterhafte Beherrschung der anspruchsvollsten tantrischen Techniken. Entdecken Sie das einzigartige Erlebnis, das Sie erwartet.',
-    'button_text' => 'MEHR INFORMATIONEN ÜBER ERIKA',
+    'title' => 'UNSERE MASSEURINNEN',
+    'description' => 'Lernen Sie unsere Masseurinnen kennen, die auf Tantra- und erotische Massage spezialisiert sind. Schönheit, Eleganz und exklusive Techniken für ein einzigartiges Erlebnis in Palma de Mallorca.',
+    'button_text' => 'MEHR INFORMATIONEN ÜBER UNSERE MASSEURINNEN',
     'specialty_text' => 'Spezialistin für Deluxe Sinnliche Tantra-Massage',
     'available_text' => 'Jetzt Verfügbar',
     'reviews_text' => 'Bewertungen',

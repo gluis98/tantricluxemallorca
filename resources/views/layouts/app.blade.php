@@ -17,8 +17,8 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical', url()->current())">
     
-    <!-- Preload LCP image (Mandala - background) -->
-    <link rel="preload" as="image" href="{{ asset('images/Mandala.webp') }}" type="image/webp">
+    <!-- Preload Mandala decorativo (background, baja prioridad) -->
+    <link rel="preload" as="image" href="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" type="image/webp" fetchpriority="low">
     
     <!-- Preload LCP hero image (per-page) -->
     @yield('page_preload')
@@ -99,6 +99,8 @@
 
     <!-- CSS principal -->
     @if($cssFile)
+        {{-- Preload para descubrir el CSS antes (reduce latencia del Critical Chain) --}}
+        <link rel="preload" href="{{ $cssFile }}" as="style">
         {{-- CSS compilado con Vite (incluye Tailwind + estilos propios) --}}
         <link rel="stylesheet" href="{{ $cssFile }}">
     @else
@@ -194,11 +196,11 @@
         <div class="fixed inset-0 w-screen h-screen pointer-events-none z-0">
             <div class="absolute top-0 left-0 -translate-x-[60%] md:-translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ asset('images/Mandala.webp') }}" alt="Left Mandala" class="object-contain w-full h-full relative z-10" fetchpriority="high" loading="eager" decoding="async">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="Left Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async">
             </div>
             <div class="absolute top-0 right-0 translate-x-[60%] md:translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ asset('images/Mandala.webp') }}" alt="Right Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async" style="transform: scaleX(-1);">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="Right Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async" style="transform: scaleX(-1);">
             </div>
         </div>
         

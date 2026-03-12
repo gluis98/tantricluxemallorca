@@ -68,16 +68,6 @@
     $packages = $servicesPage['packages'] ?? [];
     $faqs = $servicesPage['faqs'] ?? [];
     
-    $erikaImages = [
-        '/images/masseurs/Erika/IMG_0843.jpeg',
-        '/images/masseurs/Erika/IMG_0844.jpeg',
-        '/images/masseurs/Erika/IMG_0865.jpeg',
-        '/images/masseurs/Erika/IMG_0866.jpeg',
-        '/images/masseurs/Erika/IMG_0872.jpeg',
-        '/images/masseurs/Erika/IMG_0878.jpeg',
-        '/images/masseurs/Erika/IMG_0880.jpeg'
-    ];
-    
     $features = $homepage['features_section']['features'] ?? [];
     $steps = $homepage['process_section']['steps'] ?? [];
 @endphp
@@ -119,7 +109,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
                                      alt="Masaje tantrico especial Mallorca"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -135,7 +125,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
                                      alt="Masaje tantrico deluxe Palma"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -151,7 +141,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
                                      alt="Experiencia tantrica única Mallorca"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -309,26 +299,20 @@
     @php
         $masseusesData = [
             [
-                'name'      => 'Erika',
-                'specialty' => trans('masseusesPage.masseuses.0.specialty', [], $locale),
-                'image'     => '/images/masseurs/Erika/IMG_0843.jpeg',
-                'reviews'   => 89,
-            ],
-            [
                 'name'      => 'Sharon',
-                'specialty' => trans('masseusesPage.masseuses.1.specialty', [], $locale),
+                'specialty' => trans('masseusesPage.masseuses.0.specialty', [], $locale),
                 'image'     => '/images/masseurs/Sharon/1.jpg',
                 'reviews'   => 64,
             ],
             [
                 'name'      => 'April',
-                'specialty' => trans('masseusesPage.masseuses.2.specialty', [], $locale),
+                'specialty' => trans('masseusesPage.masseuses.1.specialty', [], $locale),
                 'image'     => '/images/masseurs/April/1.jpeg',
                 'reviews'   => 51,
             ],
             [
                 'name'      => 'Anny',
-                'specialty' => trans('masseusesPage.masseuses.3.specialty', [], $locale),
+                'specialty' => trans('masseusesPage.masseuses.2.specialty', [], $locale),
                 'image'     => '/images/masseurs/Anny/1.jpg',
                 'reviews'   => 47,
             ],
@@ -359,8 +343,12 @@
 
                     <!-- Imagen de la masajista -->
                     <div class="relative overflow-hidden" style="aspect-ratio: 3/4;">
-                        <img src="{{ asset($m['image']) }}"
+                        <img src="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }}"
+                             srcset="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }} 400w,
+                                     {{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 650, 'q' => 82]) }} 650w"
+                             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                              alt="{{ $m['name'] }} - Masajista Tantrica Palma Mallorca"
+                             width="400" height="533"
                              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                              loading="lazy"
                              decoding="async">
@@ -436,9 +424,11 @@
             @foreach(array_slice($services, 0, 2) as $service)
             <div class="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full">
                 <div class="flex-grow">
-                    <img src="{{ asset($service['image'] ?? '/images/default.webp') }}" 
-                         alt="{{ $service['title'] ?? '' }}" 
-                         class="w-full h-40 object-cover rounded-md mb-4">
+                    <img src="{{ route('img.serve', ['src' => ltrim($service['image'] ?? 'images/default.webp', '/'), 'w' => 700, 'q' => 82]) }}"
+                         alt="{{ $service['title'] ?? '' }}"
+                         width="700" height="160"
+                         class="w-full h-40 object-cover rounded-md mb-4"
+                         loading="lazy" decoding="async">
                     <h3 class="text-2xl font-light tracking-wider text-amber-400 mb-4">
                         {{ $service['title'] ?? '' }}
                     </h3>
@@ -538,9 +528,14 @@
                 </div>
             </div>
             <div class="relative w-full h-full">
-                <img src="{{ asset('images/especialistas_en_masajese_eroticos.webp') }}" 
-                     alt="Centro de masaje tantrico exclusivo en Palma Mallorca" 
-                     class="rounded-lg shadow-2xl object-cover w-full h-auto">
+                <img src="{{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 700, 'q' => 80]) }}"
+                     srcset="{{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 700, 'q' => 80]) }} 700w,
+                             {{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 1000, 'q' => 80]) }} 1000w"
+                     sizes="(max-width: 768px) 90vw, 50vw"
+                     alt="Centro de masaje tantrico exclusivo en Palma Mallorca"
+                     width="700" height="700"
+                     class="rounded-lg shadow-2xl object-cover w-full h-auto"
+                     loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -854,20 +849,25 @@
     let   timer;
 
     function activateSlide(idx) {
-        // Quitar clases del actual
-        slides[current].classList.remove('is-active');
-        slides[current].classList.add('is-leaving');
-        dots[current].classList.remove('is-active');
-
-        // Limpiar clase 'leaving' después de la transición
-        const leaving = slides[current];
-        setTimeout(function () { leaving.classList.remove('is-leaving'); }, 1700);
-
+        // Capturar referencias ANTES de modificar el DOM (evita forced reflow)
+        var prevSlide = slides[current];
+        var prevDot   = dots[current];
         current = idx;
+        var nextSlide = slides[current];
+        var nextDot   = dots[current];
 
-        // Activar nuevo slide
-        slides[current].classList.add('is-active');
-        dots[current].classList.add('is-active');
+        // Agrupar todos los cambios DOM en un único frame (evita múltiples reflows)
+        requestAnimationFrame(function () {
+            prevSlide.classList.remove('is-active');
+            prevSlide.classList.add('is-leaving');
+            prevDot.classList.remove('is-active');
+
+            nextSlide.classList.add('is-active');
+            nextDot.classList.add('is-active');
+
+            // Limpiar 'is-leaving' una vez terminada la transición
+            setTimeout(function () { prevSlide.classList.remove('is-leaving'); }, 1700);
+        });
     }
 
     function nextSlide() {
@@ -883,10 +883,12 @@
         startTimer();
     }
 
-    // Inicializar primer slide
-    slides[0].classList.add('is-active');
-    dots[0].classList.add('is-active');
-    startTimer();
+    // Inicializar primer slide fuera del layout crítico (evita forced reflow)
+    requestAnimationFrame(function () {
+        slides[0].classList.add('is-active');
+        dots[0].classList.add('is-active');
+        startTimer();
+    });
 
     // Clicks en dots
     dots.forEach(function (dot, i) {
