@@ -469,7 +469,7 @@
         ];
         @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-16">
             @foreach($homeServices as $svc)
             <div class="relative flex flex-col rounded-xl overflow-hidden group
                         border border-amber-600/35 hover:border-amber-400/70
@@ -514,12 +514,12 @@
                     <p class="text-center text-xs uppercase tracking-[0.3em] text-amber-400/70 cormorant-garamond mb-4">
                         Duraci&oacute;n &amp; Precio
                     </p>
-                    <div class="space-y-2.5">
+                    <div class="space-y-3">
                         @foreach($svc['prices'] as $price)
-                        <div class="flex items-center gap-3 px-4 py-3 rounded-lg
-                                    bg-amber-950/30 border border-amber-600/20 hover:border-amber-500/40
+                        <div class="flex items-center gap-3 px-5 py-3.5 rounded-lg
+                                    bg-amber-950/30 border border-amber-500/40 hover:border-amber-400/70
                                     transition-colors duration-200">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400/70 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80 flex-shrink-0"></span>
                             <span class="flex-1 text-base text-amber-100/85 cormorant-garamond font-light tracking-wide">{{ $price }}</span>
                         </div>
                         @endforeach
