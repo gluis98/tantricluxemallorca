@@ -17,8 +17,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical', url()->current())">
     
-    <!-- Preload LCP image (Mandala) -->
-    <link rel="preload" as="image" href="{{ asset('images/Mandala.webp') }}" type="image/webp" fetchpriority="high">
+    <!-- Preload LCP image (Mandala - background) -->
+    <link rel="preload" as="image" href="{{ asset('images/Mandala.webp') }}" type="image/webp">
+    
+    <!-- Preload LCP hero image (per-page) -->
+    @yield('page_preload')
     
     @php
         $ogTitle = View::hasSection('og_title') ? View::yieldContent('og_title') : (View::hasSection('title') ? View::yieldContent('title') : 'Tantric Luxe Mallorca');

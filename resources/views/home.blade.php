@@ -12,6 +12,10 @@
     @include('components.seo.hreflang', ['locale' => $locale])
 @endsection
 
+@section('page_preload')
+    <link rel="preload" as="image" href="{{ asset('images/masajista1.webp') }}" type="image/webp" fetchpriority="high">
+@endsection
+
 @section('structured_data')
 <script type="application/ld+json">
 {
@@ -80,142 +84,136 @@
 
 <main class="relative z-10 px-0 md:px-8 py-8">
     <!-- Hero Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-sm md:text-md mb-8 font-light tracking-widest text-amber-400 tenali-ramakrishna">
-                {{ $homepage['subtitle'] ?? 'EROTIC MASSAGE' }}
-            </p>
-            <h1 class="text-4xl md:text-6xl lg:text-8xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">
-                {{ $homepage['title'] ?? 'TANTRIC LUXE' }}
-            </h1>
-            <p class="text-2xl md:text-3xl lg:text-4xl font-light tracking-widest mb-6 text-gray-300 tenali-ramakrishna">
-                {{ $homepage['main_heading'] ?? 'MASAJE TANTRICO PALMA' }}
-            </p>
-            <p class="text-xl md:text-2xl font-light tracking-widest mb-8 text-gray-300 tenali-ramakrishna">
-                {{ $homepage['secondary_heading'] ?? 'EXPERIENCIA EXCLUSIVA DE MASAJE TANTRICO EN MALLORCA' }}
-            </p>
-            <div class="w-24 h-px bg-amber-400 mx-auto mb-8"></div>
+    <section class="relative min-h-[92vh] flex items-center overflow-hidden px-4 lg:px-8 py-8">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-            <!-- Service options -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-8xl mx-auto">
-                <!-- Left service -->
-                <div class="hidden lg:block space-y-6 col-span-1">
-                    <div class="w-20 h-20 rounded-full w-full m-0">
-                        <img src="{{ asset('images/MantraButton.png') }}" 
-                             alt="Botón masaje tantrico exclusivo Mallorca"
-                             class="object-contain w-full h-full">
-                    </div>
-                    <div class="text-center flex flex-col items-center">
-                        <h3 class="text-xl md:text-2xl font-light tracking-wider mb-4">
-                            {!! $homepage['hero_section']['card1_title'] ?? 'MASAJE TANTRICO<br />EXCLUSIVO' !!}
-                        </h3>
-                        <p class="text-sm text-gray-400 mb-6 leading-relaxed w-[250px]">
-                            {{ $homepage['hero_section']['card1_text'] ?? 'Experimenta nuestro masaje tantrico Palma premium - Relajación y conexión espiritual absoluta' }}
-                        </p>
-                        <div class="flex flex-col w-[200px] justify-self-center">
-                            <a href="https://wa.me/34602560426?text={{ urlencode(trans('contactPage.whatsapp_default_message', [], $locale)) }}" 
-                               target="_blank"
-                               class="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors text-center">
-                                {{ $homepage['reserve_button_text'] ?? 'RESERVAR AHORA' }}
-                            </a>
+                <!-- Columna izquierda: texto y CTAs -->
+                <div class="flex flex-col justify-center order-2 lg:order-1 text-center lg:text-left">
 
-                            <!-- Decorative dots -->
-                            <div class="flex justify-center mt-6 gap-3 space-x-2">
-                                <div class="w-2 h-2 bg-amber-100 rounded-full"></div>
-                                <div class="w-2 h-2 bg-amber-200 rounded-full"></div>
-                                <div class="w-2 h-2 bg-amber-100 rounded-full"></div>
+                    <!-- Eyebrow -->
+                    <p class="text-xs md:text-sm mb-5 font-light tracking-[0.3em] text-amber-400 tenali-ramakrishna uppercase">
+                        {{ $homepage['subtitle'] ?? 'EROTIC MASSAGE' }}
+                    </p>
+
+                    <!-- Título principal H1 -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-wider mb-5 gradiente-dorado cormorant-garamond leading-none">
+                        {{ $homepage['title'] ?? 'TANTRIC LUXE' }}
+                    </h1>
+
+                    <!-- Subtítulo -->
+                    <p class="text-xl md:text-2xl lg:text-3xl font-light tracking-widest mb-4 text-gray-300 tenali-ramakrishna">
+                        {{ $homepage['main_heading'] ?? 'MASAJE TANTRICO PALMA' }}
+                    </p>
+
+                    <p class="text-sm md:text-base font-light tracking-widest mb-8 text-gray-400 tenali-ramakrishna leading-relaxed">
+                        {{ $homepage['secondary_heading'] ?? 'EXPERIENCIA EXCLUSIVA DE MASAJE TANTRICO EN MALLORCA' }}
+                    </p>
+
+                    <!-- Separador dorado -->
+                    <div class="w-20 h-px bg-amber-400 mx-auto lg:mx-0 mb-8"></div>
+
+                    <!-- Iconos de características -->
+                    <div class="flex justify-center lg:justify-start gap-10 mb-10">
+                        <!-- Tantric -->
+                        <div class="flex flex-col gap-3 items-center">
+                            <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
+                                <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
+                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                     alt="Masaje tantrico especial Mallorca"
+                                     width="56" height="56"
+                                     class="object-contain w-full h-full relative z-10"
+                                     loading="lazy" decoding="async">
+                                <span class="absolute inset-0 flex items-center justify-center text-lg text-yellow-400 pointer-events-none z-20">Ω</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-light tracking-wider tenali-ramakrishna uppercase">{{ $homepage['hero_section']['icon1_title'] ?? 'TANTRIC' }}</p>
+                                <p class="text-xs text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon1_text'] ?? 'especial' }}</p>
+                            </div>
+                        </div>
+                        <!-- Deluxe -->
+                        <div class="flex flex-col gap-3 items-center">
+                            <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
+                                <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
+                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                     alt="Masaje tantrico deluxe Palma"
+                                     width="56" height="56"
+                                     class="object-contain w-full h-full relative z-10"
+                                     loading="lazy" decoding="async">
+                                <span class="absolute inset-0 flex items-center justify-center text-lg text-yellow-400 pointer-events-none z-20">Σ</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-light tracking-wider tenali-ramakrishna uppercase">{{ $homepage['hero_section']['icon2_title'] ?? 'DELUXE' }}</p>
+                                <p class="text-xs text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon2_text'] ?? 'masajes' }}</p>
+                            </div>
+                        </div>
+                        <!-- Único -->
+                        <div class="flex flex-col gap-3 items-center">
+                            <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
+                                <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
+                                <img src="{{ asset('images/BotomLuxDark.webp') }}"
+                                     alt="Experiencia tantrica única Mallorca"
+                                     width="56" height="56"
+                                     class="object-contain w-full h-full relative z-10"
+                                     loading="lazy" decoding="async">
+                                <span class="absolute inset-0 flex items-center justify-center text-lg text-yellow-400 pointer-events-none z-20">Φ</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-light tracking-wider tenali-ramakrishna uppercase">{{ $homepage['hero_section']['icon3_title'] ?? 'ÚNICO' }}</p>
+                                <p class="text-xs text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon3_text'] ?? 'momentos' }}</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Center services -->
-                <div class="flex justify-evenly lg:justify-between self-center gap-6 space-y-8 col-span-3 lg:col-span-1">
-                    <!-- icon 1 -->
-                    <div class="text-center flex flex-col gap-6 items-center">
-                        <!-- Primer botón luxury -->
-                        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center relative">
-                            <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                            <img src="{{ asset('images/BotomLuxDark.webp') }}" 
-                                 alt="Servicios especiales masaje tantrico Mallorca"
-                                 class="object-contain w-full h-full relative z-10">
-                            <span class="absolute inset-0 flex items-center justify-center text-2xl text-yellow-400 pointer-events-none z-20">
-                                Ω
-                            </span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-2xl font-light tracking-wider tenali-ramakrishna">{{ $homepage['hero_section']['icon1_title'] ?? 'TANTRIC' }}</h3>
-                            <p class="text-lg text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon1_text'] ?? 'especial' }}</p>
-                        </div>
-                    </div>
-
-                    <!-- icon 2 -->
-                    <div class="text-center flex flex-col gap-6 items-center">
-                        <!-- Segundo botón luxury -->
-                        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center relative">
-                            <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                            <img src="{{ asset('images/BotomLuxDark.webp') }}" 
-                                 alt="Masaje tantrico deluxe Palma Mallorca"
-                                 class="object-contain w-full h-full relative z-10">
-                            <span class="absolute inset-0 flex items-center justify-center text-2xl text-yellow-400 pointer-events-none z-20">
-                                Σ
-                            </span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-2xl font-light tracking-wider tenali-ramakrishna">{{ $homepage['hero_section']['icon2_title'] ?? 'DELUXE' }}</h3>
-                            <p class="text-lg text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon2_text'] ?? 'masajes' }}</p>
-                        </div>
-                    </div>
-
-                    <!-- icon 3 -->
-                    <div class="text-center flex flex-col gap-6 items-center">
-                        <!-- Tercer botón luxury -->
-                        <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center relative">
-                            <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                            <img src="{{ asset('images/BotomLuxDark.webp') }}" 
-                                 alt="Experiencia tantrica única Mallorca"
-                                 class="object-contain w-full h-full relative z-10">
-                            <span class="absolute inset-0 flex items-center justify-center text-2xl text-yellow-400 pointer-events-none z-20">
-                                Φ
-                            </span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-2xl font-light tracking-wider tenali-ramakrishna">{{ $homepage['hero_section']['icon3_title'] ?? 'ÚNICO' }}</h3>
-                            <p class="text-lg text-amber-400/80 uppercase tenali-ramakrishna">{{ $homepage['hero_section']['icon3_text'] ?? 'momentos' }}</p>
-                        </div>
+                    <!-- Botones CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/34602560426?text={{ urlencode(trans('contactPage.whatsapp_default_message', [], $locale)) }}"
+                           target="_blank" rel="noopener noreferrer"
+                           class="tenali-ramakrishna cursor-pointer border border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:opacity-90 text-white px-10 py-3 text-sm font-medium tracking-widest transition-opacity text-center uppercase">
+                            {{ $homepage['reserve_button_text'] ?? 'RESERVAR AHORA' }}
+                        </a>
+                        <a href="{{ url($locale . '/servicios') }}"
+                           class="tenali-ramakrishna cursor-pointer border border-amber-400/40 rounded-3xl hover:border-amber-400/80 text-amber-200 px-10 py-3 text-sm font-medium tracking-widest transition-colors text-center uppercase">
+                            {{ $homepage['hero_section']['services_button'] ?? 'VER SERVICIOS' }}
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right service -->
-                <div class="hidden lg:block space-y-6 col-span-1">
-                    <div class="w-20 h-20 rounded-full w-full m-0">
-                        <img src="{{ asset('images/MantraButton.png') }}" 
-                             alt="Masaje tantrico premium Palma de Mallorca"
-                             class="object-contain w-full h-full">
-                    </div>
-                    <div class="text-center flex flex-col items-center">
-                        <h3 class="text-xl md:text-2xl font-light tracking-wider mb-4">
-                            {!! $homepage['hero_section']['card2_title'] ?? 'MASAJE EROTICO<br />PREMIUM' !!}
-                        </h3>
-                        <p class="text-sm text-gray-400 mb-6 leading-relaxed w-[250px]">
-                            {{ $homepage['hero_section']['card2_text'] ?? 'Descubre el verdadero masaje tantrico Mallorca - Conexión sagrada y relajación profunda' }}
-                        </p>
-                        <div class="flex flex-col w-[200px] justify-self-center">
-                            <a href="https://wa.me/34602560426?text={{ urlencode(trans('contactPage.whatsapp_default_message', [], $locale)) }}" 
-                               target="_blank"
-                               class="tenali-ramakrishna border-1 cursor-pointer border-yellow-400 bg-gradient-carnemarron rounded-3xl hover:from-yellow-500 hover:to-amber-600 text-white px-8 pb-1 pt-2 text-sm font-medium tracking-wider transition-colors text-center">
-                                {{ $homepage['reserve_button_text'] ?? 'RESERVAR AHORA' }}
-                            </a>
+                <!-- Columna derecha: imagen hero (LCP) -->
+                <div class="order-1 lg:order-2 relative flex justify-center lg:justify-end">
 
-                            <!-- Decorative dots -->
-                            <div class="flex justify-center mt-6 gap-3 space-x-2">
-                                <div class="w-2 h-2 bg-amber-100 rounded-full"></div>
-                                <div class="w-2 h-2 bg-amber-200 rounded-full"></div>
-                                <div class="w-2 h-2 bg-amber-100 rounded-full"></div>
-                            </div>
+                    <!-- Marco decorativo exterior -->
+                    <div class="absolute -inset-3 rounded-sm border border-amber-400/10 pointer-events-none z-0"></div>
+
+                    <!-- Contenedor de imagen -->
+                    <div class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl"
+                         style="border: 1px solid rgba(251,191,36,0.18);">
+
+                        <!-- IMAGEN LCP PRINCIPAL -->
+                        <img src="{{ asset('images/masajista1.webp') }}"
+                             alt="Masajista tantrica exclusiva Palma de Mallorca - Tantric Luxe"
+                             width="700" height="875"
+                             class="w-full h-[55vh] lg:h-[82vh] object-cover object-top block"
+                             fetchpriority="high"
+                             loading="eager"
+                             decoding="async">
+
+                        <!-- Overlay degradado sutil inferior -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none"></div>
+
+                        <!-- Etiqueta de lujo inferior -->
+                        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
+                            <div class="h-px w-10 bg-amber-400/60"></div>
+                            <span class="text-xs tracking-[0.3em] text-amber-300/90 tenali-ramakrishna uppercase">Mallorca · Palma</span>
+                            <div class="h-px w-10 bg-amber-400/60"></div>
                         </div>
                     </div>
+
+                    <!-- Glow ambiental detrás de la imagen -->
+                    <div class="absolute inset-0 -z-10 rounded-sm"
+                         style="background: radial-gradient(ellipse at 60% 40%, rgba(180,137,82,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
                 </div>
+
             </div>
         </div>
     </section>
