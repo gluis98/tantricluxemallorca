@@ -186,14 +186,14 @@
                          class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl h-[55vh] lg:h-[82vh]"
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
-                        <!-- SLIDE 1 — LCP (eager + fetchpriority) -->
+                        <!-- SLIDE 1 — LCP (visible desde HTML, sin esperar JS) -->
                         <img src="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }}"
                              srcset="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 420, 'q' => 85]) }} 420w,
                                      {{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
                              alt="Masajista tantrica exclusiva Palma de Mallorca - Tantric Luxe"
                              width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             class="hero-slide is-active absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="0"
                              fetchpriority="high"
                              loading="eager"
@@ -918,9 +918,9 @@
         startTimer();
     }
 
-    // Inicializar primer slide fuera del layout crítico (evita forced reflow)
+    // Slide 1 ya lleva is-active en el HTML (visible sin JS → LCP correcto).
+    // Solo inicializamos el dot y arrancamos el timer.
     requestAnimationFrame(function () {
-        slides[0].classList.add('is-active');
         dots[0].classList.add('is-active');
         startTimer();
     });

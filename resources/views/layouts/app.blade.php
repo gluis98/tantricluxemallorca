@@ -17,11 +17,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical', url()->current())">
     
-    <!-- Preload Mandala decorativo (background, baja prioridad) -->
-    <link rel="preload" as="image" href="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" type="image/webp" fetchpriority="low">
-    
-    <!-- Preload LCP hero image (per-page) -->
+    <!-- Preload LCP hero image (per-page) — SIEMPRE primero para mayor prioridad -->
     @yield('page_preload')
+    {{-- El Mandala es decorativo: NO se preloada (evita competir con el LCP real) --}}
     
     @php
         $ogTitle = View::hasSection('og_title') ? View::yieldContent('og_title') : (View::hasSection('title') ? View::yieldContent('title') : 'Tantric Luxe Mallorca');
@@ -196,11 +194,11 @@
         <div class="fixed inset-0 w-screen h-screen pointer-events-none z-0">
             <div class="absolute top-0 left-0 -translate-x-[60%] md:-translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="Left Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" class="object-contain w-full h-full relative z-10" fetchpriority="low" decoding="async">
             </div>
             <div class="absolute top-0 right-0 translate-x-[60%] md:translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="Right Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async" style="transform: scaleX(-1);">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" class="object-contain w-full h-full relative z-10" fetchpriority="low" loading="lazy" decoding="async" style="transform: scaleX(-1);">
             </div>
         </div>
         
