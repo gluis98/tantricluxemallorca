@@ -17,6 +17,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical', url()->current())">
     
+    <!-- Preload LCP image (Mandala) -->
+    <link rel="preload" as="image" href="{{ asset('images/Mandala.webp') }}" type="image/webp" fetchpriority="high">
+    
     @php
         $ogTitle = View::hasSection('og_title') ? View::yieldContent('og_title') : (View::hasSection('title') ? View::yieldContent('title') : 'Tantric Luxe Mallorca');
         $ogDescription = View::hasSection('og_description') ? View::yieldContent('og_description') : (View::hasSection('description') ? View::yieldContent('description') : 'Masajes eróticos y tantricos exclusivos en Palma de Mallorca');
@@ -221,11 +224,11 @@
         <div class="fixed inset-0 w-screen h-screen pointer-events-none z-0">
             <div class="absolute top-0 left-0 -translate-x-[60%] md:-translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ asset('images/Mandala.webp') }}" alt="Left Mandala" class="object-contain w-full h-full relative z-10">
+                <img src="{{ asset('images/Mandala.webp') }}" alt="Left Mandala" class="object-contain w-full h-full relative z-10" fetchpriority="high" loading="eager" decoding="async">
             </div>
             <div class="absolute top-0 right-0 translate-x-[60%] md:translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ asset('images/Mandala.webp') }}" alt="Right Mandala" class="object-contain w-full h-full relative z-10" style="transform: scaleX(-1);">
+                <img src="{{ asset('images/Mandala.webp') }}" alt="Right Mandala" class="object-contain w-full h-full relative z-10" loading="lazy" decoding="async" style="transform: scaleX(-1);">
             </div>
         </div>
         
