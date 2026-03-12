@@ -4,6 +4,26 @@ Allow: /
 # Sitemap
 Sitemap: https://tantricluxemallorca.com/sitemap.xml
 
-# Disallow admin and private areas
-Disallow: /admin/
+# Crawl-delay para evitar sobrecarga del servidor
+Crawl-delay: 1
+
+# Permitir acceso a recursos importantes
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /build/
+
+# Bloquear acceso a archivos de configuración y rutas privadas
 Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /storage/
+
+# Optimización para motores de búsqueda
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
