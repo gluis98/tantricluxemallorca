@@ -469,90 +469,89 @@
         ];
         @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 mb-16">
             @foreach($homeServices as $svc)
-            <div class="relative bg-gradient-to-b {{ $svc['accent'] }} backdrop-blur-sm rounded-2xl overflow-hidden
-                        border border-amber-900/30 hover:border-amber-400/50
-                        shadow-lg hover:shadow-2xl hover:shadow-amber-900/25
-                        transition-all duration-500 hover:-translate-y-1
-                        flex flex-col group">
+            <div class="relative flex flex-col rounded-xl overflow-hidden group
+                        border border-white/5 hover:border-amber-400/30
+                        bg-[#0f0b07] hover:bg-[#130d08]
+                        shadow-xl hover:shadow-2xl hover:shadow-amber-950/40
+                        transition-all duration-500 hover:-translate-y-0.5">
 
-                {{-- Línea decorativa superior (acento dorado) --}}
-                <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent"></div>
+                {{-- Línea dorada superior --}}
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
 
-                {{-- Brillo ambiental de fondo al hacer hover --}}
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                     style="background: radial-gradient(ellipse at 50% 0%, rgba(251,191,36,0.07) 0%, transparent 70%);"></div>
+                {{-- Cabecera: icono + badge + título --}}
+                <div class="px-8 pt-8 pb-6 text-center">
 
-                <!-- Cabecera -->
-                <div class="relative px-7 pt-9 pb-5 text-center">
-                    <!-- Badge -->
-                    <span class="absolute top-5 right-5 text-[9px] tracking-[0.2em] tenali-ramakrishna
-                                 text-amber-300/70 border border-amber-400/20 rounded-full px-3 py-1 uppercase bg-black/20">
-                        {{ $svc['badge'] }}
-                    </span>
-
-                    <!-- Icono con halo -->
-                    <div class="relative inline-flex items-center justify-center w-16 h-16 mx-auto mb-5">
-                        <div class="absolute inset-0 rounded-full bg-amber-400/8 group-hover:bg-amber-400/15 transition-colors duration-500"></div>
-                        <span class="text-4xl relative z-10 group-hover:scale-110 transition-transform duration-400 select-none">{{ $svc['icon'] }}</span>
+                    {{-- Icono grande centrado --}}
+                    <div class="text-5xl mb-5 transition-transform duration-500 group-hover:scale-110 select-none leading-none">
+                        {{ $svc['icon'] }}
                     </div>
 
-                    <!-- Título -->
-                    <h3 class="text-base sm:text-lg font-light tracking-[0.15em] gradiente-dorado cormorant-garamond leading-snug mb-4">
+                    {{-- Título en Cormorant (soporta acentos) --}}
+                    <h3 class="text-xl md:text-2xl font-light tracking-wide cormorant-garamond mb-3"
+                        style="-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+                               background-image:linear-gradient(90deg,#c9963a 0%,#f5d485 50%,#c9963a 100%);">
                         {{ $svc['title'] }}
                     </h3>
 
-                    <!-- Separador ornamental -->
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <div class="h-px w-8 bg-amber-400/40"></div>
-                        <span class="text-amber-400/50 text-[8px]">◆</span>
-                        <div class="h-px w-8 bg-amber-400/40"></div>
-                    </div>
+                    {{-- Badge debajo del título --}}
+                    <span class="inline-block text-[10px] uppercase tracking-[0.22em] cormorant-garamond
+                                 text-amber-400/60 border border-amber-400/15 rounded-full px-4 py-1 bg-amber-400/5">
+                        {{ $svc['badge'] }}
+                    </span>
                 </div>
 
-                <!-- Descripción -->
-                <div class="flex-grow px-7 pb-6">
-                    <p class="text-gray-400/90 text-sm leading-[1.8] text-center tenali-ramakrishna">
+                {{-- Separador --}}
+                <div class="mx-8 h-px bg-gradient-to-r from-transparent via-amber-800/50 to-transparent"></div>
+
+                {{-- Descripción (Cormorant para soporte completo de acentos) --}}
+                <div class="flex-grow px-8 py-6">
+                    <p class="text-gray-400 text-[15px] leading-relaxed text-center cormorant-garamond font-light">
                         {{ $svc['description'] }}
                     </p>
                 </div>
 
-                <!-- Bloque de precios -->
-                <div class="mx-5 mb-5 rounded-xl bg-black/25 border border-amber-900/25 overflow-hidden">
-                    <div class="px-5 py-3 border-b border-amber-900/20 text-center">
-                        <p class="text-[10px] tracking-[0.25em] text-amber-400/60 tenali-ramakrishna uppercase">
-                            Duración &amp; Precio
-                        </p>
-                    </div>
-                    <div class="divide-y divide-amber-900/15">
+                {{-- Separador --}}
+                <div class="mx-8 h-px bg-gradient-to-r from-transparent via-amber-800/50 to-transparent"></div>
+
+                {{-- Precios --}}
+                <div class="px-8 pt-5 pb-2">
+                    <p class="text-center text-[10px] uppercase tracking-[0.3em] text-amber-500/50 cormorant-garamond mb-4">
+                        Duraci&oacute;n &amp; Precio
+                    </p>
+                    <div class="space-y-2">
                         @foreach($svc['prices'] as $price)
-                        <div class="flex items-center justify-between px-5 py-3 group/price hover:bg-amber-400/5 transition-colors duration-200">
-                            <span class="text-sm text-amber-200/80 tenali-ramakrishna">{{ $price }}</span>
-                            <span class="text-amber-500/40 text-xs">✦</span>
+                        <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white/[0.03] border border-white/5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500/60 flex-shrink-0"></span>
+                            <span class="flex-1 text-sm text-amber-100/75 cormorant-garamond font-light tracking-wide">{{ $price }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <!-- Botón reservar con icono WhatsApp -->
-                <div class="px-7 pb-8">
+                {{-- Botón WhatsApp --}}
+                <div class="px-8 pt-5 pb-8">
                     <a href="https://wa.me/34602560426?text={{ urlencode($svc['wa_text']) }}"
                        target="_blank" rel="noopener noreferrer"
-                       class="flex items-center justify-center gap-2 w-full
-                              tenali-ramakrishna tracking-[0.18em] text-xs uppercase font-medium
-                              text-amber-300 border border-amber-400/40 hover:border-amber-400/80
-                              bg-gradient-to-r from-amber-900/25 to-amber-800/15
-                              hover:from-amber-800/40 hover:to-amber-700/30
-                              rounded-full px-6 py-3.5
-                              transition-all duration-300 hover:scale-[1.03] hover:shadow-md hover:shadow-amber-900/30">
-                        <svg class="w-4 h-4 flex-shrink-0 opacity-70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                       class="flex items-center justify-center gap-2.5 w-full
+                              text-xs uppercase tracking-[0.25em] cormorant-garamond font-medium
+                              text-amber-300/90 hover:text-amber-200
+                              border border-amber-500/25 hover:border-amber-400/60
+                              rounded-lg px-6 py-3.5
+                              bg-gradient-to-b from-amber-900/20 to-transparent
+                              hover:from-amber-800/35
+                              transition-all duration-300">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.057 23.617a.75.75 0 00.921.921l5.77-1.476A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.425.876.893-3.318-.24-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
                         </svg>
-                        {{ $homepage['services_section']['reserve_button'] ?? 'RESERVAR AHORA' }}
+                        Reservar Ahora
                     </a>
                 </div>
+
+                {{-- Línea dorada inferior --}}
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
             </div>
             @endforeach
         </div>
