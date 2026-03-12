@@ -6,8 +6,8 @@ return array (
   'meta_keywords' => 'masajes palma, masajes mallorca, masaje erotico palma, masajes eroticos mallorca, masaje tantrico palma, masaje tantrico mallorca, masajista palma, masaje en pareja mallorca, spa mallorca, spa palma, luxe, masaje palma de mallorca, masajes mallorca ofertas, masaje erótico, masajes eroticos palma, tantric, erotic, masaje, masajes, masajes en mallorca, masajes palma de mallorca, masajistas palma, masaje erotico mallorca, masajes tantricos palma de mallorca, masaje tantrico en mallorca',
   'subtitle' => 'EROTIC MASSAGE',
   'title' => 'TANTRIC LUXE',
-  'main_heading' => 'MASAJE TANTRICO PALMA',
-  'secondary_heading' => 'EXPERIENCIA EXCLUSIVA DE MASAJE TANTRICO EN MALLORCA',
+  'main_heading' => 'MASAJE TANTRICO EN MALLORCA',
+  'secondary_heading' => 'EXPERIENCIA SENSUAL Y EXCLUSIVA EN PALMA MALLORCA',
   'masseuse_section' => 
   array (
     'title' => 'Conoce a Nuestra Especialista',
