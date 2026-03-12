@@ -260,10 +260,12 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
-                    <div class="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
-                        <img src="{{ asset('images/espacio_exclusivo_tantrico.webp') }}" 
-                             alt="Espacio Exclusivo Tantrico" 
-                             class="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105">
+                    <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
+                        <img src="{{ asset('images/extras%20sections/ESPACIO%20EXLUSIVO.jpeg') }}"
+                             alt="Espacio Exclusivo Tantrico Palma Mallorca"
+                             class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="mt-4 text-center">
                         <h3 class="text-lg font-light tracking-wider text-white tenali-ramakrishna">
@@ -272,10 +274,12 @@
                     </div>
                 </div>
                 <div class="flex-1 relative group">
-                    <div class="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
-                        <img src="{{ asset('images/ambiente_relante_en_palma.webp') }}" 
-                             alt="Ambiente Relajante En Palma" 
-                             class="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105">
+                    <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
+                        <img src="{{ asset('images/extras%20sections/Ambiente%20relajante.jpeg') }}"
+                             alt="Ambiente Relajante Masaje Tantrico Palma"
+                             class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="mt-4 text-center">
                         <h3 class="text-lg font-light tracking-wider text-white tenali-ramakrishna">
@@ -284,10 +288,12 @@
                     </div>
                 </div>
                 <div class="flex-1 relative group">
-                    <div class="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
-                        <img src="{{ asset('images/experiencias_eroticas_unicas.webp') }}" 
-                             alt="Experiencias Eroticas Unicas" 
-                             class="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105">
+                    <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
+                        <img src="{{ asset('images/extras%20sections/Experiencia%20%C3%BAnica.jpeg') }}"
+                             alt="Experiencia Única Masaje Tantrico Mallorca"
+                             class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                     <div class="mt-4 text-center">
                         <h3 class="text-lg font-light tracking-wider text-white tenali-ramakrishna">
