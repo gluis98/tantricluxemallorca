@@ -13,7 +13,7 @@
 @endsection
 
 @section('page_preload')
-    <link rel="preload" as="image" href="{{ asset('images/masajista1.webp') }}" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('images/hero%20section/1.jpg') }}" type="image/jpeg" fetchpriority="high">
 @endsection
 
 @section('structured_data')
@@ -179,37 +179,74 @@
                     </div>
                 </div>
 
-                <!-- Columna derecha: imagen hero (LCP) -->
+                <!-- Columna derecha: Hero Slideshow (LCP) -->
                 <div class="order-1 lg:order-2 relative flex justify-center lg:justify-end">
 
                     <!-- Marco decorativo exterior -->
                     <div class="absolute -inset-3 rounded-sm border border-amber-400/10 pointer-events-none z-0"></div>
 
-                    <!-- Contenedor de imagen -->
-                    <div class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl"
+                    <!-- Contenedor del slideshow -->
+                    <div id="hero-slider"
+                         class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl h-[55vh] lg:h-[82vh]"
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
-                        <!-- IMAGEN LCP PRINCIPAL -->
-                        <img src="{{ asset('images/masajista1.webp') }}"
+                        <!-- SLIDE 1 — LCP (eager + fetchpriority) -->
+                        <img src="{{ asset('images/hero%20section/1.jpg') }}"
                              alt="Masajista tantrica exclusiva Palma de Mallorca - Tantric Luxe"
                              width="700" height="875"
-                             class="w-full h-[55vh] lg:h-[82vh] object-cover object-top block"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="0"
                              fetchpriority="high"
                              loading="eager"
                              decoding="async">
 
-                        <!-- Overlay degradado sutil inferior -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent pointer-events-none"></div>
+                        <!-- SLIDE 2 -->
+                        <img src="{{ asset('images/hero%20section/2.jpg') }}"
+                             alt="Experiencia tantrica exclusiva Mallorca"
+                             width="700" height="875"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="1"
+                             loading="lazy"
+                             decoding="async">
 
-                        <!-- Etiqueta de lujo inferior -->
-                        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
+                        <!-- SLIDE 3 -->
+                        <img src="{{ asset('images/hero%20section/3.jpg') }}"
+                             alt="Masaje tantrico sensual Palma de Mallorca"
+                             width="700" height="875"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="2"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 4 -->
+                        <img src="{{ asset('images/hero%20section/4.jpeg') }}"
+                             alt="Lujo y bienestar masaje tantrico Mallorca"
+                             width="700" height="875"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="3"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- Overlay degradado inferior -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none z-10"></div>
+
+                        <!-- Etiqueta de lujo -->
+                        <div class="absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap z-20">
                             <div class="h-px w-10 bg-amber-400/60"></div>
                             <span class="text-xs tracking-[0.3em] text-amber-300/90 tenali-ramakrishna uppercase">Mallorca · Palma</span>
                             <div class="h-px w-10 bg-amber-400/60"></div>
                         </div>
+
+                        <!-- Dots de navegación -->
+                        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
+                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
+                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
+                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
+                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
+                        </div>
                     </div>
 
-                    <!-- Glow ambiental detrás de la imagen -->
+                    <!-- Glow ambiental -->
                     <div class="absolute inset-0 -z-10 rounded-sm"
                          style="background: radial-gradient(ellipse at 60% 40%, rgba(180,137,82,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
                 </div>
@@ -262,83 +299,118 @@
         </div>
     </section>
 
-    <!-- Sección de Erika con Galería de Fotos -->
+    <!-- Sección Masajistas: 4 Cards en fila -->
+    @php
+        $masseusesData = [
+            [
+                'name'      => 'Erika',
+                'specialty' => trans('masseusesPage.masseuses.0.specialty', [], $locale),
+                'image'     => '/images/masseurs/Erika/IMG_0843.jpeg',
+                'reviews'   => 89,
+            ],
+            [
+                'name'      => 'Sharon',
+                'specialty' => trans('masseusesPage.masseuses.1.specialty', [], $locale),
+                'image'     => '/images/masseurs/Sharon/1.jpg',
+                'reviews'   => 64,
+            ],
+            [
+                'name'      => 'April',
+                'specialty' => trans('masseusesPage.masseuses.2.specialty', [], $locale),
+                'image'     => '/images/masseurs/April/1.jpeg',
+                'reviews'   => 51,
+            ],
+            [
+                'name'      => 'Anny',
+                'specialty' => trans('masseusesPage.masseuses.3.specialty', [], $locale),
+                'image'     => '/images/masseurs/Anny/1.jpg',
+                'reviews'   => 47,
+            ],
+        ];
+    @endphp
     <section class="py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
-                <div class="text-center mb-12">
-                    <div class="inline-block mb-4">
-                        <span class="text-5xl md:text-6xl">✨</span>
-                    </div>
-                    <h2 class="text-4xl md:text-6xl font-light tracking-wider mb-4 gradiente-dorado cormorant-garamond">
-                        {{ $homepage['masseuse_section']['title'] ?? 'Conoce a Nuestra Especialista' }}
-                    </h2>
-                    <div class="w-24 h-px bg-amber-400 mx-auto mb-6"></div>
-                    <p class="text-lg md:text-xl font-light text-gray-300 leading-relaxed max-w-3xl mx-auto tenali-ramakrishna">
-                        {{ $homepage['masseuse_section']['description'] ?? '' }}
-                    </p>
-                </div>
 
-                <!-- Grid de fotos de Erika -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    @foreach(array_slice($erikaImages, 0, 4) as $index => $image)
-                    <div class="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300">
-                        <div class="relative aspect-[3/4]">
-                            <img src="{{ asset($image) }}" 
-                                 alt="Erika - Masajista Profesional {{ $index + 1 }}" 
-                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span class="text-white text-sm font-medium tenali-ramakrishna">
-                                    {{ $homepage['view_more_text'] ?? 'Ver más' }}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-
-                <!-- Nombre ERIKA prominente -->
-                <div class="text-center mb-8">
-                    <h3 class="text-5xl md:text-7xl font-light tracking-[0.3em] gradiente-dorado cormorant-garamond mb-4">
-                        ERIKA
-                    </h3>
-                    <div class="flex items-center justify-center gap-4 mb-4">
-                        <div class="h-px w-16 bg-amber-400"></div>
-                        <p class="text-xl md:text-2xl font-light text-amber-300 tenali-ramakrishna">
-                            {{ $homepage['masseuse_section']['specialty_text'] ?? 'Especialista en Masaje Tantrico Sensual Deluxe' }}
-                        </p>
-                        <div class="h-px w-16 bg-amber-400"></div>
-                    </div>
-                    
-                    <!-- Badge de estrellas y reviews -->
-                    <div class="flex items-center justify-center gap-2 mb-6">
-                        <div class="flex items-center">
-                            @for($i = 0; $i < 5; $i++)
-                            <span class="text-amber-400 text-2xl">★</span>
-                            @endfor
-                        </div>
-                        <span class="text-gray-400 text-lg tenali-ramakrishna">
-                            (89 {{ $homepage['masseuse_section']['reviews_text'] ?? 'opiniones' }})
-                        </span>
-                    </div>
-
-                    <!-- Badge disponible -->
-                    <div class="inline-flex items-center gap-2 bg-green-900/30 border border-green-600/40 rounded-full px-6 py-2 mb-8">
-                        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        <span class="text-green-400 font-medium tenali-ramakrishna">
-                            {{ $homepage['masseuse_section']['available_text'] ?? 'Disponible Ahora' }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Botón de más información -->
-                <div class="text-center">
-                    <a href="/{{ $locale }}/masajistas" 
-                       class="inline-block tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-10 md:px-16 py-4 md:py-5 text-xl md:text-2xl font-medium tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-900/50">
-                        {{ $homepage['masseuse_section']['button_text'] ?? 'MÁS INFORMACIÓN SOBRE ERIKA' }}
-                    </a>
-                </div>
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <p class="text-xs tracking-[0.3em] text-amber-400 tenali-ramakrishna uppercase mb-4">
+                    {{ trans('masseusesPage.pre_title', [], $locale) }}
+                </p>
+                <h2 class="text-4xl md:text-5xl font-light tracking-wider gradiente-dorado cormorant-garamond mb-5">
+                    {{ trans('masseusesPage.title', [], $locale) }}
+                </h2>
+                <div class="w-20 h-px bg-amber-400 mx-auto mb-5"></div>
+                <p class="text-base text-gray-400 tenali-ramakrishna max-w-xl mx-auto">
+                    {{ trans('masseusesPage.description', [], $locale) }}
+                </p>
             </div>
+
+            <!-- Grid 4 cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-12">
+                @foreach($masseusesData as $m)
+                <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
+                     style="border: 1px solid rgba(120,53,15,0.35);">
+
+                    <!-- Imagen de la masajista -->
+                    <div class="relative overflow-hidden" style="aspect-ratio: 3/4;">
+                        <img src="{{ asset($m['image']) }}"
+                             alt="{{ $m['name'] }} - Masajista Tantrica Palma Mallorca"
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- Overlay degradado -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+
+                        <!-- Badge disponible (top-right) -->
+                        <div class="absolute top-3 right-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm rounded-full px-2.5 py-1"
+                             style="border: 1px solid rgba(74,222,128,0.35);">
+                            <div class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-xs text-green-400 tenali-ramakrishna leading-none">
+                                {{ trans('masseusesPage.available_now_text', [], $locale) }}
+                            </span>
+                        </div>
+
+                        <!-- Info superpuesta en la parte inferior -->
+                        <div class="absolute bottom-0 left-0 right-0 p-4">
+
+                            <!-- Nombre -->
+                            <h3 class="text-2xl md:text-3xl font-light tracking-[0.2em] gradiente-dorado cormorant-garamond mb-1 leading-tight">
+                                {{ strtoupper($m['name']) }}
+                            </h3>
+
+                            <!-- Especialidad -->
+                            <p class="text-xs text-amber-300/80 tenali-ramakrishna mb-3 leading-snug line-clamp-2">
+                                {{ $m['specialty'] }}
+                            </p>
+
+                            <!-- Estrellas + reviews -->
+                            <div class="flex items-center gap-1.5 mb-4">
+                                <span class="text-amber-400 text-sm leading-none">★★★★★</span>
+                                <span class="text-xs text-gray-400 tenali-ramakrishna">({{ $m['reviews'] }})</span>
+                            </div>
+
+                            <!-- Botón reservar -->
+                            <a href="https://wa.me/34602560426?text={{ urlencode('Hola, me gustaría reservar una cita con ' . $m['name']) }}"
+                               target="_blank" rel="noopener noreferrer"
+                               class="block text-center text-xs tenali-ramakrishna rounded-full py-2 px-3 tracking-widest uppercase transition-all duration-300 hover:opacity-90"
+                               style="border: 1px solid rgba(251,191,36,0.55); color: #fcd34d; background: rgba(120,53,15,0.30);">
+                                {{ trans('masseusesPage.reserve_button_text', [], $locale) }} {{ strtoupper($m['name']) }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+            <!-- Botón ver todas -->
+            <div class="text-center">
+                <a href="/{{ $locale }}/masajistas"
+                   class="inline-block tenali-ramakrishna border-2 border-amber-400/60 hover:border-amber-400 bg-gradient-to-r from-amber-900/20 to-amber-800/10 rounded-full text-amber-300 px-12 py-4 text-base font-medium tracking-widest transition-all duration-300 hover:scale-105 shadow-lg uppercase">
+                    {{ $homepage['masseuse_section']['button_text'] ?? 'VER TODAS LAS MASAJISTAS' }}
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -740,7 +812,90 @@
 </main>
 
 @push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<style>
+    /* ── Hero Slideshow ── */
+    .hero-slide {
+        opacity: 0;
+        transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity, transform;
+    }
+    .hero-slide.is-active {
+        opacity: 1;
+        animation: hero-ken-burns 9s ease-in-out forwards;
+    }
+    .hero-slide.is-leaving {
+        opacity: 0;
+        transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes hero-ken-burns {
+        0%   { transform: scale(1.06) translate(0px,    0px); }
+        100% { transform: scale(1.00) translate(-6px, -4px); }
+    }
+    /* Dots */
+    .hero-dot.is-active { width: 20px; background-color: rgba(251,191,36,1);   }
+    .hero-dot:not(.is-active) { width:  6px; background-color: rgba(251,191,36,0.30); }
+</style>
+<script>
+(function () {
+    'use strict';
+    const slider  = document.getElementById('hero-slider');
+    if (!slider) return;
+
+    const slides  = slider.querySelectorAll('.hero-slide');
+    const dots    = slider.querySelectorAll('.hero-dot');
+    const total   = slides.length;
+    let   current = 0;
+    let   timer;
+
+    function activateSlide(idx) {
+        // Quitar clases del actual
+        slides[current].classList.remove('is-active');
+        slides[current].classList.add('is-leaving');
+        dots[current].classList.remove('is-active');
+
+        // Limpiar clase 'leaving' después de la transición
+        const leaving = slides[current];
+        setTimeout(function () { leaving.classList.remove('is-leaving'); }, 1700);
+
+        current = idx;
+
+        // Activar nuevo slide
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+    }
+
+    function nextSlide() {
+        activateSlide((current + 1) % total);
+    }
+
+    function startTimer() {
+        timer = setInterval(nextSlide, 5500);
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+    }
+
+    // Inicializar primer slide
+    slides[0].classList.add('is-active');
+    dots[0].classList.add('is-active');
+    startTimer();
+
+    // Clicks en dots
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+            if (i === current) return;
+            resetTimer();
+            activateSlide(i);
+        });
+    });
+
+    // Pausar al hover
+    slider.addEventListener('mouseenter', function () { clearInterval(timer); });
+    slider.addEventListener('mouseleave', function () { startTimer(); });
+})();
+</script>
 @endpush
 
 @endsection

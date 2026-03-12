@@ -53,151 +53,118 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
     
     @php
-        // Intentar obtener assets compilados
+        // Resolver assets compilados desde public_html/build/
         $cssFile = null;
-        $jsFile = null;
-        $manifestPath = public_path('build/manifest.json');
-        
-        // Verificar si existe el manifest y es legible
+        $jsFile  = null;
+        $manifestPath = base_path('public_html/build/manifest.json');
+
         if (file_exists($manifestPath) && is_readable($manifestPath)) {
             try {
-                $manifestContent = file_get_contents($manifestPath);
-                $manifest = json_decode($manifestContent, true);
-                
+                $manifest = json_decode(file_get_contents($manifestPath), true);
                 if (json_last_error() === JSON_ERROR_NONE && is_array($manifest)) {
-                    // Buscar CSS
+                    // CSS
                     if (isset($manifest['resources/css/app.css']['file'])) {
                         $cssFileName = $manifest['resources/css/app.css']['file'];
-                        $cssPath = public_path('build/' . $cssFileName);
-                        if (file_exists($cssPath) && is_readable($cssPath)) {
+                        if (file_exists(base_path('public_html/build/' . $cssFileName))) {
                             $cssFile = asset('build/' . $cssFileName);
                         }
                     }
-                    
-                    // Buscar JS
+                    // JS
                     if (isset($manifest['resources/js/app.js']['file'])) {
                         $jsFileName = $manifest['resources/js/app.js']['file'];
-                        $jsPath = public_path('build/' . $jsFileName);
-                        if (file_exists($jsPath) && is_readable($jsPath)) {
+                        if (file_exists(base_path('public_html/build/' . $jsFileName))) {
                             $jsFile = asset('build/' . $jsFileName);
                         }
                     }
                 }
             } catch (\Exception $e) {
-                // Si hay error, usar fallback
+                // fallback silencioso
             }
         }
     @endphp
-    
-    <!-- CSS -->
+
+    <!-- Preconnect Google Fonts (siempre, para reducir latencia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {{-- Carga NO-render-blocking de Google Fonts (media=print trick) --}}
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+    </noscript>
+
+    <!-- CSS principal -->
     @if($cssFile)
-        <!-- Usando CSS compilado desde Vite -->
+        {{-- CSS compilado con Vite (incluye Tailwind + estilos propios) --}}
         <link rel="stylesheet" href="{{ $cssFile }}">
     @else
-        <!-- Fallback: Tailwind Play CDN + Estilos personalizados -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
-        <!-- Tailwind Play CDN - Incluye todas las utilidades -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            amber: {
-                                50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
-                                400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
-                                800: '#92400e', 900: '#78350f', 950: '#451a03',
-                            }
-                        },
-                        fontFamily: {
-                            'cormorant': ['Cormorant Garamond', 'serif'],
-                            'tenali': ['Tenali Ramakrishna', 'sans-serif'],
-                            'urbanist': ['Urbanist', 'sans-serif'],
-                        }
-                    }
-                }
-            }
-        </script>
-        
-        <!-- Estilos personalizados adicionales -->
+        {{-- Fallback: estilos críticos inline + Tailwind CDN diferido --}}
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-            
-            :root {
-                --background: #0a0a0a;
-                --foreground: #ededed;
-            }
-            
+            /* Estilos críticos inline para evitar FOUC */
+            :root { --background: #0a0a0a; --foreground: #ededed; }
+            *, *::before, *::after { box-sizing: border-box; }
             body {
+                margin: 0;
                 background: var(--background);
                 color: var(--foreground);
-                font-family: 'Urbanist', sans-serif;
+                font-family: 'Urbanist', 'Georgia', sans-serif;
+                -webkit-font-smoothing: antialiased;
             }
-            
-            h1, h2, h3, h4, h5, span {
-                font-family: 'Cormorant Garamond', serif;
-            }
-            
+            h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', 'Georgia', serif; }
             .gradiente-dorado {
                 background: linear-gradient(90deg, #FFD700 0%, #FFFFFF 50%, #FFD700 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                color: transparent;
             }
-            
-            .tenali-ramakrishna {
-                font-family: 'Tenali Ramakrishna', sans-serif;
-            }
-            
-            .cormorant-garamond {
-                font-family: 'Cormorant Garamond', serif;
-            }
-            
-            .bg-gradient-carnemarron {
-                background: linear-gradient(90deg, #b48952, #d2a47b, #b48952);
-            }
-            
+            .tenali-ramakrishna { font-family: 'Tenali Ramakrishna', sans-serif; }
+            .cormorant-garamond { font-family: 'Cormorant Garamond', serif; }
+            .bg-gradient-carnemarron { background: linear-gradient(90deg, #b48952, #d2a47b, #b48952); }
             @keyframes fuego {
-                0% { opacity: 0.7; filter: blur(16px) brightness(1.2); transform: scale(1) translateY(0px); }
-                20% { opacity: 0.85; filter: blur(18px) brightness(1.3); transform: scale(1.05) translateY(-2px); }
-                40% { opacity: 0.6; filter: blur(15px) brightness(1.1); transform: scale(0.98) translateY(1px); }
-                60% { opacity: 0.8; filter: blur(17px) brightness(1.25); transform: scale(1.03) translateY(-1px); }
-                80% { opacity: 0.65; filter: blur(16px) brightness(1.15); transform: scale(1.1) translateY(2px); }
-                100% { opacity: 0.7; filter: blur(16px) brightness(1.2); transform: scale(1.02) translateY(0px); }
+                0%   { opacity: .7;  filter: blur(16px) brightness(1.2);  transform: scale(1)    translateY(0); }
+                20%  { opacity: .85; filter: blur(18px) brightness(1.3);  transform: scale(1.05) translateY(-2px); }
+                40%  { opacity: .6;  filter: blur(15px) brightness(1.1);  transform: scale(.98)  translateY(1px); }
+                60%  { opacity: .8;  filter: blur(17px) brightness(1.25); transform: scale(1.03) translateY(-1px); }
+                80%  { opacity: .65; filter: blur(16px) brightness(1.15); transform: scale(1.1)  translateY(2px); }
+                100% { opacity: .7;  filter: blur(16px) brightness(1.2);  transform: scale(1.02) translateY(0); }
             }
-            
             .glow-fire {
                 background: radial-gradient(70% 220% at 50% -40%, #ffd700cc 0%, #ff9900bb 30%, transparent 80%);
-                filter: blur(18px) brightness(1.25);
-                opacity: 0.85;
-                transition: opacity 0.3s;
-                animation: fuego 5s infinite ease-in-out;
+                filter: blur(18px) brightness(1.25); opacity: .85;
+                transition: opacity .3s; animation: fuego 5s infinite ease-in-out;
             }
-            
-            @keyframes glow-pulse {
-                0%, 100% { opacity: 0.2; }
-                50% { opacity: 0.05; }
-            }
-            
+            @keyframes glow-pulse { 0%,100%{opacity:.2} 50%{opacity:.05} }
             .glow-mandala {
                 background: radial-gradient(circle, #ffd70088 0%, #ff990044 60%, transparent 100%);
-                filter: blur(100px);
-                opacity: 0.7;
-                transition: opacity 0.3s;
+                filter: blur(100px); opacity: .7; transition: opacity .3s;
                 animation: glow-pulse 3s infinite ease-in-out;
-                pointer-events: none;
-                position: absolute;
-                inset: 0;
-                z-index: 0;
-                border-radius: 50%;
+                pointer-events: none; position: absolute; inset: 0; z-index: 0; border-radius: 50%;
             }
         </style>
+        {{-- Tailwind CDN diferido (no bloquea render) --}}
+        <script>
+            window.addEventListener('load', function () {
+                var s = document.createElement('script');
+                s.src = 'https://cdn.tailwindcss.com';
+                s.onload = function () {
+                    if (window.tailwind) {
+                        tailwind.config = {
+                            theme: {
+                                extend: {
+                                    colors: { amber: { 50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f',950:'#451a03' } },
+                                    fontFamily: { cormorant:['Cormorant Garamond','serif'], tenali:['Tenali Ramakrishna','sans-serif'], urbanist:['Urbanist','sans-serif'] }
+                                }
+                            }
+                        };
+                    }
+                };
+                document.head.appendChild(s);
+            });
+        </script>
     @endif
     
     <!-- JavaScript -->
