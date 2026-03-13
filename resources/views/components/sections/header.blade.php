@@ -162,85 +162,87 @@
             
             <!-- Logo al final -->
             <div class="flex justify-center items-center mt-8 mb-4">
-                <img src="{{ asset('images/LogoIso.png') }}" 
-                     alt="Logo Tantric Luxe" 
-                     class="w-20 h-20 drop-shadow-lg">
+                <img src="{{ asset('images/LogoIso.png') }}"
+                     alt="Logo Tantric Luxe"
+                     width="80" height="80"
+                     class="w-20 h-20 drop-shadow-lg"
+                     loading="lazy" decoding="async">
             </div>
         </div>
     </aside>
 </div>
 
 <script>
-    function openMobileMenu() {
-        const overlay = document.getElementById('mobile-menu-overlay');
-        const sidebar = document.getElementById('mobile-sidebar');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        
-        if (overlay && sidebar) {
-            overlay.classList.remove('pointer-events-none', 'opacity-0');
-            overlay.classList.add('pointer-events-auto', 'opacity-100');
-            sidebar.classList.remove('translate-x-full');
-            sidebar.classList.add('translate-x-0');
-            
-            if (menuIcon) menuIcon.classList.add('hidden');
-            if (closeIcon) closeIcon.classList.remove('hidden');
-            
-            // Prevenir scroll del body
-            document.body.style.overflow = 'hidden';
+    (function () {
+        'use strict';
+
+        // ── Captura de elementos una sola vez (evita querySelector repetido) ──
+        var _overlay, _sidebar, _menuIcon, _closeIcon, _menuOpen = false;
+
+        function getEls() {
+            if (!_overlay) {
+                _overlay   = document.getElementById('mobile-menu-overlay');
+                _sidebar   = document.getElementById('mobile-sidebar');
+                _menuIcon  = document.getElementById('menu-icon');
+                _closeIcon = document.getElementById('close-icon');
+            }
         }
-    }
-    
-    function closeMobileMenu() {
-        const overlay = document.getElementById('mobile-menu-overlay');
-        const sidebar = document.getElementById('mobile-sidebar');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        
-        if (overlay && sidebar) {
-            overlay.classList.remove('pointer-events-auto', 'opacity-100');
-            overlay.classList.add('pointer-events-none', 'opacity-0');
-            sidebar.classList.remove('translate-x-0');
-            sidebar.classList.add('translate-x-full');
-            
-            if (menuIcon) menuIcon.classList.remove('hidden');
-            if (closeIcon) closeIcon.classList.add('hidden');
-            
-            // Restaurar scroll del body
-            document.body.style.overflow = '';
-        }
-    }
-    
-    // Event listener para el botón del menú
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const overlay = document.getElementById('mobile-menu-overlay');
-                const isOpen = overlay && overlay.classList.contains('opacity-100');
-                
-                if (isOpen) {
-                    closeMobileMenu();
-                } else {
-                    openMobileMenu();
-                }
+
+        // ── Agrupa TODOS los writes en un único frame para evitar forced reflow ──
+        function openMobileMenu() {
+            getEls();
+            if (!_overlay || !_sidebar || _menuOpen) return;
+            _menuOpen = true;
+            requestAnimationFrame(function () {
+                _overlay.classList.remove('pointer-events-none', 'opacity-0');
+                _overlay.classList.add('pointer-events-auto', 'opacity-100');
+                _sidebar.classList.remove('translate-x-full');
+                _sidebar.classList.add('translate-x-0');
+                if (_menuIcon)  _menuIcon.classList.add('hidden');
+                if (_closeIcon) _closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             });
         }
-        
-        // Cerrar al hacer clic fuera del sidebar
-        const backdrop = document.getElementById('mobile-menu-backdrop');
-        if (backdrop) {
-            backdrop.addEventListener('click', closeMobileMenu);
+
+        function closeMobileMenu() {
+            getEls();
+            if (!_overlay || !_sidebar || !_menuOpen) return;
+            _menuOpen = false;
+            requestAnimationFrame(function () {
+                _overlay.classList.remove('pointer-events-auto', 'opacity-100');
+                _overlay.classList.add('pointer-events-none', 'opacity-0');
+                _sidebar.classList.remove('translate-x-0');
+                _sidebar.classList.add('translate-x-full');
+                if (_menuIcon)  _menuIcon.classList.remove('hidden');
+                if (_closeIcon) _closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
         }
-        
-        // Cerrar con la tecla ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeMobileMenu();
+
+        // Exponer para los onclick inline del HTML
+        window.openMobileMenu  = openMobileMenu;
+        window.closeMobileMenu = closeMobileMenu;
+
+        // ── Event listeners ────────────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            getEls();
+
+            var menuBtn = document.getElementById('mobile-menu-btn');
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    _menuOpen ? closeMobileMenu() : openMobileMenu();
+                });
             }
+
+            var backdrop = document.getElementById('mobile-menu-backdrop');
+            if (backdrop) backdrop.addEventListener('click', closeMobileMenu);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMobileMenu();
+            });
         });
-    });
+    }());
 </script>
 
 <div class="h-20"></div>

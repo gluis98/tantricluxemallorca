@@ -913,14 +913,21 @@
 @push('scripts')
 <style>
     /* ── Hero Slideshow ── */
+
+    /* contain:layout+style+paint aisla el slider del resto del DOM:
+       cualquier cambio interno NO propaga reflow al exterior (fix PageSpeed) */
+    #hero-slider {
+        contain: layout style paint;
+    }
+
     .hero-slide {
         opacity: 0;
         transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
-        /* will-change solo en slide activo (ahorra GPU en móvil) */
     }
     .hero-slide.is-active {
         opacity: 1;
-        will-change: opacity, transform;
+        /* will-change solo mientras está activo (libera capas compositing en móvil) */
+        will-change: opacity;
         /* Ken Burns activo solo en desktop (GPU limitada en móvil) */
         animation: hero-ken-burns 9s ease-in-out forwards;
     }
@@ -937,6 +944,7 @@
         .hero-slide.is-active {
             animation: none;
             transform: none;
+            will-change: auto; /* libera capa GPU en móvil */
         }
     }
     /* Respeta preferencia de movimiento reducido (accesibilidad + rendimiento) */
@@ -946,6 +954,7 @@
         .hero-slide.is-leaving {
             animation: none !important;
             transition-duration: 0.3s !important;
+            will-change: auto !important;
         }
     }
     /* Dots */

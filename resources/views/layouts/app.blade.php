@@ -194,11 +194,11 @@
         <div class="fixed inset-0 w-screen h-screen pointer-events-none z-0">
             <div class="absolute top-0 left-0 -translate-x-[60%] md:-translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" class="object-contain w-full h-full relative z-10" fetchpriority="low" decoding="async">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" width="600" height="600" class="object-contain w-full h-full relative z-10" fetchpriority="low" loading="lazy" decoding="async">
             </div>
             <div class="absolute top-0 right-0 translate-x-[60%] md:translate-x-1/2 w-[600px] h-[600px]">
                 <span class="glow-mandala"></span>
-                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" class="object-contain w-full h-full relative z-10" fetchpriority="low" loading="lazy" decoding="async" style="transform: scaleX(-1);">
+                <img src="{{ route('img.serve', ['src' => 'images/Mandala.webp', 'w' => 600, 'q' => 75]) }}" alt="" role="presentation" width="600" height="600" class="object-contain w-full h-full relative z-10" fetchpriority="low" loading="lazy" decoding="async" style="transform: scaleX(-1);">
             </div>
         </div>
         
