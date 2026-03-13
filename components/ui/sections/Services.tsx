@@ -21,6 +21,7 @@ export default function ServicesSection({ lang, dictionary, services }: {
         title: string;
         reserve_button: string;
         see_all_button: string;
+        see_more_button: string;
     }, services: Service[]
 }) {
 
@@ -37,46 +38,62 @@ export default function ServicesSection({ lang, dictionary, services }: {
                 <div className="w-24 h-px bg-amber-400 mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                {services.slice(0, 2).map((service) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {services.slice(0, 3).map((service) => (
                     <div
                         key={service.id}
-                        className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-4 sm:p-8 border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 flex flex-col h-full"
+                        className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg border border-amber-900/20 hover:border-amber-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/20 overflow-hidden group cursor-pointer"
+                        onClick={() => window.location.href = (lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`)}
                     >
-                        <div className="flex-grow">
+                        <div className="relative h-64 overflow-hidden">
                             <Image
                                 src={service.image}
                                 alt={service.title}
                                 width={400}
-                                height={160}
-                                className="w-full h-40 object-cover rounded-md mb-4"
+                                height={300}
+                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             />
-                            <div className="flex justify-between items-start mb-4">
-                                <h3 className="text-2xl font-light tracking-wider text-amber-400">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4">
+                                <h3 className="text-xl font-light tracking-wider text-amber-400 mb-1">
                                     {service.title}
                                 </h3>
-                                {/* <div className="text-right">
-                                    <p className="text-xl font-light text-amber-500">{service.price}</p>
-                                    <p className="text-sm text-gray-400">{service.duration}</p>
-                                </div> */}
                             </div>
-                            <p className="text-gray-300 mb-6 leading-relaxed">
+                        </div>
+
+                        <div className="p-6">
+                            <p className="text-gray-300 mb-4 leading-relaxed text-sm">
                                 {service.description}
                             </p>
                             <ul className="space-y-2 mb-6">
-                                {service.features.map((feature, index) => (
+                                {service.features.slice(0, 3).map((feature, index) => (
                                     <li key={index} className="flex items-center text-sm text-gray-400">
                                         <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        window.location.href = '/whatsapp';
+                                    }}
+                                    className="flex-1 tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-4 py-2 text-sm font-medium tracking-wider transition-all duration-300"
+                                >
+                                    {dictionary.reserve_button}
+                                </button>
+                                <button
+                                    className="px-4 py-2 border border-amber-600/30 rounded-3xl text-amber-400 text-sm hover:bg-amber-600/10 transition-colors"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        window.location.href = (lang === i18n.defaultLocale ? '/servicios' : `/${lang}/servicios`);
+                                    }}
+                                >
+                                    {dictionary.see_more_button}
+                                </button>
+                            </div>
                         </div>
-                        <button 
-                        onClick={() => window.location.href = '/whatsapp'}
-                        className="w-full cursor-pointer tenali-ramakrishna border-1 border-yellow-400/50 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-3xl hover:from-yellow-600/40 hover:to-amber-600/40 text-white px-6 py-3 text-sm font-medium tracking-wider transition-all duration-300 mt-4">
-                            {dictionary.reserve_button}
-                        </button>
                     </div>
                 ))}
             </div>
