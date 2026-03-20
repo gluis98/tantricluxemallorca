@@ -13,7 +13,6 @@ interface MasajistasModalProps {
 const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps) => {
   const [animateCards, setAnimateCards] = useState(false);
 
-  const masajistas = [
     {
       id: 1,
       name: "Erika",
@@ -23,6 +22,16 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
         : lang === 'de' 
         ? "Spezialistin für Deluxe Sinnliche Tantra-Massage"
         : "Especialista en Masaje Tantrico Sensual Deluxe"
+    },
+    {
+      id: 2,
+      name: "Valentina",
+      image: "/images/hero section/4.jpg",
+      specialty: lang === 'en' 
+        ? "Sensual & Relaxing Tantric Massage" 
+        : lang === 'de' 
+        ? "Sinnliche & Entspannende Tantra-Massage"
+        : "Masaje Tantrico Sensual y Relajante"
     }
   ];
 

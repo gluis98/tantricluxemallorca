@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function GallerySection({ dictionary }: {
   dictionary: {
-    item1: string; item2: string; item3: string;
+    item1: string; item2: string; item3: string; item4: string;
   }
 }) {
 
@@ -70,6 +70,25 @@ export default function GallerySection({ dictionary }: {
             <div className="mt-4 text-center">
               <h3 className="text-lg font-light tracking-wider text-white tenali-ramakrishna">
                 {dictionary.item3}
+              </h3>
+            </div>
+          </div>
+
+          {/* Foto 4 */}
+          <div className="flex-1 relative group">
+            <div className="relative overflow-hidden rounded-xs border-1 border-yellow-200 bg-white">
+              <Image
+                src="/images/hero section/4.jpg"
+                alt="Valentina Masaje Tantrico"
+                width={400}
+                height={500}
+                className="w-full h-64 md:h-100 object-cover rounded-xs transition-transform duration-300 group-hover:scale-105"
+              />
+
+            </div>
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-light tracking-wider text-white tenali-ramakrishna">
+                {dictionary.item4}
               </h3>
             </div>
           </div>

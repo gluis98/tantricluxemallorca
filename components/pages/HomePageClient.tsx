@@ -24,6 +24,7 @@ export default function HomePageClient({ lang, dictionary }: {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [activeGallery, setActiveGallery] = useState<'Erika' | 'Valentina'>('Erika');
 
   const erikaImages = [
     "/images/masseurs/Erika/IMG_0843.jpeg",
@@ -35,6 +36,13 @@ export default function HomePageClient({ lang, dictionary }: {
     "/images/masseurs/Erika/IMG_0880.jpeg"
   ];
 
+  const valentinaImages = [
+    "/images/masseurs/Valentina/2.jpg",
+    "/images/masseurs/Valentina/3.jpg",
+    "/images/hero section/4.jpg",
+    "/images/masseurs/Valentina/5.jpg"
+  ];
+
   return (
     <>
       <main className="relative z-10 px-0 md:px-8 py-8">
@@ -44,9 +52,11 @@ export default function HomePageClient({ lang, dictionary }: {
         {/* Gallery Section */}
         <Gallery dictionary={dictionary.homepage.gallery_section} />
 
-        {/* Sección de Erika con Galería de Fotos */}
+        {/* Sección de Masajistas */}
         <section className="py-16 px-4 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto space-y-16">
+            
+            {/* ERIKA */}
             <div className="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
               
               {/* Título de la sección */}
@@ -66,7 +76,6 @@ export default function HomePageClient({ lang, dictionary }: {
               {/* Grid de fotos de Erika */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {erikaImages.slice(0, 4).map((image, index) => {
-                  // Encontrar el índice real en el array completo
                   const realIndex = erikaImages.indexOf(image);
                   return (
                   <div 
@@ -74,6 +83,7 @@ export default function HomePageClient({ lang, dictionary }: {
                     className="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300"
                     onClick={() => {
                       setCurrentImage(realIndex >= 0 ? realIndex : index);
+                      setActiveGallery('Erika');
                       setIsImageGalleryOpen(true);
                     }}
                   >
@@ -85,7 +95,6 @@ export default function HomePageClient({ lang, dictionary }: {
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                         sizes="(max-width: 768px) 50vw, 25vw"
                       />
-                      {/* Overlay oscuro en hover */}
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="text-white text-sm font-medium tenali-ramakrishna">
                           {lang === 'en' ? 'View more' : lang === 'de' ? 'Mehr anzeigen' : 'Ver más'}
@@ -142,6 +151,89 @@ export default function HomePageClient({ lang, dictionary }: {
                   {dictionary.homepage.masseuse_section.button_text}
                 </button>
               </div>
+            </div>
+
+            {/* VALENTINA */}
+            <div className="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
+              
+              {/* Grid de fotos de Valentina */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {valentinaImages.slice(0, 4).map((image, index) => {
+                  const realIndex = valentinaImages.indexOf(image);
+                  return (
+                  <div 
+                    key={index}
+                    className="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300"
+                    onClick={() => {
+                      setCurrentImage(realIndex >= 0 ? realIndex : index);
+                      setActiveGallery('Valentina');
+                      setIsImageGalleryOpen(true);
+                    }}
+                  >
+                    <div className="relative aspect-[3/4]">
+                      <Image
+                        src={image}
+                        alt={`Valentina - Masajista Profesional ${index + 1}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="text-white text-sm font-medium tenali-ramakrishna">
+                          {lang === 'en' ? 'View more' : lang === 'de' ? 'Mehr anzeigen' : 'Ver más'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  );
+                })}
+              </div>
+
+              {/* Nombre VALENTINA prominente */}
+              <div className="text-center mb-8">
+                <h3 className="text-5xl md:text-7xl font-light tracking-[0.3em] gradiente-dorado cormorant-garamond mb-4">
+                  VALENTINA
+                </h3>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="h-px w-16 bg-amber-400"></div>
+                  <p className="text-xl md:text-2xl font-light text-amber-300 tenali-ramakrishna">
+                    {lang === 'en' 
+                      ? "Sensual & Relaxing Tantric Massage" 
+                      : lang === 'de' 
+                      ? "Sinnliche & Entspannende Tantra-Massage"
+                      : "Masaje Tantrico Sensual y Relajante"}
+                  </p>
+                  <div className="h-px w-16 bg-amber-400"></div>
+                </div>
+                
+                {/* Badge de estrellas y reviews */}
+                <div className="flex items-center justify-center gap-2 mb-6">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-amber-400 text-2xl">★</span>
+                    ))}
+                  </div>
+                  <span className="text-gray-400 text-lg tenali-ramakrishna">(45 {lang === 'en' ? 'reviews' : lang === 'de' ? 'Bewertungen' : 'opiniones'})</span>
+                </div>
+
+                {/* Badge disponible */}
+                <div className="inline-flex items-center gap-2 bg-green-900/30 border border-green-600/40 rounded-full px-6 py-2 mb-8">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-green-400 font-medium tenali-ramakrishna">
+                    {lang === 'en' ? 'Available Now' : lang === 'de' ? 'Jetzt Verfügbar' : 'Disponible Ahora'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Botón de más información */}
+              <div className="text-center">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-10 md:px-16 py-4 md:py-5 text-xl md:text-2xl font-medium tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-900/50"
+                >
+                  {dictionary.homepage.masseuse_section.button_text.replace('ERIKA', 'VALENTINA')}
+                </button>
+              </div>
 
             </div>
           </div>
@@ -195,10 +287,10 @@ export default function HomePageClient({ lang, dictionary }: {
       <ImageGalleryModal
         isOpen={isImageGalleryOpen}
         onClose={() => setIsImageGalleryOpen(false)}
-        images={erikaImages}
+        images={activeGallery === 'Erika' ? erikaImages : valentinaImages}
         currentIndex={currentImage}
         onIndexChange={setCurrentImage}
-        name="Erika"
+        name={activeGallery}
       />
     </>
   );
