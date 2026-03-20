@@ -96,5 +96,30 @@ return array (
       'rating' => 5,
       'reviews' => 47,
     ),
+    3 =>
+    array (
+      'id' => 5,
+      'name' => 'Valentina',
+      'age' => 25,
+      'specialty' => 'Sensual & Relaxing Tantric Massage',
+      'image' => '/images/hero section/4.jpg',
+      'images' =>
+      array (
+        0 => '/images/masseurs/Valentina/2.jpg',
+        1 => '/images/masseurs/Valentina/3.jpg',
+        2 => '/images/masseurs/Valentina/4.jpg',
+        3 => '/images/masseurs/Valentina/5.jpg',
+      ),
+      'description' => 'Valentina invites you to a deep journey of connection. Her intuition and warmth will guide you towards absolute relaxation and an unforgettable sensual awakening.',
+      'skills' =>
+      array (
+        0 => 'Relaxing Massage',
+        1 => 'Energy Connection',
+        2 => 'Sensual Techniques',
+        3 => 'Personalized Attention',
+      ),
+      'rating' => 5,
+      'reviews' => 45,
+    ),
   ),
 );

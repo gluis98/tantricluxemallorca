@@ -223,6 +223,18 @@
                              loading="lazy"
                              decoding="async">
 
+                        <!-- SLIDE 4 -->
+                        <img src="{{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 800, 'q' => 85]) }}"
+                             srcset="{{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 420, 'q' => 85]) }} 420w,
+                                     {{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Masajista Valentina Tantric Luxe Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="3"
+                             loading="lazy"
+                             decoding="async">
+
                         <!-- Overlay degradado inferior -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none z-10"></div>
 
@@ -238,6 +250,7 @@
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
+                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
                         </div>
                     </div>
 
@@ -333,6 +346,12 @@
                 'image'     => '/images/masseurs/Anny/1.jpg',
                 'reviews'   => 47,
             ],
+            [
+                'name'      => 'Valentina',
+                'specialty' => trans('masseusesPage.masseuses.3.specialty', [], $locale),
+                'image'     => '/images/hero section/4.jpg',
+                'reviews'   => 45,
+            ],
         ];
     @endphp
     <section class="py-16 px-4 lg:px-8">
@@ -353,7 +372,7 @@
             </div>
 
             <!-- Grid 4 cards -->
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-12 max-w-4xl mx-auto w-full">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-6xl mx-auto w-full">
                 @foreach($masseusesData as $m)
                 <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
                      style="border: 1px solid rgba(120,53,15,0.35);">
