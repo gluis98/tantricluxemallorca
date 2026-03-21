@@ -10,31 +10,43 @@ const pathTranslations: Record<string, Record<string, string>> = {
     es: '/',
     en: '/',
     de: '/',
+    it: '/',
+    fr: '/',
   },
   '/acerca': {
     es: '/acerca',
     en: '/about',
     de: '/uber-uns',
+    it: '/chi-siamo',
+    fr: '/a-propos',
   },
   '/servicios': {
     es: '/servicios',
     en: '/services',
     de: '/leistungen',
+    it: '/servizi',
+    fr: '/services',
   },
   '/contacto': {
     es: '/contacto',
     en: '/contact',
     de: '/kontakt',
+    it: '/contatti',
+    fr: '/contact',
   },
   '/masajistas': {
     es: '/masajistas',
     en: '/masseuses',
     de: '/masseurinnen',
+    it: '/massaggiatrici',
+    fr: '/masseuses',
   },
   '/whatsapp': {
     es: '/whatsapp',
     en: '/whatsapp',
     de: '/whatsapp',
+    it: '/whatsapp',
+    fr: '/whatsapp',
   },
 };
 
@@ -54,6 +66,12 @@ export default function LanguageSwitcher() {
     } else if (pathname.startsWith('/de/') || pathname === '/de') {
       currentLocale = 'de';
       pathWithoutLocale = pathname.replace('/de', '') || '/';
+    } else if (pathname.startsWith('/it/') || pathname === '/it') {
+      currentLocale = 'it';
+      pathWithoutLocale = pathname.replace('/it', '') || '/';
+    } else if (pathname.startsWith('/fr/') || pathname === '/fr') {
+      currentLocale = 'fr';
+      pathWithoutLocale = pathname.replace('/fr', '') || '/';
     } else if (pathname.startsWith('/es/') || pathname === '/es') {
       currentLocale = 'es';
       pathWithoutLocale = pathname.replace('/es', '') || '/';
@@ -84,6 +102,8 @@ export default function LanguageSwitcher() {
   const getCurrentLocale = (): string => {
     if (pathname.startsWith('/en')) return 'en';
     if (pathname.startsWith('/de')) return 'de';
+    if (pathname.startsWith('/it')) return 'it';
+    if (pathname.startsWith('/fr')) return 'fr';
     if (pathname.startsWith('/es')) return 'es';
     return 'es'; // Por defecto español
   };

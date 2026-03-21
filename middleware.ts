@@ -8,31 +8,43 @@ const pathTranslations: Record<string, Record<string, string>> = {
     es: '/acerca',      // Español: /acerca
     en: '/about',       // Inglés: /en/about
     de: '/uber-uns',    // Alemán: /de/uber-uns
+    it: '/chi-siamo',   // Italiano: /it/chi-siamo
+    fr: '/a-propos',    // Francés: /fr/a-propos
   },
   '/': {
     es: '/',
     en: '/',
     de: '/',
+    it: '/',
+    fr: '/',
   },
   '/servicios': {
     es: '/servicios',
     en: '/services',
     de: '/leistungen',
+    it: '/servizi',
+    fr: '/services',
   },
   '/contacto': {
     es: '/contacto',
     en: '/contact',
     de: '/kontakt',
+    it: '/contatti',
+    fr: '/contact',
   },
   '/masajistas': {
     es: '/masajistas',
     en: '/masseuses',
     de: '/masseurinnen',
+    it: '/massaggiatrici',
+    fr: '/masseuses',
   },
   '/whatsapp': {
     es: '/whatsapp',
     en: '/whatsapp',
     de: '/whatsapp',
+    it: '/whatsapp',
+    fr: '/whatsapp',
   },
 };
 
@@ -64,9 +76,9 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) {
-    // URL con prefijo de idioma (ej: /es/, /en/about, /de/uber-uns)
+    // URL con prefijo de idioma (ej: /es/, /en/about, /de/uber-uns, /it/chi-siamo, /fr/a-propos)
     const segments = pathname.split('/').filter(Boolean);
-    const locale = segments[0] as string; // 'es', 'en', o 'de'
+    const locale = segments[0] as string; // 'es', 'en', 'de', 'it' o 'fr'
     const pathWithoutLocale = '/' + segments.slice(1).join('/') || '/';
 
     // Si es una ruta de servicio dinámico (/servicios/[slug])
@@ -78,11 +90,20 @@ export function middleware(request: NextRequest) {
         es: ['golden-relax', 'golden-sensitivo', 'experiencia-golden', 'golden-suite-experiencia', 'velvet-duet-pareja'],
         en: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
         de: ['golden-relax', 'golden-sensitiv', 'golden-erlebnis', 'golden-suite-erlebnis', 'velvet-duet-paar'],
+        it: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
+        fr: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
       };
       
       // Si es un servicio antiguo, redirigir a la página de servicios
       if (deprecatedServices[locale]?.includes(serviceSlug)) {
-        const servicesPath = locale === 'es' ? '/servicios' : locale === 'en' ? '/services' : '/leistungen';
+        const servicesPathMap: Record<string, string> = {
+          es: '/servicios',
+          en: '/services',
+          de: '/leistungen',
+          it: '/servizi',
+          fr: '/services',
+        };
+        const servicesPath = servicesPathMap[locale] ?? '/servicios';
         const redirectUrl = new URL(`/${locale}${servicesPath}`, request.url);
         return NextResponse.redirect(redirectUrl, 301); // 301 = permanente
       }

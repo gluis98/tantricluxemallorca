@@ -61,12 +61,12 @@ export default async function RootLayout({
   const getAlternateUrls = () => {
     const baseUrl = 'https://tantricluxemallorca.com';
     const pathTranslations: Record<string, Record<string, string>> = {
-      '/': { es: '/', en: '/', de: '/' },
-      '/acerca': { es: '/acerca', en: '/about', de: '/uber-uns' },
-      '/servicios': { es: '/servicios', en: '/services', de: '/leistungen' },
-      '/contacto': { es: '/contacto', en: '/contact', de: '/kontakt' },
-      '/masajistas': { es: '/masajistas', en: '/masseuses', de: '/masseurinnen' },
-      '/whatsapp': { es: '/whatsapp', en: '/whatsapp', de: '/whatsapp' },
+      '/': { es: '/', en: '/', de: '/', it: '/', fr: '/' },
+      '/acerca': { es: '/acerca', en: '/about', de: '/uber-uns', it: '/chi-siamo', fr: '/a-propos' },
+      '/servicios': { es: '/servicios', en: '/services', de: '/leistungen', it: '/servizi', fr: '/services' },
+      '/contacto': { es: '/contacto', en: '/contact', de: '/kontakt', it: '/contatti', fr: '/contact' },
+      '/masajistas': { es: '/masajistas', en: '/masseuses', de: '/masseurinnen', it: '/massaggiatrici', fr: '/masseuses' },
+      '/whatsapp': { es: '/whatsapp', en: '/whatsapp', de: '/whatsapp', it: '/whatsapp', fr: '/whatsapp' },
       // Servicios Golden - se manejan dinámicamente en las páginas individuales
     };
 

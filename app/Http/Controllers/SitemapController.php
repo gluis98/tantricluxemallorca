@@ -10,38 +10,38 @@ class SitemapController extends Controller
     public function index()
     {
         $baseUrl = rtrim(config('app.url', 'https://tantricluxemallorca.com'), '/');
-        $locales  = ['es', 'en', 'de'];
+        $locales  = ['es', 'en', 'de', 'it', 'fr'];
         $today    = date('Y-m-d');
 
         // Rutas estáticas con sus slugs por idioma
         $routes = [
             // Inicio (cada idioma tiene su propia URL canónica)
             [
-                'slugs'       => ['es' => '', 'en' => '', 'de' => ''],
+                'slugs'       => ['es' => '', 'en' => '', 'de' => '', 'it' => '', 'fr' => ''],
                 'changefreq'  => 'daily',
                 'priority'    => '1.0',
             ],
             // Servicios
             [
-                'slugs'       => ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen'],
+                'slugs'       => ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'],
                 'changefreq'  => 'weekly',
                 'priority'    => '0.9',
             ],
             // Masajistas
             [
-                'slugs'       => ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen'],
+                'slugs'       => ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'],
                 'changefreq'  => 'weekly',
                 'priority'    => '0.9',
             ],
             // Acerca
             [
-                'slugs'       => ['es' => 'acerca', 'en' => 'about', 'de' => 'uber-uns'],
+                'slugs'       => ['es' => 'acerca', 'en' => 'about', 'de' => 'uber-uns', 'it' => 'chi-siamo', 'fr' => 'a-propos'],
                 'changefreq'  => 'monthly',
                 'priority'    => '0.7',
             ],
             // Contacto
             [
-                'slugs'       => ['es' => 'contacto', 'en' => 'contact', 'de' => 'kontakt'],
+                'slugs'       => ['es' => 'contacto', 'en' => 'contact', 'de' => 'kontakt', 'it' => 'contatti', 'fr' => 'contact'],
                 'changefreq'  => 'monthly',
                 'priority'    => '0.8',
             ],
@@ -53,7 +53,7 @@ class SitemapController extends Controller
             try {
                 App::setLocale($locale);
                 $servicesData = trans('servicesPage', [], $locale);
-                $slugKey = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen'][$locale];
+                $slugKey = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'][$locale];
                 foreach ($servicesData['services'] ?? [] as $service) {
                     $slug = $service['slug'] ?? null;
                     if ($slug) {
@@ -97,7 +97,7 @@ class SitemapController extends Controller
         }
 
         // --- Rutas dinámicas de servicios ---
-        $servicePathByLocale = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen'];
+        $servicePathByLocale = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'];
 
         foreach ($serviceSlugsByLocale as $slug => $paths) {
             foreach ($locales as $locale) {

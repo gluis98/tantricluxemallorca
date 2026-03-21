@@ -21,7 +21,7 @@ Route::get('/img', [ImageController::class, 'serve'])->name('img.serve');
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
 // Rutas con prefijo de idioma
-Route::group(['prefix' => '{locale}', 'middleware' => 'web', 'where' => ['locale' => 'es|en|de']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'web', 'where' => ['locale' => 'es|en|de|it|fr']], function () {
     // Home
     Route::get('/', [HomeController::class, 'index'])->name('home');
     
@@ -45,4 +45,18 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'web', 'where' => ['locale
     Route::get('/leistungen/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.de');
     Route::get('/masseurinnen', [MasseusesController::class, 'index'])->name('masseuses.de');
     Route::get('/kontakt', [ContactController::class, 'index'])->name('contact.de');
+
+    // Rutas traducidas - Italiano
+    Route::get('/chi-siamo', [AboutController::class, 'index'])->name('about.it');
+    Route::get('/servizi', [ServicesController::class, 'index'])->name('services.it');
+    Route::get('/servizi/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.it');
+    Route::get('/massaggiatrici', [MasseusesController::class, 'index'])->name('masseuses.it');
+    Route::get('/contatti', [ContactController::class, 'index'])->name('contact.it');
+
+    // Rutas traducidas - Francés
+    Route::get('/a-propos', [AboutController::class, 'index'])->name('about.fr');
+    Route::get('/services', [ServicesController::class, 'index'])->name('services.fr');
+    Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.fr');
+    Route::get('/masseuses', [MasseusesController::class, 'index'])->name('masseuses.fr');
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.fr');
 });

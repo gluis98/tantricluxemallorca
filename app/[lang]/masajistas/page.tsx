@@ -15,6 +15,8 @@ export async function generateMetadata({
     es: '/masajistas',
     en: '/masseuses',
     de: '/masseurinnen',
+    it: '/massaggiatrici',
+    fr: '/masseuses',
   };
   const currentUrl = `${baseUrl}/${lang}${paths[lang]}`;
   
@@ -22,6 +24,8 @@ export async function generateMetadata({
     'es': `${baseUrl}/es/masajistas`,
     'en': `${baseUrl}/en/masseuses`,
     'de': `${baseUrl}/de/masseurinnen`,
+    'it': `${baseUrl}/it/massaggiatrici`,
+    'fr': `${baseUrl}/fr/masseuses`,
     'x-default': `${baseUrl}/es/masajistas`,
   };
 
@@ -38,7 +42,7 @@ export async function generateMetadata({
       description: dictionary.masseusesPage.meta_description,
       url: currentUrl,
       siteName: 'Tantric Luxe Mallorca',
-      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'de_DE',
+      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : lang === 'it' ? 'it_IT' : 'fr_FR',
       type: 'website',
       images: [
         {

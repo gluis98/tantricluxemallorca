@@ -38,12 +38,12 @@
                     
                     // Mapeo de rutas entre idiomas
                     $routeMap = [
-                        // Ruta canónica (español) => [en => ruta_en, de => ruta_de]
-                        '' => ['en' => '', 'de' => ''], // Home
-                        'acerca' => ['en' => 'about', 'de' => 'uber-uns'],
-                        'servicios' => ['en' => 'services', 'de' => 'leistungen'],
-                        'masajistas' => ['en' => 'masseuses', 'de' => 'masseurinnen'],
-                        'contacto' => ['en' => 'contact', 'de' => 'kontakt'],
+                        // Ruta canónica (español) => traducciones por idioma
+                        '' => ['en' => '', 'de' => '', 'it' => '', 'fr' => ''], // Home
+                        'acerca' => ['en' => 'about', 'de' => 'uber-uns', 'it' => 'chi-siamo', 'fr' => 'a-propos'],
+                        'servicios' => ['en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'],
+                        'masajistas' => ['en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'],
+                        'contacto' => ['en' => 'contact', 'de' => 'kontakt', 'it' => 'contatti', 'fr' => 'contact'],
                     ];
                     
                     // Mapeo inverso: desde cualquier idioma a español
@@ -56,13 +56,19 @@
                         if (isset($translations['de'])) {
                             $reverseMap[$translations['de']] = $esRoute;
                         }
+                        if (isset($translations['it'])) {
+                            $reverseMap[$translations['it']] = $esRoute;
+                        }
+                        if (isset($translations['fr'])) {
+                            $reverseMap[$translations['fr']] = $esRoute;
+                        }
                     }
                     
                     // Extraer el idioma y la ruta actual
                     $currentLocale = $locale;
                     $currentRoute = '';
                     
-                    if (preg_match('/^(es|en|de)(?:\/(.+))?$/', $currentPath, $matches)) {
+                    if (preg_match('/^(es|en|de|it|fr)(?:\/(.+))?$/', $currentPath, $matches)) {
                         $detectedLocale = $matches[1];
                         $currentRoute = isset($matches[2]) ? $matches[2] : '';
                     } else {
@@ -79,19 +85,25 @@
                         $esPath = '/es';
                         $enPath = '/en';
                         $dePath = '/de';
+                        $itPath = '/it';
+                        $frPath = '/fr';
                     } else {
                         // Rutas con path
                         $esPath = '/es/' . $canonicalRoute;
                         $enPath = '/en/' . ($routeMap[$canonicalRoute]['en'] ?? $canonicalRoute);
                         $dePath = '/de/' . ($routeMap[$canonicalRoute]['de'] ?? $canonicalRoute);
+                        $itPath = '/it/' . ($routeMap[$canonicalRoute]['it'] ?? $canonicalRoute);
+                        $frPath = '/fr/' . ($routeMap[$canonicalRoute]['fr'] ?? $canonicalRoute);
                     }
                     
                     // Manejar rutas dinámicas (como /servicios/{slug})
-                    if (preg_match('/^(servicios|services|leistungen)\/(.+)$/', $currentRoute, $slugMatches)) {
+                    if (preg_match('/^(servicios|services|leistungen|servizi)\/(.+)$/', $currentRoute, $slugMatches)) {
                         $slug = $slugMatches[2];
                         $esPath = '/es/servicios/' . $slug;
                         $enPath = '/en/services/' . $slug;
                         $dePath = '/de/leistungen/' . $slug;
+                        $itPath = '/it/servizi/' . $slug;
+                        $frPath = '/fr/services/' . $slug;
                     }
                 @endphp
                 <a href="{{ $esPath }}" 
@@ -100,6 +112,10 @@
                    class="px-2 py-1 {{ $locale === 'en' ? 'text-amber-400' : 'text-gray-400' }} hover:text-amber-400 transition-colors">EN</a>
                 <a href="{{ $dePath }}" 
                    class="px-2 py-1 {{ $locale === 'de' ? 'text-amber-400' : 'text-gray-400' }} hover:text-amber-400 transition-colors">DE</a>
+                <a href="{{ $itPath }}" 
+                   class="px-2 py-1 {{ $locale === 'it' ? 'text-amber-400' : 'text-gray-400' }} hover:text-amber-400 transition-colors">IT</a>
+                <a href="{{ $frPath }}" 
+                   class="px-2 py-1 {{ $locale === 'fr' ? 'text-amber-400' : 'text-gray-400' }} hover:text-amber-400 transition-colors">FR</a>
             </div>
             <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-amber-400 transition-colors" aria-label="Abrir menú">
                 <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

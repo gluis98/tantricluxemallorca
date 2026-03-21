@@ -1,0 +1,303 @@
+{
+  "header": {
+    "location": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "nav": {
+      "home": "Home",
+      "about": "Chi Siamo",
+      "services": "Servizi",
+      "masseuses": "Massaggiatrici",
+      "contact": "Contatti"
+    },
+    "paths": {
+      "home": "/",
+      "about": "/chi-siamo",
+      "services": "/servizi",
+      "masseuses": "/massaggiatrici",
+      "contact": "/contatti"
+    }
+  },
+  "footer": {
+    "navigation": "NAVIGAZIONE",
+    "nav_home": "Massaggio Tantrico Maiorca",
+    "nav_services": "Servizi Tantrici",
+    "nav_masseuses": "Massaggiatrici Erotiche",
+    "nav_contact": "Contatti",
+    "paths": {
+      "home": "/",
+      "services": "/servizi",
+      "masseuses": "/massaggiatrici",
+      "contact": "/contatti"
+    },
+    "massages_title": "MASSAGGI TANTRICI",
+    "follow_us": "SEGUICI",
+    "instagram_aria": "Instagram massaggio tantrico Maiorca",
+    "whatsapp_aria": "WhatsApp massaggio tantrico Palma",
+    "copyright": "© 2025 Tantric Luxe Mallorca - Centro Specializzato in Massaggio Tantrico Palma. Tutti i diritti riservati.",
+    "privacy_policy": "Informativa sulla Privacy",
+    "terms_conditions": "Termini e Condizioni"
+  },
+  "homepage": {
+    "meta_title": "Massaggi Erotici e Tantrici Palma | Massaggiatrice Luxe Maiorca",
+    "meta_description": "Massaggi erotici e tantrici esclusivi a Palma di Maiorca. Massaggiatrici professionali, spa di lusso con massima privacy. Massaggio di coppia, tantrico e rilassante. Prenota la tua esperienza unica.",
+    "meta_keywords": "massaggi palma, massaggi maiorca, massaggio erotico palma, massaggi erotici maiorca, massaggio tantrico palma, massaggio tantrico maiorca, massaggiatrice palma, massaggio di coppia maiorca, spa maiorca, spa palma, luxe, massaggio palma di maiorca, offerte massaggi maiorca, massaggio erotico, massaggi erotici palma, tantric, erotic, massaggio, massaggi, massaggi a maiorca, massaggitrici palma",
+    "subtitle": "EROTIC MASSAGE",
+    "title": "TANTRIC LUXE",
+    "main_heading": "MASSAGGIO TANTRICO PALMA",
+    "secondary_heading": "ESPERIENZA ESCLUSIVA DI MASSAGGIO TANTRICO A MAIORCA",
+    "masseuse_section": {
+      "title": "Incontra la Nostra Specialista",
+      "description": "Erika, la nostra massaggiatrice eccezionale, unisce bellezza naturale, eleganza raffinata e una padronanza magistrale delle tecniche tantriche più sofisticate. Scopri l'esperienza unica che ti aspetta.",
+      "button_text": "MAGGIORI INFORMAZIONI SU ERIKA"
+    },
+    "about_us_section": {
+      "pre_title": "CHI SIAMO",
+      "title": "SPECIALISTI IN MASSAGGIO TANTRICO MAIORCA",
+      "p1": "In Tantric Luxe siamo pionieri del massaggio tantrico a Palma di Maiorca. Il nostro centro specializzato combina le antiche tecniche del massaggio tantrico con il lusso e la privacy che meriti nel cuore di Maiorca.",
+      "p2": "Ogni sessione di massaggio tantrico a Maiorca è progettata per risvegliare i tuoi sensi e connetterti alla tua energia interiore. Utilizziamo oli essenziali di alta qualità e tecniche tradizionali di massaggio tantrico a Palma per un'esperienza trasformativa unica.",
+      "stat1_title": "10+",
+      "stat1_text": "Anni nel massaggio tantrico",
+      "stat2_title": "500+",
+      "stat2_text": "Clienti soddisfatti",
+      "stat3_title": "100%",
+      "stat3_text": "Privacy garantita"
+    },
+    "contact_section": {
+      "pre_title": "CONTATTI",
+      "title": "PRENOTA IL TUO MASSAGGIO TANTRICO A MAIORCA",
+      "form_title": "PRENOTA MASSAGGIO TANTRICO PALMA",
+      "info_title": "INFORMAZIONI DI CONTATTO",
+      "location_title": "Centro Massaggio Tantrico",
+      "location_address": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
+      "location_note": "Palma di Maiorca",
+      "whatsapp_title": "WhatsApp",
+      "whatsapp_number": "+34 602 560 426",
+      "whatsapp_note": "Risposta immediata per prenotazioni",
+      "schedule_title": "Orari",
+      "schedule_days": "Dal Lunedì alla Domenica",
+      "schedule_hours": "09:00 - 23:00",
+      "privacy_title": "POLITICA SULLA PRIVACY",
+      "privacy_text": "Nel nostro centro di massaggio tantrico a Palma diamo valore alla tua privacy. Manteniamo una riservatezza assoluta in ogni sessione. Non condividiamo informazioni personali e garantiamo totale discrezione.",
+      "name_label": "Nome",
+      "name_placeholder": "Il tuo nome",
+      "email_label": "Email",
+      "email_placeholder": "tu@email.com",
+      "phone_label": "Telefono",
+      "phone_placeholder": "+34 XXX XXX XXX",
+      "service_label": "Tipo di Massaggio Tantrico",
+      "service_placeholder": "Seleziona il tuo massaggio tantrico",
+      "message_label": "Messaggio (Facoltativo)",
+      "message_placeholder": "Raccontaci della tua esperienza ideale",
+      "submit_button": "PRENOTA MASSAGGIO TANTRICO",
+      "submitting_button": "INVIO IN CORSO...",
+      "success_message": "✅ Prenotazione inviata con successo! Ti contatteremo a breve.",
+      "error_message": "❌ Errore durante l'invio. Riprova o contattaci su WhatsApp."
+    },
+    "services_section": {
+      "pre_title": "I NOSTRI SERVIZI",
+      "title": "ESPERIENZE ESCLUSIVE",
+      "see_all_button": "VEDI TUTTI I SERVIZI",
+      "reserve_button": "PRENOTA ORA",
+      "see_more_button": "VEDI DI PIÙ"
+    },
+    "gallery_section": {
+      "item1": "SPAZIO ESCLUSIVO",
+      "item2": "AMBIENTAZIONE RILASSANTE",
+      "item3": "ESPERIENZA UNICA",
+      "item4": "LE NOSTRE MASSAGGIATRICI"
+    },
+    "testimonials_section": {
+      "pre_title": "TESTIMONIANZE",
+      "title": "OPINIONI SU TANTRIC LUXE",
+      "testimonials": [
+        { "quote": "Il miglior massaggio tantrico a Maiorca che abbia mai provato. La tecnica e l'atmosfera creano un'esperienza trasformativa unica.", "author": "Sofia M." },
+        { "quote": "Professionalità eccezionale nel massaggio tantrico a Palma. Il lusso e la discrezione rendono ogni sessione indimenticabile.", "author": "Carlos R." },
+        { "quote": "Il workshop di massaggio tantrico per coppie ha rafforzato la nostra connessione. Un'esperienza di crescita personale straordinaria.", "author": "Ana & David" }
+      ]
+    },
+    "features_section": {
+      "pre_title": "PERCHÉ SCEGLIERCI",
+      "title": "ESPERIENZA PREMIUM GARANTITA"
+    },
+    "process_section": {
+      "pre_title": "COME FUNZIONA",
+      "title": "LA TUA ESPERIENZA IN 4 FASI"
+    },
+    "cta_section": {
+      "title": "PRONTO PER LA TUA ESPERIENZA?",
+      "subtitle": "Prenota ora e scopri la vera arte del massaggio tantrico a Palma di Maiorca.",
+      "button_text": "PRENOTA ORA"
+    },
+    "reserve_button_text": "PRENOTA ORA",
+    "hero_section": {
+      "card1_title": "MASSAGGIO TANTRICO<br />ESCLUSIVO",
+      "card1_text": "Vivi il nostro massaggio tantrico premium a Palma - Relax e connessione spirituale assoluta",
+      "card2_title": "MASSAGGIO EROTICO<br />PREMIUM",
+      "card2_text": "Scopri il vero massaggio tantrico a Maiorca - Connessione sacra e rilassamento profondo",
+      "icon1_title": "TANTRICO",
+      "icon1_text": "speciale",
+      "icon2_title": "DELUXE",
+      "icon2_text": "massaggi",
+      "icon3_title": "UNICO",
+      "icon3_text": "momenti"
+    }
+  },
+  "servicesPage": {
+    "meta_title": "Servizi di Massaggi Erotici e Tantrici Palma | Catalogo - Tantric Luxe",
+    "meta_description": "Scopri i nostri servizi di massaggi erotici e tantrici a Palma di Maiorca. Catalogo completo: massaggio di coppia, tantrico deluxe, 4 mani. Prenota ora.",
+    "meta_keywords": "servizi massaggio tantrico palma, massaggi erotici palma, massaggi erotici maiorca",
+    "pre_title": "OFFRIAMO ESPERIENZE",
+    "title": "SERVIZI EROTICI",
+    "subtitle": "ESCLUSIVITÀ E PRIVACY",
+    "description": "Scopri il nostro catalogo completo di servizi ideati per risvegliare tutti i tuoi sensi e offrirti esperienze trasformative nel massimo lusso.",
+    "packages_pre_title": "PACCHETTI SPECIALI",
+    "packages_title": "OFFERTE ESCLUSIVE",
+    "faq_pre_title": "DOMANDE FREQUENTI",
+    "faq_title": "TUTTO QUELLO CHE DEVI SAPERE",
+    "reserve_button": "PRENOTA",
+    "see_more_button": "VEDI DI PIÙ",
+    "modal_includes": "INCLUDE:",
+    "modal_description": "DESCRIZIONE COMPLETA:",
+    "modal_reserve_button": "PRENOTA ORA",
+    "modal_more_info_button": "MAGGIORI INFORMAZIONI",
+    "services": [
+      { "id": 1, "slug": "massaggio-rilassante", "title": "MASSAGGIO RILASSANTE", "duration": "60 min", "price": "€120", "description": "Un'esperienza di profondo rilassamento con oli essenziali premium.", "meta_title": "Massaggio Rilassante Palma | SPA Maiorca", "meta_description": "Prenota il tuo massaggio rilassante con oli essenziali a Palma.", "meta_keywords": "massaggio rilassante", "features": ["Oli essenziali premium", "Tecniche di rilassamento", "Ambiente climatizzato"], "fullDescription": "Il Massaggio Rilassante è un viaggio verso il benessere assoluto, per alleviare tensioni fisiche e mentali.", "image": "/images/ambiente_relante_en_palma.webp" },
+      { "id": 2, "slug": "massaggio-corpo-a-corpo", "title": "MASSAGGIO CORPO A CORPO", "duration": "70 min", "price": "€160", "description": "Connessione intima totale attraverso il contatto pelle a pelle.", "meta_title": "Massaggio Corpo a Corpo Palma | Sensuale", "meta_description": "Il massaggio corpo a corpo più sensuale di Maiorca.", "meta_keywords": "corpo a corpo", "features": ["Contatto pelle a pelle", "Oli caldi", "Sensuale"], "fullDescription": "Un massaggio profondamente erotico, con il calore degli oli essenziali su tutto il corpo.", "image": "/images/tantric_deluxe.webp" },
+      { "id": 3, "slug": "esperienza-erotica-in-doccia", "title": "ESPERIENZA EROTICA IN DOCCIA", "duration": "60 min", "price": "€150", "description": "Un incontro intimo e sensuale sott'acqua con sapone corporeo.", "meta_title": "Esperienza Doccia Palma | SPA Erotica", "meta_description": "Una doccia erotica indimenticabile a Palma di Maiorca.", "meta_keywords": "doccia erotica", "features": ["Doccia privata", "Sapone erotico", "Momenti intimi"], "fullDescription": "Il vapore, il calore e le carezze si fondono per creare un'esperienza unica sotto la doccia.", "image": "/images/experiencias_eroticas_unicas.webp" },
+      { "id": 4, "slug": "massaggio-prostatico", "title": "MASSAGGIO PROSTATICO", "duration": "60 min", "price": "€150", "description": "Un'esperienza intima con la stimolazione prostatica professionale.", "meta_title": "Massaggio Prostatico Palma", "meta_description": "Il massimo piacere maschile curato con professionalità.", "meta_keywords": "massaggio prostatico", "features": ["Igiene", "Privacy", "Professionalità"], "fullDescription": "Massaggio prostatico per il massimo del piacere, in totale sicurezza e discrezione.", "image": "/images/especialistas_en_masajese_eroticos.webp" },
+      { "id": 5, "slug": "striptease", "title": "STRIPTEASE", "duration": "45 min", "price": "€120", "description": "Uno show esclusivo e sensuale di striptease personalizzato.", "meta_title": "Striptease Palma", "meta_description": "Goditi uno show di striptease privato a Palma.", "meta_keywords": "striptease", "features": ["Show privato", "Lingerie di lusso"], "fullDescription": "Ammira uno show esclusivo preparato apposta per te dalla tua massaggiatrice.", "image": "/images/sensual_premium.webp" },
+      { "id": 6, "slug": "esperienza-premium", "title": "ESPERIENZA PREMIUM", "duration": "90 min", "price": "€250", "description": "L'esperienza più completa e lussuosa del nostro catalogo.", "meta_title": "Esperienza Premium Palma", "meta_description": "Tutto il lusso in una sola esperienza esclusiva a Palma.", "meta_keywords": "esperienza premium", "features": ["Tutto compreso", "Champagne", "Sorpresa finale"], "fullDescription": "Include striptease, doccia condivisa, massaggio corpo a corpo e calice di champagne.", "image": "/images/exotic_paradise.webp" },
+      { "id": 7, "slug": "massaggio-a-4-mani", "title": "MASSAGGIO A 4 MANI", "duration": "80 min", "price": "€240", "description": "Due massaggiatrici che lavorano in perfetta sintonia su di te.", "meta_title": "Massaggio 4 Mani Palma", "meta_description": "Due massaggiatrici per un'esperienza doppia.", "meta_keywords": "4 mani", "features": ["Doppio piacere", "Movimenti sincronizzati"], "fullDescription": "Un piacere doppio: quattro mani esperte lavorano all'unisono sul tuo corpo.", "image": "/images/espacio_exclusivo_tantrico.webp" },
+      { "id": 8, "slug": "massaggio-di-coppia", "title": "MASSAGGIO DI COPPIA", "duration": "90 min", "price": "€320", "description": "Un rituale romantico ideato per il tuo partner e te.", "meta_title": "Massaggio di Coppia Palma", "meta_description": "Rituale romantico per due a Palma.", "meta_keywords": "coppia, romantico", "features": ["Per coppie", "Champagne compreso"], "fullDescription": "Condividi il piacere erotico del massaggio con il tuo partner in un ambiente intimo.", "image": "/images/couples_harmony.webp" }
+    ],
+    "packages": [
+      { "title": "SCONTO PER CLIENTI FEDELI", "day": "TUTTI I GIOVEDI", "description": "Ricevi un coupon di <span class='text-amber-400 font-semibold'>20€ di sconto</span> sulla tua sessione.", "buttonText": "PRENOTA GIOVEDI" },
+      { "title": "PIACERE CONDIVISO", "day": "TUTTI I SABATI", "description": "Sconto del <span class='text-amber-400 font-semibold'>10%</span> per sessioni con un amico.", "buttonText": "PRENOTA SABATO" },
+      { "title": "DOMENICHE DI PECCATO", "day": "TUTTE LE DOMENICHE", "description": "Prezzo esclusivo per il massaggio a quattro mani.", "buttonText": "PRENOTA DOMENICA" }
+    ],
+    "faqs": [
+      { "question": "Cosa includono i servizi?", "answer": "Tutti i servizi includono una consultazione, ambiente climatizzato, musica, oli e asciugamani. I servizi premium includono anche calice di champagne." },
+      { "question": "Come posso prenotare?", "answer": "Puoi prenotare tramite WhatsApp o il nostro modulo online, almeno 24 ore in anticipo." }
+    ]
+  },
+  "aboutPage": {
+    "meta_title": "Chi Siamo | Tantric Luxe Mallorca - Centro Massaggi Erotici",
+    "meta_description": "Scopri Tantric Luxe Mallorca, i pionieri del massaggio erotico e tantrico di lusso.",
+    "meta_keywords": "chi siamo, tantric luxe, palma, maiorca",
+    "pre_title": "CHI SIAMO",
+    "title": "LA NOSTRA STORIA",
+    "subtitle": "SPA TANTRICA DI LUSSO",
+    "description": "Dal 2019, pionieri nelle esperienze tantriche di lusso a Maiorca.",
+    "story_title": "UN SANTUARIO DI LUSSO E SENSUALITÀ",
+    "story_p1": "In Tantric Luxe Mallorca, abbiamo creato più di una spa; è un santuario d'arte ancestrale.",
+    "story_p2": "Ogni dettaglio delle nostre strutture è stato progettato per rinvigorire tutti i sensi.",
+    "story_p3": "Il nostro team è formato da professioniste certificate a livello internazionale.",
+    "stat1_val": "5000+",
+    "stat1_text": "Clienti",
+    "stat2_val": "6",
+    "stat2_text": "Anni",
+    "stat3_val": "100%",
+    "stat3_text": "Privacy",
+    "timeline_title": "IL NOSTRO PERCORSO",
+    "milestones": [
+        { "year": "2019", "title": "FONDAZIONE", "description": "La prima spa tantrica a Palma." },
+        { "year": "2020", "title": "ESPANSIONE", "description": "Nuove suite VIP." },
+        { "year": "2024", "title": "ECCELLENZA", "description": "Punto di riferimento nell'isola." }
+    ],
+    "philosophy_title": "LA NOSTRA FILOSOFIA",
+    "philosophy_quote": "Il tantra non è solo una pratica, è un percorso verso se stessi.",
+    "philosophy_author": "— Tantric Luxe Mallorca",
+    "philosophy_points": [
+      { "title": "CONNESSIONE AUTENTICA", "text": "Incontri genuini con te stesso." },
+      { "title": "GUARIGIONE", "text": "Il tocco consapevole che restaura il corpo." },
+      { "title": "TRASFORMAZIONE", "text": "Cambi positivi e duratori incoraggiati nei sensi." }
+    ]
+  },
+  "masseusesPage": {
+    "meta_title": "Massaggiatrici Erotiche Palma | Tantric Luxe",
+    "meta_description": "Conosci le nostre professioniste in massaggi tantrici.",
+    "meta_keywords": "massaggiatrici, professioniste, palma",
+    "pre_title": "LE NOSTRE SPECIALISTE",
+    "title": "MASSAGGIATRICI TANTRICHE",
+    "subtitle": "BELLEZZA, ARTE E ENERGIA",
+    "description": "Scopri i profili delle nostre massaggiatrici.",
+    "reviews_text": "recensioni",
+    "age_text": "anni",
+    "reserve_button_text": "PRENOTA CON",
+    "masseuses": [
+      {
+        "id": 1,
+        "name": "Erika",
+        "age": 24,
+        "specialty": "Massaggio Tantrico Deluxe",
+        "image": "/images/masseurs/Erika/IMG_0843.jpeg",
+        "images": ["/images/masseurs/Erika/IMG_0843.jpeg", "/images/masseurs/Erika/IMG_0844.jpeg", "/images/masseurs/Erika/IMG_0865.jpeg"],
+        "description": "Erika apporta bellezza e grande maestria nelle tecniche esclusive.",
+        "skills": ["Avanzato", "Corpo a corpo"],
+        "rating": 5,
+        "reviews": 89
+      },
+      {
+        "id": 2,
+        "name": "Valentina",
+        "age": 25,
+        "specialty": "Massaggio Sensuale e Rilassante",
+        "image": "/images/hero section/4.jpg",
+        "images": ["/images/masseurs/Valentina/2.jpg", "/images/masseurs/Valentina/3.jpg"],
+        "description": "Valentina ti invita a un profondo viaggio di connessione emotiva.",
+        "skills": ["Sensuale", "Connessione"],
+        "rating": 5,
+        "reviews": 45
+      }
+    ]
+  },
+  "contactPage": {
+    "meta_title": "Contatti | Prenota in Tantric Luxe Mallorca",
+    "meta_description": "Contattaci o prenota subito uno dei nostri massaggi esclusivi a Palma di Maiorca.",
+    "meta_keywords": "contatti, prenota, palma",
+    "pre_title": "CONTATTI",
+    "title": "PRENOTA LA TUA",
+    "subtitle": "ESPERIENZA",
+    "description": "Siamo pronti per farti vivere dei sogni.",
+    "info_title": "INFORMAZIONI DI CONTATTO",
+    "contact_info": [
+      { "icon": "📍", "title": "POSIZIONE", "line1": "Plaça de Santa Magdalena, 3A", "line2": "07012 Palma", "line3": "Discreto" },
+      { "icon": "📱", "title": "WHATSAPP", "line1": "+34 602 560 426", "line2": "Risposta in orario", "line3": "24/7" },
+      { "icon": "⏰", "title": "ORARI", "line1": "Tutti i Giorni", "line2": "09:00 - 23:00", "line3": "Appuntamento" },
+      { "icon": "📧", "title": "EMAIL", "line1": "info@tantricluxemallorca.com", "line2": "", "line3": "" }
+    ],
+    "whatsapp_button_text": "WHATSAPP DIRETTO",
+    "call_button_text": "CHIAMA ORA",
+    "privacy_title": "🔒 GARANZIA PRIVACY",
+    "privacy_text": "Massima privacy.",
+    "form_title": "MODULO DI PRENOTAZIONE",
+    "name_label": "NOME *",
+    "name_placeholder": "Tuo nome",
+    "email_label": "EMAIL *",
+    "email_placeholder": "esempio@mail.com",
+    "phone_label": "TELEFONO *",
+    "phone_placeholder": "+34 XXX",
+    "service_label": "SERVIZIO *",
+    "service_default_option": "Scegli",
+    "service_consultation_option": "Consultazione base",
+    "date_label": "DATA",
+    "time_label": "ORA",
+    "time_default_option": "Scegli",
+    "message_label": "MESSAGGIO",
+    "message_placeholder": "Opzionale",
+    "form_notes": [ "Campi obbligatori (*)" ],
+    "success_message": "✅ Eseguito con successo!",
+    "error_message": "❌ Riprova o usa WhatsApp.",
+    "submit_button": "INVIA",
+    "submitting_button": "INVIO...",
+    "map_section_title": "POSIZIONE",
+    "map_section_subtitle": "A PALMA",
+    "map_section_p1": "Situato discretamente per privacy assoluta.",
+    "map_section_points": ["Zona esclusiva"],
+    "timeSlots": [
+      "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
+      "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00"
+    ]
+  }
+}

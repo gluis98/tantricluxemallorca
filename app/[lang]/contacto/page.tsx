@@ -15,6 +15,8 @@ export async function generateMetadata({
     es: '/contacto',
     en: '/contact',
     de: '/kontakt',
+    it: '/contatti',
+    fr: '/contact',
   };
   const currentUrl = `${baseUrl}/${lang}${paths[lang]}`;
   
@@ -22,6 +24,8 @@ export async function generateMetadata({
     'es': `${baseUrl}/es/contacto`,
     'en': `${baseUrl}/en/contact`,
     'de': `${baseUrl}/de/kontakt`,
+    'it': `${baseUrl}/it/contatti`,
+    'fr': `${baseUrl}/fr/contact`,
     'x-default': `${baseUrl}/es/contacto`,
   };
 
@@ -38,7 +42,7 @@ export async function generateMetadata({
       description: dictionary.contactPage.meta_description,
       url: currentUrl,
       siteName: 'Tantric Luxe Mallorca',
-      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'de_DE',
+      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : lang === 'it' ? 'it_IT' : 'fr_FR',
       type: 'website',
       images: [
         {

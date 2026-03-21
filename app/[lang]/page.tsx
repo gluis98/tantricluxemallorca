@@ -18,6 +18,8 @@ export async function generateMetadata({
     'es': `${baseUrl}/es`,
     'en': `${baseUrl}/en`,
     'de': `${baseUrl}/de`,
+    'it': `${baseUrl}/it`,
+    'fr': `${baseUrl}/fr`,
     'x-default': `${baseUrl}/es`,
   };
 
@@ -34,7 +36,7 @@ export async function generateMetadata({
       description: dictionary.homepage.meta_description,
       url: currentUrl,
       siteName: 'Tantric Luxe Mallorca',
-      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'de_DE',
+      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : lang === 'it' ? 'it_IT' : 'fr_FR',
       type: 'website',
       images: [
         {

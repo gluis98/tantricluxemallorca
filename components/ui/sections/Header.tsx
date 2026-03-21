@@ -110,7 +110,15 @@ const Header = ({ lang, dictionary, services = [] }: {
                                             className="block px-4 py-3 rounded-xl hover:bg-amber-600/20 transition-all duration-300 text-center"
                                         >
                                             <span className="text-amber-400 text-sm font-light tracking-wider uppercase">
-                                                {lang === 'es' ? 'Ver Todos los Servicios' : lang === 'en' ? 'View All Services' : 'Alle Leistungen anzeigen'}
+                                                {lang === 'es'
+                                                    ? 'Ver Todos los Servicios'
+                                                    : lang === 'en'
+                                                    ? 'View All Services'
+                                                    : lang === 'de'
+                                                    ? 'Alle Leistungen anzeigen'
+                                                    : lang === 'it'
+                                                    ? 'Vedi Tutti i Servizi'
+                                                    : 'Voir Tous les Services'}
                                             </span>
                                         </Link>
                                     </div>

@@ -17,7 +17,7 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locales = ['es', 'en', 'de'];
+        $locales = ['es', 'en', 'de', 'it', 'fr'];
         $defaultLocale = 'es';
         
         // Obtener el idioma de la URL

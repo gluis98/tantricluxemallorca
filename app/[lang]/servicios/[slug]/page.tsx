@@ -26,6 +26,20 @@ const serviceSlugsByLang: Record<string, string[]> = {
     'tantra-deluxe',
     'tantra-harmonie-paare',
     'yacht-massage-erlebnis'
+  ],
+  it: [
+    'esperienza-premium',
+    'massaggio-a-4-mani',
+    'massaggio-corpo-a-corpo',
+    'massaggio-di-coppia',
+    'massaggio-rilassante'
+  ],
+  fr: [
+    'experience-premium',
+    'massage-4-mains',
+    'massage-corps-a-corps',
+    'massage-en-couple',
+    'massage-relaxant'
   ]
 };
 
@@ -82,6 +96,8 @@ export async function generateMetadata({
     es: '/servicios',
     en: '/services',
     de: '/leistungen',
+    it: '/servizi',
+    fr: '/services',
   };
   const currentUrl = `${baseUrl}/${lang}${paths[lang]}/${service.slug}`;
 
@@ -89,13 +105,15 @@ export async function generateMetadata({
   const alternates: Record<string, string> = {};
   
   // Obtener diccionarios para todos los idiomas
-  const [esDict, enDict, deDict] = await Promise.all([
+  const [esDict, enDict, deDict, itDict, frDict] = await Promise.all([
     getDictionary('es'),
     getDictionary('en'),
     getDictionary('de'),
+    getDictionary('it'),
+    getDictionary('fr'),
   ]);
   
-  const dictionaries = { es: esDict, en: enDict, de: deDict };
+  const dictionaries = { es: esDict, en: enDict, de: deDict, it: itDict, fr: frDict };
   
   // Obtener el índice del servicio actual
   let serviceIndex = dictionary.servicesPage.services.findIndex((s: any) => s.slug === slug);
@@ -106,7 +124,7 @@ export async function generateMetadata({
   }
   
   if (serviceIndex !== -1) {
-    ['es', 'en', 'de'].forEach((locale) => {
+    ['es', 'en', 'de', 'it', 'fr'].forEach((locale) => {
       const localeDict = dictionaries[locale as keyof typeof dictionaries];
       const altService = localeDict.servicesPage?.services?.[serviceIndex];
       if (altService && altService.slug) {
@@ -230,11 +248,34 @@ export default async function ServiceDetailPage({
       es: '/servicios',
       en: '/services',
       de: '/leistungen',
+      it: '/servizi',
+      fr: '/services',
     };
     const currentUrl = `${baseUrl}/${lang}${paths[lang]}/${service.slug}`;
-    const servicesPath = lang === 'es' ? 'servicios' : lang === 'en' ? 'services' : 'leistungen';
-    const homeLabel = lang === 'es' ? 'Inicio' : lang === 'en' ? 'Home' : 'Startseite';
-    const servicesLabel = lang === 'es' ? 'Servicios' : lang === 'en' ? 'Services' : 'Leistungen';
+    const servicesPathMap: Record<string, string> = {
+      es: 'servicios',
+      en: 'services',
+      de: 'leistungen',
+      it: 'servizi',
+      fr: 'services',
+    };
+    const homeLabelMap: Record<string, string> = {
+      es: 'Inicio',
+      en: 'Home',
+      de: 'Startseite',
+      it: 'Home',
+      fr: 'Accueil',
+    };
+    const servicesLabelMap: Record<string, string> = {
+      es: 'Servicios',
+      en: 'Services',
+      de: 'Leistungen',
+      it: 'Servizi',
+      fr: 'Services',
+    };
+    const servicesPath = servicesPathMap[lang] ?? 'servicios';
+    const homeLabel = homeLabelMap[lang] ?? 'Inicio';
+    const servicesLabel = servicesLabelMap[lang] ?? 'Servicios';
     
     // JSON-LD para el servicio
     const serviceJsonLd = {
@@ -329,14 +370,14 @@ export default async function ServiceDetailPage({
           dictionary={{
             reserve_button: dictionary.servicesPage?.reserve_button || 'RESERVAR',
             whatsapp_button: dictionary.contactPage?.whatsapp_button_text || 'WhatsApp',
-            duration_label: lang === 'es' ? 'Duración' : lang === 'en' ? 'Duration' : 'Dauer',
-            price_label: lang === 'es' ? 'Precio' : lang === 'en' ? 'Price' : 'Preis',
-            features_title: lang === 'es' ? 'Características del Servicio' : lang === 'en' ? 'Service Features' : 'Leistungsmerkmale',
-            description_title: lang === 'es' ? 'Sobre este Servicio' : lang === 'en' ? 'About this Service' : 'Über diesen Service',
-            benefits_title: lang === 'es' ? 'Beneficios' : lang === 'en' ? 'Benefits' : 'Vorteile',
-            book_now_title: lang === 'es' ? 'Reserva tu Experiencia' : lang === 'en' ? 'Book Your Experience' : 'Buchen Sie Ihr Erlebnis',
-            related_services_title: lang === 'es' ? 'Otros Servicios que te Pueden Interesar' : lang === 'en' ? 'Other Services You May Like' : 'Andere Leistungen, die Sie interessieren könnten',
-            faq_title: lang === 'es' ? 'Preguntas Frecuentes' : lang === 'en' ? 'Frequently Asked Questions' : 'Häufig gestellte Fragen',
+            duration_label: lang === 'es' ? 'Duración' : lang === 'en' ? 'Duration' : lang === 'de' ? 'Dauer' : lang === 'it' ? 'Durata' : 'Durée',
+            price_label: lang === 'es' ? 'Precio' : lang === 'en' ? 'Price' : lang === 'de' ? 'Preis' : lang === 'it' ? 'Prezzo' : 'Prix',
+            features_title: lang === 'es' ? 'Características del Servicio' : lang === 'en' ? 'Service Features' : lang === 'de' ? 'Leistungsmerkmale' : lang === 'it' ? 'Caratteristiche del Servizio' : 'Caractéristiques du Service',
+            description_title: lang === 'es' ? 'Sobre este Servicio' : lang === 'en' ? 'About this Service' : lang === 'de' ? 'Über diesen Service' : lang === 'it' ? 'Informazioni su questo Servizio' : 'À propos de ce Service',
+            benefits_title: lang === 'es' ? 'Beneficios' : lang === 'en' ? 'Benefits' : lang === 'de' ? 'Vorteile' : lang === 'it' ? 'Benefici' : 'Avantages',
+            book_now_title: lang === 'es' ? 'Reserva tu Experiencia' : lang === 'en' ? 'Book Your Experience' : lang === 'de' ? 'Buchen Sie Ihr Erlebnis' : lang === 'it' ? 'Prenota la tua Esperienza' : 'Réservez votre Expérience',
+            related_services_title: lang === 'es' ? 'Otros Servicios que te Pueden Interesar' : lang === 'en' ? 'Other Services You May Like' : lang === 'de' ? 'Andere Leistungen, die Sie interessieren könnten' : lang === 'it' ? 'Altri Servizi che potrebbero interessarti' : "Autres Services qui pourraient vous intéresser",
+            faq_title: lang === 'es' ? 'Preguntas Frecuentes' : lang === 'en' ? 'Frequently Asked Questions' : lang === 'de' ? 'Häufig gestellte Fragen' : lang === 'it' ? 'Domande Frequenti' : 'Questions Fréquentes',
           }}
           relatedServices={relatedServices}
           lang={lang}

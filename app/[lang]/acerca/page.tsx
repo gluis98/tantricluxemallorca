@@ -16,6 +16,8 @@ export async function generateMetadata({
     es: '/acerca',
     en: '/about',
     de: '/uber-uns',
+    it: '/chi-siamo',
+    fr: '/a-propos',
   };
   const currentUrl = `${baseUrl}/${lang}${paths[lang]}`;
   
@@ -23,6 +25,8 @@ export async function generateMetadata({
     'es': `${baseUrl}/es/acerca`,
     'en': `${baseUrl}/en/about`,
     'de': `${baseUrl}/de/uber-uns`,
+    'it': `${baseUrl}/it/chi-siamo`,
+    'fr': `${baseUrl}/fr/a-propos`,
     'x-default': `${baseUrl}/es/acerca`,
   };
 
@@ -39,7 +43,7 @@ export async function generateMetadata({
       description: dictionary.aboutPage.meta_description,
       url: currentUrl,
       siteName: 'Tantric Luxe Mallorca',
-      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'de_DE',
+      locale: lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : lang === 'it' ? 'it_IT' : 'fr_FR',
       type: 'website',
       images: [
         {
