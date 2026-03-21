@@ -156,18 +156,39 @@
 
             <!-- Google Maps Embed -->
             <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-amber-900/30 shadow-2xl mb-8">
-                <div class="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="relative block w-full h-96 md:h-[500px] rounded-2xl overflow-hidden bg-black group">
                     <iframe
                         src="https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed"
                         width="100%"
                         height="100%"
-                        style="border:0;"
+                        style="border:0; filter: invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%);"
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        class="rounded-2xl"
+                        class="rounded-2xl scale-[1.02] pointer-events-none"
                     ></iframe>
-                </div>
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35"></div>
+                    <div class="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl"></div>
+
+                    <div class="pointer-events-none absolute left-4 bottom-4 bg-black/80 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 shadow-xl">
+                        <p class="text-sm text-white font-semibold">
+                            <span class="inline-block w-2.5 h-2.5 rounded-full bg-fuchsia-500 mr-2 align-middle"></span>
+                            Manos Mágicas - Palma
+                        </p>
+                    </div>
+
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
+                            <p class="text-amber-300 text-sm font-medium tenali-ramakrishna">
+                                {{ $contactPage['open_maps_text'] ?? 'Abrir en Google Maps' }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
 
             <!-- Map Points -->
