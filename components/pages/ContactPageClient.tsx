@@ -294,20 +294,36 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden border border-amber-900/20 shadow-2xl block group cursor-pointer"
+                className="relative h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden border border-white/10 shadow-2xl block group cursor-pointer bg-black"
               >
                 <iframe
                   src="https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed"
-                  className="w-full h-full pointer-events-none"
-                  style={{ border: 0 }}
+                  className="w-full h-full pointer-events-none scale-[1.02]"
+                  style={{
+                    border: 0,
+                    filter: 'invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%)',
+                  }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación Tantric Luxe Mallorca - Centro de masaje tantrico en Palma"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-amber-900/80 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/50">
-                    <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">📍 Haz clic para abrir en Google Maps</p>
+
+                {/* Glow y contraste para look dark premium */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
+
+                {/* Etiqueta inferior estilo referencia */}
+                <div className="pointer-events-none absolute left-4 bottom-4 bg-black/80 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 shadow-xl">
+                  <p className="text-sm text-white font-semibold">
+                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-fuchsia-500 mr-2 align-middle" />
+                    Manos Magicas - Palma
+                  </p>
+                </div>
+
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
+                    <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">Abrir en Google Maps</p>
                   </div>
                 </div>
               </a>
