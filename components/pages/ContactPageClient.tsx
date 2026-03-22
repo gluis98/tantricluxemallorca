@@ -313,14 +313,6 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
 
-                {/* Etiqueta inferior estilo referencia */}
-                <div className="pointer-events-none absolute left-4 bottom-4 bg-black/80 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 shadow-xl">
-                  <p className="text-sm text-white font-semibold">
-                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-fuchsia-500 mr-2 align-middle" />
-                    Manos Magicas - Palma
-                  </p>
-                </div>
-
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
                     <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">Abrir en Google Maps</p>
