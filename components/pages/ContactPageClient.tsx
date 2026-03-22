@@ -48,10 +48,6 @@ interface ContactPageClientProps {
     error_message: string;
     submitting_button: string;
     submit_button: string;
-    map_section_title: string;
-    map_section_subtitle: string;
-    map_section_p1: string;
-    map_section_points: string[];
   };
   services: Service[];
 }
@@ -262,66 +258,6 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
             </div>
           </div>
         </div>
-
-        {/* Map Section */}
-        <section className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-light tracking-wider mb-8 gradiente-dorado">
-              {dictionary.map_section_title}
-            </h2>
-            <div className="w-24 h-px bg-amber-400 mx-auto"></div>
-          </div>
-
-          <div className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-8 border border-amber-900/20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-light tracking-wider text-amber-400 mb-6 tenali-ramakrishna">
-                  {dictionary.map_section_subtitle}
-                </h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">
-                  {dictionary.map_section_p1}
-                </p>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  {dictionary.map_section_points.map((point: string, index: number) => (
-                    <li key={index} className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a 
-                href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative h-72 md:h-96 lg:h-[28rem] rounded-2xl overflow-hidden border border-white/10 shadow-2xl block group cursor-pointer bg-black"
-              >
-                <iframe
-                  src="https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed"
-                  className="w-full h-full pointer-events-none scale-[1.02]"
-                  style={{
-                    border: 0,
-                    filter: 'invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%)',
-                  }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación Tantric Luxe Mallorca - Centro de masaje tantrico en Palma"
-                />
-
-                {/* Glow y contraste para look dark premium */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
-
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
-                    <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">Abrir en Google Maps</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   );

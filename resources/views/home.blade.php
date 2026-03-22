@@ -70,6 +70,7 @@
 @php
     $homepage = trans('homepage', [], $locale);
     $servicesPage = trans('servicesPage', [], $locale);
+    $contactPageMap = trans('contactPage', [], $locale);
     $services = $servicesPage['services'] ?? [];
     $packages = $servicesPage['packages'] ?? [];
     $faqs = $servicesPage['faqs'] ?? [];
@@ -872,6 +873,70 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mapa (mismo bloque que antes en contacto; tema oscuro) -->
+        <div class="mt-16 md:mt-20">
+            <div class="text-center mb-10 md:mb-12">
+                <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
+                    {{ $contactPageMap['map_section_title'] ?? 'NUESTRA UBICACIÓN' }}
+                </p>
+                <h3 class="text-3xl md:text-5xl font-light tracking-wider mb-6 md:mb-8 gradiente-dorado cormorant-garamond">
+                    {{ $contactPageMap['map_section_subtitle'] ?? 'EN EL CORAZÓN DE PALMA' }}
+                </h3>
+                <div class="w-24 h-px bg-amber-400 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed tenali-ramakrishna">
+                    {{ $contactPageMap['map_section_p1'] ?? '' }}
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-amber-900/30 shadow-2xl mb-8">
+                <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="relative block w-full h-96 md:h-[500px] rounded-2xl overflow-hidden bg-black group">
+                    <iframe
+                        src="https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0; filter: invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="rounded-2xl scale-[1.02] pointer-events-none"
+                        title="{{ $contactPageMap['map_section_title'] ?? 'Ubicación' }}"
+                    ></iframe>
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35"></div>
+                    <div class="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl"></div>
+
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
+                            <p class="text-amber-300 text-sm font-medium tenali-ramakrishna">
+                                {{ $contactPageMap['open_maps_text'] ?? 'Abrir en Google Maps' }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach($contactPageMap['map_section_points'] ?? [] as $point)
+                <div class="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-xl p-6 border border-amber-900/20 text-center">
+                    <div class="text-3xl mb-3">📍</div>
+                    <p class="text-gray-300 text-sm tenali-ramakrishna">{{ $point }}</p>
+                </div>
+                @endforeach
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-8 py-3 text-lg font-medium tracking-wider transition-all duration-300 hover:scale-105">
+                    {{ $contactPageMap['open_maps_text'] ?? 'Abrir en Google Maps' }}
+                </a>
             </div>
         </div>
     </section>

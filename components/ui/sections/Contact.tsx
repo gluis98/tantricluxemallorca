@@ -8,6 +8,14 @@ type Service = {
     title: string;
 };
 
+type MapLabels = {
+    map_section_title: string;
+    map_section_subtitle: string;
+    map_section_p1: string;
+    map_section_points: string[];
+    open_maps_text?: string;
+};
+
 type Dictionary = {
     pre_title: string;
     title: string;
@@ -40,7 +48,20 @@ type Dictionary = {
     submit_button: string;
 };
 
-export default function ContactSection({ dictionary, services }: { dictionary: Dictionary, services: Service[] }) {
+const MAPS_PLACE_URL =
+    'https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears';
+const MAPS_EMBED_SRC =
+    'https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed';
+
+export default function ContactSection({
+    dictionary,
+    services,
+    mapLabels,
+}: {
+    dictionary: Dictionary;
+    services: Service[];
+    mapLabels: MapLabels;
+}) {
 
     return (
 
@@ -110,6 +131,78 @@ export default function ContactSection({ dictionary, services }: { dictionary: D
 
                 <div>
                     <ContactForm services={services} dictionary={dictionary} />
+                </div>
+            </div>
+
+            <div className="mt-16 md:mt-20">
+                <div className="text-center mb-10 md:mb-12">
+                    <p className="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
+                        {mapLabels.map_section_title}
+                    </p>
+                    <h3 className="text-3xl md:text-5xl font-light tracking-wider mb-6 md:mb-8 gradiente-dorado cormorant-garamond">
+                        {mapLabels.map_section_subtitle}
+                    </h3>
+                    <div className="w-24 h-px bg-amber-400 mx-auto mb-6" />
+                    <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed tenali-ramakrishna">
+                        {mapLabels.map_section_p1}
+                    </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-amber-900/30 shadow-2xl mb-8">
+                    <a
+                        href={MAPS_PLACE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative block w-full h-96 md:h-[500px] rounded-2xl overflow-hidden bg-black group"
+                    >
+                        <iframe
+                            src={MAPS_EMBED_SRC}
+                            width="100%"
+                            height="100%"
+                            style={{
+                                border: 0,
+                                filter:
+                                    'invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%)',
+                            }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-2xl scale-[1.02] pointer-events-none"
+                            title={mapLabels.map_section_title}
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
+                        <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10 rounded-2xl" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg border border-amber-400/40">
+                                <p className="text-amber-300 text-sm font-medium tenali-ramakrishna">
+                                    {mapLabels.open_maps_text ?? 'Google Maps'}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {(mapLabels.map_section_points ?? []).map((point, index) => (
+                        <div
+                            key={index}
+                            className="bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-xl p-6 border border-amber-900/20 text-center"
+                        >
+                            <div className="text-3xl mb-3">📍</div>
+                            <p className="text-gray-300 text-sm tenali-ramakrishna">{point}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mt-8">
+                    <a
+                        href={MAPS_PLACE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-8 py-3 text-lg font-medium tracking-wider transition-all duration-300 hover:scale-105"
+                    >
+                        {mapLabels.open_maps_text ?? 'Abrir en Google Maps'}
+                    </a>
                 </div>
             </div>
         </section>

@@ -277,7 +277,17 @@ export default function HomePageClient({ lang, dictionary }: {
         <CTASection dictionary={dictionary.homepage.cta_section} />
 
         {/* Contact Section */}
-        <ContactSection dictionary={dictionary.homepage.contact_section} services={dictionary.servicesPage.services} />
+        <ContactSection
+          dictionary={dictionary.homepage.contact_section}
+          services={dictionary.servicesPage.services}
+          mapLabels={{
+            map_section_title: dictionary.contactPage.map_section_title,
+            map_section_subtitle: dictionary.contactPage.map_section_subtitle,
+            map_section_p1: dictionary.contactPage.map_section_p1,
+            map_section_points: dictionary.contactPage.map_section_points ?? [],
+            open_maps_text: dictionary.contactPage.open_maps_text,
+          }}
+        />
       </main>
 
       {/* Masseuses Modal */}
