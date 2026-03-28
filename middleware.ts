@@ -48,6 +48,53 @@ const pathTranslations: Record<string, Record<string, string>> = {
   },
 };
 
+/** Segmento público de listado/detalle de servicios por idioma (la app solo tiene carpeta `servicios`). */
+const SERVICES_PUBLIC_SEGMENT: Record<string, string> = {
+  es: 'servicios',
+  en: 'services',
+  de: 'leistungen',
+  it: 'servizi',
+  fr: 'services',
+};
+
+const SERVICES_LIST_PATH: Record<string, string> = {
+  es: '/servicios',
+  en: '/services',
+  de: '/leistungen',
+  it: '/servizi',
+  fr: '/services',
+};
+
+/** Slugs antiguos: 301 al listado de servicios (evita soft 404 y URLs muertas). */
+const LEGACY_SERVICE_SLUGS = new Set([
+  'golden-relax',
+  'golden-sensitivo',
+  'experiencia-golden',
+  'golden-suite-experiencia',
+  'velvet-duet-pareja',
+  'golden-sensitive',
+  'golden-experience',
+  'golden-suite-experience',
+  'velvet-duet-couple',
+  'golden-sensitiv',
+  'golden-erlebnis',
+  'golden-suite-erlebnis',
+  'velvet-duet-paar',
+]);
+
+function extractServiceDetailSlug(pathWithoutLocale: string, locale: string): string | null {
+  const translatedSeg = SERVICES_PUBLIC_SEGMENT[locale] ?? 'servicios';
+  const prefixes = Array.from(new Set([translatedSeg, 'servicios']));
+  for (const seg of prefixes) {
+    const pref = `/${seg}/`;
+    if (pathWithoutLocale.startsWith(pref)) {
+      const slug = pathWithoutLocale.slice(pref.length).split('/').filter(Boolean)[0];
+      return slug || null;
+    }
+  }
+  return null;
+}
+
 export function middleware(request: NextRequest) {
   let pathname = request.nextUrl.pathname;
 
@@ -81,48 +128,24 @@ export function middleware(request: NextRequest) {
     const locale = segments[0] as string; // 'es', 'en', 'de', 'it' o 'fr'
     const pathWithoutLocale = '/' + segments.slice(1).join('/') || '/';
 
-    // Si es una ruta de servicio dinámico (/servicios/[slug])
-    if (pathWithoutLocale.startsWith('/servicios/') && segments.length >= 3) {
-      const serviceSlug = segments[2]; // El slug del servicio
-      
-      // Servicios antiguos que ya no existen - redirigir a la página de servicios
-      const deprecatedServices: Record<string, string[]> = {
-        es: ['golden-relax', 'golden-sensitivo', 'experiencia-golden', 'golden-suite-experiencia', 'velvet-duet-pareja'],
-        en: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
-        de: ['golden-relax', 'golden-sensitiv', 'golden-erlebnis', 'golden-suite-erlebnis', 'velvet-duet-paar'],
-        it: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
-        fr: ['golden-relax', 'golden-sensitive', 'golden-experience', 'golden-suite-experience', 'velvet-duet-couple'],
-      };
-      
-      // Si es un servicio antiguo, redirigir a la página de servicios
-      if (deprecatedServices[locale]?.includes(serviceSlug)) {
-        const servicesPathMap: Record<string, string> = {
-          es: '/servicios',
-          en: '/services',
-          de: '/leistungen',
-          it: '/servizi',
-          fr: '/services',
-        };
-        const servicesPath = servicesPathMap[locale] ?? '/servicios';
-        const redirectUrl = new URL(`/${locale}${servicesPath}`, request.url);
-        return NextResponse.redirect(redirectUrl, 301); // 301 = permanente
+    const serviceSlug = extractServiceDetailSlug(pathWithoutLocale, locale);
+    if (serviceSlug) {
+      if (LEGACY_SERVICE_SLUGS.has(serviceSlug)) {
+        const servicesPath = SERVICES_LIST_PATH[locale] ?? '/servicios';
+        return NextResponse.redirect(new URL(`/${locale}${servicesPath}`, request.url), 301);
       }
-      
-      // Es una ruta dinámica de servicio válida, reescribir directamente
-      const response = NextResponse.rewrite(new URL(`/${locale}${pathWithoutLocale}`, request.url));
+      const rewriteUrl = new URL(`/${locale}/servicios/${serviceSlug}`, request.url);
+      const response = NextResponse.rewrite(rewriteUrl);
       response.headers.set('x-pathname', pathname);
       return response;
     }
 
     // Buscar la ruta canónica desde la ruta traducida
     let canonicalPath = pathWithoutLocale;
-    let found = false;
-    
-    // Primero buscar rutas exactas
+
     for (const [canonical, translations] of Object.entries(pathTranslations)) {
       if (translations[locale] === pathWithoutLocale) {
         canonicalPath = canonical;
-        found = true;
         break;
       }
     }
@@ -138,18 +161,15 @@ export function middleware(request: NextRequest) {
     let locale = 'es';
     let canonicalPath = pathname;
 
-    // Verificar si es un servicio antiguo sin prefijo de idioma
-    if (pathname.startsWith('/servicios/')) {
-      const segments = pathname.split('/').filter(Boolean);
-      if (segments.length >= 2) {
-        const serviceSlug = segments[1];
-        const deprecatedServices = ['golden-relax', 'golden-sensitivo', 'experiencia-golden', 'golden-suite-experiencia', 'velvet-duet-pareja'];
-        
-        // Si es un servicio antiguo, redirigir a la página de servicios
-        if (deprecatedServices.includes(serviceSlug)) {
-          const redirectUrl = new URL('/es/servicios', request.url);
-          return NextResponse.redirect(redirectUrl, 301); // 301 = permanente
+    // Slugs retirados: cualquier prefijo de servicios típico → 301 al listado ES
+    const defaultServicePrefixes = ['servicios', 'services', 'leistungen', 'servizi'] as const;
+    for (const seg of defaultServicePrefixes) {
+      if (pathname.startsWith(`/${seg}/`)) {
+        const slug = pathname.split('/').filter(Boolean)[1];
+        if (slug && LEGACY_SERVICE_SLUGS.has(slug)) {
+          return NextResponse.redirect(new URL('/es/servicios', request.url), 301);
         }
+        break;
       }
     }
 
@@ -164,10 +184,10 @@ export function middleware(request: NextRequest) {
     // Construir la ruta de rewrite (mismo formato que cuando hay prefijo de idioma)
     // Asegurarse de que la ruta tenga el formato correcto para Next.js
     const rewritePath = canonicalPath === '/' ? '/es' : `/es${canonicalPath}`;
-    
+
     // Construir la URL de destino usando la misma base que request.url
     const rewriteUrl = new URL(rewritePath, request.url);
-    
+
     // Usar rewrite en lugar de redirect para mantener la URL original visible
     // pero servir el contenido en español (mismo formato que cuando hay prefijo)
     const response = NextResponse.rewrite(rewriteUrl);

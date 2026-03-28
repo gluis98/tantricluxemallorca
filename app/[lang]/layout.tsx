@@ -67,7 +67,6 @@ export default async function RootLayout({
       '/contacto': { es: '/contacto', en: '/contact', de: '/kontakt', it: '/contatti', fr: '/contact' },
       '/masajistas': { es: '/masajistas', en: '/masseuses', de: '/masseurinnen', it: '/massaggiatrici', fr: '/masseuses' },
       '/whatsapp': { es: '/whatsapp', en: '/whatsapp', de: '/whatsapp', it: '/whatsapp', fr: '/whatsapp' },
-      // Servicios Golden - se manejan dinámicamente en las páginas individuales
     };
 
     // Detectar la ruta canónica actual
@@ -156,6 +155,123 @@ export default async function RootLayout({
 
   const alternateUrls = getAlternateUrls();
 
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tantricluxemallorca.com').replace(
+    /\/$/,
+    ''
+  );
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        url: siteUrl,
+        name: 'Tantric Luxe Mallorca',
+        description:
+          'Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas en Palma de Mallorca con máxima privacidad y profesionalidad.',
+        inLanguage: ['es', 'en', 'de', 'it', 'fr'],
+        publisher: { '@id': `${siteUrl}/#business` },
+      },
+      {
+        '@type': 'HealthAndBeautyBusiness',
+        '@id': `${siteUrl}/#business`,
+        name: 'Tantric Luxe Mallorca',
+        alternateName: 'Tantric Luxe',
+        description:
+          'Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas de masaje tantrico en Palma de Mallorca con máxima privacidad y profesionalidad.',
+        url: `${siteUrl}/`,
+        telephone: '+34-602-560-426',
+        email: 'info@tantricluxemallorca.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',
+          addressLocality: 'Palma',
+          addressRegion: 'Islas Baleares',
+          postalCode: '07012',
+          addressCountry: 'ES',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: '39.5736032',
+          longitude: '2.6386885',
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+            ],
+            opens: '09:00',
+            closes: '23:00',
+          },
+        ],
+        priceRange: '€99-€499',
+        currenciesAccepted: 'EUR',
+        paymentAccepted: 'Cash, Credit Card',
+        hasMap: 'https://maps.app.goo.gl/325Sq6mRB9zq8p8R7',
+        areaServed: { '@type': 'City', name: 'Palma de Mallorca' },
+        serviceArea: {
+          '@type': 'GeoCircle',
+          geoMidpoint: {
+            '@type': 'GeoCoordinates',
+            latitude: '39.5736032',
+            longitude: '2.6386885',
+          },
+          geoRadius: '50000',
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '5',
+          reviewCount: '4',
+          bestRating: '5',
+          worstRating: '5',
+        },
+        review: [
+          {
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5',
+              bestRating: '5',
+            },
+            author: { '@type': 'Person', name: 'Sofia M.' },
+            reviewBody:
+              'El mejor masaje tantrico Mallorca que he experimentado. La técnica y el ambiente crean una experiencia transformadora única.',
+          },
+          {
+            '@type': 'Review',
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: '5',
+              bestRating: '5',
+            },
+            author: { '@type': 'Person', name: 'Carlos R.' },
+            reviewBody:
+              'Profesionalidad excepcional en masaje tantrico Palma. El lujo y la discreción hacen de cada sesión una experiencia sagrada inolvidable.',
+          },
+        ],
+        sameAs: [
+          'https://instagram.com/tantricluxemallorca',
+          'https://facebook.com/tantricluxemallorca',
+        ],
+        knowsAbout: [
+          'Masaje Tantrico',
+          'Terapias de Relajación',
+          'Experiencias de Bienestar',
+          'Masaje Terapéutico',
+          'Conexión Espiritual',
+        ],
+      },
+    ],
+  };
+
   return (
     <html lang={locale}>
       <head>
@@ -168,127 +284,14 @@ export default async function RootLayout({
             href={alt.href}
           />
         ))}
+        <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+        <link rel="apple-touch-icon" href="/images/favicon.png" sizes="180x180" />
+        <meta name="theme-color" content="#0a0a0a" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: `{
-  "@context": "https://schema.org",
-  "@type": "Masaje erótico",
-  "name": "Tantric Luxe Mallorca",
-  "alternateName": "Tantric Luxe",
-  "description": "Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas de masaje tantrico en Palma de Mallorca con máxima privacidad y profesionalidad.",
-  "url": "https://tantricluxemallorca.com/",
-  "telephone": "+34-602-560-426",
-  "email": "info@tantricluxemallorca.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears",
-    "addressLocality": "Palma",
-    "addressRegion": "Islas Baleares",
-    "postalCode": "07012",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "39.5736032",
-    "longitude": "2.6386885"
-  },
-  "openingHours": [
-    "Mo-Su 09:00-23:00"
-  ],
-  "priceRange": "99€-499€",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Cash, Credit Card",
-  "servedCuisine": [],
-  "hasMap": "https://maps.app.goo.gl/325Sq6mRB9zq8p8R7",
-  "areaServed": {
-    "@type": "City",
-    "name": "Palma de Mallorca"
-  },
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "39.5736032",
-      "longitude": "2.6386885"
-    },
-    "geoRadius": "50000"
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Masaje Tantrico Exclusivo Mallorca",
-        "description": "Experiencia exclusiva de masaje tantrico en ambiente privado y lujoso"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Masaje Tantrico Premium Palma",
-        "description": "Sesión premium de masaje tantrico con técnicas ancestrales"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Experiencia Tantrica Parejas",
-        "description": "Taller especializado de masaje tantrico para parejas"
-      }
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "4",
-    "bestRating": "5",
-    "worstRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sofia M."
-      },
-      "reviewBody": "El mejor masaje tantrico Mallorca que he experimentado. La técnica y el ambiente crean una experiencia transformadora única."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Carlos R."
-      },
-      "reviewBody": "Profesionalidad excepcional en masaje tantrico Palma. El lujo y la discreción hacen de cada sesión una experiencia sagrada inolvidable."
-    }
-  ],
-  "sameAs": [
-    "https://instagram.com/tantricluxemallorca",
-    "https://facebook.com/tantricluxemallorca"
-  ],
-  "keywords": "masaje tantrico mallorca, masaje tantrico palma, centro tantrico mallorca, experiencia tantrica palma de mallorca, masaje relajante mallorca",
-  "knowsAbout": [
-    "Masaje Tantrico",
-    "Terapias de Relajación",
-    "Experiencias de Bienestar",
-    "Masaje Terapéutico",
-    "Conexión Espiritual"
-  ]
-}
-            `.trim()
+            __html: JSON.stringify(organizationJsonLd),
           }}
         />
       </head>

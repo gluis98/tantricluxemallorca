@@ -47,8 +47,14 @@
     <!-- Alternate Languages (hreflang) -->
     @yield('hreflang')
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    {{-- Favicon PNG: type y extensión alineados (evita "Favicon mal tipado"). Mismo archivo para Apple touch. --}}
+    @php
+        $faviconUrl = asset('images/favicon.png');
+    @endphp
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ $faviconUrl }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $faviconUrl }}">
+    <link rel="apple-touch-icon" href="{{ $faviconUrl }}" sizes="180x180">
+    <meta name="theme-color" content="#0a0a0a">
     
     @php
         // Resolver assets compilados desde public_html/build/
@@ -81,22 +87,8 @@
         }
     @endphp
 
-    <!-- Preconnect Google Fonts (siempre, para reducir latencia) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    {{-- Carga NO-render-blocking de Google Fonts (media=print trick) --}}
-    <link rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-          as="style"
-          onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
-    </noscript>
-
-    <!-- CSS principal -->
     @if($cssFile)
+        {{-- Fuentes incluidas en el CSS compilado (Fontsource + Vite): sin peticiones extra ni onload que invaliden estilo --}}
         {{-- Preload para descubrir el CSS antes (reduce latencia del Critical Chain) --}}
         <link rel="preload" href="{{ $cssFile }}" as="style">
         {{-- CSS compilado con Vite (incluye Tailwind + estilos propios) --}}
@@ -145,9 +137,20 @@
                 pointer-events: none; position: absolute; inset: 0; z-index: 0; border-radius: 50%;
             }
         </style>
-        {{-- Tailwind CDN diferido (no bloquea render) --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        {{-- Sin mutar rel en onload: solo cambio de media evita un reflow forzado típico del patrón preload→stylesheet --}}
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+              media="print"
+              onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet"
+                  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tenali+Ramakrishna&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap">
+        </noscript>
+        {{-- Tailwind CDN: fuera del camino crítico (idle) para no reescanear el DOM en el mismo momento que el primer pintado --}}
         <script>
-            window.addEventListener('load', function () {
+            function loadTailwindCdn() {
                 var s = document.createElement('script');
                 s.src = 'https://cdn.tailwindcss.com';
                 s.onload = function () {
@@ -163,7 +166,12 @@
                     }
                 };
                 document.head.appendChild(s);
-            });
+            }
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadTailwindCdn, { timeout: 4000 });
+            } else {
+                window.addEventListener('load', function () { setTimeout(loadTailwindCdn, 1); });
+            }
         </script>
     @endif
     

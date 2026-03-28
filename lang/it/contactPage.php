@@ -46,6 +46,7 @@ return array (
   ),
   'whatsapp_button_text' => 'WHATSAPP DIRETTO',
   'call_button_text' => 'CHIAMA ORA',
+  'whatsapp_default_message' => 'Ciao, vorrei informazioni sui servizi TL Mallorca.',
   'privacy_title' => '🔒 GARANZIA PRIVACY',
   'privacy_text' => 'Massima privacy.',
   'form_title' => 'MODULO DI PRENOTAZIONE',

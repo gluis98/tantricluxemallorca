@@ -1,6 +1,34 @@
 {
+  "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-italic.woff2": {
+    "file": "assets/cormorant-garamond-latin-ext-wght-italic-PWzi_-0y.woff2",
+    "src": "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-italic.woff2"
+  },
+  "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-normal.woff2": {
+    "file": "assets/cormorant-garamond-latin-ext-wght-normal-ltf1AbuM.woff2",
+    "src": "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-italic.woff2": {
+    "file": "assets/cormorant-garamond-latin-wght-italic-C-nL33vl.woff2",
+    "src": "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-italic.woff2"
+  },
+  "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2": {
+    "file": "assets/cormorant-garamond-latin-wght-normal-CUoBjw-S.woff2",
+    "src": "node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/urbanist/files/urbanist-latin-ext-wght-normal.woff2": {
+    "file": "assets/urbanist-latin-ext-wght-normal-Bdxck5Au.woff2",
+    "src": "node_modules/@fontsource-variable/urbanist/files/urbanist-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/urbanist/files/urbanist-latin-wght-normal.woff2": {
+    "file": "assets/urbanist-latin-wght-normal-D69JTELx.woff2",
+    "src": "node_modules/@fontsource-variable/urbanist/files/urbanist-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource/tenali-ramakrishna/files/tenali-ramakrishna-latin-400-normal.woff2": {
+    "file": "assets/tenali-ramakrishna-latin-400-normal-DxSX-dn9.woff2",
+    "src": "node_modules/@fontsource/tenali-ramakrishna/files/tenali-ramakrishna-latin-400-normal.woff2"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CZl4IGYY.css",
+    "file": "assets/app-yzS8XsPc.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },

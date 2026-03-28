@@ -6,6 +6,9 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@fontsource-variable/cormorant-garamond": "^5.2.6",
+        "@fontsource-variable/urbanist": "^5.2.7",
+        "@fontsource/tenali-ramakrishna": "^5.2.8",
         "@tailwindcss/postcss": "^4.2.1",
         "autoprefixer": "^10.4.27",
         "axios": "^1.6.4",

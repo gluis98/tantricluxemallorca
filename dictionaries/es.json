@@ -26,6 +26,7 @@
     "nav_contact": "Contacto",
     "paths": {
       "home": "/",
+      "about": "/acerca",
       "services": "/servicios",
       "masseuses": "/masajistas",
       "contact": "/contacto"

@@ -167,7 +167,10 @@ const ContactPageClient: React.FC<ContactPageClientProps> = ({ dictionary, servi
             </div>
 
             {/* Privacy Notice */}
-            <div className="mt-12 bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-6 border border-amber-900/20">
+            <div
+              id="politica-privacidad"
+              className="mt-12 bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-6 border border-amber-900/20 scroll-mt-24"
+            >
               <h4 className="text-lg font-light tracking-wider text-amber-400 mb-3 tenali-ramakrishna">
                 {dictionary.privacy_title}
               </h4>

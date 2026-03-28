@@ -2,6 +2,14 @@
     $locale = $locale ?? 'es';
     $common = trans('common', [], $locale);
     $footer = $common['footer'] ?? [];
+    $headerPaths = $common['header']['paths'] ?? [];
+    $contactPath = '/' . $locale . ($footer['paths']['contact'] ?? '/contacto');
+    $aboutPath = '/' . $locale . ($headerPaths['about'] ?? '/acerca');
+    $privacyHref = $contactPath . '#politica-privacidad';
+    $termsHref = $aboutPath;
+    $instagramUrl = 'https://www.instagram.com/tantricluxemallorca/';
+    $waText = trans('contactPage.whatsapp_default_message', [], $locale);
+    $whatsappUrl = 'https://wa.me/34602560426?text=' . rawurlencode($waText);
 @endphp
 
 <footer class="border-t relative text-center md:text-left border-amber-900/20 py-12 px-4 mt-12">
@@ -33,17 +41,23 @@
             <div>
                 <h4 class="text-amber-400 mb-4 tenali-ramakrishna">{{ $footer['follow_us'] ?? 'SÍGUENOS' }}</h4>
                 <div class="flex space-x-4 justify-center md:justify-start">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors" aria-label="{{ $footer['instagram_aria'] ?? 'Instagram' }}">
-                        <span class="text-amber-400">📷</span>
+                    <a href="{{ $instagramUrl }}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors" aria-label="{{ $footer['instagram_aria'] ?? 'Instagram' }}">
+                        <span class="text-amber-400" aria-hidden="true">📷</span>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors" aria-label="{{ $footer['whatsapp_aria'] ?? 'WhatsApp' }}">
-                        <span class="text-amber-400">💬</span>
+                    <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors" aria-label="{{ $footer['whatsapp_aria'] ?? 'WhatsApp' }}">
+                        <span class="text-amber-400" aria-hidden="true">💬</span>
                     </a>
                 </div>
             </div>
         </div>
         <div class="border-t border-amber-900/20 pt-8 text-center text-sm text-gray-400">
-            <p>{{ $footer['copyright'] ?? '© 2025 Tantric Luxe Mallorca' }}</p>
+            <p>
+                {{ $footer['copyright'] ?? '© 2025 Tantric Luxe Mallorca' }}
+                <span class="text-gray-600 mx-1">|</span>
+                <a href="{{ $privacyHref }}" class="text-amber-400 hover:text-amber-300">{{ $footer['privacy_policy'] ?? 'Política de Privacidad' }}</a>
+                <span class="text-gray-600 mx-1">|</span>
+                <a href="{{ $termsHref }}" class="text-amber-400 hover:text-amber-300">{{ $footer['terms_conditions'] ?? 'Términos y Condiciones' }}</a>
+            </p>
         </div>
     </div>
 </footer>

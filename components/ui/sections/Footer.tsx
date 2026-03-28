@@ -4,11 +4,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
 
+const WHATSAPP_PREFILL: Record<string, string> = {
+  es: 'Hola, me gustaría información sobre los servicios TL Mallorca.',
+  en: 'Hello, I would like information about TL Mallorca services.',
+  de: 'Hallo, ich hätte gerne Informationen über die TL Mallorca Dienstleistungen.',
+  it: 'Ciao, vorrei informazioni sui servizi TL Mallorca.',
+  fr: 'Bonjour, je souhaite des informations sur les services TL Mallorca.',
+};
+
 const Footer = ({ lang, dictionary }: {
   lang: string, dictionary: {
     navigation: string;
     paths: {
       home: string;
+      about: string;
       services: string;
       masseuses: string;
       contact: string;
@@ -26,6 +35,16 @@ const Footer = ({ lang, dictionary }: {
     terms_conditions: string;
   }
 }) => {
+  const contactPath =
+    lang === i18n.defaultLocale ? dictionary.paths.contact : `/${lang}${dictionary.paths.contact}`;
+  const aboutPath =
+    lang === i18n.defaultLocale ? dictionary.paths.about : `/${lang}${dictionary.paths.about}`;
+  const privacyHref = `${contactPath}#politica-privacidad`;
+  const instagramUrl = 'https://www.instagram.com/tantricluxemallorca/';
+  const whatsappUrl =
+    'https://wa.me/34602560426?text=' +
+    encodeURIComponent(WHATSAPP_PREFILL[lang] ?? WHATSAPP_PREFILL.es);
+
   return (
     <footer className="border-t relative text-center md:text-left border-amber-900/20 py-12 px-4 mt-12">
       <div className="max-w-7xl mx-auto">
@@ -63,18 +82,26 @@ const Footer = ({ lang, dictionary }: {
             <h4 className="text-amber-400 mb-4 tenali-ramakrishna">{dictionary.follow_us}</h4>
             <div className="flex space-x-4 justify-center md:justify-start">
               <a
-                href="#"
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors"
                 aria-label={dictionary.instagram_aria}
               >
-                <span className="text-amber-400">📷</span>
+                <span className="text-amber-400" aria-hidden="true">
+                  📷
+                </span>
               </a>
               <a
-                href="#"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center hover:from-amber-600/30 hover:to-amber-900/30 transition-colors"
                 aria-label={dictionary.whatsapp_aria}
               >
-                <span className="text-amber-400">💬</span>
+                <span className="text-amber-400" aria-hidden="true">
+                  💬
+                </span>
               </a>
             </div>
           </div>
@@ -82,8 +109,13 @@ const Footer = ({ lang, dictionary }: {
         <div className="border-t border-amber-900/20 pt-8 text-center">
           <p className="text-sm text-gray-400">
             {dictionary.copyright} |
-            <a href="#" className="text-amber-400 hover:text-amber-300 mx-1">{dictionary.privacy_policy}</a>|
-            <a href="#" className="text-amber-400 hover:text-amber-300 mx-1">{dictionary.terms_conditions}</a>
+            <a href={privacyHref} className="text-amber-400 hover:text-amber-300 mx-1">
+              {dictionary.privacy_policy}
+            </a>
+            |
+            <a href={aboutPath} className="text-amber-400 hover:text-amber-300 mx-1">
+              {dictionary.terms_conditions}
+            </a>
           </p>
         </div>
       </div>

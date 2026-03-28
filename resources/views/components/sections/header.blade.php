@@ -204,19 +204,21 @@
             }
         }
 
-        // ── Agrupa TODOS los writes en un único frame para evitar forced reflow ──
+        // Doble rAF: los writes van en el *siguiente* frame de pintura, tras aplicar el layout del frame anterior (mitiga forced reflow en Lighthouse).
         function openMobileMenu() {
             getEls();
             if (!_overlay || !_sidebar || _menuOpen) return;
             _menuOpen = true;
             requestAnimationFrame(function () {
-                _overlay.classList.remove('pointer-events-none', 'opacity-0');
-                _overlay.classList.add('pointer-events-auto', 'opacity-100');
-                _sidebar.classList.remove('translate-x-full');
-                _sidebar.classList.add('translate-x-0');
-                if (_menuIcon)  _menuIcon.classList.add('hidden');
-                if (_closeIcon) _closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(function () {
+                    _overlay.classList.remove('pointer-events-none', 'opacity-0');
+                    _overlay.classList.add('pointer-events-auto', 'opacity-100');
+                    _sidebar.classList.remove('translate-x-full');
+                    _sidebar.classList.add('translate-x-0');
+                    if (_menuIcon)  _menuIcon.classList.add('hidden');
+                    if (_closeIcon) _closeIcon.classList.remove('hidden');
+                    document.documentElement.classList.add('overflow-hidden');
+                });
             });
         }
 
@@ -225,13 +227,15 @@
             if (!_overlay || !_sidebar || !_menuOpen) return;
             _menuOpen = false;
             requestAnimationFrame(function () {
-                _overlay.classList.remove('pointer-events-auto', 'opacity-100');
-                _overlay.classList.add('pointer-events-none', 'opacity-0');
-                _sidebar.classList.remove('translate-x-0');
-                _sidebar.classList.add('translate-x-full');
-                if (_menuIcon)  _menuIcon.classList.remove('hidden');
-                if (_closeIcon) _closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
+                requestAnimationFrame(function () {
+                    _overlay.classList.remove('pointer-events-auto', 'opacity-100');
+                    _overlay.classList.add('pointer-events-none', 'opacity-0');
+                    _sidebar.classList.remove('translate-x-0');
+                    _sidebar.classList.add('translate-x-full');
+                    if (_menuIcon)  _menuIcon.classList.remove('hidden');
+                    if (_closeIcon) _closeIcon.classList.add('hidden');
+                    document.documentElement.classList.remove('overflow-hidden');
+                });
             });
         }
 

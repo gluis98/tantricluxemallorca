@@ -26,6 +26,7 @@
     "nav_contact": "Kontakt",
     "paths": {
       "home": "/",
+      "about": "/uber-uns",
       "services": "/leistungen",
       "masseuses": "/masseurinnen",
       "contact": "/kontakt"

@@ -97,7 +97,7 @@
                 </div>
 
                 <!-- Privacy Notice -->
-                <div class="mt-12 bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-6 border border-amber-900/20">
+                <div id="politica-privacidad" class="mt-12 bg-gradient-to-br from-amber-900/10 to-black/30 backdrop-blur-sm rounded-lg p-6 border border-amber-900/20 scroll-mt-24">
                     <h4 class="text-lg font-light tracking-wider text-amber-400 mb-3 tenali-ramakrishna">
                         {{ $contactPage['privacy_title'] ?? '🔒 GARANTÍA DE PRIVACIDAD' }}
                     </h4>

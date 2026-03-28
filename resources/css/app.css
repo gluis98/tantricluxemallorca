@@ -1,5 +1,75 @@
-/* Google Fonts se cargan de forma no-render-blocking desde app.blade.php */
 @import "tailwindcss";
+
+/* Fuentes locales empaquetadas por Vite (woff2 en build/assets; sin Google Fonts ni onload→stylesheet) */
+@font-face {
+  font-family: 'Urbanist Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/urbanist/files/urbanist-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+    U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Urbanist Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/urbanist/files/urbanist-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-normal.woff2')
+    format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+    U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2')
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-ext-wght-italic.woff2')
+    format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+    U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-italic.woff2')
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Tenali Ramakrishna';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('@fontsource/tenali-ramakrishna/files/tenali-ramakrishna-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 :root {
   --background: #0a0a0a;
@@ -9,11 +79,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Urbanist Variable', 'Urbanist', ui-sans-serif, system-ui, sans-serif;
 }
 
 h1, h2, h3, h4, h5, span {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
 }
 
 .gradiente-dorado {
@@ -25,11 +95,11 @@ h1, h2, h3, h4, h5, span {
 }
 
 .tenali-ramakrishna {
-  font-family: 'Tenali Ramakrishna', sans-serif;
+  font-family: 'Tenali Ramakrishna', ui-sans-serif, system-ui, sans-serif;
 }
 
 .cormorant-garamond {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
 }
 
 .bg-gradient-carnemarron {
@@ -37,11 +107,11 @@ h1, h2, h3, h4, h5, span {
 }
 
 .fuente-urbanist {
-  font-family: 'Urbanist', Arial, Helvetica, sans-serif;
+  font-family: 'Urbanist Variable', 'Urbanist', Arial, Helvetica, sans-serif;
 }
 
 .fuente-garamond {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
 }
 
 @keyframes fuego {
