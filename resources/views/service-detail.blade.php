@@ -4,6 +4,7 @@
     $servicesPage = trans('servicesPage', [], $locale);
     $services = $servicesPage['services'] ?? [];
     $service = collect($services)->firstWhere('slug', $slug);
+    $bookingPath = trans('common.header.paths.booking', [], $locale);
     
     $metaTitle = $service ? ($service['title'] ?? '') . ' | Tantric Luxe Mallorca' : trans('servicesPage.meta_title', [], $locale);
     $metaDescription = $service ? ($service['description'] ?? $service['fullDescription'] ?? '') : trans('servicesPage.meta_description', [], $locale);
@@ -82,8 +83,7 @@
                     <span class="text-amber-400 text-2xl">{{ $service['price'] ?? '' }}</span>
                     <span class="text-gray-400">{{ $service['duration'] ?? '' }}</span>
                 </div>
-                <a href="https://wa.me/34602560426?text={{ urlencode('Hola, me gustaría información sobre ' . ($service['title'] ?? 'este servicio')) }}" 
-                   target="_blank"
+                <a href="/{{ $locale }}{{ $bookingPath }}?servicio={{ urlencode($service['slug'] ?? '') }}"
                    class="inline-block px-6 py-3 bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 rounded-full transition-colors">
                     {{ $servicesPage['modal_reserve_button'] ?? 'RESERVAR AHORA' }}
                 </a>

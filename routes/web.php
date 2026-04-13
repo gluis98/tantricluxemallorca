@@ -7,6 +7,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\MasseusesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ImageController;
 use App\Http\Middleware\CanonicalLocalePath;
 
@@ -43,6 +44,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/servicios/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.es');
     Route::get('/masajistas', [MasseusesController::class, 'index'])->name('masseuses.es');
     Route::get('/contacto', [ContactController::class, 'index'])->name('contact.es');
+    Route::get('/reserva', [BookingController::class, 'create']);
+    Route::post('/reserva', [BookingController::class, 'store']);
     
     // Rutas traducidas - Inglés
     Route::get('/about', [AboutController::class, 'index'])->name('about.en');
@@ -50,6 +53,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.en');
     Route::get('/masseuses', [MasseusesController::class, 'index'])->name('masseuses.en');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.en');
+    Route::get('/book', [BookingController::class, 'create']);
+    Route::post('/book', [BookingController::class, 'store']);
     
     // Rutas traducidas - Alemán
     Route::get('/uber-uns', [AboutController::class, 'index'])->name('about.de');
@@ -57,6 +62,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/leistungen/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.de');
     Route::get('/masseurinnen', [MasseusesController::class, 'index'])->name('masseuses.de');
     Route::get('/kontakt', [ContactController::class, 'index'])->name('contact.de');
+    Route::get('/buchen', [BookingController::class, 'create']);
+    Route::post('/buchen', [BookingController::class, 'store']);
 
     // Rutas traducidas - Italiano
     Route::get('/chi-siamo', [AboutController::class, 'index'])->name('about.it');
@@ -64,6 +71,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/servizi/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.it');
     Route::get('/massaggiatrici', [MasseusesController::class, 'index'])->name('masseuses.it');
     Route::get('/contatti', [ContactController::class, 'index'])->name('contact.it');
+    Route::get('/prenota', [BookingController::class, 'create']);
+    Route::post('/prenota', [BookingController::class, 'store']);
 
     // Rutas traducidas - Francés
     Route::get('/a-propos', [AboutController::class, 'index'])->name('about.fr');
@@ -71,4 +80,6 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.fr');
     Route::get('/masseuses', [MasseusesController::class, 'index'])->name('masseuses.fr');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.fr');
+    Route::get('/reserver', [BookingController::class, 'create']);
+    Route::post('/reserver', [BookingController::class, 'store']);
 });

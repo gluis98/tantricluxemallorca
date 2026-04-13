@@ -82,7 +82,8 @@ body {
   font-family: 'Urbanist Variable', 'Urbanist', ui-sans-serif, system-ui, sans-serif;
 }
 
-h1, h2, h3, h4, h5, span {
+/* Solo encabezados: no usar `span` aquí — rompe tipografía de etiquetas con utilidades Tailwind. */
+h1, h2, h3, h4, h5 {
   font-family: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, serif;
 }
 

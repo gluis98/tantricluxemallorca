@@ -28,6 +28,11 @@
             <a href="/{{ $locale }}{{ $header['paths']['services'] ?? '/servicios' }}" class="hover:text-amber-400 transition-colors uppercase">{{ $header['nav']['services'] ?? 'Servicios' }}</a>
             <a href="/{{ $locale }}{{ $header['paths']['masseuses'] ?? '/masajistas' }}" class="hover:text-amber-400 transition-colors uppercase">{{ $header['nav']['masseuses'] ?? 'Masajistas' }}</a>
             <a href="/{{ $locale }}{{ $header['paths']['contact'] ?? '/contacto' }}" class="hover:text-amber-400 transition-colors uppercase">{{ $header['nav']['contact'] ?? 'Contacto' }}</a>
+            <a href="/{{ $locale }}{{ $header['paths']['booking'] ?? '/reserva' }}"
+               class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap border border-amber-400/70 rounded-full px-5 lg:px-7 py-2 text-amber-200 hover:bg-amber-400/10 hover:border-amber-400 transition-all uppercase">
+                <span class="shrink-0 w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+                {{ $header['cta_reserve'] ?? 'Reserva ahora' }}
+            </a>
         </nav>
 
         <!-- Language Switcher & Mobile Menu -->
@@ -44,6 +49,7 @@
                         'servicios' => ['en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'],
                         'masajistas' => ['en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'],
                         'contacto' => ['en' => 'contact', 'de' => 'kontakt', 'it' => 'contatti', 'fr' => 'contact'],
+                        'reserva' => ['en' => 'book', 'de' => 'buchen', 'it' => 'prenota', 'fr' => 'reserver'],
                     ];
                     
                     // Mapeo inverso: desde cualquier idioma a español
@@ -173,6 +179,11 @@
                    onclick="closeMobileMenu()"
                    class="text-xl tracking-wider tenali-ramakrishna text-white hover:text-amber-400 transition-colors uppercase border-b border-amber-400/20 pb-3">
                     {{ $header['nav']['contact'] ?? 'Contacto' }}
+                </a>
+                <a href="/{{ $locale }}{{ $header['paths']['booking'] ?? '/reserva' }}"
+                   onclick="closeMobileMenu()"
+                   class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-amber-400/50 px-5 py-3 text-xl tracking-wider tenali-ramakrishna text-amber-200 hover:bg-amber-400/10 transition-colors uppercase">
+                    {{ $header['cta_reserve'] ?? 'Reserva ahora' }}
                 </a>
             </nav>
             

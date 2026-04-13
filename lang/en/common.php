@@ -14,6 +14,7 @@ return array (
       'masseuses' => 'Masseuses',
       'contact' => 'Contact',
     ),
+    'cta_reserve' => 'Book now',
     'paths' => 
     array (
       'home' => '/',
@@ -21,6 +22,7 @@ return array (
       'services' => '/services',
       'masseuses' => '/masseuses',
       'contact' => '/contact',
+      'booking' => '/book',
     ),
   ),
   'footer' => 

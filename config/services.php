@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'booking' => [
+        'notify_email' => env('BOOKING_NOTIFY_EMAIL', 'info@tantricluxemallorca.com'),
+        'callmebot_api_key' => env('CALLMEBOT_API_KEY'),
+        'callmebot_phone' => env('CALLMEBOT_PHONE'),
+    ],
+
 ];

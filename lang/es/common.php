@@ -14,6 +14,7 @@ return array (
       'masseuses' => 'Masajistas',
       'contact' => 'Contacto',
     ),
+    'cta_reserve' => 'Reserva ahora',
     'paths' => 
     array (
       'home' => '/',
@@ -21,6 +22,7 @@ return array (
       'services' => '/servicios',
       'masseuses' => '/masajistas',
       'contact' => '/contacto',
+      'booking' => '/reserva',
     ),
   ),
   'footer' => 

@@ -49,6 +49,8 @@
 @section('content')
 @php
     $contactPage = trans('contactPage', [], $locale);
+    $bookingPath = trans('common.header.paths.booking', [], $locale);
+    $bookingLang = trans('bookingPage', [], $locale);
 @endphp
 
 <div class="relative z-10 px-4 md:px-8 py-8">
@@ -107,35 +109,17 @@
                 </div>
             </div>
             
-            <div>
-                <h2 class="text-2xl font-light tracking-wider mb-6 gradiente-dorado cormorant-garamond">
-                    {{ $contactPage['form_title'] ?? 'FORMULARIO DE RESERVA' }}
+            <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-amber-900/30 shadow-2xl flex flex-col justify-center text-center">
+                <h2 class="text-2xl font-light tracking-wider gradiente-dorado cormorant-garamond mb-4">
+                    {{ $bookingLang['title'] ?? '' }}
                 </h2>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-gray-300 mb-2">{{ $contactPage['name_label'] ?? 'NOMBRE *' }}</label>
-                        <input type="text" class="w-full px-4 py-2 bg-gray-900/50 border border-amber-900/30 rounded-lg text-white" 
-                               placeholder="{{ $contactPage['name_placeholder'] ?? 'Tu nombre' }}">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300 mb-2">{{ $contactPage['email_label'] ?? 'EMAIL *' }}</label>
-                        <input type="email" class="w-full px-4 py-2 bg-gray-900/50 border border-amber-900/30 rounded-lg text-white" 
-                               placeholder="{{ $contactPage['email_placeholder'] ?? 'tu@email.com' }}">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300 mb-2">{{ $contactPage['phone_label'] ?? 'TELÉFONO / WHATSAPP *' }}</label>
-                        <input type="tel" class="w-full px-4 py-2 bg-gray-900/50 border border-amber-900/30 rounded-lg text-white" 
-                               placeholder="{{ $contactPage['phone_placeholder'] ?? '+34 XXX XXX XXX' }}">
-                    </div>
-                    <div>
-                        <label class="block text-gray-300 mb-2">{{ $contactPage['message_label'] ?? 'MENSAJE ADICIONAL' }}</label>
-                        <textarea rows="4" class="w-full px-4 py-2 bg-gray-900/50 border border-amber-900/30 rounded-lg text-white" 
-                                  placeholder="{{ $contactPage['message_placeholder'] ?? '' }}"></textarea>
-                    </div>
-                    <button type="submit" class="w-full px-6 py-3 bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 rounded-full transition-colors">
-                        {{ $contactPage['submit_button'] ?? 'ENVIAR RESERVA' }}
-                    </button>
-                </form>
+                <p class="text-gray-300 tenali-ramakrishna leading-relaxed mb-8">
+                    {{ $bookingLang['intro'] ?? '' }}
+                </p>
+                <a href="/{{ $locale }}{{ $bookingPath }}"
+                   class="inline-flex items-center justify-center tenali-ramakrishna border-2 border-amber-400/70 rounded-full hover:bg-amber-400/10 text-amber-200 px-8 py-4 text-base font-medium tracking-widest transition-all uppercase">
+                    {{ $bookingLang['home_banner_button'] ?? '' }}
+                </a>
             </div>
         </div>
     </div>

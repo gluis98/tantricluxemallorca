@@ -45,6 +45,12 @@ class SitemapController extends Controller
                 'changefreq'  => 'monthly',
                 'priority'    => '0.8',
             ],
+            // Reserva online
+            [
+                'slugs'       => ['es' => 'reserva', 'en' => 'book', 'de' => 'buchen', 'it' => 'prenota', 'fr' => 'reserver'],
+                'changefreq'  => 'weekly',
+                'priority'    => '0.95',
+            ],
         ];
 
         // Servicios dinámicos por idioma (manteniendo correspondencia por índice)

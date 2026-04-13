@@ -51,6 +51,8 @@
 @php
     $servicesPage = trans('servicesPage', [], $locale);
     $services     = $servicesPage['services'] ?? [];
+    $bookingPath  = trans('common.header.paths.booking', [], $locale);
+    $bookingLang  = trans('bookingPage', [], $locale);
 @endphp
 
 <div class="relative z-10 px-4 md:px-8 py-12">
@@ -68,6 +70,18 @@
             <p class="text-lg md:text-xl text-gray-300 tenali-ramakrishna max-w-2xl mx-auto leading-relaxed">
                 {{ $servicesPage['description'] ?? '' }}
             </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mt-8">
+                <a href="/{{ $locale }}{{ $bookingPath }}"
+                   class="tenali-ramakrishna border border-amber-400/60 rounded-full hover:bg-amber-400/10 text-amber-300 px-8 py-3 text-sm font-medium tracking-wider transition-all uppercase">
+                    {{ $bookingLang['home_banner_button'] ?? 'RESERVAR ONLINE' }}
+                </a>
+                <a href="https://wa.me/34602560426?text={{ urlencode(trans('contactPage.whatsapp_default_message', [], $locale)) }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="tenali-ramakrishna border border-green-400/60 rounded-full hover:bg-green-500/10 text-green-300 px-8 py-3 text-sm font-medium tracking-wider transition-all uppercase">
+                    WHATSAPP DIRECTO
+                </a>
+            </div>
         </div>
 
         {{-- Grid de servicios ────────────────────────────────────────────── --}}
@@ -115,17 +129,15 @@
                 </ul>
                 @endif
 
-                {{-- Botón --}}
-                <a href="https://wa.me/34602560426?text={{ urlencode('Hola, me gustaría información sobre ' . ($svc['title'] ?? 'los servicios')) }}"
-                   target="_blank" rel="noopener noreferrer"
+                {{-- Botón reserva online (servicio preseleccionado) --}}
+                <a href="/{{ $locale }}{{ $bookingPath }}?servicio={{ urlencode($svc['slug'] ?? '') }}"
                    class="group/btn flex items-center justify-center gap-3 w-full
                           bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400
                           text-black font-medium py-3 px-6 rounded-2xl
                           transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25
                           text-sm tracking-wider">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.057 23.617a.75.75 0 00.921.921l5.77-1.476A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.645-.5-5.17-1.373l-.37-.217-3.425.876.893-3.318-.24-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     {{ $servicesPage['reserve_button'] ?? 'RESERVAR' }}
                 </a>

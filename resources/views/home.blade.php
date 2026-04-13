@@ -77,6 +77,8 @@
     
     $features = $homepage['features_section']['features'] ?? [];
     $steps = $homepage['process_section']['steps'] ?? [];
+    $bookingPageLang = trans('bookingPage', [], $locale);
+    $bookingPath = trans('common.header.paths.booking', [], $locale);
 @endphp
 
 <main class="relative z-10 px-0 md:px-8 py-8">
@@ -260,6 +262,23 @@
                          style="background: radial-gradient(ellipse at 60% 40%, rgba(180,137,82,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 lg:px-8 py-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-amber-900/30 text-center">
+                <h2 class="text-2xl md:text-3xl font-light tracking-wider gradiente-dorado cormorant-garamond mb-3">
+                    {{ $bookingPageLang['home_banner_title'] ?? '' }}
+                </h2>
+                <p class="text-gray-300 tenali-ramakrishna max-w-2xl mx-auto mb-6">
+                    {{ $bookingPageLang['home_banner_text'] ?? '' }}
+                </p>
+                <a href="/{{ $locale }}{{ $bookingPath }}"
+                   class="inline-block tenali-ramakrishna border-2 border-amber-400/70 rounded-full hover:bg-amber-400/10 text-amber-200 px-10 py-3 text-sm font-medium tracking-widest transition-all uppercase">
+                    {{ $bookingPageLang['home_banner_button'] ?? '' }}
+                </a>
             </div>
         </div>
     </section>
@@ -713,7 +732,10 @@
             <div class="text-center mt-8">
                 <p class="text-gray-400 text-sm tenali-ramakrishna">
                     ¿Tienes más preguntas? 
-                    <a href="/whatsapp" class="text-amber-400 hover:text-amber-300 underline transition-colors">
+                    <a href="https://wa.me/34602560426?text={{ urlencode(trans('contactPage.whatsapp_default_message', [], $locale)) }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-amber-400 hover:text-amber-300 underline transition-colors">
                         Contáctanos por WhatsApp
                     </a>
                 </p>

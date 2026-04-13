@@ -57,26 +57,26 @@
     <meta name="theme-color" content="#0a0a0a">
     
     @php
-        // Resolver assets compilados desde public_html/build/
+        // Assets en public/build/ (php artisan serve y Laravel estándar).
+        // `npm run build` copia también a public_html/build si usas esa carpeta como raíz en Laragon.
         $cssFile = null;
         $jsFile  = null;
-        $manifestPath = base_path('public_html/build/manifest.json');
+        $manifestPath = base_path('public/build/manifest.json');
+        $buildDir = base_path('public/build');
 
         if (file_exists($manifestPath) && is_readable($manifestPath)) {
             try {
                 $manifest = json_decode(file_get_contents($manifestPath), true);
                 if (json_last_error() === JSON_ERROR_NONE && is_array($manifest)) {
-                    // CSS
                     if (isset($manifest['resources/css/app.css']['file'])) {
                         $cssFileName = $manifest['resources/css/app.css']['file'];
-                        if (file_exists(base_path('public_html/build/' . $cssFileName))) {
+                        if (file_exists($buildDir . '/' . $cssFileName)) {
                             $cssFile = asset('build/' . $cssFileName);
                         }
                     }
-                    // JS
                     if (isset($manifest['resources/js/app.js']['file'])) {
                         $jsFileName = $manifest['resources/js/app.js']['file'];
-                        if (file_exists(base_path('public_html/build/' . $jsFileName))) {
+                        if (file_exists($buildDir . '/' . $jsFileName)) {
                             $jsFile = asset('build/' . $jsFileName);
                         }
                     }
@@ -182,6 +182,8 @@
     
     <!-- Structured Data (JSON-LD) -->
     @yield('structured_data')
+
+    @stack('styles')
 </head>
 <body class="antialiased">
     <div class="min-h-screen relative">
