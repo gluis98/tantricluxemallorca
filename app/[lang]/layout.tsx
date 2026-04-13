@@ -182,7 +182,7 @@ export default async function RootLayout({
           'Centro especializado en masaje tantrico Mallorca. Experiencias exclusivas de masaje tantrico en Palma de Mallorca con máxima privacidad y profesionalidad.',
         url: `${siteUrl}/`,
         telephone: '+34-602-560-426',
-        email: 'info@tantricluxemallorca.com',
+        email: 'tantricluxemallorca@gmail.com',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',

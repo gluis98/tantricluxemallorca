@@ -12,15 +12,15 @@ export async function POST(request: NextRequest) {
       port: 465,
       secure: true, // SSL
       auth: {
-        user: 'info@tantricluxemallorca.com',
+        user: 'tantricluxemallorca@gmail.com',
         pass: 'Ruka2215.'
       }
     });
 
     // Configurar email
     const mailOptions = {
-      from: 'info@tantricluxemallorca.com',
-      to: 'info@tantricluxemallorca.com',
+      from: 'tantricluxemallorca@gmail.com',
+      to: 'tantricluxemallorca@gmail.com',
       replyTo: email,
       subject: `Nueva Reserva - ${name}`,
       html: `

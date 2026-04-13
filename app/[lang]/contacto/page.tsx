@@ -90,7 +90,7 @@ export default async function ContactPage({
       '@type': 'LocalBusiness',
       name: 'Tantric Luxe Mallorca',
       telephone: '+34-602-560-426',
-      email: 'info@tantricluxemallorca.com',
+      email: 'tantricluxemallorca@gmail.com',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Plaça de Santa Magdalena, 3A, Centre',

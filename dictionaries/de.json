@@ -254,7 +254,7 @@
       { "icon": "📍", "title": "STANDORT", "line1": "Plaça de Santa Magdalena, 3A, Centre", "line2": "07012 Palma, Illes Balears", "line3": "Diskrete Lage im Zentrum" },
       { "icon": "📱", "title": "WHATSAPP", "line1": "+34 602 560 426", "line2": "Antwort in weniger als 1 Stunde", "line3": "Personalisierte Betreuung" },
       { "icon": "⏰", "title": "ÖFFNUNGSZEITEN", "line1": "Montag bis Sonntag", "line2": "09:00 - 23:00", "line3": "Termine nach Vereinbarung" },
-      { "icon": "📧", "title": "EMAIL", "line1": "info@tantricluxemallorca.com", "line2": "Allgemeine Fragen und Reservierungen", "line3": "Antwort innerhalb 24h" }
+      { "icon": "📧", "title": "EMAIL", "line1": "tantricluxemallorca@gmail.com", "line2": "Allgemeine Fragen und Reservierungen", "line3": "Antwort innerhalb 24h" }
     ],
     "whatsapp_button_text": "DIREKT WHATSAPP",
     "call_button_text": "JETZT ANRUFEN",

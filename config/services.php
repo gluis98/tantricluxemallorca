@@ -32,7 +32,7 @@ return [
     ],
 
     'booking' => [
-        'notify_email' => env('BOOKING_NOTIFY_EMAIL', 'info@tantricluxemallorca.com'),
+        'notify_email' => env('BOOKING_NOTIFY_EMAIL', 'tantricluxemallorca@gmail.com'),
         'callmebot_api_key' => env('CALLMEBOT_API_KEY'),
         'callmebot_phone' => env('CALLMEBOT_PHONE'),
     ],

@@ -33,7 +33,7 @@
     "logo": "{{ asset('images/LogoFull.png') }}",
     "image": "{{ asset('images/LogoFull.png') }}",
     "telephone": "+34-602-560-426",
-    "email": "info@tantricluxemallorca.com",
+    "email": "tantricluxemallorca@gmail.com",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",

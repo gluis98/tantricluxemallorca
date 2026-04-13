@@ -39,7 +39,7 @@ return array (
     array (
       'icon' => '📧',
       'title' => 'EMAIL',
-      'line1' => 'info@tantricluxemallorca.com',
+      'line1' => 'tantricluxemallorca@gmail.com',
       'line2' => 'Para consultas generales y reservas',
       'line3' => 'Respuesta en 24 horas máximo',
     ),

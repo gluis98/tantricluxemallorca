@@ -86,7 +86,7 @@ export default async function TantricLuxeSpa({
     description: dictionary.homepage.meta_description,
     url: baseUrl,
     telephone: '+34-602-560-426',
-    email: 'info@tantricluxemallorca.com',
+    email: 'tantricluxemallorca@gmail.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Plaça de Santa Magdalena, 3A, Centre',
