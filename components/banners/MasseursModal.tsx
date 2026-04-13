@@ -13,45 +13,46 @@ interface MasajistasModalProps {
 const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps) => {
   const [animateCards, setAnimateCards] = useState(false);
 
+  const masajistas: { id: number; name: string; image: string | null; specialty: string }[] = [
     {
       id: 1,
-      name: "Erika",
-      image: "/images/masseurs/Erika/IMG_0843.jpeg",
-      specialty: lang === 'en' 
-        ? "Specialist in Deluxe Sensual Tantric Massage" 
-        : lang === 'de' 
-        ? "Spezialistin für Deluxe Sinnliche Tantra-Massage"
-        : "Especialista en Masaje Tantrico Sensual Deluxe"
+      name: "Tatiana",
+      image: "/images/masseurs/Sharon/1.jpg",
+      specialty: lang === 'en'
+        ? "Premium Sensual Tantric Massage"
+        : lang === 'de'
+        ? "Premium Sinnliche Tantra-Massage"
+        : "Masaje Tantrico Sensual Premium"
     },
     {
       id: 2,
-      name: "Valentina",
-      image: "/images/hero section/4.jpg",
-      specialty: lang === 'en' 
-        ? "Sensual & Relaxing Tantric Massage" 
-        : lang === 'de' 
-        ? "Sinnliche & Entspannende Tantra-Massage"
-        : "Masaje Tantrico Sensual y Relajante"
+      name: "Anny",
+      image: "/images/masseurs/Anny/1.jpg",
+      specialty: lang === 'en'
+        ? "Exclusive Body to Body Tantric Massage"
+        : lang === 'de'
+        ? "Exklusives Body-to-Body Tantra-Massage"
+        : "Masaje Tantrico Body to Body Exclusivo"
     }
   ];
 
   const translations = {
     es: {
-      title: "Conoce a Nuestra Especialista",
+      title: "Conoce a Nuestras Especialistas",
       subtitle: "Belleza, elegancia y experiencia exclusiva",
       available: "Disponible Ahora",
       reserve: "RESERVAR CON",
       premium: "PREMIUM"
     },
     en: {
-      title: "Meet Our Specialist",
+      title: "Meet Our Specialists",
       subtitle: "Beauty, elegance and exclusive experience",
       available: "Available Now",
       reserve: "BOOK WITH",
       premium: "PREMIUM"
     },
     de: {
-      title: "Lernen Sie Unsere Spezialistin Kennen",
+      title: "Lernen Sie Unsere Spezialistinnen Kennen",
       subtitle: "Schönheit, Eleganz und exklusives Erlebnis",
       available: "Jetzt Verfügbar",
       reserve: "BUCHEN MIT",
@@ -142,6 +143,7 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
                         className="block w-full h-[400px] md:h-[500px] rounded-2xl bg-gradient-to-br from-amber-900/30 to-gray-800/50 overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer shadow-2xl border border-amber-900/20"
                       >
                         <div className="relative w-full h-full">
+                        {masajista.image ? (
                         <Image
                           src={masajista.image}
                           alt={masajista.name}
@@ -149,6 +151,11 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
                             className="object-cover"
                             priority
                           />
+                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-br from-amber-950/60 via-black/90 to-black flex items-center justify-center">
+                            <span className="text-6xl text-amber-600/30 cormorant-garamond font-light" aria-hidden>&#10022;</span>
+                          </div>
+                        )}
                           {/* Overlay gradient */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                           

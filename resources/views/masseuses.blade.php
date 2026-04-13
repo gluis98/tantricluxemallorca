@@ -99,13 +99,19 @@
                     </div>
                     @endforeach
                 </div>
-                @else
+                @elseif(!empty($masseuse['image']))
                 <div class="mb-8">
-                    <img src="{{ route('img.serve', ['src' => ltrim($masseuse['image'] ?? 'images/default.webp', '/'), 'w' => 500, 'q' => 82]) }}"
+                    <img src="{{ route('img.serve', ['src' => ltrim($masseuse['image'], '/'), 'w' => 500, 'q' => 82]) }}"
                          alt="{{ $masseuse['name'] ?? '' }}"
                          width="500" height="667"
                          class="w-full max-w-md mx-auto h-auto rounded-2xl shadow-xl"
                          loading="lazy" decoding="async">
+                </div>
+                @else
+                <div class="mb-8 flex justify-center">
+                    <div class="w-full max-w-md aspect-[3/4] rounded-2xl border border-amber-900/40 bg-gradient-to-b from-amber-950/50 to-black/80 flex items-center justify-center shadow-xl">
+                        <span class="text-6xl text-amber-600/35 cormorant-garamond font-light" aria-hidden="true">&#10022;</span>
+                    </div>
                 </div>
                 @endif
 

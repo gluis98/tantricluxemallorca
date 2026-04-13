@@ -10,9 +10,26 @@ return array (
   'secondary_heading' => 'EXPÉRIENCE EXCLUSIVE DE MASSAGE TANTRIQUE À MAJORQUE',
   'masseuse_section' => 
   array (
-    'title' => 'Rencontrez Notre Spécialiste',
-    'description' => 'Erika, notre masseuse exceptionnelle, allie beauté naturelle, élégance raffinée et maîtrise magistrale des techniques tantriques les plus sophistiquées. Découvrez l\'expérience unique qui vous attend.',
-    'button_text' => 'PLUS D\'INFORMATIONS SUR ERIKA',
+    'title' => 'NOS SPÉCIALISTES',
+    'description' => 'Découvrez nos expertes en massage tantrique et érotique à Palma. Élégance, savoir-faire et expérience exclusive.',
+    'button_text' => 'PLUS D\'INFORMATIONS SUR NOS MASSEUSES',
+    'featured_cards' =>
+    array (
+      0 =>
+      array (
+        'name' => 'Tatiana',
+        'specialty' => 'Massage tantrique sensuel premium',
+        'image' => '/images/masseurs/Sharon/1.jpg',
+        'reviews' => 64,
+      ),
+      1 =>
+      array (
+        'name' => 'Anny',
+        'specialty' => 'Massage tantrique body-to-body exclusif',
+        'image' => '/images/masseurs/Anny/1.jpg',
+        'reviews' => 47,
+      ),
+    ),
   ),
   'about_us_section' => 
   array (

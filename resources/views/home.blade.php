@@ -79,6 +79,7 @@
     $steps = $homepage['process_section']['steps'] ?? [];
     $bookingPageLang = trans('bookingPage', [], $locale);
     $bookingPath = trans('common.header.paths.booking', [], $locale);
+    $masseusesData = $homepage['masseuse_section']['featured_cards'] ?? [];
 @endphp
 
 <main class="relative z-10 px-0 md:px-8 py-8">
@@ -214,30 +215,6 @@
                              loading="lazy"
                              decoding="async">
 
-                        <!-- SLIDE 3 -->
-                        <img src="{{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 800, 'q' => 85]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 420, 'q' => 85]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/hero section/3.jpg', 'w' => 800, 'q' => 85]) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masaje tantrico sensual Palma de Mallorca"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="2"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 4 -->
-                        <img src="{{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 800, 'q' => 85]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 420, 'q' => 85]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/hero section/4.jpg', 'w' => 800, 'q' => 85]) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista Valentina Tantric Luxe Mallorca"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="3"
-                             loading="lazy"
-                             decoding="async">
-
                         <!-- Overlay degradado inferior -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none z-10"></div>
 
@@ -252,8 +229,6 @@
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
                             <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
-                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
-                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
                         </div>
                     </div>
 
@@ -345,35 +320,7 @@
         </div>
     </section>
 
-    <!-- Sección Masajistas: 4 Cards en fila -->
-    @php
-        $masseusesData = [
-            [
-                'name'      => 'Sharon',
-                'specialty' => trans('masseusesPage.masseuses.0.specialty', [], $locale),
-                'image'     => '/images/masseurs/Sharon/1.jpg',
-                'reviews'   => 64,
-            ],
-            [
-                'name'      => 'April',
-                'specialty' => trans('masseusesPage.masseuses.1.specialty', [], $locale),
-                'image'     => '/images/masseurs/April/1.jpeg',
-                'reviews'   => 51,
-            ],
-            [
-                'name'      => 'Anny',
-                'specialty' => trans('masseusesPage.masseuses.2.specialty', [], $locale),
-                'image'     => '/images/masseurs/Anny/1.jpg',
-                'reviews'   => 47,
-            ],
-            [
-                'name'      => 'Valentina',
-                'specialty' => trans('masseusesPage.masseuses.3.specialty', [], $locale),
-                'image'     => '/images/hero section/4.jpg',
-                'reviews'   => 45,
-            ],
-        ];
-    @endphp
+    <!-- Sección Masajistas: cards de inicio (Tatiana y Anny) -->
     <section class="py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
 
@@ -391,14 +338,15 @@
                 </p>
             </div>
 
-            <!-- Grid 4 cards -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-6xl mx-auto w-full">
+            <!-- Masajistas: una fila, dos columnas -->
+            <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-12 max-w-5xl mx-auto w-full">
                 @foreach($masseusesData as $m)
                 <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
                      style="border: 1px solid rgba(120,53,15,0.35);">
 
-                    <!-- Imagen de la masajista -->
+                    <!-- Imagen de la masajista (opcional) -->
                     <div class="relative overflow-hidden" style="aspect-ratio: 3/4;">
+                        @if(!empty($m['image']))
                         <img src="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }}"
                              srcset="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }} 400w,
                                      {{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 650, 'q' => 82]) }} 650w"
@@ -408,6 +356,11 @@
                              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                              loading="lazy"
                              decoding="async">
+                        @else
+                        <div class="w-full h-full min-h-[14rem] bg-gradient-to-b from-amber-950/70 via-black/90 to-black flex items-center justify-center">
+                            <span class="text-5xl text-amber-600/40 cormorant-garamond font-light" aria-hidden="true">&#10022;</span>
+                        </div>
+                        @endif
 
                         <!-- Overlay degradado -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>

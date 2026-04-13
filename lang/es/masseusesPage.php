@@ -19,7 +19,7 @@ return array (
     0 =>
     array (
       'id' => 2,
-      'name' => 'Sharon',
+      'name' => 'Tatiana',
       'age' => 26,
       'specialty' => 'Masaje Tantrico Sensual Premium',
       'image' => '/images/masseurs/Sharon/1.jpg',
@@ -29,7 +29,7 @@ return array (
         1 => '/images/masseurs/Sharon/2.jpg',
         2 => '/images/masseurs/Sharon/3.jpg',
       ),
-      'description' => 'Sharon irradia sensualidad y elegancia en cada sesión. Con una energía única y técnicas tantricas refinadas, crea un espacio de conexión profunda donde el cuerpo y la mente encuentran su equilibrio perfecto.',
+      'description' => 'Tatiana irradia sensualidad y elegancia en cada sesión. Con una energía única y técnicas tantricas refinadas, crea un espacio de conexión profunda donde el cuerpo y la mente encuentran su equilibrio perfecto.',
       'skills' =>
       array (
         0 => 'Masaje Tantrico Sensual',
@@ -43,32 +43,6 @@ return array (
       'reviews' => 64,
     ),
     1 =>
-    array (
-      'id' => 3,
-      'name' => 'April',
-      'age' => 25,
-      'specialty' => 'Masaje Tantrico Experiencia Única',
-      'image' => '/images/masseurs/April/1.jpeg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/April/1.jpeg',
-        1 => '/images/masseurs/April/2.jpg',
-        2 => '/images/masseurs/April/4.jpg',
-      ),
-      'description' => 'April es una artista del masaje tantrico que transforma cada sesión en una experiencia sensorial sin igual. Su presencia etérea y sus manos hábiles despiertan sensaciones que van más allá de lo físico, llevándote a un estado de plenitud absoluta.',
-      'skills' =>
-      array (
-        0 => 'Masaje Tantrico Ritual',
-        1 => 'Conexión Cuerpo-Mente',
-        2 => 'Armonía Energética',
-        3 => 'Masaje Sensorial',
-        4 => 'Técnicas Ancestrales',
-        5 => 'Experiencia Transformadora',
-      ),
-      'rating' => 5,
-      'reviews' => 51,
-    ),
-    2 =>
     array (
       'id' => 4,
       'name' => 'Anny',
@@ -95,31 +69,6 @@ return array (
       ),
       'rating' => 5,
       'reviews' => 47,
-    ),
-    3 =>
-    array (
-      'id' => 5,
-      'name' => 'Valentina',
-      'age' => 25,
-      'specialty' => 'Masaje Tantrico Sensual y Relajante',
-      'image' => '/images/hero section/4.jpg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Valentina/2.jpg',
-        1 => '/images/masseurs/Valentina/3.jpg',
-        2 => '/images/masseurs/Valentina/4.jpg',
-        3 => '/images/masseurs/Valentina/5.jpg',
-      ),
-      'description' => 'Valentina te invita a un viaje profundo de conexión. Su intuición y calidez te guiarán hacia una relajación absoluta y un despertar sensual inolvidable.',
-      'skills' =>
-      array (
-        0 => 'Masaje Relajante',
-        1 => 'Conexión Energética',
-        2 => 'Técnicas Sensuales',
-        3 => 'Atención Personalizada',
-      ),
-      'rating' => 5,
-      'reviews' => 45,
     ),
   ),
 );

@@ -26,7 +26,12 @@ interface MasseuseCardProps {
 }
 
 function MasajistaCard({ masseuse, dictionary }: MasseuseCardProps) {
-  const images = masseuse.images || [masseuse.image];
+  const images =
+    masseuse.images?.length > 0
+      ? masseuse.images
+      : masseuse.image
+        ? [masseuse.image]
+        : [];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -40,6 +45,7 @@ function MasajistaCard({ masseuse, dictionary }: MasseuseCardProps) {
   return (
     <div className="group bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-0 border border-amber-900/30 hover:border-amber-600/40 transition-all duration-500 shadow-2xl hover:shadow-amber-900/30 overflow-hidden relative">
       <div className="relative w-full h-96 overflow-hidden md:h-[500px] flex items-center justify-center bg-black">
+        {images.length > 0 ? (
         <Image
           src={images[current]}
           alt={masseuse.name}
@@ -47,6 +53,11 @@ function MasajistaCard({ masseuse, dictionary }: MasseuseCardProps) {
           className="object-cover object-center transition-all duration-700 scale-105 group-hover:scale-110"
           priority
         />
+        ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-950/60 via-black/90 to-black flex items-center justify-center">
+          <span className="text-7xl text-amber-600/30 cormorant-garamond font-light" aria-hidden>&#10022;</span>
+        </div>
+        )}
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent z-10" />
         {images.length > 1 && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">

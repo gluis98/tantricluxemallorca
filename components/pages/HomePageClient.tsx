@@ -24,8 +24,6 @@ export default function HomePageClient({ lang, dictionary }: {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-  const [activeGallery, setActiveGallery] = useState<'Erika' | 'Valentina'>('Erika');
-
   const erikaImages = [
     "/images/masseurs/Erika/IMG_0843.jpeg",
     "/images/masseurs/Erika/IMG_0844.jpeg",
@@ -34,13 +32,6 @@ export default function HomePageClient({ lang, dictionary }: {
     "/images/masseurs/Erika/IMG_0872.jpeg",
     "/images/masseurs/Erika/IMG_0878.jpeg",
     "/images/masseurs/Erika/IMG_0880.jpeg"
-  ];
-
-  const valentinaImages = [
-    "/images/masseurs/Valentina/2.jpg",
-    "/images/masseurs/Valentina/3.jpg",
-    "/images/hero section/4.jpg",
-    "/images/masseurs/Valentina/5.jpg"
   ];
 
   return (
@@ -83,7 +74,6 @@ export default function HomePageClient({ lang, dictionary }: {
                     className="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300"
                     onClick={() => {
                       setCurrentImage(realIndex >= 0 ? realIndex : index);
-                      setActiveGallery('Erika');
                       setIsImageGalleryOpen(true);
                     }}
                   >
@@ -155,39 +145,6 @@ export default function HomePageClient({ lang, dictionary }: {
 
             {/* VALENTINA */}
             <div className="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-amber-900/30 shadow-2xl">
-              
-              {/* Grid de fotos de Valentina */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {valentinaImages.slice(0, 4).map((image, index) => {
-                  const realIndex = valentinaImages.indexOf(image);
-                  return (
-                  <div 
-                    key={index}
-                    className="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300"
-                    onClick={() => {
-                      setCurrentImage(realIndex >= 0 ? realIndex : index);
-                      setActiveGallery('Valentina');
-                      setIsImageGalleryOpen(true);
-                    }}
-                  >
-                    <div className="relative aspect-[3/4]">
-                      <Image
-                        src={image}
-                        alt={`Valentina - Masajista Profesional ${index + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                      />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-white text-sm font-medium tenali-ramakrishna">
-                          {lang === 'en' ? 'View more' : lang === 'de' ? 'Mehr anzeigen' : 'Ver más'}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  );
-                })}
-              </div>
 
               {/* Nombre VALENTINA prominente */}
               <div className="text-center mb-8">
@@ -297,10 +254,10 @@ export default function HomePageClient({ lang, dictionary }: {
       <ImageGalleryModal
         isOpen={isImageGalleryOpen}
         onClose={() => setIsImageGalleryOpen(false)}
-        images={activeGallery === 'Erika' ? erikaImages : valentinaImages}
+        images={erikaImages}
         currentIndex={currentImage}
         onIndexChange={setCurrentImage}
-        name={activeGallery}
+        name="Erika"
       />
     </>
   );

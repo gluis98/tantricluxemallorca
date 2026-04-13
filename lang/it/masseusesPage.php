@@ -11,50 +11,64 @@ return array (
   'reviews_text' => 'recensioni',
   'age_text' => 'anni',
   'reserve_button_text' => 'PRENOTA CON',
-  'masseuses' => 
+  'specialties_title' => 'Specialità',
+  'view_more_text' => 'Vedi altro',
+  'available_now_text' => 'Disponibile ora',
+  'masseuses' =>
   array (
-    0 => 
-    array (
-      'id' => 1,
-      'name' => 'Erika',
-      'age' => 24,
-      'specialty' => 'Massaggio Tantrico Deluxe',
-      'image' => '/images/masseurs/Erika/IMG_0843.jpeg',
-      'images' => 
-      array (
-        0 => '/images/masseurs/Erika/IMG_0843.jpeg',
-        1 => '/images/masseurs/Erika/IMG_0844.jpeg',
-        2 => '/images/masseurs/Erika/IMG_0865.jpeg',
-      ),
-      'description' => 'Erika apporta bellezza e grande maestria nelle tecniche esclusive.',
-      'skills' => 
-      array (
-        0 => 'Avanzato',
-        1 => 'Corpo a corpo',
-      ),
-      'rating' => 5,
-      'reviews' => 89,
-    ),
-    1 => 
+    0 =>
     array (
       'id' => 2,
-      'name' => 'Valentina',
-      'age' => 25,
-      'specialty' => 'Massaggio Sensuale e Rilassante',
-      'image' => '/images/hero section/4.jpg',
-      'images' => 
+      'name' => 'Tatiana',
+      'age' => 26,
+      'specialty' => 'Massaggio tantrico sensuale premium',
+      'image' => '/images/masseurs/Sharon/1.jpg',
+      'images' =>
       array (
-        0 => '/images/masseurs/Valentina/2.jpg',
-        1 => '/images/masseurs/Valentina/3.jpg',
+        0 => '/images/masseurs/Sharon/1.jpg',
+        1 => '/images/masseurs/Sharon/2.jpg',
+        2 => '/images/masseurs/Sharon/3.jpg',
       ),
-      'description' => 'Valentina ti invita a un profondo viaggio di connessione emotiva.',
-      'skills' => 
+      'description' => 'Tatiana irradia sensualità ed eleganza in ogni sessione. Con un\'energia unica e tecniche tantriche raffinate, crea uno spazio di connessione profonda dove corpo e mente ritrovano equilibrio.',
+      'skills' =>
       array (
-        0 => 'Sensuale',
-        1 => 'Connessione',
+        0 => 'Massaggio tantrico sensuale',
+        1 => 'Tecniche di respirazione',
+        2 => 'Energia kundalini',
+        3 => 'Body to body deluxe',
+        4 => 'Rilassamento consapevole',
+        5 => 'Rituali di benessere',
       ),
       'rating' => 5,
-      'reviews' => 45,
+      'reviews' => 64,
+    ),
+    1 =>
+    array (
+      'id' => 4,
+      'name' => 'Anny',
+      'age' => 23,
+      'specialty' => 'Massaggio tantrico body-to-body esclusivo',
+      'image' => '/images/masseurs/Anny/1.jpg',
+      'images' =>
+      array (
+        0 => '/images/masseurs/Anny/1.jpg',
+        1 => '/images/masseurs/Anny/3.jpg',
+        2 => '/images/masseurs/Anny/4.jpg',
+        3 => '/images/masseurs/Anny/5.jpg',
+        4 => '/images/masseurs/Anny/6.jpg',
+      ),
+      'description' => 'Anny unisce giovinezza e maestria. Il suo dominio istintivo delle arti tantriche e la sua energia luminosa creano un\'atmosfera di complicità unica dove ogni cliente scopre nuove dimensioni di piacere e benessere.',
+      'skills' =>
+      array (
+        0 => 'Body to body esclusivo',
+        1 => 'Massaggio tantrico giovanile',
+        2 => 'Energia vitale',
+        3 => 'Connessione intuitiva',
+        4 => 'Tecniche moderne',
+        5 => 'Rituale personalizzato',
+      ),
+      'rating' => 5,
+      'reviews' => 47,
     ),
   ),
 );

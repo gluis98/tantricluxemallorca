@@ -216,28 +216,28 @@
     "reserve_button_text": "BUCHEN MIT",
     "masseuses": [
       {
-        "id": 1,
-        "name": "Erika",
-        "age": 24,
-        "specialty": "Deluxe Sinnliche Tantra Massage",
-        "image": "/images/masseurs/Erika/IMG_0843.jpeg",
-        "images": ["/images/masseurs/Erika/IMG_0843.jpeg", "/images/masseurs/Erika/IMG_0844.jpeg", "/images/masseurs/Erika/IMG_0865.jpeg"],
-        "description": "Erika kombiniert natürliche Schönheit mit fortgeschrittener Technik.",
-        "skills": ["Tantra Fortgeschritten", "Body to Body", "Tiefe Entspannung"],
+        "id": 2,
+        "name": "Tatiana",
+        "age": 26,
+        "specialty": "Premium Sinnliche Tantra-Massage",
+        "image": "/images/masseurs/Sharon/1.jpg",
+        "images": ["/images/masseurs/Sharon/1.jpg", "/images/masseurs/Sharon/2.jpg", "/images/masseurs/Sharon/3.jpg"],
+        "description": "Tatiana strahlt Sinnlichkeit und Eleganz in jeder Sitzung aus. Mit einer einzigartigen Energie und verfeinerten tantrischen Techniken schafft sie einen Raum tiefer Verbindung, in dem Körper und Geist ihr perfektes Gleichgewicht finden.",
+        "skills": ["Sinnliche Tantra-Massage", "Atemtechniken", "Kundalini-Energie", "Deluxe Body-to-Body", "Bewusste Entspannung", "Wellness-Rituale"],
         "rating": 5,
-        "reviews": 89
+        "reviews": 64
       },
       {
-        "id": 2,
-        "name": "Valentina",
-        "age": 25,
-        "specialty": "Sinnliche & Entspannende Massage",
-        "image": "/images/hero section/4.jpg",
-        "images": ["/images/masseurs/Valentina/2.jpg", "/images/masseurs/Valentina/3.jpg"],
-        "description": "Valentina führt dich in tiefe Ruhe und sinnliche Präsenz.",
-        "skills": ["Entspannung", "Energiearbeit", "Sinnliche Techniken"],
+        "id": 4,
+        "name": "Anny",
+        "age": 23,
+        "specialty": "Exklusives Body-to-Body Tantra-Massage",
+        "image": "/images/masseurs/Anny/1.jpg",
+        "images": ["/images/masseurs/Anny/1.jpg", "/images/masseurs/Anny/3.jpg", "/images/masseurs/Anny/4.jpg", "/images/masseurs/Anny/5.jpg", "/images/masseurs/Anny/6.jpg"],
+        "description": "Anny ist die perfekte Fusion aus Jugend und Können. Ihre instinktive Beherrschung tantrischer Künste und ihre strahlende Energie schaffen eine Atmosphäre einzigartiger Komplizenschaft, in der jeder Gast neue Dimensionen von Lust und Wohlbefinden entdeckt.",
+        "skills": ["Exklusives Body-to-Body", "Jugendliche Tantra-Massage", "Lebensenergie", "Intuitive Verbindung", "Moderne Techniken", "Personalisiertes Ritual"],
         "rating": 5,
-        "reviews": 45
+        "reviews": 47
       }
     ]
   },

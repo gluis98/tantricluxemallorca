@@ -16,6 +16,23 @@ return array (
     'specialty_text' => 'Spezialistin für Deluxe Sinnliche Tantra-Massage',
     'available_text' => 'Jetzt Verfügbar',
     'reviews_text' => 'Bewertungen',
+    'featured_cards' =>
+    array (
+      0 =>
+      array (
+        'name' => 'Tatiana',
+        'specialty' => 'Premium Sinnliche Tantra-Massage',
+        'image' => '/images/masseurs/Sharon/1.jpg',
+        'reviews' => 64,
+      ),
+      1 =>
+      array (
+        'name' => 'Anny',
+        'specialty' => 'Exklusives Body-to-Body Tantra-Massage',
+        'image' => '/images/masseurs/Anny/1.jpg',
+        'reviews' => 47,
+      ),
+    ),
   ),
   'about_us_section' => 
   array (

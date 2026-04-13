@@ -19,7 +19,7 @@ return array (
     0 =>
     array (
       'id' => 2,
-      'name' => 'Sharon',
+      'name' => 'Tatiana',
       'age' => 26,
       'specialty' => 'Premium Sensual Tantric Massage',
       'image' => '/images/masseurs/Sharon/1.jpg',
@@ -29,7 +29,7 @@ return array (
         1 => '/images/masseurs/Sharon/2.jpg',
         2 => '/images/masseurs/Sharon/3.jpg',
       ),
-      'description' => 'Sharon radiates sensuality and elegance in every session. With a unique energy and refined tantric techniques, she creates a space of deep connection where body and mind find their perfect balance.',
+      'description' => 'Tatiana radiates sensuality and elegance in every session. With a unique energy and refined tantric techniques, she creates a space of deep connection where body and mind find their perfect balance.',
       'skills' =>
       array (
         0 => 'Sensual Tantric Massage',
@@ -43,32 +43,6 @@ return array (
       'reviews' => 64,
     ),
     1 =>
-    array (
-      'id' => 3,
-      'name' => 'April',
-      'age' => 25,
-      'specialty' => 'Unique Tantric Massage Experience',
-      'image' => '/images/masseurs/April/1.jpeg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/April/1.jpeg',
-        1 => '/images/masseurs/April/2.jpg',
-        2 => '/images/masseurs/April/4.jpg',
-      ),
-      'description' => 'April is an artist of tantric massage who transforms every session into an unparalleled sensory experience. Her ethereal presence and skilled hands awaken sensations that go beyond the physical, leading you to a state of absolute fulfillment.',
-      'skills' =>
-      array (
-        0 => 'Tantric Ritual Massage',
-        1 => 'Mind-Body Connection',
-        2 => 'Energy Harmony',
-        3 => 'Sensory Massage',
-        4 => 'Ancestral Techniques',
-        5 => 'Transformative Experience',
-      ),
-      'rating' => 5,
-      'reviews' => 51,
-    ),
-    2 =>
     array (
       'id' => 4,
       'name' => 'Anny',
@@ -95,31 +69,6 @@ return array (
       ),
       'rating' => 5,
       'reviews' => 47,
-    ),
-    3 =>
-    array (
-      'id' => 5,
-      'name' => 'Valentina',
-      'age' => 25,
-      'specialty' => 'Sensual & Relaxing Tantric Massage',
-      'image' => '/images/hero section/4.jpg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Valentina/2.jpg',
-        1 => '/images/masseurs/Valentina/3.jpg',
-        2 => '/images/masseurs/Valentina/4.jpg',
-        3 => '/images/masseurs/Valentina/5.jpg',
-      ),
-      'description' => 'Valentina invites you to a deep journey of connection. Her intuition and warmth will guide you towards absolute relaxation and an unforgettable sensual awakening.',
-      'skills' =>
-      array (
-        0 => 'Relaxing Massage',
-        1 => 'Energy Connection',
-        2 => 'Sensual Techniques',
-        3 => 'Personalized Attention',
-      ),
-      'rating' => 5,
-      'reviews' => 45,
     ),
   ),
 );

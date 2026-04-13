@@ -242,28 +242,28 @@
     "reserve_button_text": "RESERVAR CON",
     "masseuses": [
       {
-        "id": 1,
-        "name": "Erika",
-        "age": 24,
-        "specialty": "Masaje Tantrico Sensual Deluxe",
-        "image": "/images/masseurs/Erika/IMG_0843.jpeg",
-        "images": ["/images/masseurs/Erika/IMG_0843.jpeg", "/images/masseurs/Erika/IMG_0844.jpeg", "/images/masseurs/Erika/IMG_0865.jpeg", "/images/masseurs/Erika/IMG_0866.jpeg", "/images/masseurs/Erika/IMG_0872.jpeg", "/images/masseurs/Erika/IMG_0878.jpeg", "/images/masseurs/Erika/IMG_0880.jpeg"],
-        "description": "Erika combina belleza natural con un dominio excepcional de técnicas tantricas sofisticadas. Su toque intuitivo y presencia cautivadora crean experiencias únicas que despiertan tus sentidos y te conectan con el placer más profundo.",
-        "skills": ["Masaje Tantrico Avanzado", "Body to Body Premium", "Relajación Profunda", "Conexión Energética", "Técnicas Sensuales", "Experiencia Personalizada"],
+        "id": 2,
+        "name": "Tatiana",
+        "age": 26,
+        "specialty": "Masaje Tantrico Sensual Premium",
+        "image": "/images/masseurs/Sharon/1.jpg",
+        "images": ["/images/masseurs/Sharon/1.jpg", "/images/masseurs/Sharon/2.jpg", "/images/masseurs/Sharon/3.jpg"],
+        "description": "Tatiana irradia sensualidad y elegancia en cada sesión. Con una energía única y técnicas tantricas refinadas, crea un espacio de conexión profunda donde el cuerpo y la mente encuentran su equilibrio perfecto.",
+        "skills": ["Masaje Tantrico Sensual", "Técnicas de Respiración", "Energía Kundalini", "Body to Body Deluxe", "Relajación Consciente", "Rituales de Bienestar"],
         "rating": 5,
-        "reviews": 89
+        "reviews": 64
       },
       {
-        "id": 2,
-        "name": "Valentina",
-        "age": 25,
-        "specialty": "Masaje Tantrico Sensual y Relajante",
-        "image": "/images/hero section/4.jpg",
-        "images": ["/images/masseurs/Valentina/2.jpg", "/images/masseurs/Valentina/3.jpg", "/images/masseurs/Valentina/4.jpg", "/images/masseurs/Valentina/5.jpg"],
-        "description": "Valentina te invita a un profundo viaje de conexión. Su intuición y calidez te guiarán hacia una relajación absoluta y un despertar sensual inolvidable.",
-        "skills": ["Masaje Relajante", "Conexión Energética", "Técnicas Sensuales", "Atención Personalizada"],
+        "id": 4,
+        "name": "Anny",
+        "age": 23,
+        "specialty": "Masaje Tantrico Body to Body Exclusivo",
+        "image": "/images/masseurs/Anny/1.jpg",
+        "images": ["/images/masseurs/Anny/1.jpg", "/images/masseurs/Anny/3.jpg", "/images/masseurs/Anny/4.jpg", "/images/masseurs/Anny/5.jpg", "/images/masseurs/Anny/6.jpg"],
+        "description": "Anny es la fusión perfecta entre juventud y maestría. Su dominio instintivo de las artes tantricas y su energía luminosa crean un ambiente de complicidad única donde cada cliente descubre nuevas dimensiones de placer y bienestar.",
+        "skills": ["Body to Body Exclusivo", "Masaje Tantrico Juvenil", "Energía Vital", "Conexión Intuitiva", "Técnicas Modernas", "Ritual Personalizado"],
         "rating": 5,
-        "reviews": 45
+        "reviews": 47
       }
     ]
   },

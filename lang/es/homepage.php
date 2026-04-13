@@ -16,6 +16,23 @@ return array (
     'specialty_text' => 'Especialista en Masaje Tantrico Sensual Deluxe',
     'available_text' => 'Disponible Ahora',
     'reviews_text' => 'opiniones',
+    'featured_cards' =>
+    array (
+      0 =>
+      array (
+        'name' => 'Tatiana',
+        'specialty' => 'Masaje Tantrico Sensual Premium',
+        'image' => '/images/masseurs/Sharon/1.jpg',
+        'reviews' => 64,
+      ),
+      1 =>
+      array (
+        'name' => 'Anny',
+        'specialty' => 'Masaje Tantrico Body to Body Exclusivo',
+        'image' => '/images/masseurs/Anny/1.jpg',
+        'reviews' => 47,
+      ),
+    ),
   ),
   'about_us_section' => 
   array (

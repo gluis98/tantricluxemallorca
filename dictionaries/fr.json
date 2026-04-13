@@ -232,28 +232,28 @@
     "reserve_button_text": "RÉSERVER AVEC",
     "masseuses": [
       {
-        "id": 1,
-        "name": "Erika",
-        "age": 24,
-        "specialty": "Massage Tantrique Deluxe",
-        "image": "/images/masseurs/Erika/IMG_0843.jpeg",
-        "images": ["/images/masseurs/Erika/IMG_0843.jpeg", "/images/masseurs/Erika/IMG_0844.jpeg", "/images/masseurs/Erika/IMG_0865.jpeg", "/images/masseurs/Erika/IMG_0866.jpeg"],
-        "description": "Erika apporte une technique avancée pour éveiller vos sens avec harmonie.",
-        "skills": ["Tantrique Avancé", "Sensuel", "Relaxant", "Connexion"],
+        "id": 2,
+        "name": "Tatiana",
+        "age": 26,
+        "specialty": "Massage tantrique sensuel premium",
+        "image": "/images/masseurs/Sharon/1.jpg",
+        "images": ["/images/masseurs/Sharon/1.jpg", "/images/masseurs/Sharon/2.jpg", "/images/masseurs/Sharon/3.jpg"],
+        "description": "Tatiana rayonne sensualité et élégance à chaque séance. Avec une énergie unique et des techniques tantriques raffinées, elle crée un espace de connexion profonde où corps et esprit retrouvent leur équilibre.",
+        "skills": ["Massage tantrique sensuel", "Techniques respiratoires", "Énergie kundalini", "Body to body deluxe", "Relaxation consciente", "Rituels bien-être"],
         "rating": 5,
-        "reviews": 89
+        "reviews": 64
       },
       {
-        "id": 2,
-        "name": "Valentina",
-        "age": 25,
-        "specialty": "Massage Sensuel et Relaxant",
-        "image": "/images/hero section/4.jpg",
-        "images": ["/images/masseurs/Valentina/2.jpg", "/images/masseurs/Valentina/3.jpg"],
-        "description": "Valentina transmet une énergie apaisante pour une libération émotionnelle.",
-        "skills": ["Relaxant", "Doux", "Équilibrant", "Calme"],
+        "id": 4,
+        "name": "Anny",
+        "age": 23,
+        "specialty": "Massage tantrique body-to-body exclusif",
+        "image": "/images/masseurs/Anny/1.jpg",
+        "images": ["/images/masseurs/Anny/1.jpg", "/images/masseurs/Anny/3.jpg", "/images/masseurs/Anny/4.jpg", "/images/masseurs/Anny/5.jpg", "/images/masseurs/Anny/6.jpg"],
+        "description": "Anny allie jeunesse et maîtrise. Son instinct pour les arts tantriques et son énergie lumineuse créent une complicité unique où chaque client découvre de nouvelles dimensions de plaisir et de bien-être.",
+        "skills": ["Body to body exclusif", "Massage tantrique jeunesse", "Énergie vitale", "Connexion intuitive", "Techniques modernes", "Rituel personnalisé"],
         "rating": 5,
-        "reviews": 45
+        "reviews": 47
       }
     ]
   },

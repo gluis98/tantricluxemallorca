@@ -66,6 +66,6 @@ class StoreBookingRequest extends FormRequest
      */
     private function allowedMasseuses(): array
     {
-        return ['sin_preferencia', 'Sharon', 'April', 'Anny', 'Valentina'];
+        return ['sin_preferencia', 'Tatiana', 'Anny'];
     }
 }

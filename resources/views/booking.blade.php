@@ -254,10 +254,8 @@
                                     class="w-full px-3 py-2.5 bg-gray-950/60 border border-amber-900/40 rounded-xl text-amber-100 text-sm focus:border-amber-500/50 focus:outline-none">
                                 <option value="">{{ $bookingPage['masseuse_placeholder'] ?? '' }}</option>
                                 <option value="sin_preferencia" @selected(old('masseuse') === 'sin_preferencia')>{{ $bookingPage['masseuse_any'] ?? '' }}</option>
-                                <option value="Sharon" @selected(old('masseuse') === 'Sharon')>Sharon</option>
-                                <option value="April" @selected(old('masseuse') === 'April')>April</option>
+                                <option value="Tatiana" @selected(old('masseuse') === 'Tatiana')>Tatiana</option>
                                 <option value="Anny" @selected(old('masseuse') === 'Anny')>Anny</option>
-                                <option value="Valentina" @selected(old('masseuse') === 'Valentina')>Valentina</option>
                             </select>
                         </div>
                         <div>
