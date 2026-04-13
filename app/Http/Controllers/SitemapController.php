@@ -47,21 +47,16 @@ class SitemapController extends Controller
             ],
         ];
 
-        // Servicios dinámicos (slugs desde los archivos de traducción)
-        $serviceSlugsByLocale = [];
+        // Servicios dinámicos por idioma (manteniendo correspondencia por índice)
+        $servicesByLocale = [];
         foreach ($locales as $locale) {
             try {
                 App::setLocale($locale);
                 $servicesData = trans('servicesPage', [], $locale);
-                $slugKey = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'][$locale];
-                foreach ($servicesData['services'] ?? [] as $service) {
-                    $slug = $service['slug'] ?? null;
-                    if ($slug) {
-                        $serviceSlugsByLocale[$slug][$locale] = $slugKey . '/' . $slug;
-                    }
-                }
+                $servicesByLocale[$locale] = array_values($servicesData['services'] ?? []);
             } catch (\Exception $e) {
                 // continuar sin servicios si falla
+                $servicesByLocale[$locale] = [];
             }
         }
 
@@ -99,8 +94,19 @@ class SitemapController extends Controller
         // --- Rutas dinámicas de servicios ---
         $servicePathByLocale = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'];
 
-        foreach ($serviceSlugsByLocale as $slug => $paths) {
+        $maxServices = 0;
+        foreach ($locales as $locale) {
+            $maxServices = max($maxServices, count($servicesByLocale[$locale] ?? []));
+        }
+
+        for ($i = 0; $i < $maxServices; $i++) {
             foreach ($locales as $locale) {
+                $service = $servicesByLocale[$locale][$i] ?? null;
+                $slug = $service['slug'] ?? null;
+                if (!$slug) {
+                    continue;
+                }
+
                 $url = $baseUrl . '/' . $locale . '/' . $servicePathByLocale[$locale] . '/' . $slug;
 
                 $xml .= '  <url>' . "\n";
@@ -110,10 +116,21 @@ class SitemapController extends Controller
                 $xml .= '    <priority>0.8</priority>' . "\n";
 
                 foreach ($locales as $altLocale) {
-                    $altUrl = $baseUrl . '/' . $altLocale . '/' . $servicePathByLocale[$altLocale] . '/' . $slug;
+                    $altService = $servicesByLocale[$altLocale][$i] ?? null;
+                    $altSlug = $altService['slug'] ?? null;
+                    if (!$altSlug) {
+                        continue;
+                    }
+
+                    $altUrl = $baseUrl . '/' . $altLocale . '/' . $servicePathByLocale[$altLocale] . '/' . $altSlug;
                     $xml .= '    <xhtml:link rel="alternate" hreflang="' . $altLocale . '" href="' . htmlspecialchars($altUrl) . '" />' . "\n";
                 }
-                $xml .= '    <xhtml:link rel="alternate" hreflang="x-default" href="' . htmlspecialchars($baseUrl . '/es/servicios/' . $slug) . '" />' . "\n";
+
+                $esService = $servicesByLocale['es'][$i] ?? null;
+                $esSlug = $esService['slug'] ?? null;
+                if ($esSlug) {
+                    $xml .= '    <xhtml:link rel="alternate" hreflang="x-default" href="' . htmlspecialchars($baseUrl . '/es/servicios/' . $esSlug) . '" />' . "\n";
+                }
 
                 $xml .= '  </url>' . "\n";
             }

@@ -8,11 +8,23 @@ use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\MasseusesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ImageController;
+use App\Http\Middleware\CanonicalLocalePath;
 
 // Redireccionar raíz a español
 Route::get('/', function () {
     return redirect('/es');
 });
+
+// Consolidar URLs sin prefijo de idioma a sus canónicas en español
+Route::redirect('/about', '/es/acerca', 301);
+Route::redirect('/contact', '/es/contacto', 301);
+Route::redirect('/services', '/es/servicios', 301);
+Route::redirect('/masseuses', '/es/masajistas', 301);
+Route::redirect('/uber-uns', '/es/acerca', 301);
+Route::redirect('/servicios', '/es/servicios', 301);
+Route::redirect('/masajistas', '/es/masajistas', 301);
+Route::redirect('/acerca', '/es/acerca', 301);
+Route::redirect('/contacto', '/es/contacto', 301);
 
 // Optimizador de imágenes (resize + WebP)
 Route::get('/img', [ImageController::class, 'serve'])->name('img.serve');
@@ -21,7 +33,7 @@ Route::get('/img', [ImageController::class, 'serve'])->name('img.serve');
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
 
 // Rutas con prefijo de idioma
-Route::group(['prefix' => '{locale}', 'middleware' => 'web', 'where' => ['locale' => 'es|en|de|it|fr']], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePath::class], 'where' => ['locale' => 'es|en|de|it|fr']], function () {
     // Home
     Route::get('/', [HomeController::class, 'index'])->name('home');
     
