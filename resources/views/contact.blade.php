@@ -24,16 +24,16 @@
         "telephone": "+34 602 560 426",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",
+            "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
             "addressLocality": "Palma",
-            "postalCode": "07012",
+            "postalCode": "07003",
             "addressRegion": "Illes Balears",
             "addressCountry": "ES"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "39.5696",
-            "longitude": "2.6502"
+            "latitude": "39.5806",
+            "longitude": "2.6483"
         },
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",

@@ -2,7 +2,7 @@
 
 return array (
   'meta_title' => 'Contacto | Tantric Luxe Mallorca - Reserva Masajes Eróticos y Tantricos Palma',
-  'meta_description' => 'Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Ubicados en Plaça de Santa Magdalena, 3A. Horario: Lunes a Domingo 09:00-23:00.',
+  'meta_description' => 'Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma. Horario: Lunes a Domingo 09:00-23:00.',
   'meta_keywords' => 'contacto masajes palma, reservar masaje erotico palma, contacto masaje tantrico palma, reservar masajes mallorca, tantric luxe contacto, whatsapp masaje tantrico, whatsapp masajista palma, ubicacion spa palma, reserva masaje en pareja mallorca, contacto spa mallorca',
   'pre_title' => 'CONTACTO',
   'title' => 'RESERVA TU',
@@ -15,8 +15,8 @@ return array (
     array (
       'icon' => '📍',
       'title' => 'UBICACIÓN',
-      'line1' => 'Plaça de Santa Magdalena, 3A, Centre',
-      'line2' => '07012 Palma, Illes Balears',
+      'line1' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+      'line2' => '07003 Palma, Illes Balears',
       'line3' => 'Zona exclusiva y discreta del centro histórico',
     ),
     1 => 
@@ -86,6 +86,14 @@ return array (
   'open_maps_text' => 'Abrir en Google Maps',
   'whatsapp_button_tooltip' => '¡Chatea con nosotros!',
   'whatsapp_default_message' => 'Hola, me gustaría información sobre los servicios TL Mallorca.',
+  'mobile_bar_nav_label' => 'Contacto rápido',
+  'mobile_bar_call' => 'Llamar',
+  'mobile_bar_whatsapp' => 'WhatsApp',
+  'mobile_bar_web_chat' => 'Chat web',
+  'mobile_bar_web_chat_title' => 'WhatsApp Web',
+  'mobile_bar_web_chat_hint' => 'Si no ves el chat incrustado (el navegador puede bloquearlo), usa el enlace:',
+  'mobile_bar_web_chat_open_external' => 'Abrir WhatsApp Web',
+  'mobile_bar_close' => 'Cerrar',
   'timeSlots' => 
   array (
     0 => '11:00',

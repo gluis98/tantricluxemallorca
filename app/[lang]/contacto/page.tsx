@@ -93,17 +93,17 @@ export default async function ContactPage({
       email: 'tantricluxemallorca@gmail.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Plaça de Santa Magdalena, 3A, Centre',
+        streetAddress: 'Carrer del Pare Bartomeu Pou, 44, Nord',
         addressLocality: 'Palma',
         addressRegion: 'Illes Balears',
-        postalCode: '07012',
+        postalCode: '07003',
         addressCountry: 'ES',
       },
       openingHours: 'Mo-Su 09:00-23:00',
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: '39.5736032',
-        longitude: '2.6386885',
+        latitude: '39.5806',
+        longitude: '2.6483',
       },
     },
   };

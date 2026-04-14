@@ -36,16 +36,16 @@
     "email": "tantricluxemallorca@gmail.com",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",
+        "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
         "addressLocality": "Palma",
-        "postalCode": "07012",
+        "postalCode": "07003",
         "addressRegion": "Illes Balears",
         "addressCountry": "ES"
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "39.5736032",
-        "longitude": "2.6386885"
+        "latitude": "39.5806",
+        "longitude": "2.6483"
     },
     "openingHours": "Mo-Su 09:00-23:00",
     "priceRange": "€99-€499",
@@ -759,7 +759,7 @@
                         <div class="w-12 h-12 self-center rounded-full bg-gradient-to-br from-amber-600/20 to-amber-900/20 flex items-center justify-center mr-4 flex-shrink-0 group-hover:from-amber-600/30 group-hover:to-amber-900/30 transition-colors">
                             <span class="text-amber-400">📍</span>
                         </div>
-                        <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears" 
+                        <a href="https://www.google.com/maps/place/Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears" 
                            target="_blank" 
                            rel="noopener noreferrer" 
                            class="flex-1 min-w-0 hover:text-amber-300 transition-colors">
@@ -767,8 +767,8 @@
                                 {{ $homepage['contact_section']['location_title'] ?? 'Centro Masaje Tantrico' }}
                             </h4>
                             <p class="text-gray-300 break-words leading-relaxed text-sm sm:text-base group-hover:underline">
-                                <span class="block sm:inline">Plaça de Santa Magdalena, 3A, Centre,</span>
-                                <span class="block sm:inline"> 07012 Palma, Illes Balears</span>
+                                <span class="block sm:inline">Carrer del Pare Bartomeu Pou, 44, Nord,</span>
+                                <span class="block sm:inline"> 07003 Palma, Illes Balears</span>
                             </p>
                             <p class="text-sm text-gray-400 group-hover:text-gray-300">
                                 {{ $homepage['contact_section']['location_note'] ?? 'Palma de Mallorca' }}
@@ -867,12 +867,12 @@
             </div>
 
             <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-amber-900/30 shadow-2xl mb-8">
-                <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                <a href="https://www.google.com/maps/place/Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="relative block w-full h-96 md:h-[500px] rounded-2xl overflow-hidden bg-black group">
                     <iframe
-                        src="https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed"
+                        src="https://www.google.com/maps?q=Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears&output=embed"
                         width="100%"
                         height="100%"
                         style="border:0; filter: invert(92%) hue-rotate(185deg) saturate(140%) brightness(72%) contrast(102%);"
@@ -906,7 +906,7 @@
             </div>
 
             <div class="text-center mt-8">
-                <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                <a href="https://www.google.com/maps/place/Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="inline-block tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-8 py-3 text-lg font-medium tracking-wider transition-all duration-300 hover:scale-105">

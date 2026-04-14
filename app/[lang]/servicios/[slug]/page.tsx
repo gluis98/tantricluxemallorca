@@ -288,10 +288,10 @@ export default async function ServiceDetailPage({
         name: 'Tantric Luxe Mallorca',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Plaça de Santa Magdalena, 3A, Centre',
+          streetAddress: 'Carrer del Pare Bartomeu Pou, 44, Nord',
           addressLocality: 'Palma',
           addressRegion: 'Illes Balears',
-          postalCode: '07012',
+          postalCode: '07003',
           addressCountry: 'ES',
         },
         telephone: '+34-602-560-426',

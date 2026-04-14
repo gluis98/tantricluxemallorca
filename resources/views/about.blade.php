@@ -26,9 +26,9 @@
         "foundingDate": "2019",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Plaça de Santa Magdalena, 3A, Centre",
+            "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
             "addressLocality": "Palma",
-            "postalCode": "07012",
+            "postalCode": "07003",
             "addressRegion": "Illes Balears",
             "addressCountry": "ES"
         },

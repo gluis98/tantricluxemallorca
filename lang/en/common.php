@@ -3,7 +3,7 @@
 return array (
   'header' => 
   array (
-    'location' => 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',
+    'location' => 'Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears',
     'openMenu' => 'Open menu',
     'closeMenu' => 'Close menu',
     'nav' => 

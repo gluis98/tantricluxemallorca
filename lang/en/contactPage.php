@@ -2,7 +2,7 @@
 
 return array (
   'meta_title' => 'Contact | Tantric Luxe Mallorca - Book Erotic & Tantric Massage Palma',
-  'meta_description' => 'Contact Tantric Luxe Mallorca. Book your erotic, tantric or couples massage in Palma. WhatsApp: +34 602 560 426. Located at Plaça de Santa Magdalena, 3A. Hours: Monday to Sunday 09:00-23:00.',
+  'meta_description' => 'Contact Tantric Luxe Mallorca. Book your erotic, tantric or couples massage in Palma. WhatsApp: +34 602 560 426. Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma. Hours: Monday to Sunday 09:00-23:00.',
   'meta_keywords' => 'contact massage palma, book erotic massage palma, contact tantric massage palma, book massage mallorca, tantric luxe contact, whatsapp tantric massage, whatsapp masseuse palma, spa location palma, book couples massage mallorca, contact spa mallorca, massage near me contact',
   'pre_title' => 'CONTACT',
   'title' => 'BOOK YOUR',
@@ -15,8 +15,8 @@ return array (
     array (
       'icon' => '📍',
       'title' => 'LOCATION',
-      'line1' => 'Plaça de Santa Magdalena, 3A, Centre',
-      'line2' => '07012 Palma, Illes Balears',
+      'line1' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+      'line2' => '07003 Palma, Illes Balears',
       'line3' => 'Exclusive and discreet area in the historic center',
     ),
     1 => 
@@ -86,6 +86,14 @@ return array (
   'open_maps_text' => 'Open in Google Maps',
   'whatsapp_button_tooltip' => 'Chat with us!',
   'whatsapp_default_message' => 'Hello, I would like information about TL Mallorca services.',
+  'mobile_bar_nav_label' => 'Quick contact',
+  'mobile_bar_call' => 'Call',
+  'mobile_bar_whatsapp' => 'WhatsApp',
+  'mobile_bar_web_chat' => 'Web chat',
+  'mobile_bar_web_chat_title' => 'WhatsApp Web',
+  'mobile_bar_web_chat_hint' => 'If the embedded chat does not load (your browser may block it), use the link:',
+  'mobile_bar_web_chat_open_external' => 'Open WhatsApp Web',
+  'mobile_bar_close' => 'Close',
   'timeSlots' => 
   array (
     0 => '11:00',

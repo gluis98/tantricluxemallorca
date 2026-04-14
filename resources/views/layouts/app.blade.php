@@ -186,6 +186,44 @@
     @stack('styles')
 </head>
 <body class="antialiased">
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Reglas robustas para alternar CTA móvil/desktop sin depender de utilidades responsive */
+        #whatsapp-button { display: block; }
+        #mobile-contact-bar { display: none; }
+        .mobile-contact-safe-padding { padding-bottom: 0; }
+
+        @media (max-width: 767.98px) {
+            #whatsapp-button { display: none !important; }
+            #mobile-contact-bar {
+                display: block !important;
+                position: fixed !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                z-index: 2147483647 !important;
+                isolation: isolate;
+                transform: translateZ(0);
+                background: rgba(3, 7, 18, 0.98) !important;
+            }
+
+            #mobile-contact-bar * {
+                position: relative;
+                z-index: 2147483647;
+            }
+            .mobile-contact-safe-padding {
+                padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
     <div class="min-h-screen relative">
         <!-- Background design -->
         <div class="absolute inset-0 bg-gray-950"></div>
@@ -214,14 +252,16 @@
         
         @include('components.sections.header', ['locale' => $locale ?? 'es'])
         
-        <main class="relative z-10">
+        <main class="relative z-10 mobile-contact-safe-padding">
             @yield('content')
         </main>
         
         @include('components.sections.footer', ['locale' => $locale ?? 'es'])
         
-        @include('components.floating-whatsapp-button', ['locale' => $locale ?? 'es'])
     </div>
+
+    @include('components.floating-whatsapp-button', ['locale' => $locale ?? 'es'])
+    @include('components.mobile-contact-bar', ['locale' => $locale ?? 'es'])
     
     @stack('scripts')
 </body>

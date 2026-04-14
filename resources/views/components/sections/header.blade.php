@@ -12,12 +12,12 @@
     <div class="flex justify-between items-center max-w-7xl mx-auto">
         <!-- Location -->
         <div class="flex-1 flex justify-start">
-            <a href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears" 
+            <a href="https://www.google.com/maps/place/Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears" 
                target="_blank" 
                rel="noopener noreferrer"
                class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl tracking-wider text-gray-300 tenali-ramakrishna break-words leading-tight hover:text-amber-400 transition-colors cursor-pointer group">
                 <span class="hidden sm:inline group-hover:underline">{{ $header['location'] ?? '' }}</span>
-                <span class="sm:hidden group-hover:underline">Plaça de Santa Magdalena, 3A<br />Centre, 07012 Palma</span>
+                <span class="sm:hidden group-hover:underline">Carrer del Pare Bartomeu Pou, 44<br />Nord, 07003 Palma</span>
             </a>
         </div>
 

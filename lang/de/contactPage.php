@@ -2,7 +2,7 @@
 
 return array (
   'meta_title' => 'Kontakt | Tantric Luxe Mallorca - Erotische & Tantra Massage Palma buchen',
-  'meta_description' => 'Kontaktieren Sie Tantric Luxe Mallorca. Buchen Sie Ihre erotische, Tantra oder Paarmassage in Palma. WhatsApp: +34 602 560 426. Gelegen in Plaça de Santa Magdalena, 3A. Öffnungszeiten: Montag bis Sonntag 09:00-23:00.',
+  'meta_description' => 'Kontaktieren Sie Tantric Luxe Mallorca. Buchen Sie Ihre erotische, Tantra oder Paarmassage in Palma. WhatsApp: +34 602 560 426. Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma. Öffnungszeiten: Montag bis Sonntag 09:00-23:00.',
   'meta_keywords' => 'kontakt massage palma, erotische massage palma buchen, kontakt tantra massage palma, massage mallorca buchen, tantric luxe kontakt, whatsapp tantra massage, whatsapp masseurin palma, spa standort palma, paarmassage mallorca buchen, kontakt spa mallorca',
   'pre_title' => 'KONTAKT',
   'title' => 'BUCHEN SIE IHR',
@@ -15,8 +15,8 @@ return array (
     array (
       'icon' => '📍',
       'title' => 'STANDORT',
-      'line1' => 'Plaça de Santa Magdalena, 3A, Centre',
-      'line2' => '07012 Palma, Illes Balears',
+      'line1' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+      'line2' => '07003 Palma, Illes Balears',
       'line3' => 'Exklusiver und diskreter Bereich im historischen Zentrum',
     ),
     1 => 
@@ -86,6 +86,14 @@ return array (
   'open_maps_text' => 'In Google Maps öffnen',
   'whatsapp_button_tooltip' => 'Chatten Sie mit uns!',
   'whatsapp_default_message' => 'Hallo, ich hätte gerne Informationen über die TL Mallorca Dienstleistungen.',
+  'mobile_bar_nav_label' => 'Schnellkontakt',
+  'mobile_bar_call' => 'Anrufen',
+  'mobile_bar_whatsapp' => 'WhatsApp',
+  'mobile_bar_web_chat' => 'Web-Chat',
+  'mobile_bar_web_chat_title' => 'WhatsApp Web',
+  'mobile_bar_web_chat_hint' => 'Wenn der eingebettete Chat nicht lädt (Browser kann das blockieren), nutzen Sie den Link:',
+  'mobile_bar_web_chat_open_external' => 'WhatsApp Web öffnen',
+  'mobile_bar_close' => 'Schließen',
   'timeSlots' => 
   array (
     0 => '11:00',

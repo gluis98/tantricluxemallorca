@@ -49,9 +49,9 @@ type Dictionary = {
 };
 
 const MAPS_PLACE_URL =
-    'https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears';
+    'https://www.google.com/maps/place/Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears';
 const MAPS_EMBED_SRC =
-    'https://www.google.com/maps?q=Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears&output=embed';
+    'https://www.google.com/maps?q=Carrer+del+Pare+Bartomeu+Pou,+44,+Nord,+07003+Palma,+Illes+Balears&output=embed';
 
 export default function ContactSection({
     dictionary,
@@ -84,15 +84,15 @@ export default function ContactSection({
                                 <span className="text-amber-400">📍</span>
                             </div>
                             <a 
-                                href="https://www.google.com/maps/place/Plaça+de+Santa+Magdalena,+3A,+Centre,+07012+Palma,+Illes+Balears"
+                                href={MAPS_PLACE_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex-1 min-w-0 hover:text-amber-300 transition-colors"
                             >
                                 <h4 className="text-amber-400 text-xl mb-1 tenali-ramakrishna group-hover:text-amber-300">{dictionary.location_title}</h4>
                                 <p className="text-gray-300 break-words leading-relaxed text-sm sm:text-base group-hover:underline">
-                                    <span className="block sm:inline">Plaça de Santa Magdalena, 3A, Centre,</span>
-                                    <span className="block sm:inline"> 07012 Palma, Illes Balears</span>
+                                    <span className="block sm:inline">Carrer del Pare Bartomeu Pou, 44, Nord,</span>
+                                    <span className="block sm:inline"> 07003 Palma, Illes Balears</span>
                                 </p>
                                 <p className="text-sm text-gray-400 group-hover:text-gray-300">{dictionary.location_note}</p>
                             </a>

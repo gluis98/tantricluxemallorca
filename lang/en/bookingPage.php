@@ -19,7 +19,7 @@ return [
     'provider_name' => 'Tantric Luxe Mallorca',
     'duration_label' => 'Duration',
     'location_label' => 'Location',
-    'location_address' => 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',
+    'location_address' => 'Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears',
     'summary_datetime' => 'Selected date and time',
     'summary_pending' => 'Select day and time',
     'contact_section' => 'Your details',

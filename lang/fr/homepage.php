@@ -51,7 +51,7 @@ return array (
     'form_title' => 'RÉSERVER MASSAGE TANTRIQUE PALMA',
     'info_title' => 'COORDONNÉES',
     'location_title' => 'Centre Massage Tantrique',
-    'location_address' => 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',
+    'location_address' => 'Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears',
     'location_note' => 'Palma de Majorque',
     'whatsapp_title' => 'WhatsApp',
     'whatsapp_number' => '+34 602 560 426',

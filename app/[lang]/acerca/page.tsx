@@ -94,10 +94,10 @@ export default async function AboutPage({
       foundingDate: '2019',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Plaça de Santa Magdalena, 3A, Centre',
+        streetAddress: 'Carrer del Pare Bartomeu Pou, 44, Nord',
         addressLocality: 'Palma',
         addressRegion: 'Illes Balears',
-        postalCode: '07012',
+        postalCode: '07003',
         addressCountry: 'ES',
       },
       aggregateRating: {

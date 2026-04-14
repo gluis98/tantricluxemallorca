@@ -54,7 +54,7 @@ return array (
     'form_title' => 'BOOK TANTRIC MASSAGE PALMA',
     'info_title' => 'CONTACT INFORMATION',
     'location_title' => 'Tantric Massage Center',
-    'location_address' => 'Plaça de Santa Magdalena, 3A, Centre, 07012 Palma, Illes Balears',
+    'location_address' => 'Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears',
     'location_note' => 'Palma de Mallorca',
     'whatsapp_title' => 'WhatsApp',
     'whatsapp_number' => '+34 602 560 426',
