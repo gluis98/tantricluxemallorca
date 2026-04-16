@@ -369,7 +369,7 @@
     }
 
     function buildWeekdayHeader() {
-        calWeekdayRow.innerHTML = '';
+        var frag = document.createDocumentFragment();
         var base = new Date(2024, 0, 1);
         for (var i = 0; i < 7; i++) {
             var d = new Date(base);
@@ -377,24 +377,24 @@
             var label = new Intl.DateTimeFormat(intlLocale, { weekday: 'short' }).format(d);
             var cell = document.createElement('div');
             cell.textContent = label;
-            calWeekdayRow.appendChild(cell);
+            frag.appendChild(cell);
         }
+        calWeekdayRow.replaceChildren(frag);
     }
 
     function renderCalendar() {
         var y = viewDate.getFullYear();
         var m = viewDate.getMonth();
         calMonthLabel.textContent = formatMonthYear(viewDate);
-        calGrid.innerHTML = '';
 
         var first = new Date(y, m, 1);
         var lastDay = new Date(y, m + 1, 0).getDate();
         var lead = mondayWeekdayIndex(first.getDay());
         var t0 = todayStart();
+        var frag = document.createDocumentFragment();
 
         for (var i = 0; i < lead; i++) {
-            var empty = document.createElement('div');
-            calGrid.appendChild(empty);
+            frag.appendChild(document.createElement('div'));
         }
 
         for (var day = 1; day <= lastDay; day++) {
@@ -430,8 +430,9 @@
                     });
                 })(y, m, day);
             }
-            calGrid.appendChild(cell);
+            frag.appendChild(cell);
         }
+        calGrid.replaceChildren(frag);
     }
 
     function generateSlots() {
@@ -459,9 +460,10 @@
     }
 
     function renderTimeSlots() {
-        timeSlotsEl.innerHTML = '';
         if (selectedY == null) {
+            timeSlotsEl.replaceChildren();
             availabilityDateLabel.textContent = pickDateMsg;
+            syncBookedAtInput();
             return;
         }
         availabilityDateLabel.textContent = formatLongDate(selectedY, selectedM, selectedD);
@@ -473,6 +475,7 @@
             selectedTime = null;
         }
 
+        var frag = document.createDocumentFragment();
         SLOTS.forEach(function (t) {
             var btn = document.createElement('button');
             btn.type = 'button';
@@ -493,8 +496,9 @@
                     syncBookedAtInput();
                 });
             }
-            timeSlotsEl.appendChild(btn);
+            frag.appendChild(btn);
         });
+        timeSlotsEl.replaceChildren(frag);
 
         syncBookedAtInput();
     }
@@ -529,16 +533,20 @@
     }
 
     parseOldBookedAt();
-    buildWeekdayHeader();
-    renderCalendar();
-    renderTimeSlots();
-    syncBookedAtInput();
-    updateServiceDetails();
 
-    if (selectedY != null) {
+    // Un solo frame de pintura para el primer render del calendario (menos reflows encadenados).
+    requestAnimationFrame(function () {
+        buildWeekdayHeader();
+        renderCalendar();
         renderTimeSlots();
         syncBookedAtInput();
-    }
+        updateServiceDetails();
+
+        if (selectedY != null) {
+            renderTimeSlots();
+            syncBookedAtInput();
+        }
+    });
 
     document.getElementById('booking-form').addEventListener('submit', function (e) {
         if (!bookedAtInput.value) {

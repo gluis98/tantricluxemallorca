@@ -6,14 +6,14 @@
 
 <nav
     id="mobile-contact-bar"
-    class="fixed bottom-0 left-0 right-0 w-screen max-w-none z-[2147483647] md:hidden bg-gray-950 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 px-0 shadow-[0_-12px_40px_rgba(0,0,0,0.75)]"
+    class="mobile-contact-bar-root fixed bottom-0 left-0 right-0 w-screen max-w-none z-[2147483647] md:hidden bg-gray-950 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 px-0 shadow-[0_-12px_40px_rgba(0,0,0,0.75)]"
     aria-label="{{ trans('contactPage.mobile_bar_nav_label', [], $locale) }}"
 >
     <div class="absolute top-0 left-0 w-full h-px" style="background: linear-gradient(90deg, rgb(255, 230, 166), #ffffff, rgb(224, 194, 117));"></div>
-    <div class="grid grid-cols-2 gap-1 w-full">
+    <div class="mobile-contact-bar__grid grid grid-cols-2 gap-1 w-full">
         <a
             href="tel:+34602560426"
-            class="flex flex-col items-center justify-center gap-1 py-2 rounded-lg text-amber-100/90 hover:bg-white/5 active:bg-white/10 transition-colors min-h-[3.25rem]"
+            class="mobile-contact-bar__link flex flex-col items-center justify-center gap-1 py-2 rounded-lg text-amber-100/90 hover:bg-white/5 active:bg-white/10 transition-colors min-h-[3.25rem]"
             aria-label="{{ trans('contactPage.mobile_bar_call', [], $locale) }}"
         >
             <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -26,7 +26,7 @@
             href="{{ $waMeUrl }}"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex flex-col items-center justify-center gap-1 py-2 rounded-lg text-green-400 hover:bg-white/5 active:bg-white/10 transition-colors min-h-[3.25rem]"
+            class="mobile-contact-bar__link flex flex-col items-center justify-center gap-1 py-2 rounded-lg text-green-400 hover:bg-white/5 active:bg-white/10 transition-colors min-h-[3.25rem]"
             aria-label="{{ trans('contactPage.mobile_bar_whatsapp', [], $locale) }}"
         >
             <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

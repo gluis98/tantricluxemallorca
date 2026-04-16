@@ -227,8 +227,8 @@
 
                         <!-- Dots de navegación -->
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
-                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
-                            <button class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
+                            <button type="button" class="hero-dot is-active transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
                         </div>
                     </div>
 
@@ -917,7 +917,7 @@
     </section>
 </main>
 
-@push('scripts')
+@push('styles')
 <style>
     /* ── Hero Slideshow ── */
 
@@ -927,21 +927,19 @@
         contain: layout style paint;
     }
 
-    .hero-slide {
-        opacity: 0;
-        transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    .hero-slide { opacity: 0; }
+    #hero-slider.hero-slider-ready .hero-slide { transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .hero-slide.is-active {
         opacity: 1;
         /* will-change solo mientras está activo (libera capas compositing en móvil) */
         will-change: opacity;
-        /* Ken Burns activo solo en desktop (GPU limitada en móvil) */
-        animation: hero-ken-burns 9s ease-in-out forwards;
     }
+    /* Evita retrasar el LCP: no animar la primera pintura, solo cuando el slider ya está listo. */
+    #hero-slider.hero-slider-ready .hero-slide.is-active { animation: hero-ken-burns 9s ease-in-out forwards; }
     .hero-slide.is-leaving {
         opacity: 0;
-        transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    #hero-slider.hero-slider-ready .hero-slide.is-leaving { transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1); }
     @keyframes hero-ken-burns {
         0%   { transform: scale(1.06) translate(0px,    0px); }
         100% { transform: scale(1.00) translate(-6px, -4px); }
@@ -968,6 +966,9 @@
     .hero-dot.is-active { width: 20px; background-color: rgba(251,191,36,1);   }
     .hero-dot:not(.is-active) { width:  6px; background-color: rgba(251,191,36,0.30); }
 </style>
+@endpush
+
+@push('scripts')
 <script>
 (function () {
     'use strict';
@@ -1015,10 +1016,9 @@
         startTimer();
     }
 
-    // Slide 1 ya lleva is-active en el HTML (visible sin JS → LCP correcto).
-    // Solo inicializamos el dot y arrancamos el timer.
+    // Slide 1 y el primer dot llevan is-active en el HTML (sin mutar el DOM en el primer frame).
     requestAnimationFrame(function () {
-        dots[0].classList.add('is-active');
+        slider.classList.add('hero-slider-ready');
         startTimer();
     });
 

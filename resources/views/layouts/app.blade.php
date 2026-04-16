@@ -213,6 +213,32 @@
                 isolation: isolate;
                 transform: translateZ(0);
                 background: rgba(3, 7, 18, 0.98) !important;
+                /* Evita CLS: layout estable sin depender del momento en que cargue el CSS de Tailwind */
+                box-sizing: border-box;
+                padding-top: 0.5rem;
+                padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+                /* Misma altura reservada en main (.mobile-contact-safe-padding); fuente sistema = sin salto al cargar Urbanist */
+                font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                min-height: 4.25rem;
+            }
+
+            #mobile-contact-bar .mobile-contact-bar__grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.25rem;
+                width: 100%;
+            }
+
+            #mobile-contact-bar .mobile-contact-bar__link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0.25rem;
+                box-sizing: border-box;
+                min-height: 3.25rem;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
             }
 
             #mobile-contact-bar * {
