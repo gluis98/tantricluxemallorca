@@ -150,6 +150,14 @@
                 animation: glow-pulse 3s infinite ease-in-out;
                 pointer-events: none; position: absolute; inset: 0; z-index: 0; border-radius: 50%;
             }
+            @media (max-width: 1024px), (prefers-reduced-motion: reduce) {
+                .glow-fire, .glow-mandala {
+                    animation: none !important;
+                    transition: none !important;
+                    filter: none !important;
+                    opacity: .25;
+                }
+            }
         </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

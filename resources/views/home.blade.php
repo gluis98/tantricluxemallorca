@@ -241,7 +241,7 @@
         </div>
     </section>
 
-    <section class="px-4 lg:px-8 py-10">
+    <section class="defer-render px-4 lg:px-8 py-10">
         <div class="max-w-7xl mx-auto">
             <div class="bg-gradient-to-br from-amber-900/20 to-black/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-amber-900/30 text-center">
                 <h2 class="text-2xl md:text-3xl font-light tracking-wider gradiente-dorado cormorant-garamond mb-3">
@@ -259,7 +259,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-16 px-4 lg:px-8">
+    <section class="defer-render py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
@@ -321,7 +321,7 @@
     </section>
 
     <!-- Sección Masajistas: cards de inicio (Tatiana y Anny) -->
-    <section class="py-16 px-4 lg:px-8">
+    <section class="defer-render py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
 
             <!-- Encabezado -->
@@ -418,7 +418,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="servicios" class="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
+    <section id="servicios" class="defer-render py-12 sm:py-24 px-4 max-w-7xl mx-auto">
         <div class="text-center mb-12">
             <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
                 {{ $homepage['services_section']['pre_title'] ?? 'NUESTROS SERVICIOS' }}
@@ -501,7 +501,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-16 px-4 lg:px-8">
+    <section class="defer-render py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
@@ -532,7 +532,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
+    <section class="defer-render py-12 sm:py-24 px-4 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-0 sm:gap-16 items-center">
             <div>
                 <div class="flex flex-col mb-10 items-center text-center md:text-left md:items-start">
@@ -579,7 +579,7 @@
     </section>
 
     <!-- Process Section -->
-    <section class="py-16 px-4 lg:px-8 bg-gradient-to-b from-amber-900/5 to-transparent">
+    <section class="defer-render py-16 px-4 lg:px-8 bg-gradient-to-b from-amber-900/5 to-transparent">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
@@ -618,7 +618,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
+    <section class="defer-render py-12 sm:py-24 px-4 max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
                 {{ $homepage['testimonials_section']['pre_title'] ?? 'TESTIMONIOS' }}
@@ -645,7 +645,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 px-4 lg:px-8">
+    <section class="defer-render py-16 px-4 lg:px-8">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
                 <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
@@ -697,7 +697,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-4 lg:px-8 relative overflow-hidden">
+    <section class="defer-render py-20 px-4 lg:px-8 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-black/40 to-amber-900/20"></div>
         
         <div class="max-w-4xl mx-auto relative z-10 text-center">
@@ -738,7 +738,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="py-12 sm:py-24 px-4 max-w-7xl mx-auto">
+    <section id="contacto" class="defer-render py-12 sm:py-24 px-4 max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <p class="text-sm mb-4 font-light tracking-widest text-amber-400 tenali-ramakrishna">
                 {{ $homepage['contact_section']['pre_title'] ?? 'CONTACTO' }}
@@ -925,6 +925,11 @@
        cualquier cambio interno NO propaga reflow al exterior (fix PageSpeed) */
     #hero-slider {
         contain: layout style paint;
+    }
+    /* Reduce trabajo inicial de Style/Layout en secciones bajo el hero. */
+    .defer-render {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 900px;
     }
 
     .hero-slide { opacity: 0; }

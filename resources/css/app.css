@@ -178,3 +178,14 @@ h1, h2, h3, h4, h5 {
   z-index: 0;
   border-radius: 50%;
 }
+
+/* Lighthouse móvil: recortar efectos caros de paint/composición reduce Style & Layout y jank. */
+@media (max-width: 1024px), (prefers-reduced-motion: reduce) {
+  .glow-fire,
+  .glow-mandala {
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+    opacity: 0.25;
+  }
+}
