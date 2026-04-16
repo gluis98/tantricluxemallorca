@@ -57,29 +57,43 @@
     <meta name="theme-color" content="#0a0a0a">
     
     @php
-        // Assets en public/build/ (php artisan serve y Laravel estándar).
-        // `npm run build` copia también a public_html/build si usas esa carpeta como raíz en Laragon.
+        // Resolver build en ambos escenarios: public/build (Laravel estándar) y public_html/build (hosting/Laragon).
         $cssFile = null;
         $jsFile  = null;
-        $manifestPath = base_path('public/build/manifest.json');
-        $buildDir = base_path('public/build');
 
-        if (file_exists($manifestPath) && is_readable($manifestPath)) {
+        $buildCandidates = [
+            base_path('public/build'),
+            base_path('public_html/build'),
+        ];
+
+        foreach ($buildCandidates as $candidateDir) {
+            $candidateManifest = $candidateDir . '/manifest.json';
+            if (!file_exists($candidateManifest) || !is_readable($candidateManifest)) {
+                continue;
+            }
+
             try {
-                $manifest = json_decode(file_get_contents($manifestPath), true);
-                if (json_last_error() === JSON_ERROR_NONE && is_array($manifest)) {
-                    if (isset($manifest['resources/css/app.css']['file'])) {
-                        $cssFileName = $manifest['resources/css/app.css']['file'];
-                        if (file_exists($buildDir . '/' . $cssFileName)) {
-                            $cssFile = asset('build/' . $cssFileName);
-                        }
+                $manifest = json_decode(file_get_contents($candidateManifest), true);
+                if (json_last_error() !== JSON_ERROR_NONE || !is_array($manifest)) {
+                    continue;
+                }
+
+                if (isset($manifest['resources/css/app.css']['file'])) {
+                    $cssFileName = $manifest['resources/css/app.css']['file'];
+                    if (file_exists($candidateDir . '/' . $cssFileName)) {
+                        $cssFile = asset('build/' . $cssFileName);
                     }
-                    if (isset($manifest['resources/js/app.js']['file'])) {
-                        $jsFileName = $manifest['resources/js/app.js']['file'];
-                        if (file_exists($buildDir . '/' . $jsFileName)) {
-                            $jsFile = asset('build/' . $jsFileName);
-                        }
+                }
+
+                if (isset($manifest['resources/js/app.js']['file'])) {
+                    $jsFileName = $manifest['resources/js/app.js']['file'];
+                    if (file_exists($candidateDir . '/' . $jsFileName)) {
+                        $jsFile = asset('build/' . $jsFileName);
                     }
+                }
+
+                if ($cssFile || $jsFile) {
+                    break;
                 }
             } catch (\Exception $e) {
                 // fallback silencioso
