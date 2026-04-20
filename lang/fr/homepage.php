@@ -24,9 +24,9 @@ return array (
       ),
       1 =>
       array (
-        'name' => 'Anny',
+        'name' => 'Leila',
         'specialty' => 'Massage tantrique body-to-body exclusif',
-        'image' => '/images/masseurs/Anny/1.jpg',
+        'image' => '/images/masseurs/Leila/1.jpg',
         'reviews' => 47,
       ),
     ),

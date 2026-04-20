@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  * ImageController
  *
  * Sirve imágenes redimensionadas y convertidas a WebP, con caché en disco.
- * Uso: /img?src=images/masseurs/Anny/1.jpg&w=650&q=82
+ * Uso: /img?src=images/masseurs/Leila/1.jpg&w=650&q=82
  *
  * Parámetros:
  *   src  — ruta relativa dentro de public_html/  (obligatorio)

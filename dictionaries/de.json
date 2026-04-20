@@ -229,12 +229,12 @@
       },
       {
         "id": 4,
-        "name": "Anny",
+        "name": "Leila",
         "age": 23,
         "specialty": "Exklusives Body-to-Body Tantra-Massage",
-        "image": "/images/masseurs/Anny/1.jpg",
-        "images": ["/images/masseurs/Anny/1.jpg", "/images/masseurs/Anny/3.jpg", "/images/masseurs/Anny/4.jpg", "/images/masseurs/Anny/5.jpg", "/images/masseurs/Anny/6.jpg"],
-        "description": "Anny ist die perfekte Fusion aus Jugend und Können. Ihre instinktive Beherrschung tantrischer Künste und ihre strahlende Energie schaffen eine Atmosphäre einzigartiger Komplizenschaft, in der jeder Gast neue Dimensionen von Lust und Wohlbefinden entdeckt.",
+        "image": "/images/masseurs/Leila/1.jpg",
+        "images": ["/images/masseurs/Leila/1.jpg", "/images/masseurs/Leila/2.jpg", "/images/masseurs/Leila/3.jpg", "/images/masseurs/Leila/4.jpg"],
+        "description": "Leila ist die perfekte Fusion aus Jugend und Können. Ihre instinktive Beherrschung tantrischer Künste und ihre strahlende Energie schaffen eine Atmosphäre einzigartiger Komplizenschaft, in der jeder Gast neue Dimensionen von Lust und Wohlbefinden entdeckt.",
         "skills": ["Exklusives Body-to-Body", "Jugendliche Tantra-Massage", "Lebensenergie", "Intuitive Verbindung", "Moderne Techniken", "Personalisiertes Ritual"],
         "rating": 5,
         "reviews": 47

@@ -320,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Sección Masajistas: cards de inicio (Tatiana y Anny) -->
+    <!-- Sección Masajistas: cards de inicio (Tatiana y Leila) -->
     <section class="defer-render py-16 px-4 lg:px-8">
         <div class="max-w-7xl mx-auto">
 

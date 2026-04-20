@@ -45,19 +45,18 @@ return array (
     1 =>
     array (
       'id' => 4,
-      'name' => 'Anny',
+      'name' => 'Leila',
       'age' => 23,
       'specialty' => 'Exclusive Body to Body Tantric Massage',
-      'image' => '/images/masseurs/Anny/1.jpg',
+      'image' => '/images/masseurs/Leila/1.jpg',
       'images' =>
       array (
-        0 => '/images/masseurs/Anny/1.jpg',
-        1 => '/images/masseurs/Anny/3.jpg',
-        2 => '/images/masseurs/Anny/4.jpg',
-        3 => '/images/masseurs/Anny/5.jpg',
-        4 => '/images/masseurs/Anny/6.jpg',
+        0 => '/images/masseurs/Leila/1.jpg',
+        1 => '/images/masseurs/Leila/2.jpg',
+        2 => '/images/masseurs/Leila/3.jpg',
+        3 => '/images/masseurs/Leila/4.jpg',
       ),
-      'description' => 'Anny is the perfect fusion of youth and mastery. Her instinctive command of tantric arts and her radiant energy create an atmosphere of unique complicity where each client discovers new dimensions of pleasure and well-being.',
+      'description' => 'Leila is the perfect fusion of youth and mastery. Her instinctive command of tantric arts and her radiant energy create an atmosphere of unique complicity where each client discovers new dimensions of pleasure and well-being.',
       'skills' =>
       array (
         0 => 'Exclusive Body to Body',

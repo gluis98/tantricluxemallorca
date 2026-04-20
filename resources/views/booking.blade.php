@@ -255,7 +255,7 @@
                                 <option value="">{{ $bookingPage['masseuse_placeholder'] ?? '' }}</option>
                                 <option value="sin_preferencia" @selected(old('masseuse') === 'sin_preferencia')>{{ $bookingPage['masseuse_any'] ?? '' }}</option>
                                 <option value="Tatiana" @selected(old('masseuse') === 'Tatiana')>Tatiana</option>
-                                <option value="Anny" @selected(old('masseuse') === 'Anny')>Anny</option>
+                                <option value="Leila" @selected(old('masseuse') === 'Leila')>Leila</option>
                             </select>
                         </div>
                         <div>

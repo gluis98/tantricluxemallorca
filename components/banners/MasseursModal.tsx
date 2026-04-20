@@ -26,8 +26,8 @@ const MasajistasModal = ({ isOpen, onClose, lang = 'es' }: MasajistasModalProps)
     },
     {
       id: 2,
-      name: "Anny",
-      image: "/images/masseurs/Anny/1.jpg",
+      name: "Leila",
+      image: "/images/masseurs/Leila/1.jpg",
       specialty: lang === 'en'
         ? "Exclusive Body to Body Tantric Massage"
         : lang === 'de'
