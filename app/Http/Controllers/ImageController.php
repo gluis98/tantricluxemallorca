@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
  *
  * Sirve imágenes redimensionadas y convertidas a WebP, con caché en disco.
  * Uso: /img?src=images/masseurs/Leila/1.jpg&w=650&q=82
+ * También: /img?src=Img/Rooms/foto.jpg&w=750&q=82
  *
  * Parámetros:
  *   src  — ruta relativa dentro de public_html/  (obligatorio)
@@ -38,13 +39,18 @@ class ImageController extends Controller
             abort(400, 'Tipo de imagen no permitido.');
         }
 
-        // Solo se sirven imágenes dentro de public_html/images/
-        if (!str_starts_with($src, 'images/')) {
+        // Solo rutas bajo public_html/images/ o public_html/Img/ (habitaciones, etc.)
+        $allowedPrefix = str_starts_with($src, 'images/') || str_starts_with($src, 'Img/');
+        if (! $allowedPrefix) {
             abort(403, 'Ruta no permitida.');
         }
 
-        $sourcePath = base_path('public_html/' . $src);
-        if (!file_exists($sourcePath) || !is_file($sourcePath)) {
+        $sourcePath = $this->resolveSourcePath($src);
+        if ($sourcePath === null) {
+            $fallbackUrl = $this->fallbackRemoteUrl($src);
+            if ($fallbackUrl !== null) {
+                return redirect()->away($fallbackUrl, 302);
+            }
             abort(404, 'Imagen no encontrada.');
         }
 
@@ -75,6 +81,54 @@ class ImageController extends Controller
         file_put_contents($cachePath, $webpData);
 
         return $this->fileResponse($cachePath);
+    }
+
+    /**
+     * Busca el archivo en public_html (producción/hosting) o en public/ (Laragon estándar).
+     */
+    private function resolveSourcePath(string $src): ?string
+    {
+        $projectRoot = dirname(__DIR__, 3);
+        $documentRoot = $_SERVER['DOCUMENT_ROOT'] ?? null;
+
+        $candidates = [
+            base_path('public_html/' . $src),
+            public_path($src),
+            $projectRoot . DIRECTORY_SEPARATOR . 'public_html' . DIRECTORY_SEPARATOR . $src,
+            $projectRoot . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . $src,
+            $documentRoot ? rtrim($documentRoot, '\\/') . DIRECTORY_SEPARATOR . $src : null,
+        ];
+
+        foreach ($candidates as $path) {
+            if (!is_string($path) || $path === '') {
+                continue;
+            }
+            $normalized = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path);
+            if (is_file($normalized)) {
+                return $normalized;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Fallback opcional cuando no existe imagen local.
+     * Por defecto usa el dominio productivo; se puede desactivar con IMAGE_REMOTE_FALLBACK=0.
+     */
+    private function fallbackRemoteUrl(string $src): ?string
+    {
+        $enabled = filter_var(env('IMAGE_REMOTE_FALLBACK', true), FILTER_VALIDATE_BOOL, FILTER_NULL_ON_FAILURE);
+        if ($enabled === false) {
+            return null;
+        }
+
+        $base = rtrim((string) env('IMAGE_REMOTE_BASE_URL', 'https://tantricluxemallorca.com'), '/');
+        if ($base === '') {
+            return null;
+        }
+
+        return $base . '/' . ltrim($src, '/');
     }
 
     // ── Respuesta con caché 1 año ──────────────────────────────────────────

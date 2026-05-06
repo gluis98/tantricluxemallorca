@@ -92,6 +92,18 @@ return array (
     'item2' => 'RELAXING ATMOSPHERE',
     'item3' => 'UNIQUE EXPERIENCE',
   ),
+  'rooms_section' => 
+  array (
+    'pre_title' => 'YOUR SANCTUARY IN PALMA',
+    'title' => 'Our Rooms',
+    'description' => 'Intimate spaces designed for deep comfort: warm light, soft textures, and an elegant hush that helps you leave the day behind. Every detail is crafted so your tantric experience feels as indulgent as it is unforgettable.',
+    'expand_hint' => 'Tap to expand',
+    'room_label' => 'Room',
+    'modal_close_aria' => 'Close gallery',
+    'modal_prev_aria' => 'Previous image',
+    'modal_next_aria' => 'Next image',
+    'empty_hint' => 'Gallery photos of our rooms will appear here soon. If you manage the site, add JPG, PNG or WebP files to the folder below, run npm run build if you changed JS, and clear Laravel view cache.',
+  ),
   'view_more_text' => 'View more',
   'testimonials_section' => 
   array (

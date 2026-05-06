@@ -18,56 +18,77 @@ return array (
   array (
     0 =>
     array (
-      'id' => 2,
-      'name' => 'Tatiana',
-      'age' => 26,
-      'specialty' => 'Masaje Tantrico Sensual Premium',
-      'image' => '/images/masseurs/Sharon/1.jpg',
+      'id' => 1,
+      'name' => 'Angela',
+      'age' => 25,
+      'specialty' => 'Masaje Tantrico Sensual Deluxe',
+      'image' => '/images/masseurs/Angela/1.jpg',
       'images' =>
       array (
-        0 => '/images/masseurs/Sharon/1.jpg',
-        1 => '/images/masseurs/Sharon/2.jpg',
-        2 => '/images/masseurs/Sharon/3.jpg',
+        0 => '/images/masseurs/Angela/1.jpg',
+        1 => '/images/masseurs/Angela/2.jpg',
+        2 => '/images/masseurs/Angela_2/1.jpg',
+        3 => '/images/masseurs/Angela_2/2.jpg',
       ),
-      'description' => 'Tatiana irradia sensualidad y elegancia en cada sesión. Con una energía única y técnicas tantricas refinadas, crea un espacio de conexión profunda donde el cuerpo y la mente encuentran su equilibrio perfecto.',
+      'description' => 'Angela combina presencia magnética y técnica refinada para una experiencia de masaje tántrico intensa, elegante y profundamente relajante.',
       'skills' =>
       array (
         0 => 'Masaje Tantrico Sensual',
-        1 => 'Técnicas de Respiración',
-        2 => 'Energía Kundalini',
-        3 => 'Body to Body Deluxe',
-        4 => 'Relajación Consciente',
-        5 => 'Rituales de Bienestar',
+        1 => 'Body to Body Deluxe',
+        2 => 'Respiración Consciente',
+        3 => 'Rituales de Relajación',
+        4 => 'Conexión Energética',
+        5 => 'Experiencia Personalizada',
       ),
       'rating' => 5,
-      'reviews' => 64,
+      'reviews' => 92,
     ),
     1 =>
     array (
-      'id' => 4,
-      'name' => 'Leila',
-      'age' => 23,
-      'specialty' => 'Masaje Tantrico Body to Body Exclusivo',
-      'image' => '/images/masseurs/Leila/1.jpg',
+      'id' => 2,
+      'name' => 'Brenda',
+      'age' => 24,
+      'specialty' => 'Masaje Body to Body Exclusivo',
+      'image' => '/images/masseurs/Brenda/1.jpg',
       'images' =>
       array (
-        0 => '/images/masseurs/Leila/1.jpg',
-        1 => '/images/masseurs/Leila/2.jpg',
-        2 => '/images/masseurs/Leila/3.jpg',
-        3 => '/images/masseurs/Leila/4.jpg',
+        0 => '/images/masseurs/Brenda/1.jpg',
+        1 => '/images/masseurs/Brenda/2.jpg',
       ),
-      'description' => 'Leila es la fusión perfecta entre juventud y maestría. Su dominio instintivo de las artes tantricas y su energía luminosa crean un ambiente de complicidad única donde cada cliente descubre nuevas dimensiones de placer y bienestar.',
+      'description' => 'Brenda destaca por su trato cercano y su estilo envolvente; cada sesión combina sensualidad, técnica y relajación profunda en un ambiente exclusivo.',
       'skills' =>
       array (
         0 => 'Body to Body Exclusivo',
-        1 => 'Masaje Tantrico Juvenil',
-        2 => 'Energía Vital',
+        1 => 'Masaje Sensual Premium',
+        2 => 'Relajación Profunda',
         3 => 'Conexión Intuitiva',
         4 => 'Técnicas Modernas',
         5 => 'Ritual Personalizado',
       ),
       'rating' => 5,
-      'reviews' => 47,
+      'reviews' => 78,
+    ),
+    2 =>
+    array (
+      'id' => 3,
+      'name' => 'Amara',
+      'age' => 26,
+      'specialty' => 'Masaje Tantrico Relajante',
+      'image' => '/images/masseurs/Amara/1.jpg',
+      'images' =>
+      array (
+        0 => '/images/masseurs/Amara/1.jpg',
+      ),
+      'description' => 'Amara ofrece una experiencia calmada y elegante, ideal para desconectar el cuerpo y aquietar la mente con tacto experto.',
+      'skills' =>
+      array (
+        0 => 'Masaje Tantrico Relajante',
+        1 => 'Respiración Consciente',
+        2 => 'Liberación de Estrés',
+        3 => 'Ritual Sensorial',
+      ),
+      'rating' => 5,
+      'reviews' => 53,
     ),
   ),
 );

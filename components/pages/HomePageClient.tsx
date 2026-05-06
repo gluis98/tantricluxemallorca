@@ -15,15 +15,19 @@ import CTASection from '@/components/ui/sections/CTA';
 import ContactSection from '@/components/ui/sections/Contact';
 import MasajistasModal from '@/components/banners/MasseursModal';
 import ImageGalleryModal from '@/components/modals/ImageGalleryModal';
+import RoomsSection from '@/components/ui/sections/RoomsSection';
 import { Locale } from '@/i18n-config';
 
-export default function HomePageClient({ lang, dictionary }: {
+export default function HomePageClient({ lang, dictionary, roomImages = [] }: {
   lang: Locale;
   dictionary: any;
+  roomImages?: string[];
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isRoomsGalleryOpen, setIsRoomsGalleryOpen] = useState(false);
+  const [roomsGalleryIndex, setRoomsGalleryIndex] = useState(0);
   const erikaImages = [
     "/images/masseurs/Erika/IMG_0843.jpeg",
     "/images/masseurs/Erika/IMG_0844.jpeg",
@@ -196,6 +200,15 @@ export default function HomePageClient({ lang, dictionary }: {
           </div>
         </section>
 
+        <RoomsSection
+          dictionary={dictionary.homepage.rooms_section}
+          images={roomImages}
+          onImageClick={(i) => {
+            setRoomsGalleryIndex(i);
+            setIsRoomsGalleryOpen(true);
+          }}
+        />
+
         {/* Services Section */}
         <ServicesSection lang={lang} dictionary={dictionary.homepage.services_section} services={dictionary.servicesPage.services} />
 
@@ -259,6 +272,17 @@ export default function HomePageClient({ lang, dictionary }: {
         onIndexChange={setCurrentImage}
         name="Erika"
       />
+
+      {roomImages.length > 0 && (
+        <ImageGalleryModal
+          isOpen={isRoomsGalleryOpen}
+          onClose={() => setIsRoomsGalleryOpen(false)}
+          images={roomImages}
+          currentIndex={roomsGalleryIndex}
+          onIndexChange={setRoomsGalleryIndex}
+          name={dictionary.homepage.rooms_section.room_label}
+        />
+      )}
     </>
   );
 }

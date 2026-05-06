@@ -108,6 +108,14 @@
       "item3": "EINZIGARTIGES ERLEBNIS",
       "item4": "UNSERE MASSEURINNEN"
     },
+    "rooms_section": {
+      "pre_title": "IHR RÜCKZUGSORT IN PALMA",
+      "title": "Unsere Zimmer",
+      "description": "Intime Räume für höchsten Komfort: warmes Licht, sanfte Materialien und eine elegante Stille, die den Alltag loslässt. Jedes Detail ist darauf ausgelegt, Ihr tantrisches Erlebnis so wohltuend wie unvergesslich zu machen.",
+      "expand_hint": "Tippen zum Vergrößern",
+      "room_label": "Zimmer",
+      "empty_hint": "Die Zimmergalerie erscheint hier bald. Als Administrator: Bilder unter public_html/Img/Rooms ablegen (bei Next: public/Img/Rooms) und neu laden."
+    },
     "testimonials_section": {
       "pre_title": "BEWERTUNGEN",
       "title": "MEINUNGEN ÜBER TANTRIC LUXE",

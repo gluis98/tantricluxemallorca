@@ -108,6 +108,14 @@
       "item3": "UNIQUE EXPERIENCE",
       "item4": "OUR MASSEUSES"
     },
+    "rooms_section": {
+      "pre_title": "YOUR SANCTUARY IN PALMA",
+      "title": "Our Rooms",
+      "description": "Intimate spaces designed for deep comfort: warm light, soft textures, and an elegant hush that helps you leave the day behind. Every detail is crafted so your tantric experience feels as indulgent as it is unforgettable.",
+      "expand_hint": "Tap to expand",
+      "room_label": "Room",
+      "empty_hint": "Room gallery photos will appear here soon. If you manage the project, add images under public_html/Img/Rooms (or public/Img/Rooms with Next) and reload."
+    },
     "testimonials_section": {
       "pre_title": "TESTIMONIALS",
       "title": "REVIEWS OF TANTRIC LUXE",

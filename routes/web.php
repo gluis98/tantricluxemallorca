@@ -28,7 +28,10 @@ Route::redirect('/acerca', '/es/acerca', 301);
 Route::redirect('/contacto', '/es/contacto', 301);
 
 // Optimizador de imágenes (resize + WebP)
-Route::get('/img', [ImageController::class, 'serve'])->name('img.serve');
+// Nota: usamos /_img para evitar colisión con carpetas físicas "img" en el webroot.
+Route::get('/_img', [ImageController::class, 'serve'])->name('img.serve');
+// Compatibilidad legado (si no hay colisión con carpeta /img)
+Route::get('/img', [ImageController::class, 'serve']);
 
 // Sitemap
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');

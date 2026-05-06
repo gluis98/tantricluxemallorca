@@ -108,6 +108,14 @@
       "item3": "EXPERIENCIA ÚNICA",
       "item4": "NUESTRAS MASAJISTAS"
     },
+    "rooms_section": {
+      "pre_title": "TU REFUGIO EN PALMA",
+      "title": "Nuestras Habitaciones",
+      "description": "Espacios íntimos pensados para el máximo confort: luz cálida, texturas suaves y un silencio elegante que invita a soltar el ritmo del día. Cada detalle está creado para que tu experiencia tantrica sea tan placentera como inolvidable.",
+      "expand_hint": "Pulsa para ampliar",
+      "room_label": "Habitación",
+      "empty_hint": "Muy pronto podrás ver aquí la galería de nuestras habitaciones. Si administras el proyecto, añade fotos en public_html/Img/Rooms (o public/Img/Rooms en Next) y vuelve a cargar."
+    },
     "testimonials_section": {
       "pre_title": "TESTIMONIOS",
       "title": "OPINIONES DE TANTRIC LUXE",

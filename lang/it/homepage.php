@@ -91,6 +91,18 @@ return array (
     'item3' => 'ESPERIENZA UNICA',
     'item4' => 'LE NOSTRE MASSAGGIATRICI',
   ),
+  'rooms_section' => 
+  array (
+    'pre_title' => 'IL TUO RIFUGIO A PALMA',
+    'title' => 'Le Nostre Camere',
+    'description' => 'Spazi intimi pensati per il massimo comfort: luce calda, tessuti morbidi e un silenzio elegante che invita a lasciarsi alle spalle la giornata. Ogni dettaglio è studiato perché la tua esperienza tantrica sia piacevole e indimenticabile.',
+    'expand_hint' => 'Tocca per ingrandire',
+    'room_label' => 'Stanza',
+    'modal_close_aria' => 'Chiudi galleria',
+    'modal_prev_aria' => 'Immagine precedente',
+    'modal_next_aria' => 'Immagine successiva',
+    'empty_hint' => 'Presto potrai vedere qui la galleria delle nostre camere. Se gestisci il sito, aggiungi immagini JPG, PNG o WebP nella cartella indicata sotto, esegui npm run build se hai modificato il JS e svuota la cache delle viste Laravel.',
+  ),
   'testimonials_section' => 
   array (
     'pre_title' => 'TESTIMONIANZE',

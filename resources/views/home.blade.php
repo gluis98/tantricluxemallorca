@@ -15,9 +15,9 @@
 @section('page_preload')
     {{-- Precarga responsiva del LCP: el navegador descarga el tamaño correcto según la pantalla --}}
     <link rel="preload" as="image"
-          href="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }}"
-          imagesrcset="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 420, 'q' => 85]) }} 420w,
-                       {{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+          href="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }}"
+          imagesrcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 420, 85) }} 420w,
+                       {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }} 800w"
           imagesizes="(max-width: 1024px) 90vw, 50vw"
           fetchpriority="high">
 @endsection
@@ -79,7 +79,52 @@
     $steps = $homepage['process_section']['steps'] ?? [];
     $bookingPageLang = trans('bookingPage', [], $locale);
     $bookingPath = trans('common.header.paths.booking', [], $locale);
-    $masseusesData = $homepage['masseuse_section']['featured_cards'] ?? [];
+    $homeSeeds = $homepage['masseuse_section']['featured_cards'] ?? [];
+    $masseusesPageSeeds = trans('masseusesPage.masseuses', [], $locale) ?? [];
+    $masseusesData = \App\Support\MasseuseCatalog::build(array_merge($homeSeeds, $masseusesPageSeeds), true);
+    $heroMasseuseSrcs = array_values(array_filter(array_map(
+        fn ($m) => ltrim((string)($m['image'] ?? ''), '/'),
+        $masseusesData
+    )));
+    if (count($heroMasseuseSrcs) === 0) {
+        $heroMasseuseSrcs = ['images/hero section/1.jpg'];
+    }
+    $masseuseGalleryUrls = array_map(
+        fn ($m) => \App\Support\OptimizedImage::url(ltrim((string)($m['image'] ?? ''), '/'), 1600, 85),
+        $masseusesData
+    );
+    $masseuseGalleryNames = array_map(
+        fn ($m) => (string)($m['name'] ?? 'Masajista'),
+        $masseusesData
+    );
+
+    $roomGallerySrcs = [];
+    $seenRoomFiles = [];
+    foreach ([base_path('public_html/images/rooms'), public_path('images/rooms')] as $roomsDir) {
+        if (! is_dir($roomsDir)) {
+            continue;
+        }
+        foreach (scandir($roomsDir) as $f) {
+            if ($f === '.' || $f === '..') {
+                continue;
+            }
+            if (! preg_match('/\\.(jpe?g|png|webp|gif|avif)$/i', $f)) {
+                continue;
+            }
+            if (isset($seenRoomFiles[$f])) {
+                continue;
+            }
+            $seenRoomFiles[$f] = true;
+            $roomGallerySrcs[] = 'images/rooms/'.$f;
+        }
+    }
+    natcasesort($roomGallerySrcs);
+    $roomGallerySrcs = array_values($roomGallerySrcs);
+    $roomGalleryUrls = array_map(
+        fn ($s) => \App\Support\OptimizedImage::url($s, 1600, 85),
+        $roomGallerySrcs
+    );
+    $roomsSection = $homepage['rooms_section'] ?? [];
 @endphp
 
 <main class="relative z-10 px-0 md:px-8 py-8">
@@ -119,7 +164,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
+                                <img src="{{ \App\Support\OptimizedImage::url('images/BotomLuxDark.webp', 120, 85) }}"
                                      alt="Masaje tantrico especial Mallorca"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -135,7 +180,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
+                                <img src="{{ \App\Support\OptimizedImage::url('images/BotomLuxDark.webp', 120, 85) }}"
                                      alt="Masaje tantrico deluxe Palma"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -151,7 +196,7 @@
                         <div class="flex flex-col gap-3 items-center">
                             <div class="w-14 h-14 rounded-full flex items-center justify-center relative">
                                 <span class="absolute inset-0 z-0 rounded-full pointer-events-none glow-fire"></span>
-                                <img src="{{ route('img.serve', ['src' => 'images/BotomLuxDark.webp', 'w' => 120, 'q' => 85]) }}"
+                                <img src="{{ \App\Support\OptimizedImage::url('images/BotomLuxDark.webp', 120, 85) }}"
                                      alt="Experiencia tantrica única Mallorca"
                                      width="56" height="56"
                                      class="object-contain w-full h-full relative z-10"
@@ -191,11 +236,11 @@
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
                         <!-- SLIDE 1 — LCP (visible desde HTML, sin esperar JS) -->
-                        <img src="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 420, 'q' => 85]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/hero section/1.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista tantrica exclusiva Palma de Mallorca - Tantric Luxe"
+                             alt="Masajista tántrica exclusiva en Palma de Mallorca"
                              width="800" height="955"
                              class="hero-slide is-active absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="0"
@@ -204,14 +249,62 @@
                              decoding="async">
 
                         <!-- SLIDE 2 -->
-                        <img src="{{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 800, 'q' => 85]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 420, 'q' => 85]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/hero section/2.jpg', 'w' => 800, 'q' => 85]) }} 800w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Experiencia tantrica exclusiva Mallorca"
-                             width="800" height="954"
+                             alt="Experiencia sensorial premium en Mallorca"
+                             width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="1"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 3 -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Masajista tántrica exclusiva en Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="2"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 4 -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Masajista sensual profesional en Palma"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="3"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 5 -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Experiencia tántrica relajante en Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="4"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 6 -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Masajista premium en Palma de Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="5"
                              loading="lazy"
                              decoding="async">
 
@@ -229,6 +322,10 @@
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
                             <button type="button" class="hero-dot is-active transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
                             <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="4" aria-label="Slide 5"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="5" aria-label="Slide 6"></button>
                         </div>
                     </div>
 
@@ -259,14 +356,27 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="defer-render py-16 px-4 lg:px-8">
+    <section class="defer-render py-16 px-4 lg:px-8"
+             x-data="{
+                masseuseOpen: false,
+                masseuseIdx: 0,
+                masseuseUrls: @js($masseuseGalleryUrls),
+                masseuseNames: @js($masseuseGalleryNames),
+                openMasseuse(i) { this.masseuseIdx = i; this.masseuseOpen = true; document.body.style.overflow = 'hidden'; },
+                closeMasseuse() { this.masseuseOpen = false; document.body.style.overflow = ''; },
+                prevMasseuse() { this.masseuseIdx = (this.masseuseIdx - 1 + this.masseuseUrls.length) % this.masseuseUrls.length; },
+                nextMasseuse() { this.masseuseIdx = (this.masseuseIdx + 1) % this.masseuseUrls.length; }
+             }"
+             @keydown.escape.window="masseuseOpen && closeMasseuse()"
+             @keydown.left.window="masseuseOpen && masseuseUrls.length > 1 && prevMasseuse()"
+             @keydown.right.window="masseuseOpen && masseuseUrls.length > 1 && nextMasseuse()">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 750, 'q' => 82]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/extras sections/ESPACIO EXLUSIVO.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Espacio Exclusivo Tantrico Palma Mallorca"
                              width="750" height="500"
@@ -282,9 +392,9 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 750, 'q' => 82]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/extras sections/Ambiente relajante.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Ambiente Relajante Masaje Tantrico Palma"
                              width="750" height="500"
@@ -300,11 +410,11 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 750, 'q' => 82]) }}"
-                             srcset="{{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 420, 'q' => 82]) }} 420w,
-                                     {{ route('img.serve', ['src' => 'images/extras sections/Experiencia única.jpeg', 'w' => 750, 'q' => 82]) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
-                             alt="Experiencia Única Masaje Tantrico Mallorca"
+                             alt="Masajista tántrica profesional en Mallorca"
                              width="750" height="500"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
@@ -340,16 +450,16 @@
 
             <!-- Masajistas: una fila, dos columnas -->
             <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-12 max-w-5xl mx-auto w-full">
-                @foreach($masseusesData as $m)
+                @foreach($masseusesData as $index => $m)
                 <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
                      style="border: 1px solid rgba(120,53,15,0.35);">
 
                     <!-- Imagen de la masajista (opcional) -->
-                    <div class="relative overflow-hidden" style="aspect-ratio: 3/4;">
+                    <div class="relative overflow-hidden cursor-pointer" style="aspect-ratio: 3/4;" @click="openMasseuse({{ $index }})">
                         @if(!empty($m['image']))
-                        <img src="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }}"
-                             srcset="{{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 400, 'q' => 82]) }} 400w,
-                                     {{ route('img.serve', ['src' => ltrim($m['image'], '/'), 'w' => 650, 'q' => 82]) }} 650w"
+                        <img src="{{ \App\Support\OptimizedImage::url(ltrim($m['image'], '/'), 400, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url(ltrim($m['image'], '/'), 400, 82) }} 400w,
+                                     {{ \App\Support\OptimizedImage::url(ltrim($m['image'], '/'), 650, 82) }} 650w"
                              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                              alt="{{ $m['name'] }} - Masajista Tantrica Palma Mallorca"
                              width="400" height="533"
@@ -414,6 +524,171 @@
                 </a>
             </div>
 
+            <template x-if="masseuseOpen">
+                <div class="fixed inset-0 z-[100] flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" @click="closeMasseuse()" aria-hidden="true"></div>
+                    <button type="button" @click="closeMasseuse()" class="absolute top-4 right-4 z-[102] w-10 h-10 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all group" aria-label="Cerrar galería">
+                        <span class="text-amber-400 text-2xl group-hover:rotate-90 transition-transform duration-300">&times;</span>
+                    </button>
+                    <button type="button" x-show="masseuseUrls.length > 1" @click.stop="prevMasseuse()" class="absolute left-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all" aria-label="Anterior">
+                        <span class="text-amber-400 text-2xl leading-none">&#8249;</span>
+                    </button>
+                    <button type="button" x-show="masseuseUrls.length > 1" @click.stop="nextMasseuse()" class="absolute right-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all" aria-label="Siguiente">
+                        <span class="text-amber-400 text-2xl leading-none">&#8250;</span>
+                    </button>
+                    <div class="relative z-[101] w-full max-w-5xl mx-4 h-[90vh] flex flex-col items-center justify-center">
+                        <img :src="masseuseUrls[masseuseIdx]" :alt="(masseuseNames[masseuseIdx] || 'Masajista') + ' - Imagen ampliada'" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl" width="1600" height="1200">
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </section>
+
+    <!-- Nuestras Habitaciones (después de masajistas) -->
+    <section class="defer-render py-16 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="text-xs tracking-[0.3em] text-amber-400 tenali-ramakrishna uppercase mb-4">
+                    {{ $roomsSection['pre_title'] ?? 'TU REFUGIO EN PALMA' }}
+                </p>
+                <h2 class="text-4xl md:text-5xl font-light tracking-wider gradiente-dorado cormorant-garamond mb-5">
+                    {{ $roomsSection['title'] ?? 'Nuestras Habitaciones' }}
+                </h2>
+                <div class="w-20 h-px bg-amber-400 mx-auto mb-5"></div>
+                <p class="text-base text-gray-400 tenali-ramakrishna max-w-2xl mx-auto">
+                    {{ $roomsSection['description'] ?? '' }}
+                </p>
+            </div>
+
+            @if(count($roomGallerySrcs) > 0)
+            <div x-data="{
+                roomsOpen: false,
+                roomsIdx: 0,
+                roomsUrls: [],
+                openRoom(i) { this.roomsIdx = i; this.roomsOpen = true; document.body.style.overflow = 'hidden'; },
+                closeRooms() { this.roomsOpen = false; document.body.style.overflow = ''; },
+                prevRoom() { this.roomsIdx = (this.roomsIdx - 1 + this.roomsUrls.length) % this.roomsUrls.length; },
+                nextRoom() { this.roomsIdx = (this.roomsIdx + 1) % this.roomsUrls.length; }
+             }"
+             x-init="roomsUrls = @js($roomGalleryUrls)"
+             @keydown.escape.window="roomsOpen && closeRooms()"
+             @keydown.left.window="roomsOpen && roomsUrls.length > 1 && prevRoom()"
+             @keydown.right.window="roomsOpen && roomsUrls.length > 1 && nextRoom()">
+
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-12 max-w-5xl mx-auto w-full">
+                    @foreach($roomGallerySrcs as $index => $src)
+                    <div class="group relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-500 hover:-translate-y-1"
+                         style="border: 1px solid rgba(120,53,15,0.35);">
+
+                        <button type="button"
+                                class="relative overflow-hidden w-full text-left"
+                                style="aspect-ratio: 3/4;"
+                                @click.prevent.stop="openRoom({{ $index }})"
+                                aria-label="{{ ($roomsSection['expand_hint'] ?? 'Pulsa para ampliar') }} — {{ $index + 1 }}">
+                            <img src="{{ \App\Support\OptimizedImage::url($src, 500, 82) }}"
+                                 srcset="{{ \App\Support\OptimizedImage::url($src, 500, 82) }} 500w,
+                                         {{ \App\Support\OptimizedImage::url($src, 800, 82) }} 800w"
+                                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
+                                 alt="{{ ($roomsSection['room_label'] ?? 'Habitación') }} {{ $index + 1 }}"
+                                 width="500" height="667"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                 loading="lazy"
+                                 decoding="async">
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+
+                            <div class="absolute top-3 right-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm rounded-full px-2.5 py-1"
+                                 style="border: 1px solid rgba(251,191,36,0.35);">
+                                <span class="text-xs text-amber-300 tenali-ramakrishna leading-none">
+                                    {{ $roomsSection['expand_hint'] ?? 'Pulsa para ampliar' }}
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <h3 class="text-2xl md:text-3xl font-light tracking-[0.15em] gradiente-dorado cormorant-garamond mb-2 leading-tight">
+                                    {{ strtoupper($roomsSection['room_label'] ?? 'Habitación') }} {{ $index + 1 }}
+                                </h3>
+                                <p class="text-xs text-amber-300/80 tenali-ramakrishna mb-4 leading-snug">
+                                    {{ $roomsSection['card_subtitle'] ?? 'Ambiente íntimo, elegante y exclusivo' }}
+                                </p>
+                                <span class="block text-center text-xs tenali-ramakrishna rounded-full py-2 px-3 tracking-widest uppercase"
+                                      style="border: 1px solid rgba(251,191,36,0.55); color: #fcd34d; background: rgba(120,53,15,0.30);">
+                                    {{ $roomsSection['open_button_text'] ?? 'VER HABITACIÓN' }}
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    @endforeach
+                </div>
+
+                <template x-teleport="body">
+                    <template x-if="roomsOpen">
+                        <div class="fixed inset-0 z-[100] flex items-center justify-center"
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0"
+                             x-transition:enter-end="opacity-100"
+                             x-transition:leave="transition ease-in duration-150"
+                             x-transition:leave-start="opacity-100"
+                             x-transition:leave-end="opacity-0"
+                             role="dialog"
+                             aria-modal="true"
+                             aria-label="{{ $roomsSection['title'] ?? 'Nuestras habitaciones' }}">
+                            <div class="absolute inset-0 bg-black/90 backdrop-blur-md" @click="closeRooms()" aria-hidden="true"></div>
+
+                            <button type="button"
+                                    @click="closeRooms()"
+                                    class="absolute top-4 right-4 z-[102] w-10 h-10 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all group"
+                                    aria-label="{{ $roomsSection['modal_close_aria'] ?? 'Cerrar' }}">
+                                <span class="text-amber-400 text-2xl group-hover:rotate-90 transition-transform duration-300">&times;</span>
+                            </button>
+
+                            <template x-if="roomsUrls.length > 1">
+                                <button type="button"
+                                        @click.stop="prevRoom()"
+                                        class="absolute left-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all"
+                                        aria-label="{{ $roomsSection['modal_prev_aria'] ?? 'Anterior' }}">
+                                    <span class="text-amber-400 text-2xl leading-none">&#8249;</span>
+                                </button>
+                            </template>
+                            <template x-if="roomsUrls.length > 1">
+                                <button type="button"
+                                        @click.stop="nextRoom()"
+                                        class="absolute right-4 top-1/2 -translate-y-1/2 z-[102] w-12 h-12 rounded-full bg-amber-900/80 hover:bg-amber-900/60 flex items-center justify-center transition-all"
+                                        aria-label="{{ $roomsSection['modal_next_aria'] ?? 'Siguiente' }}">
+                                    <span class="text-amber-400 text-2xl leading-none">&#8250;</span>
+                                </button>
+                            </template>
+
+                            <div class="relative z-[101] w-full max-w-5xl mx-4 h-[90vh] flex flex-col items-center justify-center pointer-events-none">
+                                <div class="relative w-full h-full flex items-center justify-center pointer-events-auto">
+                                    <img :src="roomsUrls[roomsIdx]"
+                                         :alt="'{{ $roomsSection['room_label'] ?? 'Habitación' }} ' + (roomsIdx + 1)"
+                                         class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                                         width="1600"
+                                         height="1200">
+                                </div>
+                                <template x-if="roomsUrls.length > 1">
+                                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 pointer-events-auto">
+                                        <span class="text-amber-400 text-sm tenali-ramakrishna" x-text="(roomsIdx + 1) + ' / ' + roomsUrls.length"></span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+            @else
+            <div class="max-w-2xl mx-auto text-center rounded-2xl border border-amber-900/35 bg-gradient-to-br from-amber-950/20 to-black/40 px-8 py-12">
+                <p class="text-gray-300 tenali-ramakrishna leading-relaxed">
+                    {{ $roomsSection['empty_hint'] ?? 'Pronto mostraremos aquí imágenes de nuestras habitaciones.' }}
+                </p>
+                <p class="mt-4 text-xs text-amber-500/70 font-mono break-all">
+                    public_html/images/rooms/<br>
+                    <span class="text-amber-500/50">o</span> public/images/rooms/
+                </p>
+            </div>
+            @endif
         </div>
     </section>
 
@@ -566,9 +841,9 @@
                 </div>
             </div>
             <div class="relative w-full h-full">
-                <img src="{{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 700, 'q' => 80]) }}"
-                     srcset="{{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 700, 'q' => 80]) }} 700w,
-                             {{ route('img.serve', ['src' => 'images/especialistas_en_masajese_eroticos.webp', 'w' => 1000, 'q' => 80]) }} 1000w"
+                <img src="{{ \App\Support\OptimizedImage::url('images/especialistas_en_masajese_eroticos.webp', 700, 80) }}"
+                     srcset="{{ \App\Support\OptimizedImage::url('images/especialistas_en_masajese_eroticos.webp', 700, 80) }} 700w,
+                             {{ \App\Support\OptimizedImage::url('images/especialistas_en_masajese_eroticos.webp', 1000, 80) }} 1000w"
                      sizes="(max-width: 768px) 90vw, 50vw"
                      alt="Centro de masaje tantrico exclusivo en Palma Mallorca"
                      width="700" height="700"

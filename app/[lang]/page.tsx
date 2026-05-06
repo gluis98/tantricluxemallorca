@@ -3,6 +3,7 @@ import { Locale } from '@/i18n-config';
 import { Metadata } from 'next';
 
 import HomePageClient from '@/components/pages/HomePageClient';
+import { getRoomImagePaths } from '@/lib/get-room-images';
 
 export async function generateMetadata({
   params,
@@ -74,6 +75,7 @@ export default async function TantricLuxeSpa({
 }) {
   const { lang } = await params;
   const dictionary = await getDictionary(lang);
+  const roomImages = getRoomImagePaths();
   const baseUrl = 'https://tantricluxemallorca.com';
   
   // JSON-LD para la página home
@@ -142,7 +144,7 @@ export default async function TantricLuxeSpa({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomePageClient lang={lang} dictionary={dictionary} />
+      <HomePageClient lang={lang} dictionary={dictionary} roomImages={roomImages} />
     </>
   );
 }

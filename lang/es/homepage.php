@@ -20,17 +20,17 @@ return array (
     array (
       0 =>
       array (
-        'name' => 'Tatiana',
-        'specialty' => 'Masaje Tantrico Sensual Premium',
-        'image' => '/images/masseurs/Sharon/1.jpg',
-        'reviews' => 64,
+        'name' => 'Angela',
+        'specialty' => 'Masaje Tantrico Sensual Deluxe',
+        'image' => '/images/masseurs/Angela/1.jpg',
+        'reviews' => 92,
       ),
       1 =>
       array (
-        'name' => 'Leila',
-        'specialty' => 'Masaje Tantrico Body to Body Exclusivo',
-        'image' => '/images/masseurs/Leila/1.jpg',
-        'reviews' => 47,
+        'name' => 'Brenda',
+        'specialty' => 'Masaje Body to Body Exclusivo',
+        'image' => '/images/masseurs/Brenda/1.jpg',
+        'reviews' => 78,
       ),
     ),
   ),
@@ -91,6 +91,20 @@ return array (
     'item1' => 'ESPACIO EXCLUSIVO',
     'item2' => 'AMBIENTE RELAJANTE',
     'item3' => 'EXPERIENCIA ÚNICA',
+  ),
+  'rooms_section' => 
+  array (
+    'pre_title' => 'TU REFUGIO EN PALMA',
+    'title' => 'Nuestras Habitaciones',
+    'description' => 'Espacios íntimos pensados para el máximo confort: luz cálida, texturas suaves y un silencio elegante que invita a soltar el ritmo del día. Cada detalle está creado para que tu experiencia tantrica sea tan placentera como inolvidable.',
+    'expand_hint' => 'Pulsa para ampliar',
+    'room_label' => 'Habitación',
+    'modal_close_aria' => 'Cerrar galería',
+    'modal_prev_aria' => 'Imagen anterior',
+    'modal_next_aria' => 'Imagen siguiente',
+    'card_subtitle' => 'Ambiente íntimo, elegante y exclusivo',
+    'open_button_text' => 'VER HABITACIÓN',
+    'empty_hint' => 'Muy pronto podrás ver aquí la galería de nuestras habitaciones. Si administras la web, coloca fotos JPG, PNG o WebP en la carpeta indicada abajo, ejecuta npm run build si cambiaste el JS y borra la caché de vistas de Laravel.',
   ),
   'view_more_text' => 'Ver más',
   'testimonials_section' => 

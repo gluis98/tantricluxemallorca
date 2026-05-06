@@ -91,6 +91,18 @@ return array (
     'item3' => 'EXPÉRIENCE UNIQUE',
     'item4' => 'NOS MASSEUSES',
   ),
+  'rooms_section' => 
+  array (
+    'pre_title' => 'VOTRE REFUGE À PALMA',
+    'title' => 'Nos Chambres',
+    'description' => 'Des espaces intimes pensés pour un confort absolu : lumière douce, textures délicates et un calme élégant qui invite à lâcher prise. Chaque détail est pensé pour que votre expérience tantrique soit aussi délicieuse qu\'inoubliable.',
+    'expand_hint' => 'Appuyez pour agrandir',
+    'room_label' => 'Chambre',
+    'modal_close_aria' => 'Fermer la galerie',
+    'modal_prev_aria' => 'Image précédente',
+    'modal_next_aria' => 'Image suivante',
+    'empty_hint' => 'La galerie de nos chambres sera bientôt visible ici. Si vous gérez le site : ajoutez des images (JPG, PNG, WebP) dans le dossier indiqué ci-dessous, lancez npm run build si le JS a changé et videz le cache des vues Laravel.',
+  ),
   'testimonials_section' => 
   array (
     'pre_title' => 'TÉMOIGNAGES',

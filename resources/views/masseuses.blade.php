@@ -3,7 +3,9 @@
 @php
     // Definir las variables al inicio para que estén disponibles en todas las secciones
     $masseusesPage = trans('masseusesPage', [], $locale);
-    $masseuses = $masseusesPage['masseuses'] ?? [];
+    $seed = $masseusesPage['masseuses'] ?? [];
+    $homeSeed = trans('homepage.masseuse_section.featured_cards', [], $locale) ?? [];
+    $masseuses = \App\Support\MasseuseCatalog::build(array_merge($seed, $homeSeed), false);
 @endphp
 
 @section('title', trans('masseusesPage.meta_title', [], $locale))
@@ -82,9 +84,9 @@
                     @foreach(array_slice($masseuse['images'], 0, 4) as $index => $image)
                     <div class="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-amber-900/40 hover:border-amber-600/60 transition-all duration-300">
                         <div class="relative aspect-[3/4]">
-                            <img src="{{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 400, 'q' => 82]) }}"
-                             srcset="{{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 400, 'q' => 82]) }} 400w,
-                                     {{ route('img.serve', ['src' => ltrim($image, '/'), 'w' => 700, 'q' => 82]) }} 700w"
+                            <img src="{{ \App\Support\OptimizedImage::url(ltrim($image, '/'), 400, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url(ltrim($image, '/'), 400, 82) }} 400w,
+                                     {{ \App\Support\OptimizedImage::url(ltrim($image, '/'), 700, 82) }} 700w"
                              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                              alt="{{ $masseuse['name'] ?? '' }} - Masajista Tantrica Palma Mallorca"
                              width="400" height="533"
@@ -101,7 +103,7 @@
                 </div>
                 @elseif(!empty($masseuse['image']))
                 <div class="mb-8">
-                    <img src="{{ route('img.serve', ['src' => ltrim($masseuse['image'], '/'), 'w' => 500, 'q' => 82]) }}"
+                    <img src="{{ \App\Support\OptimizedImage::url(ltrim($masseuse['image'], '/'), 500, 82) }}"
                          alt="{{ $masseuse['name'] ?? '' }}"
                          width="500" height="667"
                          class="w-full max-w-md mx-auto h-auto rounded-2xl shadow-xl"

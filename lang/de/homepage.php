@@ -92,6 +92,18 @@ return array (
     'item2' => 'ENTSPANNENDE ATMOSPHÄRE',
     'item3' => 'EINZIGARTIGES ERLEBNIS',
   ),
+  'rooms_section' => 
+  array (
+    'pre_title' => 'IHR RÜCKZUGSORT IN PALMA',
+    'title' => 'Unsere Zimmer',
+    'description' => 'Intime Räume für höchsten Komfort: warmes Licht, sanfte Materialien und eine elegante Stille, die den Alltag loslässt. Jedes Detail ist darauf ausgelegt, Ihr tantrisches Erlebnis so wohltuend wie unvergesslich zu machen.',
+    'expand_hint' => 'Tippen zum Vergrößern',
+    'room_label' => 'Zimmer',
+    'modal_close_aria' => 'Galerie schließen',
+    'modal_prev_aria' => 'Vorheriges Bild',
+    'modal_next_aria' => 'Nächstes Bild',
+    'empty_hint' => 'Bald sehen Sie hier unsere Zimmer-Galerie. Als Administrator: Bilder (JPG, PNG, WebP) in den unten genannten Ordner legen, bei JS-Änderungen npm run build ausführen und den Laravel-Ansichts-Cache leeren.',
+  ),
   'view_more_text' => 'Mehr anzeigen',
   'testimonials_section' => 
   array (
