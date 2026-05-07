@@ -22,7 +22,7 @@ return array (
       array (
         'name' => 'Angela',
         'specialty' => 'Masaje Tantrico Sensual Deluxe',
-        'image' => '/images/masseurs/Angela/1.jpg',
+        'image' => '/images/masseurs/Angela/2.jpg',
         'reviews' => 92,
       ),
       1 =>

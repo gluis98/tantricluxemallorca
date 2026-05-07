@@ -15,9 +15,9 @@
 @section('page_preload')
     {{-- Precarga responsiva del LCP: el navegador descarga el tamaño correcto según la pantalla --}}
     <link rel="preload" as="image"
-          href="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }}"
-          imagesrcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 420, 85) }} 420w,
-                       {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }} 800w"
+          href="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }}"
+          imagesrcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 420, 85) }} 420w,
+                       {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }} 800w"
           imagesizes="(max-width: 1024px) 90vw, 50vw"
           fetchpriority="high">
 @endsection
@@ -82,6 +82,10 @@
     $homeSeeds = $homepage['masseuse_section']['featured_cards'] ?? [];
     $masseusesPageSeeds = trans('masseusesPage.masseuses', [], $locale) ?? [];
     $masseusesData = \App\Support\MasseuseCatalog::build(array_merge($homeSeeds, $masseusesPageSeeds), true);
+    $masseusesData = array_values(array_filter(
+        $masseusesData,
+        fn ($m) => !str_contains(strtolower((string)($m['image'] ?? '')), '/masseurs/sharon/')
+    ));
     $heroMasseuseSrcs = array_values(array_filter(array_map(
         fn ($m) => ltrim((string)($m['image'] ?? ''), '/'),
         $masseusesData
@@ -236,9 +240,9 @@
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
                         <!-- SLIDE 1 — LCP (visible desde HTML, sin esperar JS) -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpg', 800, 85) }} 800w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
                              alt="Masajista tántrica exclusiva en Palma de Mallorca"
                              width="800" height="955"
@@ -273,18 +277,6 @@
                              decoding="async">
 
                         <!-- SLIDE 4 -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Sharon/1.jpg', 800, 85) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista sensual profesional en Palma"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="3"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 5 -->
                         <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }}"
                              srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 420, 85) }} 420w,
                                      {{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }} 800w"
@@ -292,19 +284,7 @@
                              alt="Experiencia tántrica relajante en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="4"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 6 -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela_2/1.jpg', 800, 85) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista premium en Palma de Mallorca"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="5"
+                             data-slide="3"
                              loading="lazy"
                              decoding="async">
 
@@ -324,8 +304,6 @@
                             <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
                             <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
                             <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="4" aria-label="Slide 5"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="5" aria-label="Slide 6"></button>
                         </div>
                     </div>
 
@@ -374,9 +352,9 @@
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/extras sections/ESPACIO EXLUSIVO.jpeg', 750, 82) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Espacio Exclusivo Tantrico Palma Mallorca"
                              width="750" height="500"
@@ -392,9 +370,9 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/extras sections/Ambiente relajante.jpeg', 750, 82) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Ambiente Relajante Masaje Tantrico Palma"
                              width="750" height="500"

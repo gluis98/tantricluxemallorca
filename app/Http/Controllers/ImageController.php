@@ -55,7 +55,8 @@ class ImageController extends Controller
         }
 
         // ── 2. Caché en disco ──────────────────────────────────────────────
-        $cacheKey  = md5($src . '|' . $width . '|' . $quality);
+        $sourceFingerprint = @filemtime($sourcePath) . '|' . @filesize($sourcePath);
+        $cacheKey  = md5($src . '|' . $width . '|' . $quality . '|' . $sourceFingerprint);
         $cacheDir  = storage_path('app/imgcache');
         $cachePath = $cacheDir . DIRECTORY_SEPARATOR . $cacheKey . '.webp';
 
@@ -63,8 +64,8 @@ class ImageController extends Controller
             mkdir($cacheDir, 0755, true);
         }
 
-        // Regenerar si el original es más reciente que la caché
-        if (file_exists($cachePath) && filemtime($cachePath) >= filemtime($sourcePath)) {
+        // Si ya existe la variante exacta para este archivo/tamaño/calidad, servirla.
+        if (file_exists($cachePath)) {
             return $this->fileResponse($cachePath);
         }
 

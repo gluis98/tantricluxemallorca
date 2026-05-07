@@ -27,8 +27,6 @@ return array (
       array (
         0 => '/images/masseurs/Angela/1.jpg',
         1 => '/images/masseurs/Angela/2.jpg',
-        2 => '/images/masseurs/Angela_2/1.jpg',
-        3 => '/images/masseurs/Angela_2/2.jpg',
       ),
       'description' => 'Angela combina presencia magnética y técnica refinada para una experiencia de masaje tántrico intensa, elegante y profundamente relajante.',
       'skills' =>
