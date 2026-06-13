@@ -15,9 +15,9 @@
 @section('page_preload')
     {{-- Precarga responsiva del LCP: el navegador descarga el tamaño correcto según la pantalla --}}
     <link rel="preload" as="image"
-          href="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }}"
-          imagesrcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 420, 85) }} 420w,
-                       {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }} 800w"
+          href="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 800, 85) }}"
+          imagesrcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 420, 85) }} 420w,
+                       {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 800, 85) }} 800w"
           imagesizes="(max-width: 1024px) 90vw, 50vw"
           fetchpriority="high">
 @endsection
@@ -239,12 +239,12 @@
                          class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl h-[55vh] lg:h-[82vh]"
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
-                        <!-- SLIDE 1 — LCP (visible desde HTML, sin esperar JS) -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/2.jpg', 800, 85) }} 800w"
+                        <!-- SLIDE 1 — Angela · LCP (visible desde HTML, sin esperar JS) -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Angela/1.jpeg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista tántrica exclusiva en Palma de Mallorca"
+                             alt="Angela, masajista tántrica exclusiva en Palma de Mallorca"
                              width="800" height="955"
                              class="hero-slide is-active absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="0"
@@ -252,39 +252,63 @@
                              loading="eager"
                              decoding="async">
 
-                        <!-- SLIDE 2 -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpg', 800, 85) }} 800w"
+                        <!-- SLIDE 2 — Brenda -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpeg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpeg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Brenda/1.jpeg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Experiencia sensorial premium en Mallorca"
+                             alt="Brenda, masajista tántrica premium en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="1"
                              loading="lazy"
                              decoding="async">
 
-                        <!-- SLIDE 3 -->
+                        <!-- SLIDE 3 — Leila -->
                         <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }}"
                              srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 420, 85) }} 420w,
                                      {{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Masajista tántrica exclusiva en Mallorca"
+                             alt="Leila, masajista tántrica en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="2"
                              loading="lazy"
                              decoding="async">
 
-                        <!-- SLIDE 4 -->
+                        <!-- SLIDE 4 — Amara -->
                         <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }}"
                              srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 420, 85) }} 420w,
                                      {{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }} 800w"
                              sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Experiencia tántrica relajante en Mallorca"
+                             alt="Amara, masajista tántrica relajante en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="3"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 5 — Emma -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Emma, masajista tántrica sensual en Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="4"
+                             loading="lazy"
+                             decoding="async">
+
+                        <!-- SLIDE 6 — Mia -->
+                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 800, 85) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 420, 85) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 800, 85) }} 800w"
+                             sizes="(max-width: 1024px) 90vw, 50vw"
+                             alt="Mia, masajista tántrica exclusiva en Mallorca"
+                             width="800" height="955"
+                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
+                             data-slide="5"
                              loading="lazy"
                              decoding="async">
 
@@ -300,10 +324,12 @@
 
                         <!-- Dots de navegación -->
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
-                            <button type="button" class="hero-dot is-active transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Slide 1"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Slide 2"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Slide 3"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Slide 4"></button>
+                            <button type="button" class="hero-dot is-active transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Angela"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Brenda"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Leila"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Amara"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="4" aria-label="Emma"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="5" aria-label="Mia"></button>
                         </div>
                     </div>
 

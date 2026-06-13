@@ -1,69 +1,98 @@
 @php
     $currentPath = request()->path();
-    $baseUrl = config('app.url', 'https://tantricluxemallorca.com');
-    
-    // Mapeo de rutas entre idiomas
+    $baseUrl = rtrim(config('app.url', 'https://tantricluxemallorca.com'), '/');
+
+    $locales = ['es', 'en', 'de', 'it', 'fr'];
+
+    // Ruta del segmento de servicios por idioma
+    $servicePaths = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'];
+
+    // Mapeo de rutas estáticas
     $routeMap = [
-        '' => ['es' => '', 'en' => '', 'de' => '', 'it' => '', 'fr' => ''],
-        'acerca' => ['es' => 'acerca', 'en' => 'about', 'de' => 'uber-uns', 'it' => 'chi-siamo', 'fr' => 'a-propos'],
-        'servicios' => ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'],
-        'masajistas' => ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'],
-        'contacto' => ['es' => 'contacto', 'en' => 'contact', 'de' => 'kontakt', 'it' => 'contatti', 'fr' => 'contact'],
-        'reserva' => ['es' => 'reserva', 'en' => 'book', 'de' => 'buchen', 'it' => 'prenota', 'fr' => 'reserver'],
+        ''          => ['es' => '',           'en' => '',          'de' => '',             'it' => '',              'fr' => ''],
+        'acerca'    => ['es' => 'acerca',     'en' => 'about',     'de' => 'uber-uns',     'it' => 'chi-siamo',     'fr' => 'a-propos'],
+        'servicios' => ['es' => 'servicios',  'en' => 'services',  'de' => 'leistungen',   'it' => 'servizi',       'fr' => 'services'],
+        'masajistas'=> ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici','fr' => 'masseuses'],
+        'contacto'  => ['es' => 'contacto',   'en' => 'contact',   'de' => 'kontakt',      'it' => 'contatti',      'fr' => 'contact'],
+        'reserva'   => ['es' => 'reserva',    'en' => 'book',      'de' => 'buchen',       'it' => 'prenota',       'fr' => 'reserver'],
     ];
-    
-    // Extraer el idioma y la ruta actual
+
     $currentLocale = $locale ?? 'es';
-    $currentRoute = '';
-    
-    if (preg_match('/^(es|en|de|it|fr)(?:\/(.+))?$/', $currentPath, $matches)) {
-        $detectedLocale = $matches[1];
-        $currentRoute = isset($matches[2]) ? $matches[2] : '';
+    $currentRoute  = '';
+
+    if (preg_match('/^(es|en|de|it|fr)(?:\/(.+))?$/', $currentPath, $m)) {
+        $currentRoute = $m[2] ?? '';
     } else {
         $currentRoute = $currentPath;
     }
-    
-    // Convertir la ruta actual a la ruta canónica (español)
-    $canonicalRoute = $currentRoute;
-    foreach ($routeMap as $esRoute => $translations) {
-        if ($currentRoute === $translations['en'] || $currentRoute === $translations['de'] || $currentRoute === $translations['it'] || $currentRoute === $translations['fr'] || $currentRoute === $esRoute) {
-            $canonicalRoute = $esRoute;
-            break;
-        }
-    }
-    
-    // Manejar rutas dinámicas (servicios con slug)
-    $isDynamicRoute = false;
-    $slug = '';
-    if (preg_match('/^(servicios|services|leistungen|servizi)\/(.+)$/', $currentRoute, $slugMatches)) {
+
+    // ── Rutas dinámicas de servicio ──────────────────────────────────────────
+    $isDynamicRoute    = false;
+    $hreflangUrls      = [];
+
+    if (preg_match('/^(?:servicios|services|leistungen|servizi)\/(.+)$/', $currentRoute, $slugMatches)) {
         $isDynamicRoute = true;
-        $slug = $slugMatches[2];
-    }
-    
-    // Generar URLs para cada idioma
-    if ($isDynamicRoute) {
-        $esUrl = $baseUrl . '/es/servicios/' . $slug;
-        $enUrl = $baseUrl . '/en/services/' . $slug;
-        $deUrl = $baseUrl . '/de/leistungen/' . $slug;
-        $itUrl = $baseUrl . '/it/servizi/' . $slug;
-        $frUrl = $baseUrl . '/fr/services/' . $slug;
-    } else {
-        // Si no encontramos la ruta en el mapa, usar la ruta actual
-        if (!isset($routeMap[$canonicalRoute])) {
-            $canonicalRoute = $currentRoute;
+        $currentSlug    = $slugMatches[1];
+
+        // Cargar servicios de todos los idiomas y localizar el servicio por índice
+        $servicesByLocale = [];
+        foreach ($locales as $loc) {
+            $servicesByLocale[$loc] = array_values(trans('servicesPage.services', [], $loc) ?? []);
         }
-        
-        $esUrl = $baseUrl . '/es' . ($canonicalRoute ? '/' . $canonicalRoute : '');
-        $enUrl = $baseUrl . '/en' . (isset($routeMap[$canonicalRoute]['en']) && $routeMap[$canonicalRoute]['en'] ? '/' . $routeMap[$canonicalRoute]['en'] : ($canonicalRoute && !isset($routeMap[$canonicalRoute]) ? '/' . $canonicalRoute : ''));
-        $deUrl = $baseUrl . '/de' . (isset($routeMap[$canonicalRoute]['de']) && $routeMap[$canonicalRoute]['de'] ? '/' . $routeMap[$canonicalRoute]['de'] : ($canonicalRoute && !isset($routeMap[$canonicalRoute]) ? '/' . $canonicalRoute : ''));
-        $itUrl = $baseUrl . '/it' . (isset($routeMap[$canonicalRoute]['it']) && $routeMap[$canonicalRoute]['it'] ? '/' . $routeMap[$canonicalRoute]['it'] : ($canonicalRoute && !isset($routeMap[$canonicalRoute]) ? '/' . $canonicalRoute : ''));
-        $frUrl = $baseUrl . '/fr' . (isset($routeMap[$canonicalRoute]['fr']) && $routeMap[$canonicalRoute]['fr'] ? '/' . $routeMap[$canonicalRoute]['fr'] : ($canonicalRoute && !isset($routeMap[$canonicalRoute]) ? '/' . $canonicalRoute : ''));
+
+        // Buscar el índice del servicio (el slug puede estar en cualquier idioma)
+        $serviceIndex = null;
+        foreach ($servicesByLocale as $services) {
+            foreach ($services as $idx => $svc) {
+                if (($svc['slug'] ?? null) === $currentSlug) {
+                    $serviceIndex = $idx;
+                    break 2;
+                }
+            }
+        }
+
+        // Construir las URLs con el slug correcto para cada idioma
+        if ($serviceIndex !== null) {
+            foreach ($locales as $loc) {
+                $svc = $servicesByLocale[$loc][$serviceIndex] ?? null;
+                $slugForLocale = $svc['slug'] ?? null;
+                if ($slugForLocale) {
+                    $hreflangUrls[$loc] = $baseUrl . '/' . $loc . '/' . $servicePaths[$loc] . '/' . $slugForLocale;
+                }
+            }
+        }
+    }
+
+    // ── Rutas estáticas ──────────────────────────────────────────────────────
+    if (!$isDynamicRoute) {
+        // Convertir la ruta actual a su clave canónica
+        $canonicalKey = $currentRoute;
+        foreach ($routeMap as $key => $translations) {
+            if (in_array($currentRoute, $translations, true) || $currentRoute === $key) {
+                $canonicalKey = $key;
+                break;
+            }
+        }
+
+        if (isset($routeMap[$canonicalKey])) {
+            foreach ($locales as $loc) {
+                $path = $routeMap[$canonicalKey][$loc];
+                $hreflangUrls[$loc] = $baseUrl . '/' . $loc . ($path ? '/' . $path : '');
+            }
+        } else {
+            // Ruta desconocida: usar la ruta actual en todos los idiomas
+            foreach ($locales as $loc) {
+                $hreflangUrls[$loc] = $baseUrl . '/' . $loc . ($currentRoute ? '/' . $currentRoute : '');
+            }
+        }
     }
 @endphp
 
-<link rel="alternate" hreflang="es" href="{{ $esUrl }}">
-<link rel="alternate" hreflang="en" href="{{ $enUrl }}">
-<link rel="alternate" hreflang="de" href="{{ $deUrl }}">
-<link rel="alternate" hreflang="it" href="{{ $itUrl }}">
-<link rel="alternate" hreflang="fr" href="{{ $frUrl }}">
-<link rel="alternate" hreflang="x-default" href="{{ $esUrl }}">
+@foreach($locales as $loc)
+    @if(isset($hreflangUrls[$loc]))
+<link rel="alternate" hreflang="{{ $loc }}" href="{{ $hreflangUrls[$loc] }}">
+    @endif
+@endforeach
+@if(isset($hreflangUrls['es']))
+<link rel="alternate" hreflang="x-default" href="{{ $hreflangUrls['es'] }}">
+@endif

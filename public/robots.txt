@@ -19,6 +19,16 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /storage/
 
+# Bloquear páginas de redirección a WhatsApp (no aptas para indexación)
+Disallow: /es/whatsapp
+Disallow: /en/whatsapp
+Disallow: /de/whatsapp
+Disallow: /it/whatsapp
+Disallow: /fr/whatsapp
+
+# Bloquear recursos internos de Next.js
+Disallow: /_next/
+
 # Optimización para motores de búsqueda
 User-agent: Googlebot
 Allow: /
