@@ -264,31 +264,7 @@
                              loading="lazy"
                              decoding="async">
 
-                        <!-- SLIDE 3 — Leila -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 800, 85) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Leila, masajista tántrica en Mallorca"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="2"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 4 — Amara -->
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Amara/1.jpg', 800, 85) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
-                             alt="Amara, masajista tántrica relajante en Mallorca"
-                             width="800" height="955"
-                             class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="3"
-                             loading="lazy"
-                             decoding="async">
-
-                        <!-- SLIDE 5 — Emma -->
+                        <!-- SLIDE 3 — Emma -->
                         <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 800, 85) }}"
                              srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 420, 85) }} 420w,
                                      {{ \App\Support\OptimizedImage::url('images/masseurs/Emma/1.jpeg', 800, 85) }} 800w"
@@ -296,11 +272,11 @@
                              alt="Emma, masajista tántrica sensual en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="4"
+                             data-slide="2"
                              loading="lazy"
                              decoding="async">
 
-                        <!-- SLIDE 6 — Mia -->
+                        <!-- SLIDE 4 — Mia -->
                         <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 800, 85) }}"
                              srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 420, 85) }} 420w,
                                      {{ \App\Support\OptimizedImage::url('images/masseurs/Mia/1.jpeg', 800, 85) }} 800w"
@@ -308,7 +284,7 @@
                              alt="Mia, masajista tántrica exclusiva en Mallorca"
                              width="800" height="955"
                              class="hero-slide absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="5"
+                             data-slide="3"
                              loading="lazy"
                              decoding="async">
 
@@ -326,10 +302,8 @@
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
                             <button type="button" class="hero-dot is-active transition-all duration-500 rounded-full bg-amber-400 w-5 h-1.5" data-dot="0" aria-label="Angela"></button>
                             <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="1" aria-label="Brenda"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Leila"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Amara"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="4" aria-label="Emma"></button>
-                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="5" aria-label="Mia"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="2" aria-label="Emma"></button>
+                            <button type="button" class="hero-dot transition-all duration-500 rounded-full bg-amber-400/30 w-1.5 h-1.5" data-dot="3" aria-label="Mia"></button>
                         </div>
                     </div>
 
