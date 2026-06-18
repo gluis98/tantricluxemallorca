@@ -355,10 +355,11 @@
                     </div>
                 </div>
                 <div class="flex-1 relative group">
+                    @php $gallerySrc = ($heroSlides[array_rand($heroSlides)] ?? ['src' => 'images/masajista1.webp'])['src']; @endphp
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/masseurs/Leila/1.jpg', 750, 82) }} 750w"
+                        <img src="{{ \App\Support\OptimizedImage::url($gallerySrc, 750, 82) }}"
+                             srcset="{{ \App\Support\OptimizedImage::url($gallerySrc, 420, 82) }} 420w,
+                                     {{ \App\Support\OptimizedImage::url($gallerySrc, 750, 82) }} 750w"
                              sizes="(max-width: 768px) 90vw, 33vw"
                              alt="Masajista tántrica profesional en Mallorca"
                              width="750" height="500"
