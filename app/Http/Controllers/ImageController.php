@@ -29,7 +29,7 @@ class ImageController extends Controller
         // ── 1. Parámetros y validación básica ──────────────────────────────
         $src     = $request->get('src', '');
         $width   = max(0, min(self::MAX_WIDTH, (int) $request->get('w', 0)));
-        $quality = max(10, min(100, (int) $request->get('q', 82)));
+        $quality = max(10, min(100, (int) $request->get('q', 78)));
 
         // Prevenir path traversal: eliminar ".." y separadores no deseados
         $src = ltrim(preg_replace('/\.{2,}/', '', str_replace(['\\', "\0"], '/', $src)), '/');

@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@php
+    $heroWidths = [400, 680];
+    $heroLcpQ = 80;
+    $galleryCardWidths = [360, 480];
+    $galleryCardQ = 72;
+@endphp
+
 @section('title', trans('homepage.meta_title', [], $locale))
 @section('description', trans('homepage.meta_description', [], $locale))
 @section('keywords', trans('homepage.meta_keywords', [], $locale))
@@ -16,10 +23,9 @@
     {{-- Precarga responsiva del LCP: el navegador descarga el tamaño correcto según la pantalla --}}
     @if(!empty($heroSlides))
     <link rel="preload" as="image"
-          href="{{ \App\Support\OptimizedImage::url($heroSlides[0]['src'], 800, 85) }}"
-          imagesrcset="{{ \App\Support\OptimizedImage::url($heroSlides[0]['src'], 420, 85) }} 420w,
-                       {{ \App\Support\OptimizedImage::url($heroSlides[0]['src'], 800, 85) }} 800w"
-          imagesizes="(max-width: 1024px) 90vw, 50vw"
+          href="{{ \App\Support\OptimizedImage::largest($heroSlides[0]['src'], $heroWidths, $heroLcpQ) }}"
+          imagesrcset="{{ \App\Support\OptimizedImage::srcset($heroSlides[0]['src'], $heroWidths, $heroLcpQ) }}"
+          imagesizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 680px"
           fetchpriority="high">
     @endif
 @endsection
@@ -242,15 +248,14 @@
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
                         @foreach($heroSlides as $i => $slide)
-                        <img src="{{ \App\Support\OptimizedImage::url($slide['src'], 800, 85) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url($slide['src'], 420, 85) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url($slide['src'], 800, 85) }} 800w"
-                             sizes="(max-width: 1024px) 90vw, 50vw"
+                        <img src="{{ \App\Support\OptimizedImage::largest($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
+                             srcset="{{ \App\Support\OptimizedImage::srcset($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
+                             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 680px"
                              alt="{{ $slide['name'] }}, masajista tántrica en Palma de Mallorca"
-                             width="800" height="955"
+                             width="680" height="812"
                              class="hero-slide {{ $i === 0 ? 'is-active' : '' }} absolute inset-0 w-full h-full object-cover object-top"
                              data-slide="{{ $i }}"
-                             {{ $i === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"' }}
+                             @if($i === 0) fetchpriority="high" loading="eager" @else loading="lazy" @endif
                              decoding="async">
                         @endforeach
 
@@ -320,12 +325,11 @@
             <div class="flex flex-col md:flex-row gap-6 lg:gap-8">
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/rooms/1.jpg', 750, 82) }} 750w"
-                             sizes="(max-width: 768px) 90vw, 33vw"
+                        <img src="{{ \App\Support\OptimizedImage::largest('images/rooms/1.jpg', $galleryCardWidths, $galleryCardQ) }}"
+                             srcset="{{ \App\Support\OptimizedImage::srcset('images/rooms/1.jpg', $galleryCardWidths, $galleryCardQ) }}"
+                             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 400px"
                              alt="Espacio Exclusivo Tantrico Palma Mallorca"
-                             width="750" height="500"
+                             width="480" height="320"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -338,12 +342,11 @@
                 </div>
                 <div class="flex-1 relative group">
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url('images/rooms/2.jpg', 750, 82) }} 750w"
-                             sizes="(max-width: 768px) 90vw, 33vw"
+                        <img src="{{ \App\Support\OptimizedImage::largest('images/rooms/2.jpg', $galleryCardWidths, $galleryCardQ) }}"
+                             srcset="{{ \App\Support\OptimizedImage::srcset('images/rooms/2.jpg', $galleryCardWidths, $galleryCardQ) }}"
+                             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 400px"
                              alt="Ambiente Relajante Masaje Tantrico Palma"
-                             width="750" height="500"
+                             width="480" height="320"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
@@ -357,12 +360,11 @@
                 <div class="flex-1 relative group">
                     @php $gallerySrc = ($heroSlides[array_rand($heroSlides)] ?? ['src' => 'images/masajista1.webp'])['src']; @endphp
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::url($gallerySrc, 750, 82) }}"
-                             srcset="{{ \App\Support\OptimizedImage::url($gallerySrc, 420, 82) }} 420w,
-                                     {{ \App\Support\OptimizedImage::url($gallerySrc, 750, 82) }} 750w"
-                             sizes="(max-width: 768px) 90vw, 33vw"
+                        <img src="{{ \App\Support\OptimizedImage::largest($gallerySrc, $galleryCardWidths, $galleryCardQ) }}"
+                             srcset="{{ \App\Support\OptimizedImage::srcset($gallerySrc, $galleryCardWidths, $galleryCardQ) }}"
+                             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 400px"
                              alt="Masajista tántrica profesional en Mallorca"
-                             width="750" height="500"
+                             width="480" height="320"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
