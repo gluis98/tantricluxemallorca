@@ -9,7 +9,11 @@ use App\Http\Controllers\MasseusesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MaintenanceController;
 use App\Http\Middleware\CanonicalLocalePath;
+
+// Vista de mantenimiento (única ruta accesible cuando APP_MAINTENANCE=true)
+Route::get('/mantenimiento', [MaintenanceController::class, 'show'])->name('maintenance');
 
 // Redireccionar raíz a español
 Route::get('/', function () {
