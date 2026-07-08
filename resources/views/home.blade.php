@@ -247,23 +247,50 @@
                          class="relative w-full max-w-lg lg:max-w-none overflow-hidden rounded-sm shadow-2xl h-[55vh] lg:h-[82vh]"
                          style="border: 1px solid rgba(251,191,36,0.18);">
 
+                        <!-- Flechas de navegación (solo móvil) -->
+                        @if(count($heroSlides) > 1)
+                        <button type="button"
+                                id="hero-prev"
+                                class="hero-nav hero-nav--prev lg:hidden"
+                                aria-label="Foto anterior">
+                            <span aria-hidden="true">&#8249;</span>
+                        </button>
+                        <button type="button"
+                                id="hero-next"
+                                class="hero-nav hero-nav--next lg:hidden"
+                                aria-label="Foto siguiente">
+                            <span aria-hidden="true">&#8250;</span>
+                        </button>
+                        @endif
+
                         @foreach($heroSlides as $i => $slide)
-                        <img src="{{ \App\Support\OptimizedImage::largest($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
-                             srcset="{{ \App\Support\OptimizedImage::srcset($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
-                             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 680px"
-                             alt="{{ $slide['name'] }}, masajista tántrica en Palma de Mallorca"
-                             width="680" height="812"
-                             class="hero-slide {{ $i === 0 ? 'is-active' : '' }} absolute inset-0 w-full h-full object-cover object-top"
-                             data-slide="{{ $i }}"
-                             @if($i === 0) fetchpriority="high" loading="eager" @else loading="lazy" @endif
-                             decoding="async">
+                        @php
+                            $waMessage = 'Hola, me gustaría reservar una cita con ' . $slide['name'];
+                        @endphp
+                        <div class="hero-slide {{ $i === 0 ? 'is-active' : '' }} absolute inset-0"
+                             data-slide="{{ $i }}">
+                            <img src="{{ \App\Support\OptimizedImage::largest($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
+                                 srcset="{{ \App\Support\OptimizedImage::srcset($slide['src'], $heroWidths, $i === 0 ? $heroLcpQ : 74) }}"
+                                 sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 680px"
+                                 alt="{{ $slide['name'] }}, masajista tántrica en Palma de Mallorca"
+                                 width="680" height="812"
+                                 class="hero-slide-img absolute inset-0 w-full h-full object-cover object-top"
+                                 @if($i === 0) fetchpriority="high" loading="eager" @else loading="lazy" @endif
+                                 decoding="async">
+                            <a href="https://wa.me/34602560426?text={{ urlencode($waMessage) }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="hero-slide-wa absolute bottom-14 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap tenali-ramakrishna border border-amber-400/60 bg-black/50 backdrop-blur-sm rounded-full hover:bg-amber-400/15 text-amber-200 px-5 py-2 text-xs font-medium tracking-widest transition-all uppercase">
+                                Reservar con {{ $slide['name'] }}
+                            </a>
+                        </div>
                         @endforeach
 
                         <!-- Overlay degradado inferior -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none z-10"></div>
 
-                        <!-- Etiqueta de lujo -->
-                        <div class="absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap z-20">
+                        <!-- Etiqueta de lujo (solo desktop, por encima del botón) -->
+                        <div class="absolute bottom-28 left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-3 whitespace-nowrap z-20">
                             <div class="h-px w-10 bg-amber-400/60"></div>
                             <span class="text-xs tracking-[0.3em] text-amber-300/90 tenali-ramakrishna uppercase">Mallorca · Palma</span>
                             <div class="h-px w-10 bg-amber-400/60"></div>
@@ -1149,6 +1176,7 @@
        cualquier cambio interno NO propaga reflow al exterior (fix PageSpeed) */
     #hero-slider {
         contain: layout style paint;
+        touch-action: pan-y;
     }
     /* Reduce trabajo inicial de Style/Layout en secciones bajo el hero. */
     .defer-render {
@@ -1160,25 +1188,62 @@
     #hero-slider.hero-slider-ready .hero-slide { transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .hero-slide.is-active {
         opacity: 1;
-        /* will-change solo mientras está activo (libera capas compositing en móvil) */
         will-change: opacity;
     }
-    /* Evita retrasar el LCP: no animar la primera pintura, solo cuando el slider ya está listo. */
-    #hero-slider.hero-slider-ready .hero-slide.is-active { animation: hero-ken-burns 9s ease-in-out forwards; }
+    #hero-slider.hero-slider-ready .hero-slide.is-active .hero-slide-img { animation: hero-ken-burns 9s ease-in-out forwards; }
     .hero-slide.is-leaving {
         opacity: 0;
     }
     #hero-slider.hero-slider-ready .hero-slide.is-leaving { transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .hero-slide-wa {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+    .hero-slide.is-active .hero-slide-wa {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .hero-nav {
+        position: absolute;
+        top: 50%;
+        z-index: 30;
+        transform: translateY(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        border: 1px solid rgba(251, 191, 36, 0.35);
+        background: rgba(0, 0, 0, 0.45);
+        color: #fbbf24;
+        font-size: 1.75rem;
+        line-height: 1;
+        cursor: pointer;
+        backdrop-filter: blur(4px);
+        transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-nav:hover,
+    .hero-nav:active {
+        background: rgba(251, 191, 36, 0.15);
+        border-color: rgba(251, 191, 36, 0.6);
+    }
+    .hero-nav--prev { left: 0.75rem; }
+    .hero-nav--next { right: 0.75rem; }
     @keyframes hero-ken-burns {
         0%   { transform: scale(1.06) translate(0px,    0px); }
         100% { transform: scale(1.00) translate(-6px, -4px); }
     }
     /* En móvil: sin Ken Burns (ahorra CPU/GPU y evita jank) */
     @media (max-width: 1024px) {
-        .hero-slide.is-active {
+        .hero-slide.is-active .hero-slide-img {
             animation: none;
             transform: none;
-            will-change: auto; /* libera capa GPU en móvil */
+            will-change: auto;
+        }
+        .hero-slide.is-active {
+            will-change: auto;
         }
     }
     /* Respeta preferencia de movimiento reducido (accesibilidad + rendimiento) */
@@ -1189,6 +1254,10 @@
             animation: none !important;
             transition-duration: 0.3s !important;
             will-change: auto !important;
+        }
+        .hero-slide.is-active .hero-slide-img {
+            animation: none !important;
+            transform: none !important;
         }
     }
     /* Dots */
@@ -1236,6 +1305,10 @@
         activateSlide((current + 1) % total);
     }
 
+    function prevSlide() {
+        activateSlide((current - 1 + total) % total);
+    }
+
     function startTimer() {
         timer = setInterval(nextSlide, 5500);
     }
@@ -1259,6 +1332,62 @@
             activateSlide(i);
         });
     });
+
+    // Flechas móvil
+    var prevBtn = document.getElementById('hero-prev');
+    var nextBtn = document.getElementById('hero-next');
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            resetTimer();
+            prevSlide();
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            resetTimer();
+            nextSlide();
+        });
+    }
+
+    // Deslizar con el dedo (móvil)
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchActive = false;
+    var SWIPE_THRESHOLD = 40;
+
+    slider.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchActive = true;
+        clearInterval(timer);
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function (e) {
+        if (!touchActive) return;
+        touchActive = false;
+
+        var touch = e.changedTouches[0];
+        var deltaX = touch.clientX - touchStartX;
+        var deltaY = touch.clientY - touchStartY;
+
+        if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaY) > Math.abs(deltaX)) {
+            startTimer();
+            return;
+        }
+
+        resetTimer();
+        if (deltaX < 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }, { passive: true });
+
+    slider.addEventListener('touchcancel', function () {
+        touchActive = false;
+        startTimer();
+    }, { passive: true });
 
     // Pausar al hover
     slider.addEventListener('mouseenter', function () { clearInterval(timer); });
