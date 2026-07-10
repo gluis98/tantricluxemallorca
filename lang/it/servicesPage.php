@@ -22,26 +22,6 @@ return array (
   array (
     0 => 
     array (
-      'id' => 1,
-      'slug' => 'massaggio-rilassante',
-      'title' => 'MASSAGGIO RILASSANTE',
-      'duration' => '60 min',
-      'price' => '€120',
-      'description' => 'Un\'esperienza di profondo rilassamento con oli essenziali premium.',
-      'meta_title' => 'Massaggio Rilassante Palma | SPA Maiorca',
-      'meta_description' => 'Prenota il tuo massaggio rilassante con oli essenziali a Palma.',
-      'meta_keywords' => 'massaggio rilassante',
-      'features' => 
-      array (
-        0 => 'Oli essenziali premium',
-        1 => 'Tecniche di rilassamento',
-        2 => 'Ambiente climatizzato',
-      ),
-      'fullDescription' => 'Il Massaggio Rilassante è un viaggio verso il benessere assoluto, per alleviare tensioni fisiche e mentali.',
-      'image' => '/images/ambiente_relante_en_palma.webp',
-    ),
-    1 => 
-    array (
       'id' => 2,
       'slug' => 'massaggio-corpo-a-corpo',
       'title' => 'MASSAGGIO CORPO A CORPO',

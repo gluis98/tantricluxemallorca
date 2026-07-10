@@ -22,21 +22,6 @@ return array (
   array (
     0 =>
     array (
-      'id' => 1,
-      'slug' => 'masaje-relajante',
-      'title' => 'MASAJE RELAJANTE',
-      'duration' => '30-60 min',
-      'price' => 'Desde €60',
-      'description' => 'Ideal para desconectar del estrés y recuperar la armonía del cuerpo. Mediante técnicas suaves y relajantes se alivian las tensiones acumuladas, permitiendo que el cuerpo y la mente entren en un estado de profunda relajación.',
-      'meta_title' => 'Masaje Relajante Palma | Técnicas Suaves y Relajación Profunda Mallorca',
-      'meta_description' => 'Masaje relajante en Palma de Mallorca. Técnicas suaves que alivian tensiones y llevan al cuerpo a un estado de profunda armonía. Desde 60€. Reserva ahora.',
-      'meta_keywords' => 'masaje relajante palma, masaje suave mallorca, relajacion profunda palma, masaje antiestres mallorca, masaje bienestar palma',
-      'features' => array ( 0 => 'Técnicas suaves y relajantes', 1 => 'Alivio de tensiones', 2 => 'Armonía cuerpo y mente', 3 => 'Ambiente tranquilo' ),
-      'fullDescription' => 'Ideal para desconectar del estrés y recuperar la armonía del cuerpo. Mediante técnicas suaves y relajantes se alivian las tensiones acumuladas, permitiendo que el cuerpo y la mente entren en un estado de profunda relajación. Opciones: 30 min – 60€ | 60 min – 100€.',
-      'image' => '/images/exotic_paradise.webp',
-    ),
-    1 =>
-    array (
       'id' => 2,
       'slug' => 'masaje-cuerpo-a-cuerpo',
       'title' => 'MASAJE CUERPO A CUERPO',

@@ -22,27 +22,6 @@ return array (
   array (
     0 =>
     array (
-      'id' => 1,
-      'slug' => 'relaxing-massage',
-      'title' => 'RELAXING MASSAGE',
-      'duration' => '30-60 min',
-      'price' => 'From €60',
-      'description' => 'Ideal for disconnecting from stress and recovering the harmony of the body. Through gentle and relaxing techniques, accumulated tensions are relieved, allowing body and mind to enter a state of deep relaxation.',
-      'meta_title' => 'Relaxing Massage Palma | Gentle Techniques & Deep Relaxation Mallorca',
-      'meta_description' => 'Relaxing massage in Palma de Mallorca. Gentle techniques that relieve tension and bring the body into a state of deep harmony. From €60. Book now.',
-      'meta_keywords' => 'relaxing massage palma, gentle massage mallorca, deep relaxation palma, anti-stress massage mallorca, wellness massage palma',
-      'features' => 
-      array (
-        0 => 'Gentle and relaxing techniques',
-        1 => 'Tension relief',
-        2 => 'Body and mind harmony',
-        3 => 'Calm atmosphere',
-      ),
-      'fullDescription' => 'Ideal for disconnecting from stress and recovering the harmony of the body. Through gentle and relaxing techniques, accumulated tensions are relieved, allowing body and mind to enter a state of deep relaxation. Options: 30 min – €60 | 60 min – €100.',
-      'image' => '/images/exotic_paradise.webp',
-    ),
-    1 => 
-    array (
       'id' => 2,
       'slug' => 'body-to-body-massage',
       'title' => 'BODY TO BODY MASSAGE',

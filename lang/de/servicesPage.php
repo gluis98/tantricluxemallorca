@@ -22,27 +22,6 @@ return array (
   array (
     0 => 
     array (
-      'id' => 1,
-      'slug' => 'entspannungsmassage',
-      'title' => 'ENTSPANNUNGSMASSAGE',
-      'duration' => '30-60 Min.',
-      'price' => 'Ab 60€',
-      'description' => 'Ideal, um vom Stress abzuschalten und die Harmonie des Körpers wiederzufinden. Durch sanfte und entspannende Techniken werden angesammelte Spannungen abgebaut und Körper und Geist in einen Zustand tiefer Entspannung versetzt.',
-      'meta_title' => 'Entspannungsmassage Palma | Sanfte Techniken & Tiefe Entspannung Mallorca',
-      'meta_description' => 'Entspannungsmassage in Palma de Mallorca. Sanfte Techniken, die Spannungen lösen und den Körper in tiefe Harmonie bringen. Ab 60€. Jetzt buchen.',
-      'meta_keywords' => 'entspannungsmassage palma, sanfte massage mallorca, tiefe entspannung palma, anti-stress massage mallorca, wellness massage palma',
-      'features' => 
-      array (
-        0 => 'Sanfte und entspannende Techniken',
-        1 => 'Spannungsabbau',
-        2 => 'Körper- und Geistharmonie',
-        3 => 'Ruhige Atmosphäre',
-      ),
-      'fullDescription' => 'Ideal, um vom Stress abzuschalten und die Harmonie des Körpers wiederzufinden. Durch sanfte und entspannende Techniken werden angesammelte Spannungen abgebaut und Körper und Geist in einen Zustand tiefer Entspannung versetzt. Optionen: 30 Min. – 60€ | 60 Min. – 100€.',
-      'image' => '/images/exotic_paradise.webp',
-    ),
-    1 => 
-    array (
       'id' => 2,
       'slug' => 'koerper-an-koerper-massage',
       'title' => 'KÖRPER AN KÖRPER MASSAGE',

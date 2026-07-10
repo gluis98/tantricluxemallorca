@@ -12,6 +12,11 @@ class ServiceDetailController extends Controller
      * @var list<string>
      */
     private const LEGACY_SERVICE_SLUGS = [
+        'masaje-relajante',
+        'relaxing-massage',
+        'entspannungsmassage',
+        'massage-relaxant',
+        'massaggio-rilassante',
         'golden-relax',
         'golden-sensitivo',
         'experiencia-golden',

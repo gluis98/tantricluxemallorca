@@ -22,27 +22,6 @@ return array (
   array (
     0 => 
     array (
-      'id' => 1,
-      'slug' => 'massage-relaxant',
-      'title' => 'MASSAGE RELAXANT',
-      'duration' => '60 min',
-      'price' => '€120',
-      'description' => 'Une expérience de relaxation profonde qui soulage les tensions et le stress. Huiles essentielles premium et techniques professionnelles.',
-      'meta_title' => 'Massage Relaxant Palma | Relaxation Profonde',
-      'meta_description' => 'Massage Relaxant à Palma de Majorque. Relaxation profonde avec huiles essentielles. Soulage les tensions. SPA de luxe.',
-      'meta_keywords' => 'massage relaxant, palma, majorque',
-      'features' => 
-      array (
-        0 => 'Huiles essentielles premium',
-        1 => 'Techniques de relaxation',
-        2 => 'Ambiance climatisée',
-        3 => 'Musique ambiante spéciale',
-      ),
-      'fullDescription' => 'Le Massage Relaxant est la porte d\'entrée au monde du plaisir et du bien-être. Avec des mouvements doux et enveloppants, notre masseuse experte utilise des huiles essentielles premium pour harmoniser corps et esprit. Cette session soulage les tensions accumulées, réduit le stress et vous transporte dans un état de calme absolu.',
-      'image' => '/images/ambiente_relante_en_palma.webp',
-    ),
-    1 => 
-    array (
       'id' => 2,
       'slug' => 'massage-corps-a-corps',
       'title' => 'MASSAGE CORPS À CORPS',
