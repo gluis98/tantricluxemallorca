@@ -13,37 +13,38 @@
 @endsection
 
 @section('structured_data')
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-        "@type": "LocalBusiness",
-        "name": "Tantric Luxe Mallorca",
-        "image": "{{ asset('images/LogoFull.png') }}",
-        "telephone": "+34 602 560 426",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
-            "addressLocality": "Palma",
-            "postalCode": "07003",
-            "addressRegion": "Illes Balears",
-            "addressCountry": "ES"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "39.5806",
-            "longitude": "2.6483"
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "23:00"
-        }
-    }
-}
-</script>
+@php
+    $contactSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ContactPage',
+        'mainEntity' => [
+            '@type' => 'LocalBusiness',
+            'name' => 'Tantric Luxe Mallorca',
+            'image' => asset('images/LogoFull.png'),
+            'telephone' => '+34 602 560 426',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+                'addressLocality' => 'Palma',
+                'postalCode' => '07003',
+                'addressRegion' => 'Illes Balears',
+                'addressCountry' => 'ES',
+            ],
+            'geo' => [
+                '@type' => 'GeoCoordinates',
+                'latitude' => '39.5806',
+                'longitude' => '2.6483',
+            ],
+            'openingHoursSpecification' => [
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                'opens' => '09:00',
+                'closes' => '23:00',
+            ],
+        ],
+    ];
+@endphp
+@include('components.seo.json-ld', ['schema' => $contactSchema])
 @endsection
 
 @section('content')

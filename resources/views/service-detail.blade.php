@@ -25,38 +25,37 @@
 @endsection
 
 @section('structured_data')
-@if($service)
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "{{ $service['title'] ?? '' }}",
-    "description": "{{ strip_tags($service['description'] ?? $service['fullDescription'] ?? '') }}",
-    "provider": {
-        "@type": "Spa",
-        "name": "Tantric Luxe Mallorca",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
-            "addressLocality": "Palma",
-            "postalCode": "07003",
-            "addressRegion": "Illes Balears",
-            "addressCountry": "ES"
-        }
-    },
-    "areaServed": {
-        "@type": "City",
-        "name": "Palma de Mallorca"
-    },
-    "offers": {
-        "@type": "Offer",
-        "price": "{{ preg_replace('/[^0-9.]/', '', $service['price'] ?? '') }}",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-    }
-}
-</script>
-@endif
+@php
+    $serviceSchema = $service ? [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'name' => $service['title'] ?? '',
+        'description' => strip_tags($service['description'] ?? $service['fullDescription'] ?? ''),
+        'provider' => [
+            '@type' => 'Spa',
+            'name' => 'Tantric Luxe Mallorca',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+                'addressLocality' => 'Palma',
+                'postalCode' => '07003',
+                'addressRegion' => 'Illes Balears',
+                'addressCountry' => 'ES',
+            ],
+        ],
+        'areaServed' => [
+            '@type' => 'City',
+            'name' => 'Palma de Mallorca',
+        ],
+        'offers' => [
+            '@type' => 'Offer',
+            'price' => preg_replace('/[^0-9.]/', '', $service['price'] ?? ''),
+            'priceCurrency' => 'EUR',
+            'availability' => 'https://schema.org/InStock',
+        ],
+    ] : null;
+@endphp
+@include('components.seo.json-ld', ['schema' => $serviceSchema])
 @endsection
 
 @section('content')

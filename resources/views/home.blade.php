@@ -31,47 +31,48 @@
 @endsection
 
 @section('structured_data')
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
-    "name": "Tantric Luxe Mallorca",
-    "description": "{{ trans('homepage.meta_description', [], $locale) }}",
-    "url": "https://tantricluxemallorca.com",
-    "logo": "{{ asset('images/LogoFull.png') }}",
-    "image": "{{ asset('images/LogoFull.png') }}",
-    "telephone": "+34-602-560-426",
-    "email": "tantricluxemallorca@gmail.com",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
-        "addressLocality": "Palma",
-        "postalCode": "07003",
-        "addressRegion": "Illes Balears",
-        "addressCountry": "ES"
-    },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "39.5806",
-        "longitude": "2.6483"
-    },
-    "openingHours": "Mo-Su 09:00-23:00",
-    "priceRange": "€99-€499",
-    "currenciesAccepted": "EUR",
-    "paymentAccepted": "Cash, Credit Card",
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "89",
-        "bestRating": "5",
-        "worstRating": "1"
-    },
-    "sameAs": [
-        "https://instagram.com/tantricluxemallorca",
-        "https://facebook.com/tantricluxemallorca"
-    ]
-}
-</script>
+@php
+    $homeSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'HealthAndBeautyBusiness',
+        'name' => 'Tantric Luxe Mallorca',
+        'description' => trans('homepage.meta_description', [], $locale),
+        'url' => 'https://tantricluxemallorca.com',
+        'logo' => asset('images/LogoFull.png'),
+        'image' => asset('images/LogoFull.png'),
+        'telephone' => '+34-602-560-426',
+        'email' => 'tantricluxemallorca@gmail.com',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+            'addressLocality' => 'Palma',
+            'postalCode' => '07003',
+            'addressRegion' => 'Illes Balears',
+            'addressCountry' => 'ES',
+        ],
+        'geo' => [
+            '@type' => 'GeoCoordinates',
+            'latitude' => '39.5806',
+            'longitude' => '2.6483',
+        ],
+        'openingHours' => 'Mo-Su 09:00-23:00',
+        'priceRange' => '€99-€499',
+        'currenciesAccepted' => 'EUR',
+        'paymentAccepted' => 'Cash, Credit Card',
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '5',
+            'reviewCount' => '89',
+            'bestRating' => '5',
+            'worstRating' => '1',
+        ],
+        'sameAs' => [
+            'https://instagram.com/tantricluxemallorca',
+            'https://facebook.com/tantricluxemallorca',
+        ],
+    ];
+@endphp
+@include('components.seo.json-ld', ['schema' => $homeSchema])
 @endsection
 
 @section('content')

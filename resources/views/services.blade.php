@@ -13,38 +13,39 @@
 @endsection
 
 @section('structured_data')
-@php $servicesForSchema = trans('servicesPage.services', [], $locale) ?? []; @endphp
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "{{ trans('servicesPage.title', [], $locale) }}",
-    "description": "{{ trans('servicesPage.meta_description', [], $locale) }}",
-    "itemListElement": [
-        @foreach($servicesForSchema as $index => $svc)
-        {
-            "@type": "ListItem",
-            "position": {{ $index + 1 }},
-            "item": {
-                "@type": "Service",
-                "name": "{{ $svc['title'] ?? '' }}",
-                "description": "{{ $svc['description'] ?? '' }}",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "{{ preg_replace('/[^0-9.]/', '', $svc['price'] ?? '0') }}",
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/InStock"
-                },
-                "provider": {
-                    "@type": "LocalBusiness",
-                    "name": "Tantric Luxe Mallorca"
-                }
-            }
-        }{{ $index < count($servicesForSchema) - 1 ? ',' : '' }}
-        @endforeach
-    ]
-}
-</script>
+@php
+    $servicesForSchema = array_values(trans('servicesPage.services', [], $locale) ?? []);
+    $itemListElement = [];
+    foreach ($servicesForSchema as $index => $svc) {
+        $itemListElement[] = [
+            '@type' => 'ListItem',
+            'position' => $index + 1,
+            'item' => [
+                '@type' => 'Service',
+                'name' => $svc['title'] ?? '',
+                'description' => $svc['description'] ?? '',
+                'offers' => [
+                    '@type' => 'Offer',
+                    'price' => preg_replace('/[^0-9.]/', '', $svc['price'] ?? '0'),
+                    'priceCurrency' => 'EUR',
+                    'availability' => 'https://schema.org/InStock',
+                ],
+                'provider' => [
+                    '@type' => 'LocalBusiness',
+                    'name' => 'Tantric Luxe Mallorca',
+                ],
+            ],
+        ];
+    }
+    $servicesSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => trans('servicesPage.title', [], $locale),
+        'description' => trans('servicesPage.meta_description', [], $locale),
+        'itemListElement' => $itemListElement,
+    ];
+@endphp
+@include('components.seo.json-ld', ['schema' => $servicesSchema])
 @endsection
 
 @section('content')

@@ -13,36 +13,37 @@
 @endsection
 
 @section('structured_data')
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "mainEntity": {
-        "@type": "LocalBusiness",
-        "name": "Tantric Luxe Mallorca",
-        "description": "{{ trans('aboutPage.meta_description', [], $locale) }}",
-        "url": "https://tantricluxemallorca.com",
-        "logo": "{{ asset('images/LogoFull.png') }}",
-        "foundingDate": "2019",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Carrer del Pare Bartomeu Pou, 44, Nord",
-            "addressLocality": "Palma",
-            "postalCode": "07003",
-            "addressRegion": "Illes Balears",
-            "addressCountry": "ES"
-        },
-        "telephone": "+34-602-560-426",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "89",
-            "bestRating": "5",
-            "worstRating": "1"
-        }
-    }
-}
-</script>
+@php
+    $aboutSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'AboutPage',
+        'mainEntity' => [
+            '@type' => 'LocalBusiness',
+            'name' => 'Tantric Luxe Mallorca',
+            'description' => trans('aboutPage.meta_description', [], $locale),
+            'url' => 'https://tantricluxemallorca.com',
+            'logo' => asset('images/LogoFull.png'),
+            'foundingDate' => '2019',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Carrer del Pare Bartomeu Pou, 44, Nord',
+                'addressLocality' => 'Palma',
+                'postalCode' => '07003',
+                'addressRegion' => 'Illes Balears',
+                'addressCountry' => 'ES',
+            ],
+            'telephone' => '+34-602-560-426',
+            'aggregateRating' => [
+                '@type' => 'AggregateRating',
+                'ratingValue' => '5',
+                'reviewCount' => '89',
+                'bestRating' => '5',
+                'worstRating' => '1',
+            ],
+        ],
+    ];
+@endphp
+@include('components.seo.json-ld', ['schema' => $aboutSchema])
 @endsection
 
 @section('content')

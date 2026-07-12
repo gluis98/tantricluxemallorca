@@ -21,32 +21,32 @@
 @endsection
 
 @section('structured_data')
-@if(count($masseuses) > 0)
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-        @foreach($masseuses as $index => $masseuse)
-        {
-            "@type": "ListItem",
-            "position": {{ $index + 1 }},
-            "item": {
-                "@type": "Person",
-                "name": "{{ $masseuse['name'] ?? '' }}",
-                "jobTitle": "{{ $masseuse['specialty'] ?? '' }}",
-                "worksFor": {
-                    "@type": "LocalBusiness",
-                    "name": "Tantric Luxe Mallorca",
-                    "url": "https://tantricluxemallorca.com"
-                }
-            }
-        }{{ $index < count($masseuses) - 1 ? ',' : '' }}
-        @endforeach
-    ]
-}
-</script>
-@endif
+@php
+    $masseusesForSchema = array_values($masseuses);
+    $itemListElement = [];
+    foreach ($masseusesForSchema as $index => $masseuse) {
+        $itemListElement[] = [
+            '@type' => 'ListItem',
+            'position' => $index + 1,
+            'item' => [
+                '@type' => 'Person',
+                'name' => $masseuse['name'] ?? '',
+                'jobTitle' => $masseuse['specialty'] ?? '',
+                'worksFor' => [
+                    '@type' => 'LocalBusiness',
+                    'name' => 'Tantric Luxe Mallorca',
+                    'url' => 'https://tantricluxemallorca.com',
+                ],
+            ],
+        ];
+    }
+    $masseusesSchema = count($itemListElement) > 0 ? [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'itemListElement' => $itemListElement,
+    ] : null;
+@endphp
+@include('components.seo.json-ld', ['schema' => $masseusesSchema])
 @endsection
 
 @section('content')
