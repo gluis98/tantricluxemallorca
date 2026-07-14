@@ -386,12 +386,11 @@
                     </div>
                 </div>
                 <div class="flex-1 relative group">
-                    @php $gallerySrc = ($heroSlides[array_rand($heroSlides)] ?? ['src' => 'images/masajista1.webp'])['src']; @endphp
                     <div class="relative overflow-hidden rounded-xs" style="border: 1px solid rgba(251,191,36,0.20);">
-                        <img src="{{ \App\Support\OptimizedImage::largest($gallerySrc, $galleryCardWidths, $galleryCardQ) }}"
-                             srcset="{{ \App\Support\OptimizedImage::srcset($gallerySrc, $galleryCardWidths, $galleryCardQ) }}"
+                        <img src="{{ \App\Support\OptimizedImage::largest('images/extras sections/Experiencia Unica.jpeg', $galleryCardWidths, $galleryCardQ) }}"
+                             srcset="{{ \App\Support\OptimizedImage::srcset('images/extras sections/Experiencia Unica.jpeg', $galleryCardWidths, $galleryCardQ) }}"
                              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 400px"
-                             alt="Masajista tántrica profesional en Mallorca"
+                             alt="Experiencia única Tantric Luxe Mallorca"
                              width="480" height="320"
                              class="w-full h-64 md:h-100 object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" decoding="async">
