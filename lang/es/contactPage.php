@@ -1,17 +1,17 @@
 <?php
 
 return array (
-  'meta_title' => 'Contacto | Tantric Luxe Mallorca - Reserva Masajes Eróticos y Tantricos Palma',
-  'meta_description' => 'Contacta con Tantric Luxe Mallorca. Reserva tu masaje erótico, tantrico o en pareja en Palma. WhatsApp: +34 602 560 426. Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma. Horario: Lunes a Domingo 09:00-23:00.',
-  'meta_keywords' => 'contacto masajes palma, reservar masaje erotico palma, contacto masaje tantrico palma, reservar masajes mallorca, tantric luxe contacto, whatsapp masaje tantrico, whatsapp masajista palma, ubicacion spa palma, reserva masaje en pareja mallorca, contacto spa mallorca',
+  'meta_title' => 'Contacto | Reserva Masaje Erótico Palma - Masaje Tantrico Mallorca',
+  'meta_description' => 'Reserva masaje erotico Palma o masaje tantrico Mallorca. WhatsApp +34 602 560 426. Spa erotico Mallorca en Carrer del Pare Bartomeu Pou, 44. Masajista tantrica Palma disponible de lunes a domingo.',
+  'meta_keywords' => 'masaje erotico palma contacto, masaje tantrico mallorca reserva, spa erotico mallorca, masajista tantrica palma, masajes eroticos mallorca, masajes palma de mallorca, reservar masaje palma',
   'pre_title' => 'CONTACTO',
   'title' => 'RESERVA TU',
   'subtitle' => 'EXPERIENCIA',
-  'description' => 'Estamos aquí para hacer realidad tu experiencia perfecta. Contáctanos para reservar o consultar cualquier duda sobre nuestros servicios exclusivos.',
+  'description' => 'Contacta para reservar masaje tantrico Mallorca, masaje erotico Palma o masaje en pareja. Respuesta rápida por WhatsApp en nuestro spa erotico Mallorca.',
   'info_title' => 'INFORMACIÓN DE CONTACTO',
-  'contact_info' => 
+  'contact_info' =>
   array (
-    0 => 
+    0 =>
     array (
       'icon' => '📍',
       'title' => 'UBICACIÓN',
@@ -19,7 +19,7 @@ return array (
       'line2' => '07003 Palma, Illes Balears',
       'line3' => 'Zona exclusiva y discreta del centro histórico',
     ),
-    1 => 
+    1 =>
     array (
       'icon' => '📱',
       'title' => 'WHATSAPP PREFERIDO',
@@ -27,7 +27,7 @@ return array (
       'line2' => 'Respuesta garantizada en menos de 1 hora',
       'line3' => 'Atención personalizada 24/7',
     ),
-    2 => 
+    2 =>
     array (
       'icon' => '⏰',
       'title' => 'HORARIOS',
@@ -35,7 +35,7 @@ return array (
       'line2' => '09:00 - 23:00',
       'line3' => 'Servicios con cita previa',
     ),
-    3 => 
+    3 =>
     array (
       'icon' => '📧',
       'title' => 'EMAIL',
@@ -63,7 +63,7 @@ return array (
   'time_default_option' => 'Selecciona una hora',
   'message_label' => 'MENSAJE ADICIONAL',
   'message_placeholder' => '¿Alguna petición especial o pregunta? (Opcional)',
-  'form_notes' => 
+  'form_notes' =>
   array (
     0 => 'Los campos marcados con * son obligatorios',
     1 => 'Recibirás confirmación en un plazo máximo de 2 horas',
@@ -76,7 +76,7 @@ return array (
   'map_section_title' => 'NUESTRA UBICACIÓN',
   'map_section_subtitle' => 'EN EL CORAZÓN DE PALMA',
   'map_section_p1' => 'Nuestro exclusivo spa se encuentra estratégicamente ubicado en una zona discreta del centro histórico de Palma de Mallorca, ofreciendo fácil acceso desde cualquier punto de la ciudad mientras mantenemos la máxima privacidad.',
-  'map_section_points' => 
+  'map_section_points' =>
   array (
     0 => '5 minutos del centro comercial',
     1 => '10 minutos de la catedral',
@@ -94,7 +94,7 @@ return array (
   'mobile_bar_web_chat_hint' => 'Si no ves el chat incrustado (el navegador puede bloquearlo), usa el enlace:',
   'mobile_bar_web_chat_open_external' => 'Abrir WhatsApp Web',
   'mobile_bar_close' => 'Cerrar',
-  'timeSlots' => 
+  'timeSlots' =>
   array (
     0 => '11:00',
     1 => '12:00',

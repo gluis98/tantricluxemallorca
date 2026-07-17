@@ -1,16 +1,16 @@
 <?php
 
 return array (
-  'meta_title' => 'Über Uns | Tantric Luxe Mallorca - Erotische Massage Zentrum & Luxus Spa',
-  'meta_description' => 'Lernen Sie Tantric Luxe Mallorca kennen. Pioniere der erotischen und Tantra Luxus-Massage seit 2019. Exklusives Spa mit zertifizierten professionellen Masseurinnen, Premium-Einrichtungen und über 5000 zufriedenen Kunden in Palma.',
-  'meta_keywords' => 'über tantric luxe mallorca, tantra massage palma geschichte, erotische massage zentrum mallorca, tantra spa palma, spa mallorca, spa palma, tantra massage fachkräfte, tantra erlebnis palma, massage palma, professionelle masseurinnen mallorca, tantra zentrum mallorca, luxe spa mallorca, erotische massage palma',
+  'meta_title' => 'Über Uns | Tantra Massage Mallorca - Erotisches Spa Tantric Luxe',
+  'meta_description' => 'Tantric Luxe: Referenz für Tantra Massage Mallorca und erotische Massage Palma seit 2019. Erotisches Spa Mallorca mit zertifizierten Tantra Masseurinnen und Premium-Einrichtungen.',
+  'meta_keywords' => 'tantra massage mallorca, erotische massage palma, erotisches spa mallorca, tantra masseurin palma, erotische massage mallorca, tantric luxe mallorca',
   'pre_title' => 'ÜBER UNS',
   'title' => 'UNSERE GESCHICHTE',
   'subtitle' => 'LUXUS-TANTRA-SPA',
-  'description' => 'Seit 2019 sind wir Pioniere bei der Schaffung luxuriöser Tantra-Erlebnisse, die Leben verändern und das Bewusstsein im Herzen Mallorcas erhöhen.',
+  'description' => 'Wir sind das Referenz-erotische Spa Mallorca für Tantra Massage und erotische Massage Palma: Sinnlichkeit, Wohlbefinden und Luxus in exklusivem, diskretem Ambiente.',
   'story_title' => 'EIN HEILIGTUM VON LUXUS UND SINNLICHKEIT',
-  'story_p1' => 'Bei Tantric Luxe Mallorca haben wir mehr als ein Spa geschaffen; wir haben ein Heiligtum entwickelt, in dem die uralte Kunst des Tantra auf den raffiniertesten zeitgenössischen Luxus trifft. Unsere Vision ist es, einen heiligen Raum zu bieten, in dem unsere Gäste erkunden, heilen und sich verwandeln können.',
-  'story_p2' => 'Jedes Detail unserer Einrichtungen wurde sorgfältig entworfen, um eine Atmosphäre zu schaffen, die alle Sinne erweckt. Von ätherischen Ölen, die direkt aus ihren Ursprungsorten importiert werden, bis hin zu Ambiente-Musik, die speziell für jede Art von Erlebnis komponiert wurde.',
+  'story_p1' => 'Tantric Luxe wurde mit der Vision gegründet, Tantra Massage Mallorca und erotische Massage Palma auf ein neues Exzellenzniveau zu heben. Wir haben ein Heiligtum geschaffen, in dem erfahrene Tantra Masseurinnen sensorische Rituale führen — von Körper an Körper Massage Palma bis Paarmassage Mallorca — in einem sicheren, eleganten und absolut privaten Raum.',
+  'story_p2' => 'Jedes Detail unseres erotischen Spa Mallorca ist für anspruchsvolle Massage-Erlebnisse in Palma de Mallorca konzipiert: Premium-Öle, warmes Licht, einhüllende Musik und intime Suiten, in denen Vergnügen, Entspannung und tantrische Verbindung ihre höchste Ausdrucksform finden.',
   'story_p3' => 'Unser Team besteht aus hochqualifizierten und international zertifizierten Fachleuten, die sich verpflichten, die höchsten Standards an Exzellenz, Privatsphäre und Respekt in jeder Interaktion aufrechtzuerhalten.',
   'stat1_val' => '5000+',
   'stat1_text' => 'Zufriedene Kunden',

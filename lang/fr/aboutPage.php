@@ -1,16 +1,16 @@
 <?php
 
 return array (
-  'meta_title' => 'À Propos | Tantric Luxe Mallorca - Spa et Centre de Massage',
-  'meta_description' => 'Découvrez Tantric Luxe Mallorca. Pionniers des massages érotiques et luxueux.',
-  'meta_keywords' => 'à propos, histoire, spa, massage, palma, luxe',
+  'meta_title' => 'À Propos | Massage Tantrique Mallorca - Spa Érotique Tantric Luxe',
+  'meta_description' => 'Tantric Luxe : référence en massage tantrique Mallorca et massage érotique Palma depuis 2019. Spa érotique Mallorca avec masseuses tantriques certifiées et installations premium.',
+  'meta_keywords' => 'massage tantrique mallorca, massage erotique palma, spa erotique mallorca, masseuse tantrique palma, massage érotique mallorca, tantric luxe mallorca',
   'pre_title' => 'À PROPOS DE NOUS',
   'title' => 'NOTRE HISTOIRE',
   'subtitle' => 'SPA TANTRIQUE DE LUXE',
-  'description' => 'Depuis 2019, nous sommes pionniers dans la création d\'expériences tantriques de luxe à Majorque.',
+  'description' => 'Nous sommes le spa érotique Mallorca de référence pour massage tantrique et massage érotique Palma : sensualité, bien-être et luxe dans un cadre exclusif et discret.',
   'story_title' => 'UN SANCTUAIRE DE LUXE ET DE SENSUALITÉ',
-  'story_p1' => 'Chez Tantric Luxe Mallorca, nous avons créé plus qu\'un spa; un sanctuaire de paix et de plaisir.',
-  'story_p2' => 'Chaque détail a été méticuleusement conçu pour le bien-être de nos clients.',
+  'story_p1' => 'Tantric Luxe est né avec la vision d\'élever massage tantrique Mallorca et massage érotique Palma à un niveau d\'excellence sans précédent. Nous avons créé un sanctuaire où des masseuses tantriques expertes guident des rituels sensoriels — du massage corps à corps Palma au massage en couple Mallorca — dans un espace sûr, élégant et absolument privé.',
+  'story_p2' => 'Chaque détail de notre spa érotique Mallorca est pensé pour les expériences de massage les plus exigeantes à Palma de Mallorca : huiles premium, lumière chaude, musique enveloppante et suites intimes où plaisir, relaxation et connexion tantrique atteignent leur expression maximale.',
   'story_p3' => 'Notre équipe est composée de professionnels hautement qualifiés.',
   'stat1_val' => '5000+',
   'stat1_text' => 'Clients',

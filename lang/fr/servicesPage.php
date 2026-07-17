@@ -1,213 +1,33 @@
 <?php
 
 return array (
-  'meta_title' => 'Services de Massages Érotiques et Tantriques Palma | Catalogue Complet - Tantric Luxe',
-  'meta_description' => 'Découvrez nos services de massages érotiques et tantriques à Palma de Majorque. Catalogue complet: massage en couple, tantrique deluxe, 4 mains. Réservez.',
-  'meta_keywords' => 'services massage tantrique palma, massages erotiques palma, massages erotiques majorque, massage tantrique majorque, services erotiques palma',
+  'meta_title' => 'Massages Érotiques et Tantriques Palma | Spa Érotique Mallorca - Tantric Luxe',
+  'meta_description' => 'Catalogue complet massage érotique Mallorca : massage tantrique, corps à corps Palma, massage en couple et 4 mains. Spa érotique Mallorca avec réservation immédiate.',
+  'meta_keywords' => 'massage érotique mallorca, massage tantrique mallorca, massage érotique palma, massage corps a corps palma, massage en couple mallorca, spa érotique mallorca, masseuse tantrique palma',
   'pre_title' => 'NOUS OFFRONS DES EXPÉRIENCES',
   'title' => 'SERVICES ÉROTIQUES',
-  'subtitle' => 'EXCLUSIVITÉ ET INTIMITÉ',
-  'description' => 'Découvrez notre catalogue complet de services conçus pour éveiller tous vos sens et vous offrir des expériences transformatrices dans un environnement de luxe maximum',
+  'subtitle' => 'EXCLUSIVITÉ ET CONFIDENTIALITÉ',
+  'description' => 'Explorez notre catalogue de massage érotique Mallorca et massage tantrique Palma : expériences sensorielles pour plaisir, relaxation et connexion dans notre spa érotique Mallorca.',
   'packages_pre_title' => 'FORFAITS SPÉCIAUX',
   'packages_title' => 'OFFRES EXCLUSIVES',
   'faq_pre_title' => 'QUESTIONS FRÉQUENTES',
-  'faq_title' => 'TOUT CE QUE VOUS DEVEZ SAVOIR',
+  'faq_title' => 'TOUT CE QU\'IL FAUT SAVOIR',
   'reserve_button' => 'RÉSERVER',
   'see_more_button' => 'VOIR PLUS',
-  'modal_includes' => 'INCLUS:',
-  'modal_description' => 'DESCRIPTION COMPLÈTE:',
+  'modal_includes' => 'INCLUT :',
+  'modal_description' => 'DESCRIPTION COMPLÈTE :',
   'modal_reserve_button' => 'RÉSERVER MAINTENANT',
   'modal_more_info_button' => 'PLUS D\'INFORMATIONS',
-  'services' => 
+  'services' =>
   array (
-    0 => 
-    array (
-      'id' => 2,
-      'slug' => 'massage-corps-a-corps',
-      'title' => 'MASSAGE CORPS À CORPS',
-      'duration' => '70 min',
-      'price' => '€160',
-      'description' => 'Connexion intime totale par un contact peau à peau. Votre masseuse glisse son corps sur le vôtre avec des huiles chaudes et sensuelles.',
-      'meta_title' => 'Massage Corps à Corps Palma | Massage Érotique Sensuel',
-      'meta_description' => 'Massage Corps à Corps à Palma de Majorque. Contact peau à peau avec huiles chaudes et sensuelles.',
-      'meta_keywords' => 'massage corps a corps, palma, majorque',
-      'features' => 
-      array (
-        0 => 'Contact peau à peau',
-        1 => 'Huiles chaudes et sensuelles',
-        2 => 'Techniques érotiques professionnelles',
-        3 => 'Connexion intime totale',
-      ),
-      'fullDescription' => 'Le Massage Corps à Corps est une expérience d\'intimité maximale et de sensualité. Votre masseuse utilisera tout son corps pour vous masser avec des mouvements lents et sensuels, en glissant sur vous avec des huiles chaudes.',
-      'image' => '/images/tantric_deluxe.webp',
-    ),
-    2 => 
-    array (
-      'id' => 3,
-      'slug' => 'experience-erotique-sous-la-douche',
-      'title' => 'EXPÉRIENCE ÉROTIQUE SOUS LA DOUCHE',
-      'duration' => '60 min',
-      'price' => '€150',
-      'description' => 'Une rencontre intime et sensuelle sous l\'eau. Savon corporel érotique, caresses sensuelles et jeux aquatiques dans notre douche privée.',
-      'meta_title' => 'Expérience Érotique sous la Douche Palma',
-      'meta_description' => 'Douche érotique à Palma. Rencontre intime sous l\'eau avec savon charnel.',
-      'meta_keywords' => 'douche érotique, spa, palma, massage',
-      'features' => 
-      array (
-        0 => 'Douche privée équipée',
-        1 => 'Savon corporel érotique',
-        2 => 'Caresses sous l\'eau',
-        3 => 'Ambiance intime et sensuelle',
-      ),
-      'fullDescription' => 'L\'Expérience Érotique sous la Douche combine la sensualité de l\'eau chaude à l\'art du toucher expert. Notre masseuse vous accompagnera sous la douche dans une séance intime où le glissement devient le protagoniste.',
-      'image' => '/images/experiencias_eroticas_unicas.webp',
-    ),
-    3 => 
-    array (
-      'id' => 4,
-      'slug' => 'massage-prostatique',
-      'title' => 'MASSAGE PROSTATIQUE',
-      'duration' => '60 min',
-      'price' => '€150',
-      'description' => 'Une expérience intime et agréable avec des techniques professionnelles de stimulation prostatique. Hygiène maximale garantie.',
-      'meta_title' => 'Massage Prostatique Palma | Stimulation Professionnelle',
-      'meta_description' => 'Massage prostatique à Palma de Majorque. Stimulation professionnelle avec sécurité et intimité totale.',
-      'meta_keywords' => 'massage prostatique, palma, majorque',
-      'features' => 
-      array (
-        0 => 'Techniques certifiées',
-        1 => 'Hygiène maximale',
-        2 => 'Intimité absolue',
-        3 => 'Plaisir intense',
-      ),
-      'fullDescription' => 'Le Massage Prostatique est l\'une des expériences les plus intenses. Avec des techniques professionnelles et un soin maximal de l\'hygiène, notre masseuse vous guidera dans une séance intime de stimulation prostatique profonde.',
-      'image' => '/images/especialistas_en_masajese_eroticos.webp',
-    ),
-    4 => 
-    array (
-      'id' => 5,
-      'slug' => 'striptease',
-      'title' => 'STRIP-TEASE',
-      'duration' => '45 min',
-      'price' => '€120',
-      'description' => 'Un spectacle exclusif et sensuel avec lingerie fine.',
-      'meta_title' => 'Striptease Palma | Show Érotique',
-      'meta_description' => 'Spectacle exclusif et sensuel de striptease à Palma.',
-      'meta_keywords' => 'striptease palma',
-      'features' => 
-      array (
-        0 => 'Striptease exclusif',
-        1 => 'Lingerie fine',
-        2 => 'Danse personnalisé',
-        3 => 'Musique choisie',
-      ),
-      'fullDescription' => 'Notre Striptease est plus qu\'un spectacle. C\'est une performance intime et personnalisée conçue pour activer tous vos sens et éveiller votre fantaisie.',
-      'image' => '/images/sensual_premium.webp',
-    ),
-    5 => 
-    array (
-      'id' => 6,
-      'slug' => 'experience-premium',
-      'title' => 'EXPÉRIENCE PREMIUM',
-      'duration' => '90 min',
-      'price' => '€250',
-      'description' => 'L\'expérience complète: Striptease, douche, massage corps à corps et finale surprise.',
-      'meta_title' => 'Expérience Premium Palma',
-      'meta_description' => 'Le rituel complet et premium à Palma.',
-      'meta_keywords' => 'premium, rituel erotique',
-      'features' => 
-      array (
-        0 => 'Striptease',
-        1 => 'Douche partagée',
-        2 => 'Corps à Corps',
-        3 => 'Coupe de champagne',
-      ),
-      'fullDescription' => 'L\'Expérience Premium rassemble le meilleur de nos services. Elle commence par un striptease, suivi d\'une douche sensuelle, d\'un massage corps à corps, un final surprise et une coupe de champagne.',
-      'image' => '/images/exotic_paradise.webp',
-    ),
-    6 => 
-    array (
-      'id' => 7,
-      'slug' => 'massage-4-mains',
-      'title' => 'MASSAGE À 4 MAINS',
-      'duration' => '80 min',
-      'price' => '€240',
-      'description' => 'Doublez le plaisir. Deux masseuses travaillent en synchronisation totale.',
-      'meta_title' => 'Massage 4 Mains Palma',
-      'meta_description' => 'Deux expertes pour un massage en simultané.',
-      'meta_keywords' => '4 mains, massage double',
-      'features' => 
-      array (
-        0 => 'Deux masseuses',
-        1 => 'Mouvements synchronisés',
-        2 => 'Stimulation double',
-        3 => 'Huiles premium',
-      ),
-      'fullDescription' => 'Le Massage à 4 Mains est l\'expérience ultime de relaxation et de plaisir, exécutée par deux professionnelles synchronisées pour un éveil sensoriel total.',
-      'image' => '/images/espacio_exclusivo_tantrico.webp',
-    ),
-    7 => 
-    array (
-      'id' => 8,
-      'slug' => 'massage-en-couple',
-      'title' => 'MASSAGE EN COUPLE',
-      'duration' => '90 min',
-      'price' => '€320',
-      'description' => 'Un rituel intime conçu pour se reconnecter avec votre partenaire.',
-      'meta_title' => 'Massage Couple Palma',
-      'meta_description' => 'Rituel intime partagé à deux pour éveiller vos sens.',
-      'meta_keywords' => 'couple, rituel, palma',
-      'features' => 
-      array (
-        0 => 'Rituel pour deux',
-        1 => 'Guides experts',
-        2 => 'Ambiance romantique',
-        3 => 'Bouteille de champagne',
-      ),
-      'fullDescription' => 'Partagez la sensualité d\'un massage tantrique avec votre partenaire dans une atmosphère de bougies et de pétales.',
-      'image' => '/images/couples_harmony.webp',
-    ),
+    0 => array ( 'id' => 2, 'slug' => 'massage-corps-a-corps', 'title' => 'MASSAGE CORPS À CORPS', 'duration' => '30-60 min', 'price' => 'À partir de 80€', 'description' => 'Massage corps à corps Palma avec contact peau à peau et mouvements enveloppants. L\'une des expériences les plus demandées de massage érotique Mallorca pour sensualité et bien-être profond.', 'meta_title' => 'Massage Corps à Corps Palma | Massage Érotique Mallorca', 'meta_description' => 'Massage corps à corps Palma chez Tantric Luxe. Contact intime peau à peau, huiles premium et masseuse tantrique Palma. À partir de 80€. Réservez dans notre spa érotique Mallorca.', 'meta_keywords' => 'massage corps a corps palma, massage érotique mallorca, massage érotique palma, massage tantrique mallorca, spa érotique mallorca', 'features' => array ( 0 => 'Contact peau à peau', 1 => 'Mouvements doux et enveloppants', 2 => 'Connexion sensorielle profonde', 3 => 'Relaxation et bien-être' ), 'fullDescription' => 'Notre massage corps à corps Palma est une expérience intime où la masseuse tantrique glisse sur votre corps avec des mouvements fluides et des huiles chaudes, créant une connexion sensorielle unique. Parmi les massages érotiques Mallorca les plus demandés, il allie sensualité, relaxation et plaisir à Palma de Mallorca. Options : 30 min – 80€ | 45 min – 120€ | 60 min – 150€.', 'image' => '/images/sensual_premium.webp' ),
+    1 => array ( 'id' => 3, 'slug' => 'experience-erotique-sous-la-douche', 'title' => 'EXPÉRIENCE ÉROTIQUE SOUS LA DOUCHE', 'duration' => '60 min', 'price' => '200€', 'description' => 'Rituel érotique sous l\'eau dans notre spa érotique Mallorca. Caresses, chaleur et proximité corporelle pour une expérience de massage érotique Palma inoubliable.', 'meta_title' => 'Expérience Érotique sous la Douche Palma | Spa Érotique Mallorca', 'meta_description' => 'Expérience érotique sous la douche à Palma de Mallorca. Massage sensoriel sous l\'eau avec masseuse tantrique. 60 min – 200€. Réservez chez Tantric Luxe.', 'meta_keywords' => 'experience erotique douche palma, massage érotique palma, massage érotique mallorca, spa érotique mallorca, massage tantrique mallorca', 'features' => array ( 0 => 'Ambiance chaude sous l\'eau', 1 => 'Contact rapproché et sensoriel', 2 => 'Caresses douces et enveloppantes', 3 => 'Atmosphère de plaisir et de connexion' ), 'fullDescription' => 'L\'expérience érotique sous la douche élève le massage érotique Palma à un rituel aquatique de plaisir et de connexion. Dans notre spa érotique Mallorca, l\'eau chaude, les caresses conscientes et la proximité corporelle éveillent les sens et créent un moment intime parmi les offres les plus exclusives de massage érotique Mallorca.', 'image' => '/images/exotic_paradise.webp' ),
+    2 => array ( 'id' => 4, 'slug' => 'massage-prostatique', 'title' => 'MASSAGE PROSTATIQUE', 'duration' => '60 min', 'price' => '200€', 'description' => 'Massage prostatique professionnel à Palma avec techniques précises, hygiène maximale et confidentialité. Bien-être masculin dans notre catalogue de massage érotique Mallorca.', 'meta_title' => 'Massage Prostatique Palma | Massage Érotique Mallorca', 'meta_description' => 'Massage prostatique à Palma de Mallorca. Techniques expertes, ambiance intime et discrétion totale dans notre spa érotique Mallorca. 60 min – 200€.', 'meta_keywords' => 'massage prostatique palma, massage érotique palma, massage érotique mallorca, massage tantrique mallorca, spa érotique mallorca', 'features' => array ( 0 => 'Techniques spécialisées', 1 => 'Ambiance intime et relaxante', 2 => 'Confidentialité maximale', 3 => 'Professionnelles certifiées' ), 'fullDescription' => 'Le massage prostatique à Palma de Mallorca combine stimulation précise, respect et confidentialité absolue. Faisant partie de nos massages érotiques Mallorca, cette séance est conçue pour libérer les tensions, intensifier le plaisir masculin et offrir une expérience intime selon les plus hauts standards de notre spa érotique Mallorca.', 'image' => '/images/sensual_premium.webp' ),
+    3 => array ( 'id' => 5, 'slug' => 'striptease', 'title' => 'STRIPTEASE', 'duration' => '60 min', 'price' => '250€', 'description' => 'Spectacle privé de striptease à Palma avec élégance et sensualité. Complément parfait avant un massage érotique Palma ou rituel tantrique exclusif.', 'meta_title' => 'Striptease Palma | Massage Érotique Mallorca', 'meta_description' => 'Striptease privé à Palma de Mallorca. Spectacle érotique exclusif au spa érotique Mallorca. 60 min – 250€. Réservez maintenant.', 'meta_keywords' => 'striptease palma, massage érotique palma, massage érotique mallorca, spa érotique mallorca, massage tantrique mallorca', 'features' => array ( 0 => 'Spectacle privé exclusif', 1 => 'Danse sensuelle et élégante', 2 => 'Jeu de regards et attitude', 3 => 'Atmosphère intime et séduisante' ), 'fullDescription' => 'Le striptease privé à Palma de Mallorca ouvre la porte à une expérience visuelle et érotique de haut niveau. Chaque mouvement est pensé pour éveiller la fantaisie et préparer le corps à un massage tantrique ou massage érotique Palma ultérieur, dans le cadre exclusif de notre spa érotique Mallorca.', 'image' => '/images/exotic_paradise.webp' ),
+    4 => array ( 'id' => 6, 'slug' => 'experience-premium', 'title' => 'EXPÉRIENCE PREMIUM', 'duration' => '70 min', 'price' => '300€', 'description' => 'L\'expérience la plus complète de massage érotique Mallorca : striptease, douche intime, massage corps à corps PLUS et champagne dans notre spa érotique Mallorca.', 'meta_title' => 'Expérience Premium Palma | Spa Érotique Mallorca', 'meta_description' => 'Expérience Premium à Palma : striptease, douche érotique, massage corps à corps et champagne. Le rituel le plus exclusif de massage tantrique Mallorca. Réservez maintenant.', 'meta_keywords' => 'experience premium palma, massage érotique mallorca, massage corps a corps palma, spa érotique mallorca, massage tantrique mallorca', 'features' => array ( 0 => 'Striptease privé', 1 => 'Expérience intime sous la douche', 2 => 'Massage corps à corps PLUS', 3 => 'Coupe de champagne incluse' ), 'fullDescription' => 'L\'Expérience Premium réunit le meilleur du massage érotique Palma et du massage tantrique Mallorca en un seul rituel de 70 minutes. Striptease privé, douche sensorielle, massage corps à corps Palma intensifié et champagne : l\'offre définitive de notre spa érotique Mallorca pour ceux qui recherchent le luxe sensoriel maximal.', 'image' => '/images/sensual_premium.webp' ),
+    5 => array ( 'id' => 7, 'slug' => 'massage-4-mains', 'title' => 'MASSAGE À 4 MAINS', 'duration' => '60 min', 'price' => '300€', 'description' => 'Massage 4 mains Palma avec deux masseuses tantriques synchronisées. Double plaisir, relaxation totale et joyau du massage érotique Mallorca.', 'meta_title' => 'Massage 4 Mains Palma | Massage Érotique Mallorca', 'meta_description' => 'Massage 4 mains Palma avec deux masseuses tantriques expertes. Synchronisation parfaite au spa érotique Mallorca. 60 min – 300€.', 'meta_keywords' => 'massage 4 mains palma, massage érotique mallorca, massage tantrique mallorca, masseuse tantrique palma, spa érotique mallorca', 'features' => array ( 0 => 'Deux masseuses synchronisées', 1 => 'Caresses simultanées', 2 => 'Mouvements fluides et enveloppants', 3 => 'Plaisir profond et relaxation totale' ), 'fullDescription' => 'Le massage 4 mains Palma multiplie les sensations avec deux masseuses tantriques glissant sur votre corps à l\'unisson. Parmi les massages érotiques Mallorca les plus intenses, il combine excitation, relaxation profonde et un rythme hypnotique que seul un spa érotique Mallorca d\'élite peut offrir à Palma de Mallorca.', 'image' => '/images/exotic_paradise.webp' ),
+    6 => array ( 'id' => 8, 'slug' => 'massage-en-couple', 'title' => 'MASSAGE EN COUPLE', 'duration' => '60 min', 'price' => '280€', 'description' => 'Massage en couple Mallorca pour partager plaisir et connexion. Rituel tantrique ou érotique avec une ou deux masseuses en cadre intime et exclusif.', 'meta_title' => 'Massage en Couple Mallorca | Massage Érotique Palma', 'meta_description' => 'Massage en couple Mallorca chez Tantric Luxe. Partagez massage tantrique ou érotique avec votre partenaire au spa érotique Mallorca. 60 min – 280€.', 'meta_keywords' => 'massage en couple mallorca, massage érotique palma, massage érotique mallorca, massage tantrique mallorca, spa érotique mallorca', 'features' => array ( 0 => 'Option 1 ou 2 masseuses', 1 => 'Caresses douces et enveloppantes', 2 => 'Ambiance sensuelle et relaxante', 3 => 'Connexion profonde en couple' ), 'fullDescription' => 'Le massage en couple Mallorca est conçu pour que deux personnes partagent sensualité, calme et excitation dans le même rituel. Avec une masseuse tantrique Palma experte en dynamiques de couple, cette expérience de massage érotique Palma renforce la connexion et amplifie le plaisir partagé dans notre spa érotique Mallorca.', 'image' => '/images/couples_harmony.webp' ),
   ),
-  'packages' => 
-  array (
-    0 => 
-    array (
-      'title' => 'RÉDUCTION CLIENTS FIDÈLES',
-      'day' => 'TOUS LES JEUDIS',
-      'description' => 'Les fidèles méritent une récompense. Obtenez une réduction de <span class=\'text-amber-400 font-semibold\'>20€</span> sur votre session chaque jeudi.',
-      'buttonText' => 'RÉSERVER JEUDI',
-    ),
-    1 => 
-    array (
-      'title' => 'PLAISIR PARTAGÉ',
-      'day' => 'TOUS LES SAMEDIS',
-      'description' => 'Obtenez <span class=\'text-amber-400 font-semibold\'>10% de réduction</span> pour deux personnes.',
-      'buttonText' => 'RÉSERVER SAMEDI',
-    ),
-    2 => 
-    array (
-      'title' => 'DIMANCHES DU PÉCHÉ',
-      'day' => 'TOUS LES DIMANCHES',
-      'description' => 'Tarif spécial sur les massages 4 mains le dimanche.',
-      'buttonText' => 'RÉSERVER DIMANCHE',
-    ),
-  ),
-  'faqs' => 
-  array (
-    0 => 
-    array (
-      'question' => 'Que comprennent les services?',
-      'answer' => 'Tous les services comprennent une consultation, un climatiseur, de la musique, des huiles et des serviettes chaudes. Les services premium incluent des commodités luxueuses.',
-    ),
-    1 => 
-    array (
-      'question' => 'Comment puis-je réserver?',
-      'answer' => 'Via WhatsApp ou notre site internet. Réservation suggérée 24h à l\'avance.',
-    ),
-    2 => 
-    array (
-      'question' => 'Quelle est la discrétion garantie?',
-      'answer' => 'Confidentialité absolue et entrées privées discrètes.',
-    ),
-  ),
+  'packages' => array ( 0 => array ( 'title' => 'RÉDUCTION CLIENTS FIDÈLES', 'day' => 'TOUS LES JEUDIS', 'description' => 'Les fidèles méritent une récompense. Si vous avez déjà profité de nos massages, ce jeudi obtenez un bon de <span class=\'text-amber-400 font-semibold\'>20€ de réduction</span> sur votre séance.', 'buttonText' => 'RÉSERVER JEUDI' ), 1 => array ( 'title' => 'PLAISIR PARTAGÉ', 'day' => 'TOUS LES SAMEDIS', 'description' => 'Chaque samedi, venez accompagné... Si vous partagez le moment avec un ami, profitez tous les deux d\'une <span class=\'text-amber-400 font-semibold\'>réduction de 10%</span> sur votre expérience.', 'buttonText' => 'RÉSERVER SAMEDI' ), 2 => array ( 'title' => 'DIMANCHES POUR SE FAIRE PLAISIR', 'day' => 'TOUS LES DIMANCHES', 'description' => 'Choisissez un massage à quatre mains à prix exclusif. Plus de mains... plus de plaisir. Une expérience intensifiée pour ceux qui cherchent quelque chose de plus profond.', 'buttonText' => 'RÉSERVER DIMANCHE' ) ),
+  'faqs' => array ( 0 => array ( 'question' => 'Que comprennent les services ?', 'answer' => 'Tous nos services comprennent une consultation personnalisée, un environnement climatisé, une musique d\'ambiance, des huiles premium et des serviettes chaudes. Les services premium incluent des amenities supplémentaires comme du champagne et un jacuzzi privé.' ), 1 => array ( 'question' => 'Comment puis-je réserver ?', 'answer' => 'Réservez via WhatsApp, notre formulaire en ligne ou par téléphone. Nous recommandons au moins 24 heures à l\'avance. Pour les services premium, 48 heures sont requises.' ), 2 => array ( 'question' => 'Quelles mesures de confidentialité avez-vous ?', 'answer' => 'Nous garantissons une discrétion absolue. Entrées privées, aucun partage de données clients et accords de confidentialité pour tout le personnel.' ) ),
 );

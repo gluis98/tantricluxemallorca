@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'meta_title' => 'Book online | Tantric Luxe Mallorca',
-    'meta_description' => 'Book your appointment in Palma: pick date, service and masseuse. Tantric Luxe Mallorca.',
-    'meta_keywords' => 'book massage palma, online booking mallorca, tantric luxe',
+    'meta_title' => 'Book Tantric Massage Mallorca | Erotic Massage Palma Online',
+    'meta_description' => 'Book tantric massage Mallorca or erotic massage Palma online. Choose date, service and tantric masseuse at our erotic spa Mallorca. Fast confirmation.',
+    'meta_keywords' => 'book tantric massage mallorca, book erotic massage palma, couples massage mallorca booking, erotic spa mallorca, tantric masseuse palma, online massage booking palma',
     'pre_title' => 'ONLINE BOOKING',
     'title' => 'Schedule your service',
     'intro' => 'Check availability and book the date and time that suit you best.',

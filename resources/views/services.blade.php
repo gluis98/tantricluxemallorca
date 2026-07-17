@@ -16,6 +16,7 @@
 @php
     $servicesForSchema = array_values(trans('servicesPage.services', [], $locale) ?? []);
     $itemListElement = [];
+    $servicesPathForSchema = trans('common.header.paths.services', [], $locale);
     foreach ($servicesForSchema as $index => $svc) {
         $itemListElement[] = [
             '@type' => 'ListItem',
@@ -24,6 +25,7 @@
                 '@type' => 'Service',
                 'name' => $svc['title'] ?? '',
                 'description' => $svc['description'] ?? '',
+                'url' => url('/'.$locale.$servicesPathForSchema.'/'.($svc['slug'] ?? '')),
                 'offers' => [
                     '@type' => 'Offer',
                     'price' => preg_replace('/[^0-9.]/', '', $svc['price'] ?? '0'),
@@ -107,7 +109,10 @@
 
                 {{-- Título --}}
                 <h2 class="text-2xl font-light tracking-wider mb-4 cormorant-garamond gradiente-dorado">
-                    {{ $svc['title'] ?? '' }}
+                    <a href="/{{ $locale }}{{ trans('common.header.paths.services', [], $locale) }}/{{ $svc['slug'] ?? '' }}"
+                       class="hover:opacity-90 transition-opacity">
+                        {{ $svc['title'] ?? '' }}
+                    </a>
                 </h2>
 
                 {{-- Separador --}}
@@ -130,18 +135,26 @@
                 </ul>
                 @endif
 
-                {{-- Botón reserva online (servicio preseleccionado) --}}
-                <a href="/{{ $locale }}{{ $bookingPath }}?servicio={{ urlencode($svc['slug'] ?? '') }}"
-                   class="group/btn flex items-center justify-center gap-3 w-full
-                          bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400
-                          text-black font-medium py-3 px-6 rounded-2xl
-                          transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25
-                          text-sm tracking-wider">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    {{ $servicesPage['reserve_button'] ?? 'RESERVAR' }}
-                </a>
+                <div class="mt-auto space-y-3">
+                    <a href="/{{ $locale }}{{ trans('common.header.paths.services', [], $locale) }}/{{ $svc['slug'] ?? '' }}"
+                       class="group/btn flex items-center justify-center gap-3 w-full
+                              border border-amber-400/50 hover:bg-amber-400/10
+                              text-amber-300 font-medium py-3 px-6 rounded-2xl
+                              transition-all duration-300 text-sm tracking-wider">
+                        {{ $servicesPage['see_more_button'] ?? 'VER MÁS' }}
+                    </a>
+                    <a href="/{{ $locale }}{{ $bookingPath }}?servicio={{ urlencode($svc['slug'] ?? '') }}"
+                       class="group/btn flex items-center justify-center gap-3 w-full
+                              bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400
+                              text-black font-medium py-3 px-6 rounded-2xl
+                              transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25
+                              text-sm tracking-wider">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        {{ $servicesPage['reserve_button'] ?? 'RESERVAR' }}
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>

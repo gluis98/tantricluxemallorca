@@ -1,9 +1,9 @@
 <?php
 
 return array (
-  'meta_title' => 'Massaggi Erotici e Tantrici Palma | Massaggiatrice Luxe Maiorca',
-  'meta_description' => 'Massaggi erotici e tantrici esclusivi a Palma di Maiorca. Massaggiatrici professionali, spa di lusso con massima privacy. Massaggio di coppia, tantrico e rilassante. Prenota la tua esperienza unica.',
-  'meta_keywords' => 'massaggi palma, massaggi maiorca, massaggio erotico palma, massaggi erotici maiorca, massaggio tantrico palma, massaggio tantrico maiorca, massaggiatrice palma, massaggio di coppia maiorca, spa maiorca, spa palma, luxe, massaggio palma di maiorca, offerte massaggi maiorca, massaggio erotico, massaggi erotici palma, tantric, erotic, massaggio, massaggi, massaggi a maiorca, massaggitrici palma',
+  'meta_title' => 'Massaggio Tantrico Mallorca | Massaggio Erótico Palma - Spa Erótico Tantric Luxe',
+  'meta_description' => 'Massaggio tantrico Mallorca e massaggio erotico Palma in spa erotico esclusivo. Massaggiatrice tantrica Palma, massaggio corpo a corpo, di coppia e a 4 mani. Prenota a Palma de Mallorca.',
+  'meta_keywords' => 'massaggio tantrico mallorca, massaggio erotico palma, massaggiatrice tantrica palma, spa erotico mallorca, massaggio corpo a corpo palma, massaggio di coppia mallorca',
   'subtitle' => 'EROTIC MASSAGE',
   'title' => 'TANTRIC LUXE',
   'main_heading' => 'MASSAGGIO TANTRICO PALMA',
@@ -11,32 +11,21 @@ return array (
   'masseuse_section' => 
   array (
     'title' => 'LE NOSTRE SPECIALISTE',
-    'description' => 'Scopri le nostre esperte in massaggio tantrico ed erotico a Palma. Eleganza, competenza ed esperienza esclusiva.',
+    'description' => 'Conosci Angy, Brenda, Aroha e le nostre massaggiatrici tantriche Palma. Specialiste in massaggio erotico, corpo a corpo e di coppia Mallorca nel nostro spa erotico Mallorca.',
     'button_text' => 'MAGGIORI INFORMAZIONI SULLE NOSTRE MASSAGGIATRICI',
     'featured_cards' =>
     array (
-      0 =>
-      array (
-        'name' => 'Tatiana',
-        'specialty' => 'Massaggio tantrico sensuale premium',
-        'image' => '/images/masseurs/Sharon/1.jpg',
-        'reviews' => 64,
-      ),
-      1 =>
-      array (
-        'name' => 'Leila',
-        'specialty' => 'Massaggio tantrico body-to-body esclusivo',
-        'image' => '/images/masseurs/Leila/1.jpg',
-        'reviews' => 47,
-      ),
+      0 => array ( 'name' => 'Angy', 'specialty' => 'Massaggio Tantrico ed Erótico Deluxe', 'image' => '/images/masseurs/Angy/2.jpeg', 'reviews' => 94 ),
+      1 => array ( 'name' => 'Brenda', 'specialty' => 'Massaggio Corpo a Corpo Esclusivo', 'image' => '/images/masseurs/Brenda/2.jpeg', 'reviews' => 81 ),
+      2 => array ( 'name' => 'Luna', 'specialty' => 'Massaggio Erótico ed Esperienza in Doccia', 'image' => '/images/masseurs/Luna/2.jpeg', 'reviews' => 73 ),
     ),
   ),
   'about_us_section' => 
   array (
     'pre_title' => 'CHI SIAMO',
     'title' => 'SPECIALISTI IN MASSAGGIO TANTRICO MAIORCA',
-    'p1' => 'In Tantric Luxe siamo pionieri del massaggio tantrico a Palma di Maiorca. Il nostro centro specializzato combina le antiche tecniche del massaggio tantrico con il lusso e la privacy che meriti nel cuore di Maiorca.',
-    'p2' => 'Ogni sessione di massaggio tantrico a Maiorca è progettata per risvegliare i tuoi sensi e connetterti alla tua energia interiore. Utilizziamo oli essenziali di alta qualità e tecniche tradizionali di massaggio tantrico a Palma per un\'esperienza trasformativa unica.',
+    'p1' => 'A Tantric Luxe siamo leader del massaggio tantrico Mallorca e del massaggio erotico Palma in uno spa erotico Mallorca di riferimento. Massaggiatrici tantriche esperte, strutture premium e privacy assoluta nel cuore di Palma de Mallorca.',
+    'p2' => 'Dal massaggio corpo a corpo Palma al massaggio di coppia Mallorca, ogni rituale risveglia i sensi con oli premium e tecniche tantriche. Esperienze di massaggio a Palma de Mallorca pensate per piacere, rilassamento e connessione autentica.',
     'stat1_title' => '10+',
     'stat1_text' => 'Anni nel massaggio tantrico',
     'stat2_title' => '500+',
@@ -47,10 +36,10 @@ return array (
   'contact_section' => 
   array (
     'pre_title' => 'CONTATTI',
-    'title' => 'PRENOTA IL TUO MASSAGGIO TANTRICO A MAIORCA',
-    'form_title' => 'PRENOTA MASSAGGIO TANTRICO PALMA',
+    'title' => 'PRENOTA MASSAGGIO ERÓTICO PALMA',
+    'form_title' => 'PRENOTA MASSAGGIO TANTRICO MALLORCA',
     'info_title' => 'INFORMAZIONI DI CONTATTO',
-    'location_title' => 'Centro Massaggio Tantrico',
+    'location_title' => 'Spa Erótico Mallorca',
     'location_address' => 'Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma, Illes Balears',
     'location_note' => 'Palma di Maiorca',
     'whatsapp_title' => 'WhatsApp',
@@ -95,7 +84,7 @@ return array (
   array (
     'pre_title' => 'IL TUO RIFUGIO A PALMA',
     'title' => 'Le Nostre Camere',
-    'description' => 'Spazi intimi pensati per il massimo comfort: luce calda, tessuti morbidi e un silenzio elegante che invita a lasciarsi alle spalle la giornata. Ogni dettaglio è studiato perché la tua esperienza tantrica sia piacevole e indimenticabile.',
+    'description' => 'Camere intime per massaggio tantrico Mallorca e massaggio erotico Palma: luce calda, tessuti morbidi e privacy totale. Ogni spazio del nostro spa erotico Mallorca è pensato per rendere indimenticabile il massaggio corpo a corpo Palma.',
     'expand_hint' => 'Tocca per ingrandire',
     'room_label' => 'Stanza',
     'modal_close_aria' => 'Chiudi galleria',

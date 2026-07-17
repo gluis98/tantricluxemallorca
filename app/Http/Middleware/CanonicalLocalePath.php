@@ -83,6 +83,33 @@ class CanonicalLocalePath
         return null;
     }
 
+    private function masseusesPathByLocale(string $locale): string
+    {
+        return match ($locale) {
+            'es' => 'masajistas',
+            'en', 'fr' => 'masseuses',
+            'de' => 'masseurinnen',
+            'it' => 'massaggiatrici',
+            default => 'masajistas',
+        };
+    }
+
+    private function knownMasseuseSlugs(): array
+    {
+        $slugs = [];
+        foreach (self::LOCALES as $locale) {
+            App::setLocale($locale);
+            foreach (trans('masseusesPage.masseuses', [], $locale) ?? [] as $masseuse) {
+                $slug = strtolower((string) ($masseuse['slug'] ?? ''));
+                if ($slug !== '') {
+                    $slugs[$slug] = true;
+                }
+            }
+        }
+
+        return $slugs;
+    }
+
     public function handle(Request $request, Closure $next)
     {
         $locale = $request->route('locale');
@@ -137,6 +164,23 @@ class CanonicalLocalePath
                 }
 
                 $canonical = $targetBase . '/' . $targetSlug;
+                if ('/' . implode('/', $segments) !== $canonical) {
+                    return redirect($canonical, 301);
+                }
+            }
+
+            $masseuseSegments = ['masajistas', 'masseuses', 'masseurinnen', 'massaggiatrici'];
+            if (in_array($serviceSegment, $masseuseSegments, true)) {
+                $expectedSegment = $this->masseusesPathByLocale($locale);
+                $targetBase = '/' . $locale . '/' . $expectedSegment;
+                $masseuseSlug = strtolower($slug);
+                $known = $this->knownMasseuseSlugs();
+
+                if (! isset($known[$masseuseSlug])) {
+                    return redirect($targetBase, 301);
+                }
+
+                $canonical = $targetBase . '/' . $masseuseSlug;
                 if ('/' . implode('/', $segments) !== $canonical) {
                     return redirect($canonical, 301);
                 }

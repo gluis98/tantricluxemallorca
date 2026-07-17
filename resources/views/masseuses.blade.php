@@ -32,6 +32,7 @@
                 '@type' => 'Person',
                 'name' => $masseuse['name'] ?? '',
                 'jobTitle' => $masseuse['specialty'] ?? '',
+                'url' => url('/'.$locale.trans('common.header.paths.masseuses', [], $locale).'/'.($masseuse['slug'] ?? \App\Support\MasseuseCatalog::slugify($masseuse['name'] ?? ''))),
                 'worksFor' => [
                     '@type' => 'LocalBusiness',
                     'name' => 'Tantric Luxe Mallorca',
@@ -120,7 +121,10 @@
                 <!-- Nombre prominente -->
                 <div class="text-center mb-8">
                     <h3 class="text-5xl md:text-7xl font-light tracking-[0.3em] gradiente-dorado cormorant-garamond mb-4">
-                        {{ strtoupper($masseuse['name'] ?? '') }}
+                        <a href="/{{ $locale }}{{ trans('common.header.paths.masseuses', [], $locale) }}/{{ $masseuse['slug'] ?? \App\Support\MasseuseCatalog::slugify($masseuse['name'] ?? '') }}"
+                           class="hover:opacity-90 transition-opacity">
+                            {{ strtoupper($masseuse['name'] ?? '') }}
+                        </a>
                     </h3>
                     <div class="flex items-center justify-center gap-4 mb-4">
                         <div class="h-px w-16 bg-amber-400"></div>
@@ -177,7 +181,11 @@
                 @endif
 
                 <!-- Botón de reserva -->
-                <div class="text-center">
+                <div class="text-center flex flex-col sm:flex-row justify-center gap-3">
+                    <a href="/{{ $locale }}{{ trans('common.header.paths.masseuses', [], $locale) }}/{{ $masseuse['slug'] ?? \App\Support\MasseuseCatalog::slugify($masseuse['name'] ?? '') }}"
+                       class="inline-block tenali-ramakrishna border border-amber-400/60 rounded-full hover:bg-amber-400/10 text-amber-300 px-8 py-4 text-lg font-medium tracking-wider transition-all">
+                        {{ $masseusesPage['view_more_text'] ?? 'Ver más' }}
+                    </a>
                     <a href="https://wa.me/34602560426?text={{ urlencode('Hola, me gustaría reservar una cita con ' . ($masseuse['name'] ?? 'la masajista')) }}" 
                        target="_blank"
                        class="inline-block tenali-ramakrishna border-2 border-amber-400 bg-gradient-to-r from-amber-600/20 to-amber-800/20 rounded-full hover:from-amber-600/30 hover:to-amber-800/30 text-amber-300 px-10 md:px-16 py-4 md:py-5 text-xl md:text-2xl font-medium tracking-wider transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-amber-900/50">

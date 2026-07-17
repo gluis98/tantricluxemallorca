@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\MasseusesController;
+use App\Http\Controllers\MasseuseDetailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ImageController;
@@ -50,6 +51,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/servicios', [ServicesController::class, 'index'])->name('services.es');
     Route::get('/servicios/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.es');
     Route::get('/masajistas', [MasseusesController::class, 'index'])->name('masseuses.es');
+    Route::get('/masajistas/{slug}', [MasseuseDetailController::class, 'show'])->name('masseuse.detail.es');
     Route::get('/contacto', [ContactController::class, 'index'])->name('contact.es');
     Route::get('/reserva', [BookingController::class, 'create']);
     Route::post('/reserva', [BookingController::class, 'store']);
@@ -59,6 +61,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/services', [ServicesController::class, 'index'])->name('services.en');
     Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.en');
     Route::get('/masseuses', [MasseusesController::class, 'index'])->name('masseuses.en');
+    Route::get('/masseuses/{slug}', [MasseuseDetailController::class, 'show'])->name('masseuse.detail.en');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.en');
     Route::get('/book', [BookingController::class, 'create']);
     Route::post('/book', [BookingController::class, 'store']);
@@ -68,6 +71,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/leistungen', [ServicesController::class, 'index'])->name('services.de');
     Route::get('/leistungen/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.de');
     Route::get('/masseurinnen', [MasseusesController::class, 'index'])->name('masseuses.de');
+    Route::get('/masseurinnen/{slug}', [MasseuseDetailController::class, 'show'])->name('masseuse.detail.de');
     Route::get('/kontakt', [ContactController::class, 'index'])->name('contact.de');
     Route::get('/buchen', [BookingController::class, 'create']);
     Route::post('/buchen', [BookingController::class, 'store']);
@@ -77,6 +81,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/servizi', [ServicesController::class, 'index'])->name('services.it');
     Route::get('/servizi/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.it');
     Route::get('/massaggiatrici', [MasseusesController::class, 'index'])->name('masseuses.it');
+    Route::get('/massaggiatrici/{slug}', [MasseuseDetailController::class, 'show'])->name('masseuse.detail.it');
     Route::get('/contatti', [ContactController::class, 'index'])->name('contact.it');
     Route::get('/prenota', [BookingController::class, 'create']);
     Route::post('/prenota', [BookingController::class, 'store']);
@@ -86,6 +91,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => ['web', CanonicalLocalePat
     Route::get('/services', [ServicesController::class, 'index'])->name('services.fr');
     Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.detail.fr');
     Route::get('/masseuses', [MasseusesController::class, 'index'])->name('masseuses.fr');
+    Route::get('/masseuses/{slug}', [MasseuseDetailController::class, 'show'])->name('masseuse.detail.fr');
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.fr');
     Route::get('/reserver', [BookingController::class, 'create']);
     Route::post('/reserver', [BookingController::class, 'store']);

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'meta_title' => 'Prenota online | Tantric Luxe Mallorca',
-    'meta_description' => 'Prenota il tuo appuntamento a Palma: data, servizio e massaggiatrice. Tantric Luxe Mallorca.',
-    'meta_keywords' => 'prenotare massaggio palma, booking mallorca',
+    'meta_title' => 'Prenota Massaggio Tantrico Mallorca | Massaggio Erótico Palma Online',
+    'meta_description' => 'Prenota online massaggio tantrico Mallorca o massaggio erotico Palma. Scegli data, servizio e massaggiatrice tantrica nel nostro spa erotico Mallorca.',
+    'meta_keywords' => 'prenotare massaggio tantrico mallorca, prenotare massaggio erotico palma, massaggio di coppia mallorca, spa erotico mallorca, massaggiatrice tantrica palma',
     'pre_title' => 'PRENOTAZIONE ONLINE',
     'title' => 'Programma il tuo servizio',
     'intro' => 'Controlla la disponibilità e prenota data e ora più adatte a te.',

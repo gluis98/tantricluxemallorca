@@ -43,7 +43,7 @@ return array (
     'follow_us' => 'FOLLOW US',
     'instagram_aria' => 'Instagram tantric massage Mallorca',
     'whatsapp_aria' => 'WhatsApp tantric massage Palma',
-    'copyright' => '© 2025 Tantric Luxe Mallorca - Specialized Center in Tantric Massage Palma. All rights reserved.',
+    'copyright' => '© 2026 Tantric Luxe Mallorca - Specialized Center for Tantric Massage Mallorca and Erotic Massage Palma. All rights reserved.',
     'privacy_policy' => 'Privacy Policy',
     'terms_conditions' => 'Terms and Conditions',
   ),

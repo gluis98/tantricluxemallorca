@@ -1,13 +1,13 @@
 <?php
 
 return array (
-  'meta_title' => 'Masseuses Érotiques Palma | Spécialistes - Tantric Luxe',
-  'meta_description' => 'Découvrez nos expertes en massage érotique et tantrique.',
-  'meta_keywords' => 'masseuses, palma, majorque, spécialistes',
+  'meta_title' => 'Masseuse Tantrique Palma | Massage Érotique Mallorca - Tantric Luxe',
+  'meta_description' => 'Découvrez Angy, Aroha, Brenda, Emma, Luna et Zoe : masseuses tantriques à Palma de Mallorca. Spécialistes en massage érotique, corps à corps et en couple. Réservez dans notre spa érotique Mallorca.',
+  'meta_keywords' => 'masseuse tantrique palma, massage érotique mallorca, massage érotique palma, massage tantrique mallorca, spa érotique mallorca, masseuse palma',
   'pre_title' => 'NOS SPÉCIALISTES',
   'title' => 'MASSEUSES TANTRIQUES',
-  'subtitle' => 'BEAUTÉ, ART ET ÉNERGIE',
-  'description' => 'Découvrez nos profils professionnels.',
+  'subtitle' => 'BEAUTÉ, ART ET ÉNERGIE À CHAQUE SÉANCE',
+  'description' => 'Galerie de nos masseuses tantriques réelles à Palma de Mallorca. Profils, spécialités et réservation directe avec chaque masseuse de notre spa exclusif.',
   'reviews_text' => 'avis',
   'age_text' => 'ans',
   'reserve_button_text' => 'RÉSERVER AVEC',
@@ -16,58 +16,11 @@ return array (
   'available_now_text' => 'Disponible maintenant',
   'masseuses' =>
   array (
-    0 =>
-    array (
-      'id' => 2,
-      'name' => 'Tatiana',
-      'age' => 26,
-      'specialty' => 'Massage tantrique sensuel premium',
-      'image' => '/images/masseurs/Sharon/1.jpg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Sharon/1.jpg',
-        1 => '/images/masseurs/Sharon/2.jpg',
-        2 => '/images/masseurs/Sharon/3.jpg',
-      ),
-      'description' => 'Tatiana rayonne sensualité et élégance à chaque séance. Avec une énergie unique et des techniques tantriques raffinées, elle crée un espace de connexion profonde où corps et esprit retrouvent leur équilibre.',
-      'skills' =>
-      array (
-        0 => 'Massage tantrique sensuel',
-        1 => 'Techniques respiratoires',
-        2 => 'Énergie kundalini',
-        3 => 'Body to body deluxe',
-        4 => 'Relaxation consciente',
-        5 => 'Rituels bien-être',
-      ),
-      'rating' => 5,
-      'reviews' => 64,
-    ),
-    1 =>
-    array (
-      'id' => 4,
-      'name' => 'Leila',
-      'age' => 23,
-      'specialty' => 'Massage tantrique body-to-body exclusif',
-      'image' => '/images/masseurs/Leila/1.jpg',
-      'images' =>
-      array (
-        0 => '/images/masseurs/Leila/1.jpg',
-        1 => '/images/masseurs/Leila/2.jpg',
-        2 => '/images/masseurs/Leila/3.jpg',
-        3 => '/images/masseurs/Leila/4.jpg',
-      ),
-      'description' => 'Leila allie jeunesse et maîtrise. Son instinct pour les arts tantriques et son énergie lumineuse créent une complicité unique où chaque client découvre de nouvelles dimensions de plaisir et de bien-être.',
-      'skills' =>
-      array (
-        0 => 'Body to body exclusif',
-        1 => 'Massage tantrique jeunesse',
-        2 => 'Énergie vitale',
-        3 => 'Connexion intuitive',
-        4 => 'Techniques modernes',
-        5 => 'Rituel personnalisé',
-      ),
-      'rating' => 5,
-      'reviews' => 47,
-    ),
+    0 => array ( 'id' => 1, 'slug' => 'angy', 'name' => 'Angy', 'age' => 25, 'specialty' => 'Massage Tantrique et Érotique Deluxe', 'image' => '/images/masseurs/Angy/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Angy/1.jpeg', 1 => '/images/masseurs/Angy/2.jpeg', 2 => '/images/masseurs/Angy/3.jpeg', 3 => '/images/masseurs/Angy/4.jpeg', 4 => '/images/masseurs/Angy/5.jpeg' ), 'description' => 'Angy est masseuse tantrique à Palma spécialisée en massage érotique et rituels sensoriels. Son toucher enveloppant et sa présence élégante font de chaque séance une expérience unique de connexion et de plaisir à Mallorca.', 'fullDescription' => 'Angy allie technique raffinée et sensibilité exceptionnelle dans notre spa érotique Mallorca. Formée au massage tantrique et au massage corps à corps Palma, elle guide chaque séance avec chaleur, discrétion et un rythme qui éveille tous les sens. Idéale pour ceux qui cherchent une masseuse tantrique Palma capable de créer des atmosphères intimes, relaxantes et profondément excitantes au cœur de Palma de Mallorca.', 'meta_title' => 'Angy | Masseuse Tantrique Palma - Massage Érotique Mallorca', 'meta_description' => 'Angy, masseuse tantrique à Palma de Mallorca. Spécialiste en massage érotique, tantrique et corps à corps. Réservez avec Angy chez Tantric Luxe.', 'meta_keywords' => 'angy masseuse palma, masseuse tantrique angy mallorca, massage érotique palma angy, massage tantrique mallorca angy', 'skills' => array ( 0 => 'Massage Tantrique Deluxe', 1 => 'Massage Érotique Sensuel', 2 => 'Massage Corps à Corps', 3 => 'Respiration Consciente', 4 => 'Rituels Sensoriels', 5 => 'Connexion Énergétique' ), 'rating' => 5, 'reviews' => 94 ),
+    1 => array ( 'id' => 2, 'slug' => 'aroha', 'name' => 'Aroha', 'age' => 27, 'specialty' => 'Massage 4 Mains et Expérience Premium', 'image' => '/images/masseurs/Aroha/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Aroha/1.jpeg', 1 => '/images/masseurs/Aroha/2.jpeg', 2 => '/images/masseurs/Aroha/3.jpeg', 3 => '/images/masseurs/Aroha/4.jpeg', 4 => '/images/masseurs/Aroha/5.jpeg', 5 => '/images/masseurs/Aroha/6.jpeg' ), 'description' => 'Aroha excelle en massage 4 mains Palma et expériences premium en couple. Son style fluide et synchronisé élève le plaisir sensoriel dans notre spa érotique Mallorca avec une élégance maximale.', 'fullDescription' => 'Aroha est une référence pour le massage 4 mains Palma et les expériences les plus complètes du catalogue tantrique de Mallorca. Elle maîtrise la synchronisation corporelle, le massage en couple Mallorca et les rituels premium alliant sensualité, relaxation profonde et connexion authentique. Chez Tantric Luxe, Aroha crée des séances mémorables pour ceux qui souhaitent aller au-delà du massage érotique conventionnel à Palma de Mallorca.', 'meta_title' => 'Aroha | Massage 4 Mains Palma - Spa Érotique Mallorca', 'meta_description' => 'Aroha, spécialiste en massage 4 mains et massage en couple à Palma de Mallorca. Expériences premium dans notre spa érotique. Réservez avec Aroha.', 'meta_keywords' => 'aroha masseuse palma, massage 4 mains palma aroha, massage en couple mallorca aroha, masseuse tantrique palma, spa érotique mallorca', 'skills' => array ( 0 => 'Massage 4 Mains', 1 => 'Massage en Couple', 2 => 'Expérience Premium', 3 => 'Synchronisation Corporelle', 4 => 'Massage Tantrique Avancé', 5 => 'Rituels de Luxe' ), 'rating' => 5, 'reviews' => 67 ),
+    2 => array ( 'id' => 3, 'slug' => 'brenda', 'name' => 'Brenda', 'age' => 24, 'specialty' => 'Massage Corps à Corps Exclusif', 'image' => '/images/masseurs/Brenda/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Brenda/1.jpeg', 1 => '/images/masseurs/Brenda/2.jpeg', 2 => '/images/masseurs/Brenda/3.jpeg', 3 => '/images/masseurs/Brenda/4.jpeg' ), 'description' => 'Brenda est experte en massage corps à corps Palma avec un style chaleureux et enveloppant. Chaque séance de massage érotique avec Brenda éveille sensualité, calme et connexion profonde.', 'fullDescription' => 'Brenda a bâti sa réputation de masseuse érotique Palma grâce à un massage corps à corps Palma exceptionnellement intime et naturel. Son approche chaleureuse, combinée à des huiles premium et des mouvements fluides, crée une expérience de massage érotique Mallorca difficile à oublier. Dans notre spa érotique Mallorca, Brenda personnalise chaque rituel pour équilibrer excitation, relaxation et bien-être en toute confidentialité.', 'meta_title' => 'Brenda | Massage Corps à Corps Palma - Masseuse Érotique', 'meta_description' => 'Brenda, masseuse érotique spécialisée en massage corps à corps à Palma de Mallorca. Massages érotiques exclusifs avec discrétion maximale. Réservez avec Brenda.', 'meta_keywords' => 'brenda masseuse palma, massage corps a corps palma brenda, massage érotique palma brenda, massage érotique mallorca, masseuse tantrique palma', 'skills' => array ( 0 => 'Massage Corps à Corps', 1 => 'Massage Érotique Premium', 2 => 'Contact Peau à Peau', 3 => 'Relaxation Profonde', 4 => 'Techniques Sensuelles', 5 => 'Rituel Personnalisé' ), 'rating' => 5, 'reviews' => 81 ),
+    3 => array ( 'id' => 4, 'slug' => 'emma', 'name' => 'Emma', 'age' => 26, 'specialty' => 'Massage Tantrique Relaxant et Sensuel', 'image' => '/images/masseurs/Emma/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Emma/1.jpeg', 1 => '/images/masseurs/Emma/2.jpeg', 2 => '/images/masseurs/Emma/3.jpeg', 3 => '/images/masseurs/Emma/4.jpeg', 4 => '/images/masseurs/Emma/5.jpeg' ), 'description' => 'Emma propose massage tantrique Mallorca avec une approche calme et élégante. Idéale pour déconnecter, libérer les tensions et se reconnecter à son énergie à Palma.', 'fullDescription' => 'Emma incarne le côté le plus méditatif du massage tantrique Mallorca : présence sereine, respiration guidée et toucher conscient qui apaise l\'esprit tout en éveillant la sensualité. En tant que masseuse tantrique Palma, elle maîtrise les rituels relaxants, le massage érotique doux et les techniques de connexion énergétique — parfaites pour une première visite ou une expérience profonde et équilibrée dans notre spa érotique Mallorca.', 'meta_title' => 'Emma | Massage Tantrique Mallorca - Masseuse Tantrique Palma', 'meta_description' => 'Emma, masseuse tantrique à Palma de Mallorca. Massage tantrique relaxant et sensuel avec techniques conscientes. Réservez avec Emma.', 'meta_keywords' => 'emma masseuse palma, massage tantrique mallorca emma, masseuse tantrique palma, massage érotique palma emma, spa érotique mallorca', 'skills' => array ( 0 => 'Massage Tantrique Relaxant', 1 => 'Respiration Consciente', 2 => 'Libération du Stress', 3 => 'Massage Érotique Doux', 4 => 'Rituel Sensoriel', 5 => 'Connexion Énergétique' ), 'rating' => 5, 'reviews' => 58 ),
+    4 => array ( 'id' => 5, 'slug' => 'luna', 'name' => 'Luna', 'age' => 23, 'specialty' => 'Massage Érotique et Expérience sous la Douche', 'image' => '/images/masseurs/Luna/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Luna/1.jpeg', 1 => '/images/masseurs/Luna/2.jpeg', 2 => '/images/masseurs/Luna/3.jpeg', 3 => '/images/masseurs/Luna/4.jpeg' ), 'description' => 'Luna combine massage érotique Palma avec des expériences sensorielles sous l\'eau. Son énergie jeune et son style séducteur font de chaque séance un rituel intime et excitant.', 'fullDescription' => 'Luna apporte fraîcheur et sensualité au catalogue de massage érotique Mallorca. Spécialiste en massage érotique Palma et expériences intimes sous la douche, elle crée des atmosphères de jeu, de proximité et de plaisir progressif. Comme masseuse de notre spa érotique Mallorca, Luna adapte chaque rencontre — du massage tantrique doux aux rituels plus audacieux — avec professionnalisme, charisme et discrétion absolue à Palma de Mallorca.', 'meta_title' => 'Luna | Massage Érotique Palma - Masseuse Mallorca', 'meta_description' => 'Luna, masseuse érotique à Palma de Mallorca. Massage érotique, expérience sous la douche et rituels tantriques. Réservez avec Luna.', 'meta_keywords' => 'luna masseuse palma, massage érotique palma luna, massage érotique mallorca, masseuse tantrique palma, spa érotique mallorca luna', 'skills' => array ( 0 => 'Massage Érotique', 1 => 'Expérience sous la Douche', 2 => 'Massage Sensuel', 3 => 'Atmosphère Intime', 4 => 'Techniques Séductrices', 5 => 'Rituel Personnalisé' ), 'rating' => 5, 'reviews' => 73 ),
+    5 => array ( 'id' => 6, 'slug' => 'zoe', 'name' => 'Zoe', 'age' => 28, 'specialty' => 'Massage en Couple et Connexion Tantrique', 'image' => '/images/masseurs/Zoe/1.jpeg', 'images' => array ( 0 => '/images/masseurs/Zoe/1.jpeg', 1 => '/images/masseurs/Zoe/2.jpeg', 2 => '/images/masseurs/Zoe/3.jpeg' ), 'description' => 'Zoe guide le massage en couple Mallorca avec sensibilité et expérience. Parfaite pour les couples qui souhaitent partager plaisir, connexion et relaxation à Palma.', 'fullDescription' => 'Zoe est la référence du massage en couple Mallorca chez Tantric Luxe. Forte de années de pratique en massage tantrique et massage érotique Mallorca, elle facilite des rencontres intimes où les deux partenaires profitent de caresses synchronisées, d\'une respiration partagée et d\'une atmosphère romantique et excitante. Son approche empathique transforme chaque séance de couple en rituel de reconnexion dans notre spa érotique Mallorca.', 'meta_title' => 'Zoe | Massage en Couple Mallorca - Masseuse Tantrique Palma', 'meta_description' => 'Zoe, spécialiste en massage en couple à Palma de Mallorca. Massage tantrique et érotique à deux en cadre exclusif. Réservez avec Zoe.', 'meta_keywords' => 'zoe masseuse palma, massage en couple mallorca zoe, masseuse tantrique palma, massage érotique palma couple, spa érotique mallorca', 'skills' => array ( 0 => 'Massage en Couple', 1 => 'Massage Tantrique', 2 => 'Connexion de Couple', 3 => 'Rituels Romantiques', 4 => 'Massage Érotique', 5 => 'Guidance Consciente' ), 'rating' => 5, 'reviews' => 49 ),
   ),
 );

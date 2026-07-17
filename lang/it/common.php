@@ -43,7 +43,7 @@ return array (
     'follow_us' => 'SEGUICI',
     'instagram_aria' => 'Instagram massaggio tantrico Maiorca',
     'whatsapp_aria' => 'WhatsApp massaggio tantrico Palma',
-    'copyright' => '© 2025 Tantric Luxe Mallorca - Centro Specializzato in Massaggio Tantrico Palma. Tutti i diritti riservati.',
+    'copyright' => '© 2026 Tantric Luxe Mallorca - Centro Specializzato in Massaggio Tantrico Mallorca e Massaggio Erotico Palma. Tutti i diritti riservati.',
     'privacy_policy' => 'Informativa sulla Privacy',
     'terms_conditions' => 'Termini e Condizioni',
   ),

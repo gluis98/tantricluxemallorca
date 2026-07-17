@@ -4,8 +4,9 @@
 
     $locales = ['es', 'en', 'de', 'it', 'fr'];
 
-    // Ruta del segmento de servicios por idioma
+    // Ruta del segmento de servicios / masajistas por idioma
     $servicePaths = ['es' => 'servicios', 'en' => 'services', 'de' => 'leistungen', 'it' => 'servizi', 'fr' => 'services'];
+    $masseusePaths = ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'];
 
     // Mapeo de rutas estáticas
     $routeMap = [
@@ -34,13 +35,11 @@
         $isDynamicRoute = true;
         $currentSlug    = $slugMatches[1];
 
-        // Cargar servicios de todos los idiomas y localizar el servicio por índice
         $servicesByLocale = [];
         foreach ($locales as $loc) {
             $servicesByLocale[$loc] = array_values(trans('servicesPage.services', [], $loc) ?? []);
         }
 
-        // Buscar el índice del servicio (el slug puede estar en cualquier idioma)
         $serviceIndex = null;
         foreach ($servicesByLocale as $services) {
             foreach ($services as $idx => $svc) {
@@ -51,7 +50,6 @@
             }
         }
 
-        // Construir las URLs con el slug correcto para cada idioma
         if ($serviceIndex !== null) {
             foreach ($locales as $loc) {
                 $svc = $servicesByLocale[$loc][$serviceIndex] ?? null;
@@ -63,9 +61,17 @@
         }
     }
 
+    // ── Rutas dinámicas de masajista (slug estable entre idiomas) ────────────
+    if (! $isDynamicRoute && preg_match('/^(?:masajistas|masseuses|masseurinnen|massaggiatrici)\/(.+)$/', $currentRoute, $masseuseMatches)) {
+        $isDynamicRoute = true;
+        $masseuseSlug = strtolower($masseuseMatches[1]);
+        foreach ($locales as $loc) {
+            $hreflangUrls[$loc] = $baseUrl . '/' . $loc . '/' . $masseusePaths[$loc] . '/' . $masseuseSlug;
+        }
+    }
+
     // ── Rutas estáticas ──────────────────────────────────────────────────────
     if (!$isDynamicRoute) {
-        // Convertir la ruta actual a su clave canónica
         $canonicalKey = $currentRoute;
         foreach ($routeMap as $key => $translations) {
             if (in_array($currentRoute, $translations, true) || $currentRoute === $key) {
@@ -80,7 +86,6 @@
                 $hreflangUrls[$loc] = $baseUrl . '/' . $loc . ($path ? '/' . $path : '');
             }
         } else {
-            // Ruta desconocida: usar la ruta actual en todos los idiomas
             foreach ($locales as $loc) {
                 $hreflangUrls[$loc] = $baseUrl . '/' . $loc . ($currentRoute ? '/' . $currentRoute : '');
             }

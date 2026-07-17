@@ -1,16 +1,16 @@
 <?php
 
 return array (
-  'meta_title' => 'Chi Siamo | Tantric Luxe Mallorca - Centro Massaggi Erotici',
-  'meta_description' => 'Scopri Tantric Luxe Mallorca, i pionieri del massaggio erotico e tantrico di lusso.',
-  'meta_keywords' => 'chi siamo, tantric luxe, palma, maiorca',
+  'meta_title' => 'Chi Siamo | Massaggio Tantrico Mallorca - Spa Erótico Tantric Luxe',
+  'meta_description' => 'Tantric Luxe: riferimento per massaggio tantrico Mallorca e massaggio erotico Palma dal 2019. Spa erotico Mallorca con massaggiatrici tantriche certificate e strutture premium.',
+  'meta_keywords' => 'massaggio tantrico mallorca, massaggio erotico palma, spa erotico mallorca, massaggiatrice tantrica palma, massaggio erotico mallorca, tantric luxe mallorca',
   'pre_title' => 'CHI SIAMO',
   'title' => 'LA NOSTRA STORIA',
   'subtitle' => 'SPA TANTRICA DI LUSSO',
-  'description' => 'Dal 2019, pionieri nelle esperienze tantriche di lusso a Maiorca.',
+  'description' => 'Siamo lo spa erotico Mallorca di riferimento per massaggio tantrico e massaggio erotico Palma: sensualità, benessere e lusso in un ambiente esclusivo e discreto.',
   'story_title' => 'UN SANTUARIO DI LUSSO E SENSUALITÀ',
-  'story_p1' => 'In Tantric Luxe Mallorca, abbiamo creato più di una spa; è un santuario d\'arte ancestrale.',
-  'story_p2' => 'Ogni dettaglio delle nostre strutture è stato progettato per rinvigorire tutti i sensi.',
+  'story_p1' => 'Tantric Luxe è nato con la visione di elevare massaggio tantrico Mallorca e massaggio erotico Palma a un livello di eccellenza senza precedenti. Abbiamo creato un santuario dove massaggiatrici tantriche esperte guidano rituali sensoriali — dal massaggio corpo a corpo Palma al massaggio di coppia Mallorca — in uno spazio sicuro, elegante e assolutamente privato.',
+  'story_p2' => 'Ogni dettaglio del nostro spa erotico Mallorca è pensato per le esperienze di massaggio più esigenti a Palma de Mallorca: oli premium, luce calda, musica avvolgente e suite intime dove piacere, rilassamento e connessione tantrica raggiungono la massima espressione.',
   'story_p3' => 'Il nostro team è formato da professioniste certificate a livello internazionale.',
   'stat1_val' => '5000+',
   'stat1_text' => 'Clienti',

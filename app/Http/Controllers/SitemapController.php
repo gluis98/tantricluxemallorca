@@ -142,6 +142,43 @@ class SitemapController extends Controller
             }
         }
 
+        // --- Rutas dinámicas de masajistas (slug estable) ---
+        $masseusePathByLocale = ['es' => 'masajistas', 'en' => 'masseuses', 'de' => 'masseurinnen', 'it' => 'massaggiatrici', 'fr' => 'masseuses'];
+        $masseuseSlugs = [];
+        foreach ($locales as $locale) {
+            try {
+                App::setLocale($locale);
+                foreach (array_values(trans('masseusesPage.masseuses', [], $locale) ?? []) as $masseuse) {
+                    $slug = strtolower((string) ($masseuse['slug'] ?? ''));
+                    if ($slug !== '') {
+                        $masseuseSlugs[$slug] = true;
+                    }
+                }
+            } catch (\Exception $e) {
+                // continuar
+            }
+        }
+
+        foreach (array_keys($masseuseSlugs) as $masseuseSlug) {
+            foreach ($locales as $locale) {
+                $url = $baseUrl . '/' . $locale . '/' . $masseusePathByLocale[$locale] . '/' . $masseuseSlug;
+
+                $xml .= '  <url>' . "\n";
+                $xml .= '    <loc>' . htmlspecialchars($url) . '</loc>' . "\n";
+                $xml .= '    <lastmod>' . $today . '</lastmod>' . "\n";
+                $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+                $xml .= '    <priority>0.8</priority>' . "\n";
+
+                foreach ($locales as $altLocale) {
+                    $altUrl = $baseUrl . '/' . $altLocale . '/' . $masseusePathByLocale[$altLocale] . '/' . $masseuseSlug;
+                    $xml .= '    <xhtml:link rel="alternate" hreflang="' . $altLocale . '" href="' . htmlspecialchars($altUrl) . '" />' . "\n";
+                }
+                $xml .= '    <xhtml:link rel="alternate" hreflang="x-default" href="' . htmlspecialchars($baseUrl . '/es/masajistas/' . $masseuseSlug) . '" />' . "\n";
+
+                $xml .= '  </url>' . "\n";
+            }
+        }
+
         $xml .= '</urlset>';
 
         return Response::make($xml, 200, [

@@ -1,13 +1,13 @@
 <?php
 
 return array (
-  'meta_title' => 'Kontakt | Tantric Luxe Mallorca - Erotische & Tantra Massage Palma buchen',
-  'meta_description' => 'Kontaktieren Sie Tantric Luxe Mallorca. Buchen Sie Ihre erotische, Tantra oder Paarmassage in Palma. WhatsApp: +34 602 560 426. Carrer del Pare Bartomeu Pou, 44, Nord, 07003 Palma. Öffnungszeiten: Montag bis Sonntag 09:00-23:00.',
-  'meta_keywords' => 'kontakt massage palma, erotische massage palma buchen, kontakt tantra massage palma, massage mallorca buchen, tantric luxe kontakt, whatsapp tantra massage, whatsapp masseurin palma, spa standort palma, paarmassage mallorca buchen, kontakt spa mallorca',
+  'meta_title' => 'Kontakt | Erotische Massage Palma buchen - Tantra Massage Mallorca',
+  'meta_description' => 'Erotische Massage Palma oder Tantra Massage Mallorca buchen. WhatsApp +34 602 560 426. Erotisches Spa Mallorca, Carrer del Pare Bartomeu Pou, 44. Tantra Masseurin Palma Mo–So.',
+  'meta_keywords' => 'erotische massage palma kontakt, tantra massage mallorca buchen, erotisches spa mallorca, tantra masseurin palma, erotische massage mallorca, paarmassage mallorca buchen',
   'pre_title' => 'KONTAKT',
   'title' => 'BUCHEN SIE IHR',
   'subtitle' => 'ERLEBNIS',
-  'description' => 'Wir sind hier, um Ihr perfektes Erlebnis Wirklichkeit werden zu lassen. Kontaktieren Sie uns, um zu buchen oder Fragen zu unseren exklusiven Leistungen zu stellen.',
+  'description' => 'Kontaktieren Sie uns für Tantra Massage Mallorca, erotische Massage Palma oder Paarmassage. Schnelle WhatsApp-Antwort in unserem erotischen Spa Mallorca.',
   'info_title' => 'KONTAKTINFORMATIONEN',
   'contact_info' => 
   array (
