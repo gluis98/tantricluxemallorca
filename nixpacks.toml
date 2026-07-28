@@ -1,0 +1,4 @@
+# Evita la colisión LICENSE entre yarn y composer en Nixpacks.
+# Ver: https://github.com/coollabsio/coolify/issues/4202
+[phases.setup]
+nixPkgs = ["...", "(lib.hiPrio php83Packages.composer)"]
