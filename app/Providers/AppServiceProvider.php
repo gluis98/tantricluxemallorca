@@ -20,7 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if ($this->app->environment('production')) {
+        // Solo forzar HTTPS si APP_URL ya es https (dominios temporales Coolify
+        // suelen ser http://*.sslip.io; forzar https rompería assets/imágenes).
+        $appUrl = (string) config('app.url');
+        if (str_starts_with($appUrl, 'https://')) {
             URL::forceScheme('https');
         }
     }
