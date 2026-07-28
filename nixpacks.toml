@@ -4,7 +4,10 @@
 [phases.setup]
 nixPkgs = ["...", "(lib.hiPrio php83Packages.composer)"]
 
-# Asegura que Vite compile assets (public/build). No cachear config aquí:
-# APP_URL en build suele ser distinto al dominio final.
+# Coolify a veces deja el install solo con Composer; hay que instalar
+# node_modules aquí para que `vite` exista en el build.
 [phases.build]
-cmds = ["yarn run build"]
+cmds = [
+    "yarn install --frozen-lockfile",
+    "yarn run build"
+]
