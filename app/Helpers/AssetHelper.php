@@ -33,7 +33,7 @@ if (!function_exists('get_vite_asset')) {
                 return null;
             }
             
-            return asset('build/' . $fileName);
+            return '/build/' . $fileName;
         } catch (\Exception $e) {
             return null;
         }

@@ -78,17 +78,18 @@
                     continue;
                 }
 
+                // Rutas root-relative: no dependen de APP_URL (evita CSS/JS rotos en Coolify).
                 if (isset($manifest['resources/css/app.css']['file'])) {
                     $cssFileName = $manifest['resources/css/app.css']['file'];
                     if (file_exists($candidateDir . '/' . $cssFileName)) {
-                        $cssFile = asset('build/' . $cssFileName);
+                        $cssFile = '/build/' . $cssFileName;
                     }
                 }
 
                 if (isset($manifest['resources/js/app.js']['file'])) {
                     $jsFileName = $manifest['resources/js/app.js']['file'];
                     if (file_exists($candidateDir . '/' . $jsFileName)) {
-                        $jsFile = asset('build/' . $jsFileName);
+                        $jsFile = '/build/' . $jsFileName;
                     }
                 }
 
