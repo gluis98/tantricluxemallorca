@@ -1,4 +1,5 @@
 # Evita la colisión LICENSE entre yarn y composer en Nixpacks.
 # Ver: https://github.com/coollabsio/coolify/issues/4202
+# PHP 8.3+ (Nixpacks lee la versión de composer.json; "^8.1" forzaba 8.1)
 [phases.setup]
 nixPkgs = ["...", "(lib.hiPrio php83Packages.composer)"]
